@@ -11,9 +11,10 @@ int main()
     string city;
 
     cout << "Please enter your name: ";
-    cin  >> name;
+    getline(cin, name);
+    // using getline instead of cin to support spaces
     cout << "Enter the city you live in: ";
-    cin  >> city;
+    getline(cin, city);
 
     cout << "Hello, " << name << endl;
     cout << "You live in " << city << endl;
