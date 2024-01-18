@@ -2,10 +2,10 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main() {
+    int value = 100;
+    // moved variable declaration and assignment above its reference
     cout << value;   
 
-    int value = 100;
     return 0;
 }
