@@ -11,6 +11,6 @@ int main()
 
     // Needs a type cast to display the value of number
     // converted to the char data type
-    cout << number << endl;
+    cout << static_cast<char>(number) << endl;
     return 0;
 }
