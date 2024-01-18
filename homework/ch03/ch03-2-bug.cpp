@@ -13,7 +13,8 @@ int main()
     cin  >> num2;
     cout << "Enter the third number: ";
     cin  >> num3;
-    avg = num1 + num2 + num3 / 3;
+    avg = (num1 + num2 + num3) / 3;
+    // added () around nums to correct order of operations
     cout << "The average is " << avg << endl;
     return 0;
 }
