@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
     string month = "February";    // month is initialized to "February"
-    int year                     // year is not initialized
+    int year,                     // year is not initialized - added ',' to fix multi variable assignment
         days  = 29;               // days is initialized to 29
 
     year = 1776;                  // Now year is assigned a value
