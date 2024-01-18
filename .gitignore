@@ -15,8 +15,12 @@
 # any.swp
 *.swp
 
-# out files
+# out/executable files
 *.out
+*.exe
+
+# vscode files
+.vscode
 
 # files named "temp"
 temp.*
