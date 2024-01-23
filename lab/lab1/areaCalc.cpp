@@ -16,14 +16,17 @@ int main() {
     int choice;
     float length, radius, a, b, area;
 
+    // Displays menu
     cout << "Program to calculate areas of objects" << endl
          << "\t 1 -- square" << endl
          << "\t 2 -- circle" << endl
          << "\t 3 -- right triangle" << endl
          << "\t 4 -- quit" << endl;
 
+    // Get user input
     cin >> choice;
 
+    // Logic for each menu item
     if (choice == 1) {
         cout << "Length of the square: ";
         cin >> length;
