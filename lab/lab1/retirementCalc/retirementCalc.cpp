@@ -6,19 +6,7 @@
 
 #include "compoundCalc.h"
 
-// TEMP: RS = P x (1 + r)t aka RS = P * pow((1 + r), t)
-// compoundCalc: Calculates the retirement savings given principal, rate, and time
-float compoundCalc(float p, float r, float t) {
-    float rs;
-
-    // Not calculating decimals properly
-    rs = p * pow((1 + r), t);
-
-    return rs;
-}
-
-// Using main-last structure
-int main() {
+    int main() {
     float principal, rate, years, savings;
 
     // Get values from user
