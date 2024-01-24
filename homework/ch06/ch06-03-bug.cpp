@@ -9,7 +9,7 @@
 using namespace std;
 
 // Function prototype
-bool readData(ifstream &someFile, string city, double rain);
+bool readData(ifstream &someFile, string &city, double &rain);
 
 int main()
 {
@@ -48,8 +48,11 @@ int main()
  * Then, if it read data, it returns true. If there was *
  * no more data in the file to read, it returns false.  *
  ********************************************************/
-bool readData(ifstream &someFile, string city, double rain)
+// Error was the paramaters were not all assigned with &
+bool readData(ifstream &someFile, string &city, double &rain)
 {
-    bool foundData = someFile >> city >> rain;
-    return foundData;
+    // bool foundData = someFile >> city >> rain;
+    // return foundData;
+    // New error found in that compiler cannot convert istream to bool in initalization
+    return bool{someFile >> city >> rain};
 }
