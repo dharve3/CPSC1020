@@ -7,7 +7,8 @@ using namespace std;
 
 int main()
 {
-    const int ADULT_MEAL_COST = 8.25; // Child meal cost = 60% of this
+    // Logic Error: Stored floating point number in an int
+    const double ADULT_MEAL_COST = 8.25; // Child meal cost = 60% of this
 
    int    numAdults,                 // Guests ages 12 and older
            numChildren;               // Guests ages 2-11
