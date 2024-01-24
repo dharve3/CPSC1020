@@ -13,7 +13,8 @@ int main()
 
     // However, internally result is NOT precisely equal to 4.
     // So test to see if it is "close" to 4.
-    if (result == 4.0)
+    // Fix: Use abs() and specify a precision level
+    if (abs(result - 4.0 < .0001))
         cout << "result DOES equal 4!" << endl;
     else
         cout << "result DOES NOT equal 4!" << endl;
