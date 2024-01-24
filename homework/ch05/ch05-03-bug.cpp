@@ -26,10 +26,21 @@ int main()
     cin  >> years;
 
     // Calculate monthly payment
-    numPayments = static_cast<int>(12 * years);
-    moInterestRate = rate / 12.0;
-    term = pow((1 + moInterestRate), numPayments);
-    payment = (loan * moInterestRate * term) / (term - 1.0);
+    if (rate == 0) {
+        // set moInterestRate to 0 and calculate payment using a slightly different formula
+        moInterestRate = 0;
+
+        payment = loan / static_cast<double>(12 * years);
+    }
+    else {
+        // Calculate as normal
+        numPayments = static_cast<int>(12 * years);
+        moInterestRate = rate / 12.0;
+        term = pow((1 + moInterestRate), numPayments);
+        payment = (loan * moInterestRate * term) / (term - 1.0);
+    }
+
+
 
     // Display monthly payment
     cout << fixed << showpoint << setprecision(2);
