@@ -3,7 +3,7 @@
 using namespace std;
 
 // Function prototype
-void displayValue();   // Can be written as void displayValue(int);
+void displayValue(int);   // Can be written as void displayValue(int);
 
 int main()
 {
@@ -21,7 +21,8 @@ int main()
  *  This function uses an integer parameter *
  *  whose value is displayed.               *
  ********************************************/
-void displayValue()
+// Fixed function header, added num parameter
+void displayValue(int num)
 {
     cout << "The value is " << num << endl;
 }
