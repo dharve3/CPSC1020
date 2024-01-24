@@ -30,7 +30,8 @@ int main()
  *******************************************************/
 bool isEven(int number)
 {
-    if (number / 2 == 0)
+    // Logic error: was using / instead of %
+    if (number % 2 == 0)
         return true;   // The number is even if there's no remainder
     else
         return false;  // Otherwise, the number is odd
