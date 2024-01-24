@@ -12,7 +12,8 @@ int main()
     cout << "is odd or even. ";
     cin  >> number;
 
-    if (number % 2 == 1)
+    // Logic Error: %2 == 0 for even not == 1
+    if (number % 2 == 0)
         cout << number << " is even.\n";
     else
         cout << number << " is odd.\n";
