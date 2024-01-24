@@ -19,7 +19,7 @@
 
     savings = compoundCalc(principal, rate, years);
 
-    cout << "Your retirement savings will be " << setprecision(2) << fixed << savings << endl;
+    cout << "Your retirement savings will be $" << setprecision(2) << fixed << savings << endl;
 
     return 0;
 }
