@@ -7,8 +7,9 @@ using namespace std;
 int main()
 {
     int game = 1,         // Game counter
-       points,           // Holds number of points for a specific game
-         total;        // Accumulates total points for all games
+        points,           // Holds number of points for a specific game
+        total = 0;        // Accumulates total points for all games
+        // ^ Logic error, total was not set to 0 before an operation was preformed, causing unexpected behavior.
 
     // Read in the points for game 1
     cout << "Enter the number of points your team earned for each\n";
