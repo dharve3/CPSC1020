@@ -29,6 +29,7 @@ int main()
     if (rate == 0) {
         // set moInterestRate to 0 and calculate payment using a slightly different formula
         moInterestRate = 0;
+        numPayments = static_cast<int>(12 * years);
 
         payment = loan / static_cast<double>(12 * years);
     }
