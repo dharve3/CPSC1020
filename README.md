@@ -8,6 +8,10 @@ Contains the lecture homework assignments.
 Contains all the lab assignments and supporting files.
 ### lecture/
 Contains all practice programs and related files from the lectures.
+### projects/
+Contains all the project assignments and supporting files.
+### shared/
+Contains some extra files/shared unfinished files, misc...
 ### templates/
 Templates for creating programs/submitting assignments
 
