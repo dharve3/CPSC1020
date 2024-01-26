@@ -22,5 +22,6 @@
 # vscode files
 .vscode
 
-# files named "temp"
+# files and directories named "temp"
 temp.*
+temp
