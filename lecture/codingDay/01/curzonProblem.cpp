@@ -10,7 +10,8 @@
 using namespace std;
 
 bool isCurzon(int num) {
-    long divisor, dividend, remainder;
+    long divisor, dividend;
+	 // long remainder;
     // double fResult;
 
     dividend = (pow(2, num) + 1);
@@ -27,12 +28,13 @@ bool isCurzon(int num) {
 }
 
 int main(int argc, char* argv[]) {
-    int number;
-    number = stoi(argv[1]);
+	int number;
+	number = stoi(argv[1]);
 
-    if (isCurzon(number))
-        cout << number << " is a Curzon number";
-    else
-        cout << number << " is not a Curzon number";
+	if (isCurzon(number))
+		cout << number << " is a Curzon number";
+	else
+		cout << number << " is not a Curzon number";
+
 	return 0;
 }
