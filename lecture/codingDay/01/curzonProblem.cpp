@@ -11,7 +11,7 @@ using namespace std;
 
 bool isCurzon(int num) {
     long divisor, dividend;
-	 // long remainder;
+	// long remainder;
     // double fResult;
 
     dividend = (pow(2, num) + 1);
