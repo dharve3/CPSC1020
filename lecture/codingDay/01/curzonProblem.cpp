@@ -10,7 +10,7 @@
 using namespace std;
 
 bool isCurzon(int num) {
-    long divisor, dividend;
+    long long divisor, dividend;
 	// long remainder;
     // double fResult;
 
