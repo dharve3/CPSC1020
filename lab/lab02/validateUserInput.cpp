@@ -1,7 +1,7 @@
 // My Name: Dylan Harvey
 // My Class: CPSC 1021
 // Date: 1/29/2024
-// Desc: 
+// Desc: Contains function to validate user input
 // Time: <5 min
 
 #include "validateUserInput.h"

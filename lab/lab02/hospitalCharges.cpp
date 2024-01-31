@@ -1,7 +1,7 @@
 // My Name: Dylan Harvey
 // My Class: CPSC 1021
 // Date: 1/29/2024
-// Desc: 
+// Desc: Calculates the charges the paitent will have to pay based on the services they recieved
 // Time: ~1 hr
 
 #include "validateUserInput.h"
