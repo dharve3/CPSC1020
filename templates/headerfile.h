@@ -1,5 +1,5 @@
-#ifndef COMPOUNDCALC_H
-#define COMPOUNDCALC_H
+#ifndef HEADERFILE_H
+#define HEADERFILE_H
 
 // Include statements
 #include <iostream>
@@ -10,6 +10,6 @@
 using namespace std;
 
 // Function prototypes
-float compoundCalc(float inital_principal, float interest_rate, float time_years);
+float functionName(int value1, float value2);
 
 #endif
