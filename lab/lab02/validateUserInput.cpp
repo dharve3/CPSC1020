@@ -7,7 +7,7 @@
 #include "validateUserInput.h"
 
 
-//checks to see if argument is greater than 0, sends T/F
+// Checks to see if argument is greater than 0, returns T/F
 bool validateUserInput(double input) {
 	if (input < 0) {
 		return false;
