@@ -50,7 +50,8 @@ int main()
     Carpet purchase;                // This variable is a Carpet object
     double pricePerYd;
     double length;
-    double length;
+    // fixed double assignment of length and locally assigned length
+    double width;
 
     cout << "Room length in feet: ";
     cin  >> length;
