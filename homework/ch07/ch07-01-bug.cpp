@@ -10,7 +10,7 @@ class Circle
       double radius;             // This is a member variable.
 
    public:
-      void  setRadius(double);   // These are just prototypes
+      void setRadius(double);   // These are just prototypes
       double calcArea();         // for the member functions.
 };
 
@@ -22,8 +22,10 @@ class Circle
  * This function copies the argument passed into the parameter to *
  * the private member variable radius.                            *
  ******************************************************************/
-void setRadius(double r)
-{    radius = r;
+void Circle::setRadius(double r)
+// Made function a child of class Circle with 'Circle::'
+{
+    radius = r;
 }
 
 /******************************************************************
@@ -32,8 +34,10 @@ void setRadius(double r)
  * It does not need any parameters because it already has access  *
  * to the member variable radius.                                 *
  ******************************************************************/
-double calcArea()
-{    return 3.14 * pow(radius, 2);
+double Circle::calcArea()
+// Made function a child of class Circle with 'Circle::'
+{
+    return 3.14 * pow(radius, 2);
 }
 
 /******************************************************************
