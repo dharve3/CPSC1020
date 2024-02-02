@@ -43,7 +43,7 @@ class Carpet
 
         double getTotalPrice()
         // Fixed formula for price calculation
-        {  return (size.getArea() * pricePerSqYd); }
+        {  return (size.getArea() * (pricePerSqYd / 9)); }
 };
 
 // ************** Client Program *****************
