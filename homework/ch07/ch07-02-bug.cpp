@@ -33,7 +33,8 @@ class Carpet
                                     // the Rectangle class
     public:
         void setPricePerYd(double p)
-        {  p = pricePerSqYd; }
+        // Fixed logic error p = prucePerSqYd;
+        {  pricePerSqYd = p; }
 
         void setDimensions(double len, double wid)
         {  size.setLength(len);
@@ -41,7 +42,8 @@ class Carpet
         }
 
         double getTotalPrice()
-        {  return (size.getArea() * size.getLength()); }
+        // Fixed formula for price calculation
+        {  return (size.getArea() * pricePerSqYd); }
 };
 
 // ************** Client Program *****************
