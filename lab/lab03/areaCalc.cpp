@@ -36,13 +36,13 @@ int main() {
 		cout << "Radius: ";
 		cin >> r;
 		circle1.setRadius(r);
-		cout << "Area: " << fixed << setprecision(2) << circle1.calcArea() << endl; //prints circle area
+		cout << "Area: " << fixed << setprecision(1) << circle1.calcArea() << endl; //prints circle area
 	} else if (menuChoice == 2) {
 		Square square1;
 		cout << "Side: ";
 		cin >> s;
 		square1.setSide(s);
-		cout << "Area: " << fixed << setprecision(2) << square1.calcArea() << endl;
+		cout << "Area: " << fixed << setprecision(1) << square1.calcArea() << endl;
 	} else if (menuChoice == 3) {
 		Rectangle rectangle1;
 		cout << "Length: ";
@@ -52,7 +52,7 @@ int main() {
 		cin >> w;
 		rectangle1.setLength(l);
 		rectangle1.setWidth(w);
-		cout << "Area: " << fixed << setprecision(2) << rectangle1.calcArea() << endl;
+		cout << "Area: " << fixed << setprecision(1) << rectangle1.calcArea() << endl;
 	} else {
 		Trapezoid trapezoid1;
 		cout << "Base1: ";
@@ -66,7 +66,7 @@ int main() {
 		trapezoid1.setBase1(b1);
 		trapezoid1.setBase2(b2);
 		trapezoid1.setHeight(h);
-		cout << "Area: " << fixed << setprecision(2) << trapezoid1.calcArea() << endl;
+		cout << "Area: " << fixed << setprecision(1) << trapezoid1.calcArea() << endl;
 	}
 
 	return 0;
