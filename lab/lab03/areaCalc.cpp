@@ -4,7 +4,10 @@
 // Desc: 
 // Time: 
 
+#include <iostream>
 #include <iomanip>
+
+using namespace std;
 
 #include "Circle.h"
 #include "Rectangle.h"
@@ -60,9 +63,9 @@ int main() {
 		cout << endl;
 		cout << "Height: ";
 		cin << h;
-		trapezoid.setBase1(b1);
-		trapezoid.setBase2(b2);
-		trapezoid.setHeight(h);
+		trapezoid1.setBase1(b1);
+		trapezoid1.setBase2(b2);
+		trapezoid1.setHeight(h);
 		cout << "Area: " << trapezoid.calcArea() << endl;
 	}
 

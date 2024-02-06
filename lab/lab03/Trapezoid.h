@@ -15,4 +15,6 @@ public:
     void setHeight(double);
     double getHeight();
     double calcArea();
-}
+};
+
+#endif
