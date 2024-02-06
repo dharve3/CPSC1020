@@ -30,7 +30,7 @@ int main() {
 		cin >> menuChoice;
 	}
 	if (menuChoice == 5) {
-		exit(1);
+		exit(0);
 	} else if (menuChoice == 1) {
 		Circle circle1;
 		cout << "Radius: ";
