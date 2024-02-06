@@ -25,7 +25,7 @@ int main() {
     cout << "\t\t5 -- quit\n";
     cin >> menuChoice;
 
-    while (menuChoice < 1 && menuChoice > 5) {   //validates user input
+    while (menuChoice < 1 || menuChoice > 5) {   //validates user input
 		cout << "Please enter a valid menu choice: ";
 		cin >> menuChoice;
 	}
@@ -47,7 +47,6 @@ int main() {
 		Rectangle rectangle1;
 		cout << "Length: ";
 		cin >> l;
-		cout << endl;
 		cout << "Width: ";
 		cin >> w;
 		rectangle1.setLength(l);
@@ -57,10 +56,8 @@ int main() {
 		Trapezoid trapezoid1;
 		cout << "Base1: ";
 		cin >> b1;
-		cout << endl;
 		cout << "Base2: ";
 		cin >> b2;
-		cout << endl;
 		cout << "Height: ";
 		cin >> h;
 		trapezoid1.setBase1(b1);
