@@ -62,7 +62,7 @@ int main() {
 		cin >> b2;
 		cout << endl;
 		cout << "Height: ";
-		cin << h;
+		cin >> h;
 		trapezoid1.setBase1(b1);
 		trapezoid1.setBase2(b2);
 		trapezoid1.setHeight(h);
