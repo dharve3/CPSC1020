@@ -66,7 +66,7 @@ int main() {
 		trapezoid1.setBase1(b1);
 		trapezoid1.setBase2(b2);
 		trapezoid1.setHeight(h);
-		cout << "Area: " << trapezoid.calcArea() << endl;
+		cout << "Area: " << trapezoid1.calcArea() << endl;
 	}
 
 	return 0;
