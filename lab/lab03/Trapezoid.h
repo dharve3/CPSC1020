@@ -1,3 +1,5 @@
+// Trapezoid.h
+// Contains class Trapezoid - Defines variables and functions
 #ifndef TRAPEZOID_H_
 #define TRAPEZOID_H_
 

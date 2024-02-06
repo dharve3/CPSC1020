@@ -1,3 +1,5 @@
+// Rectangle.cpp
+// Initalizes functions for class Rectangle
 #include "Rectangle.h"
 
 void Rectangle::setLength(double l)

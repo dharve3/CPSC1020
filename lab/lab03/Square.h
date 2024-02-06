@@ -1,3 +1,5 @@
+// Square.h
+// Contains class Square - Defines variables and functions
 #ifndef SQUARE_H_
 #define SQUARE_H_
 

@@ -1,3 +1,5 @@
+// Rectangle.h
+// Contains class Rectangle - Defines variables and functions
 #ifndef RECTANGLE_H_
 #define RECTANGLE_H_
 

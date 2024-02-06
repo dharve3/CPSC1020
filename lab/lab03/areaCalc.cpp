@@ -18,32 +18,34 @@ int main() {
 	int menuChoice;
 	double r, s, l, w, b1, b2, h;
     
-	cout << "\t\t1 -- circle\n";    //user menu 
+	// user menu
+	cout << "\t\t1 -- circle\n"; 
     cout << "\t\t2 -- square\n";
     cout << "\t\t3 -- rectangle\n";
     cout << "\t\t4 -- trapezoid\n";
     cout << "\t\t5 -- quit\n";
     cin >> menuChoice;
 
-    while (menuChoice < 1 || menuChoice > 5) {   //validates user input
+	// validates user input
+    while (menuChoice < 1 || menuChoice > 5) {
 		cout << "Please enter a valid menu choice: ";
 		cin >> menuChoice;
 	}
 	if (menuChoice == 5) {
 		exit(0);
-	} else if (menuChoice == 1) {
+	} else if (menuChoice == 1) {  // choice for circle
 		Circle circle1;
 		cout << "Radius: ";
 		cin >> r;
 		circle1.setRadius(r);
-		cout << "Area: " << fixed << setprecision(1) << circle1.calcArea() << endl; //prints circle area
-	} else if (menuChoice == 2) {
+		cout << "Area: " << fixed << setprecision(1) << circle1.calcArea() << endl;
+	} else if (menuChoice == 2) {  // choice for square
 		Square square1;
 		cout << "Side: ";
 		cin >> s;
 		square1.setSide(s);
 		cout << "Area: " << fixed << setprecision(1) << square1.calcArea() << endl;
-	} else if (menuChoice == 3) {
+	} else if (menuChoice == 3) {  // choice for rectangle
 		Rectangle rectangle1;
 		cout << "Length: ";
 		cin >> l;
@@ -52,7 +54,7 @@ int main() {
 		rectangle1.setLength(l);
 		rectangle1.setWidth(w);
 		cout << "Area: " << fixed << setprecision(1) << rectangle1.calcArea() << endl;
-	} else {
+	} else if (menuChoice == 4) {  // choice for trapezoid
 		Trapezoid trapezoid1;
 		cout << "Base1: ";
 		cin >> b1;
@@ -64,6 +66,9 @@ int main() {
 		trapezoid1.setBase2(b2);
 		trapezoid1.setHeight(h);
 		cout << "Area: " << fixed << setprecision(1) << trapezoid1.calcArea() << endl;
+	}
+	else {  // theoretically unreachable condition
+		cout << "How did you get here?" << endl;
 	}
 
 	return 0;

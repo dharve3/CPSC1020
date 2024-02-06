@@ -1,3 +1,5 @@
+// Circle.h
+// Contains class Circle - Defines variables and functions
 #ifndef CIRCLE_H_
 #define CIRCLE_H_
 

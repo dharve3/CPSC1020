@@ -1,3 +1,5 @@
+// Trapezoid.cpp
+// Initalizes functions for class Trapezoid
 #include "Trapezoid.h"
 
 void Trapezoid::setBase1(double b1)

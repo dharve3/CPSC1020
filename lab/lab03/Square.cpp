@@ -1,3 +1,5 @@
+// Square.cpp
+// Initalizes functions for class Square
 #include "Square.h"
 
 void Square::setSide(double s)

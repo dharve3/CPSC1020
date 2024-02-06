@@ -1,3 +1,5 @@
+// Circle.cpp
+// Initalizes functions for class Circle
 #include "Circle.h"
 
 void Circle::setRadius(double r)
