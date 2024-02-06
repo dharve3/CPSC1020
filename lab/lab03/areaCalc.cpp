@@ -1,14 +1,70 @@
 // My Name: Dylan Harvey
 // My Class: CPSC 1021
-// Date: 2/5/2024
-// Desc: brief description of what the program does
-// Time: approximate amount of time you spent on this program
+// Date: 2/6/2024
+// Desc: 
+// Time: 
 
-#include <iostream>
+#include <iomanip>
 
-using namespace std;
+#include "Circle.h"
+#include "Rectangle.h"
+#include "Square.h"
+#include "Trapezoid.h"
 
-int main( ) {
+int main() {
+	int menuChoice;
+	double r, s, l, w, b1, b2, h;
+    
+	cout << "\t\t1 -- circle\n";    //user menu 
+    cout << "\t\t2 -- square\n";
+    cout << "\t\t3 -- rectangle\n";
+    cout << "\t\t4 -- trapezoid\n";
+    cout << "\t\t5 -- quit\n";
+    cin >> menuChoice;
+
+    while (menuChoice < 1 && menuChoice > 5) {   //validates user input
+		cout << "Please enter a valid menu choice: ";
+		cin >> menuChoice;
+	}
+	if (menuChoice == 5) {
+		exit(1);
+	} else if (menuChoice == 1) {
+		Circle circle1;
+		cout << "Radius: ";
+		cin >> r;
+		circle1.setRadius(r);
+		cout << "Area: " << circle1.calcArea() << endl; //prints circle area
+	} else if (menuChoice == 2) {
+		Square square1;
+		cout << "Side: ";
+		cin >> s;
+		square1.setSide(s);
+		cout << "Area: " << square1.calcArea() << endl;
+	} else if (menuChoice == 3) {
+		Rectangle rectangle1;
+		cout << "Length: ";
+		cin >> l;
+		cout << endl;
+		cout << "Width: ";
+		cin >> w;
+		rectangle1.setLength(l);
+		rectangle1.setWidth(w);
+		cout << "Area: " << rectangle1.calcArea() << endl;
+	} else {
+		Trapezoid trapezoid1;
+		cout << "Base1: ";
+		cin >> b1;
+		cout << endl;
+		cout << "Base2: ";
+		cin >> b2;
+		cout << endl;
+		cout << "Height: ";
+		cin << h;
+		trapezoid.setBase1(b1);
+		trapezoid.setBase2(b2);
+		trapezoid.setHeight(h);
+		cout << "Area: " << trapezoid.calcArea() << endl;
+	}
 
 	return 0;
 }
