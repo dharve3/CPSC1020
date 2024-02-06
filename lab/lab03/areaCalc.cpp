@@ -1,8 +1,8 @@
 // My Name: Dylan Harvey
 // My Class: CPSC 1021
 // Date: 2/6/2024
-// Desc: 
-// Time: 
+// Desc: file containing main function that operates as menu for the user and displays output
+// Time: ~1 Hour
 
 #include <iostream>
 #include <iomanip>
