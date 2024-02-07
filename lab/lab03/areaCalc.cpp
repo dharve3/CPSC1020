@@ -69,6 +69,7 @@ int main() {
 	}
 	else {  // theoretically unreachable condition
 		cout << "How did you get here?" << endl;
+		exit(1);
 	}
 
 	return 0;
