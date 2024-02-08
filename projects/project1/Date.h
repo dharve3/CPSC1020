@@ -2,14 +2,25 @@
 #define DATE_H
 
 // Include statements
-#include <iostream>
 #include <iomanip>
-#include <cmath>
 
-// Using...
-using namespace std;
-
-// Function prototypes
-
+// Class Declaration
+class Date 
+{
+private:
+    int day;
+    int month;
+    int year;
+public:
+    Date();
+    Date(int, int, int);
+    bool setDay(int);
+    bool setMonth(int);
+    bool setYear(int);
+    int getDay();
+    int getMonth();
+    int getYear();
+    string showDate();
+};
 
 #endif
