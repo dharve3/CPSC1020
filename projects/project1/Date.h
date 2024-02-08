@@ -2,7 +2,10 @@
 #define DATE_H
 
 // Include statements
+#include <string>
 #include <iomanip>
+
+using namespace std;
 
 // Class Declaration
 class Date 
