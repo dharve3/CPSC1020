@@ -1,7 +1,12 @@
-// Trapezoid.h
-// Contains class Trapezoid - Defines variables and functions
-#ifndef TRAPEZOID_H_
-#define TRAPEZOID_H_
+// My Name: Dylan Harvey
+// My Class: CPSC 1021
+// Date: 2/6/2024
+// Lab name: Lab 3 - Areas Calculation
+// File name: Trapezoid.h
+// Desc: Contains class Trapezoid - Defines variables and functions
+
+#ifndef TRAPEZOID_H
+#define TRAPEZOID_H
 
 class Trapezoid
 {

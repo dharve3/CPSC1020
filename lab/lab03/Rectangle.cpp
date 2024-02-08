@@ -1,5 +1,10 @@
-// Rectangle.cpp
-// Initalizes functions for class Rectangle
+// My Name: Dylan Harvey
+// My Class: CPSC 1021
+// Date: 2/6/2024
+// Lab name: Lab 3 - Areas Calculation
+// File name: Rectangle.cpp
+// Desc: Initalizes functions for class Rectangle
+
 #include "Rectangle.h"
 
 void Rectangle::setLength(double l)

@@ -1,8 +1,10 @@
 // My Name: Dylan Harvey
 // My Class: CPSC 1021
 // Date: 2/6/2024
+// Lab Name: Lab 3 - Areas Calculation
+// File Name: areaCalc.cpp
 // Desc: file containing main function that operates as menu for the user and displays output
-// Time: ~1 Hour
+// Time: ~2 Hours
 
 #include <iostream>
 #include <iomanip>

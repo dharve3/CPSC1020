@@ -1,7 +1,12 @@
-// Circle.h
-// Contains class Circle - Defines variables and functions
-#ifndef CIRCLE_H_
-#define CIRCLE_H_
+// My Name: Dylan Harvey
+// My Class: CPSC 1021
+// Date: 2/6/2024
+// Lab name: Lab 3 - Areas Calculation
+// File name: Circle.h
+// Desc: Contains class Circle - Defines variables and functions
+
+#ifndef CIRCLE_H
+#define CIRCLE_H
 
 #include <cmath>
 

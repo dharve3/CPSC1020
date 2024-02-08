@@ -1,7 +1,12 @@
-// Rectangle.h
-// Contains class Rectangle - Defines variables and functions
-#ifndef RECTANGLE_H_
-#define RECTANGLE_H_
+// My Name: Dylan Harvey
+// My Class: CPSC 1021
+// Date: 2/6/2024
+// Lab name: Lab 3 - Areas Calculation
+// File name: Rectangle.h
+// Desc: Contains class Rectangle - Defines variables and functions
+
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
 
 class Rectangle
 {

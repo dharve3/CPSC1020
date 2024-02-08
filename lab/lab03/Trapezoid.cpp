@@ -1,5 +1,10 @@
-// Trapezoid.cpp
-// Initalizes functions for class Trapezoid
+// My Name: Dylan Harvey
+// My Class: CPSC 1021
+// Date: 2/6/2024
+// Lab name: Lab 3 - Areas Calculation
+// File name: Trapezoid.cpp
+// Desc: Initalizes functions for class Trapezoid
+
 #include "Trapezoid.h"
 
 void Trapezoid::setBase1(double b1)
