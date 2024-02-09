@@ -16,3 +16,4 @@ int calcDays(const Date& date1, const Date& date2) {
     // Calculate the difference between the two dates
     return daysDiff2 - daysDiff1;
 }
+// Note: considered making the function for days since 01/01/2023 but since this is it's only utilization, I decided against.
