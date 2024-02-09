@@ -13,5 +13,6 @@
 
 // Function prototypes
 int calcDays(const Date&, const Date&);
+int daysSinceFirst(const Date&);
 
 #endif // CALCDAYS_H
