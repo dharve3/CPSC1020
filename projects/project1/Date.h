@@ -14,16 +14,20 @@ private:
     int day;
     int month;
     int year;
+
 public:
     Date();
     Date(int, int, int);
+
     bool setDay(int);
     bool setMonth(int);
     bool setYear(int);
+
     int getDay() const;
     int getMonth() const;
     int getYear() const;
+
     string showDate() const;
 };
 
-#endif
+#endif // DATE_H

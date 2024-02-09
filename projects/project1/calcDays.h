@@ -7,4 +7,4 @@
 // Function prototypes
 int calcDays(const Date&, const Date&);
 
-#endif
+#endif // CALCDAYS_H
