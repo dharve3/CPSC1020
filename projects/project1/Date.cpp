@@ -6,48 +6,56 @@
 
 #include "Date.h"
 
-Date::Date() {
-    day = 1;
-    month = 1;
-    year = 2023;
-}
+Date::Date() : day(1), month(1), year(2023) {}
 
 Date::Date(int d, int m, int y) {
-    day = d;
-    month = m;
-    year = y;
+    if (!setYear(y) || !setMonth(m) || !setDay(d)) {
+        // If any input is invalid, set all variables to default values
+        day = 1;
+        month = 1;
+        year = 2023;
+    }
 }
 
 bool Date::setDay(int d) {
-    day = d;
-    // Add input validation
-    return 1;
+    if (d >= 1 && d <= 31) {
+        day = d;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 bool Date::setMonth(int m) {
-    month = m;
-    // Add input validation
-    return 1;
+    if (m >= 1 && m <= 12) {
+        month = m;
+        return true;
+    } else {
+        return false;
+    }
 }
 
 bool Date::setYear(int y) {
-    year = y;
-    // Add input validation
-    return 1;
+    if (y >= 2023 && y <= 2023) {
+        year = y;
+        return true;
+    } else {
+        return false;
+    }
 }
 
-int Date::getDay() {
+int Date::getDay() const {
     return day;
 }
 
-int Date::getMonth() {
+int Date::getMonth() const {
     return month;
 }
 
-int Date::getYear() {
+int Date::getYear() const {
     return year;
 }
 
-string Date::showDate() {
-    // format return as MM/DD/YYYY
+string Date::showDate() const {
+    return to_string(month) + "/" + to_string(day) + "/" + to_string(year);
 }

@@ -2,8 +2,8 @@
 #define DATE_H
 
 // Include statements
-#include <string>
 #include <iomanip>
+#include <string>
 
 using namespace std;
 
@@ -20,10 +20,10 @@ public:
     bool setDay(int);
     bool setMonth(int);
     bool setYear(int);
-    int getDay();
-    int getMonth();
-    int getYear();
-    string showDate();
+    int getDay() const;
+    int getMonth() const;
+    int getYear() const;
+    string showDate() const;
 };
 
 #endif

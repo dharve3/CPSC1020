@@ -2,9 +2,9 @@
 #define CALCDAYS_H
 
 // Include statements
-#include <cmath>
+#include "Date.h"
 
 // Function prototypes
-int calcDays();
+int calcDays(Date, Date);
 
 #endif
