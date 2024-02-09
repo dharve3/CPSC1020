@@ -23,7 +23,6 @@ int main( ) {
 
 		cout << "Date tested positive: ";
 		cin >> posMonth >> slash >> posDay >> slash >> posYear;
-		// not sure if this slash shenanagins works yet but lmao if it does
 
 		Date datePositive;
 		datePositive = Date(posDay, posMonth, posYear);
@@ -46,7 +45,6 @@ int main( ) {
 
 			cout << "Date exposed to positive case: ";
 			cin >> expMonth >> slash >> expDay >> slash >> expYear;
-			// not sure if this slash shenanagins works yet but lmao if it does
 
 			Date dateExposed;
 			dateExposed = Date(expDay, expMonth, expYear);
@@ -60,18 +58,17 @@ int main( ) {
 
 				cout << "Date second vaccination dose received: ";
 				cin >> secMonth >> slash >> secDay >> slash >> secYear;
-				// not sure if this slash shenanagins works yet but lmao if it does
 
 				Date dateSecondDose;
 				dateSecondDose = Date(secDay, secMonth, secYear);
 
 				if (calcDays(dateSecondDose, dateExposed) >= 14) {
-					cout << "TRUE DEBUG: " << calcDays(dateSecondDose, dateExposed) << endl;
+					// cout << "TRUE DEBUG: " << calcDays(dateSecondDose, dateExposed) << endl;
 					cout << "Vaccination status at time of exposure: fully vaccinated\n";
 					cout << "Length of isolation: 3 days\n";
 					// Case 3
 				} else {
-					cout << "ELSE DEBUG: " << calcDays(dateSecondDose, dateExposed) << endl;
+					// cout << "ELSE DEBUG: " << calcDays(dateSecondDose, dateExposed) << endl;
 					cout << "Vaccination status at time of exposure: not fully vaccinated\n";
 					cout << "Length of isolation: 12 days\n";
 					// Case 4 (1)
