@@ -8,6 +8,7 @@
 #define CALCDAYS_H
 
 // Include statements
+#include <cmath>
 #include "Date.h"
 
 // Function prototypes

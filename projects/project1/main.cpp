@@ -2,7 +2,7 @@
 // My Class: CPSC 1020
 // Date: 2/7/2024
 // Desc: 
-// Time: 
+// Time: 4 Hours
 
 #include <iostream>
 #include <string>
@@ -13,17 +13,20 @@ using namespace std;
 
 int main( ) {
 	string testResult;
+
+	// Input for test result
     cout << "Test result: ";
 	cin >> testResult;
-	// maybe add validaiton here
 
 	if (testResult == "positive") {
 		int posMonth, posDay, posYear;
 		char slash;
 
+		// Input for date tested positive
 		cout << "Date tested positive: ";
 		cin >> posMonth >> slash >> posDay >> slash >> posYear;
 
+		// Instantiation for datePositive
 		Date datePositive;
 		datePositive = Date(posDay, posMonth, posYear);
 
@@ -43,9 +46,11 @@ int main( ) {
 			char slash;
 			string secondDoseReceived;
 
+			// Input for date exposed
 			cout << "Date exposed to positive case: ";
 			cin >> expMonth >> slash >> expDay >> slash >> expYear;
 
+			// Instantiation for dateExposed
 			Date dateExposed;
 			dateExposed = Date(expDay, expMonth, expYear);
 

@@ -14,6 +14,8 @@ int calcDays(const Date& date1, const Date& date2) {
     int daysDiff2 = (date2.getYear() - 2023) * 365 + date2.getMonth() * 30 + date2.getDay();
 
     // Calculate the difference between the two dates
-    return daysDiff2 - daysDiff1;
+    return abs(daysDiff2 - daysDiff1);
 }
 // Note: considered making the function for days since 01/01/2023 but since this is it's only utilization, I decided against.
+// Note2: currently passing all tests except the last calcDays() test case with error 2
+    // Test failed: calcDays() calculation error 2.
