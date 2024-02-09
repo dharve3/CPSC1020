@@ -66,16 +66,16 @@ int main( ) {
 				dateSecondDose = Date(secDay, secMonth, secYear);
 
 				if (calcDays(dateSecondDose, dateExposed) >= 14) {
-					cout << "TRUE DEBUG: dateSecondDose: " << dateSecondDose.showDate() << endl;
-					cout << "TRUE DEBUG: dateExposed: " << dateExposed.showDate() << endl;
-					cout << "TRUE DEBUG: " << calcDays(dateSecondDose, dateExposed) << endl;
+					// cout << "TRUE DEBUG: dateSecondDose: " << dateSecondDose.showDate() << endl;
+					// cout << "TRUE DEBUG: dateExposed: " << dateExposed.showDate() << endl;
+					// cout << "TRUE DEBUG: " << calcDays(dateSecondDose, dateExposed) << endl;
 					cout << "Vaccination status at time of exposure: fully vaccinated\n";
 					cout << "Length of isolation: 3 days\n";
 					// Case 3
 				} else {
-					cout << "ELSE DEBUG: dateSecondDose: " << dateSecondDose.showDate() << endl;
-					cout << "ELSE DEBUG: dateExposed: " << dateExposed.showDate() << endl;
-					cout << "ELSE DEBUG: " << calcDays(dateSecondDose, dateExposed) << endl;
+					// cout << "ELSE DEBUG: dateSecondDose: " << dateSecondDose.showDate() << endl;
+					// cout << "ELSE DEBUG: dateExposed: " << dateExposed.showDate() << endl;
+					// cout << "ELSE DEBUG: " << calcDays(dateSecondDose, dateExposed) << endl;
 					cout << "Vaccination status at time of exposure: not fully vaccinated\n";
 					cout << "Length of isolation: 12 days\n";
 					// Case 4 (1)
