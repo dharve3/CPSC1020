@@ -5,6 +5,6 @@
 #include "Date.h"
 
 // Function prototypes
-int calcDays(Date, Date);
+int calcDays(const Date&, const Date&);
 
 #endif
