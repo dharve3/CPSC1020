@@ -1,8 +1,9 @@
-// My Name: Dylan Harvey
-// My Class: CPSC 1020
-// Date: 2/7/2024
-// Desc: 
-// Time: 
+// Name: Dylan Harvey
+// Class: CPSC 1020
+// Date: 2/9/2024
+// Project 1
+// Time: ~4 Hours
+// Desc: Calculates the differnece between 2 dates.
 
 #include "calcDays.h"
 

@@ -1,8 +1,9 @@
-// My Name: Dylan Harvey
-// My Class: CPSC 1020
-// Date: 2/7/2024
-// Desc: 
-// Time: 4 Hours
+// Name: Dylan Harvey
+// Class: CPSC 1020
+// Date: 2/9/2024
+// Project 1
+// Time: ~4 Hours
+// Desc: Determines the length of isolation required based on COVID exposure from user input.
 
 #include <iostream>
 #include <string>
