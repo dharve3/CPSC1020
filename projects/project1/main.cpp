@@ -28,7 +28,7 @@ int main( ) {
 		Date datePositive;
 		datePositive = Date(posDay, posMonth, posYear);
 
-		cout << "Length of isolation: 7 days";
+		cout << "Length of isolation: 7 days\n";
 		// Case 1
 
 	} else {
@@ -66,24 +66,24 @@ int main( ) {
 				Date dateSecondDose;
 				dateSecondDose = Date(secDay, secMonth, secYear);
 
-				if (calcDays(dateExposed, dateSecondDose) >= 14) {
-					cout << "Vaccination status at time of exposure: fully vaccinated";
-					cout << "Length of isolation: 3 days";
+				if (calcDays(dateExposed, dateSecondDose) <= 14) {
+					cout << "Vaccination status at time of exposure: fully vaccinated\n";
+					cout << "Length of isolation: 3 days\n";
 					// Case 3
 				} else {
-					cout << "Vaccination status at time of exposure: not fully vaccinated";
-					cout << "Length of isolation: 12 days";
+					cout << "Vaccination status at time of exposure: not fully vaccinated\n";
+					cout << "Length of isolation: 12 days\n";
 					// Case 4 (1)
 				}
 			} else {
 
-				cout << "Vaccination status at time of exposure: not fully vaccinated";
-				cout << "Length of isolation: 12 days";
+				cout << "Vaccination status at time of exposure: not fully vaccinated\n";
+				cout << "Length of isolation: 12 days\n";
 				// Case 4 (2)
 			}
 
 		} else {
-			cout << "Length of isolation: 0 days";
+			cout << "Length of isolation: 0 days\n";
 			// Case 2
 		}
 	}
