@@ -53,7 +53,6 @@ int main( ) {
 
 			cout << "Second vaccination dose received: ";
 			cin >> secondDoseReceived;
-		
 
 			if (secondDoseReceived == "Yes") {
 				int secMonth, secDay, secYear;
@@ -66,11 +65,13 @@ int main( ) {
 				Date dateSecondDose;
 				dateSecondDose = Date(secDay, secMonth, secYear);
 
-				if (calcDays(dateExposed, dateSecondDose) <= 14) {
+				if (calcDays(dateExposed, dateSecondDose) >= 14) {
+					cout << "TRUE DEBUG: " << calcDays(dateExposed, dateSecondDose);
 					cout << "Vaccination status at time of exposure: fully vaccinated\n";
 					cout << "Length of isolation: 3 days\n";
 					// Case 3
 				} else {
+					cout << "ELSE DEBUG: " << calcDays(dateExposed, dateSecondDose);
 					cout << "Vaccination status at time of exposure: not fully vaccinated\n";
 					cout << "Length of isolation: 12 days\n";
 					// Case 4 (1)
