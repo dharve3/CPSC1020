@@ -23,7 +23,7 @@ Date::Date(int d, int m, int y) {
 }
 
 bool Date::setDay(int d) {
-    if (month == 2 && ((year % 4 == 0 && d <= 29) || (year % 4 != 0 && d <= 28)) ||
+    if ((month == 2 && ((year % 4 == 0 && d <= 29)) || (year % 4 != 0 && d <= 28)) ||
         ((month == 4 || month == 6 || month == 9 || month == 11) && d <= 30) ||
         ((month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12) && d <= 31)) {
         // this isn't the best way to do this but it works
