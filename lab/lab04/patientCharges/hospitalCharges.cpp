@@ -1,8 +1,9 @@
-// My Name: Dylan Harvey
-// My Class: CPSC 1021
-// Date: 1/29/2024
-// Desc: Calculates the charges the paitent will have to pay based on the services they recieved
-// Time: ~1 hr
+// Name: Dylan Harvey
+// Date: 2/12/2024
+// Class: CPSC 1021
+// Lab Name: Lab 4 - Paitent Charges w/ Classes
+// File Name: hospitalCharges.cpp
+// Desc: 
 
 #include "validateUserInput.h"
 #include "calcTotalCharges.h"
