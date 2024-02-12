@@ -1,8 +1,8 @@
-// My Name: Dylan Harvey
-// My Class: CPSC 1021
+// Name: Dylan Harvey
 // Date: 2/12/2024
-// Lab name: Lab 4 - Areas Calculation w/ Member Initalization
-// File name: Circle.h
+// Class: CPSC 1021
+// Lab Name: Lab 4 - Areas Calculation w/ Member Initalization
+// File Name: Circle.h
 // Desc: Contains class Circle - Defines variables and functions
 
 #ifndef CIRCLE_H

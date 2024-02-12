@@ -1,8 +1,8 @@
-// My Name: Dylan Harvey
-// My Class: CPSC 1021
-// Date: 2/6/2024
-// Lab name: Lab 3 - Areas Calculation
-// File name: Rectangle.cpp
+// Name: Dylan Harvey
+// Date: 2/12/2024
+// Class: CPSC 1021
+// Lab Name: Lab 4 - Areas Calculation w/ Member Initalization
+// File Name: Rectangle.cpp
 // Desc: Initalizes functions for class Rectangle
 
 #include "Rectangle.h"
