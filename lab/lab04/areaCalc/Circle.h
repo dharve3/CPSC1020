@@ -1,7 +1,7 @@
 // My Name: Dylan Harvey
 // My Class: CPSC 1021
-// Date: 2/6/2024
-// Lab name: Lab 3 - Areas Calculation
+// Date: 2/12/2024
+// Lab name: Lab 4 - 
 // File name: Circle.h
 // Desc: Contains class Circle - Defines variables and functions
 
@@ -15,9 +15,10 @@ const double PI = 3.14159;
 class Circle
 {
 private:
-    double radius;
-
+    double radius = 1.0;
 public:
+    Circle(double value) : radius{value} { }
+    Circle() = default; // default constructor
     void setRadius(double);
     double getRadius();
     double calcArea();

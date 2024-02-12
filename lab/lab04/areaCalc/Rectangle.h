@@ -11,9 +11,11 @@
 class Rectangle
 {
 private:
-    double length;
-    double width;
+    double length = 1.0;
+    double width = 1.0;
 public:
+    Rectangle(double value1, double value2) : length{value1}, width{value2} { }
+    Rectangle() = default; // default constructor
     void setLength(double);
     double getLength();
     void setWidth(double);

@@ -11,8 +11,10 @@
 class Square
 {
 private:
-    double side;
+    double side = 1.0;
 public:
+    Square(double value) : side{value} { }
+    Square() = default;
     void setSide(double);
     double getSide();
     double calcArea();

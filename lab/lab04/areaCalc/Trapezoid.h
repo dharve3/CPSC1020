@@ -15,6 +15,8 @@ private:
     double base2;
     double height;
 public:
+    Trapezoid(double value1, double value2, double value3) : base1{value1}, base2{value2}, height{value3} { }
+    Trapezoid() = default; // default constructor
     void setBase1(double);
     double getBase1();
     void setBase2(double);
