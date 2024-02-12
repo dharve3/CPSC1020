@@ -1,7 +1,7 @@
 // My Name: Dylan Harvey
 // My Class: CPSC 1021
-// Date: 2/6/2024
-// Lab name: Lab 3 - Areas Calculation
+// Date: 2/12/2024
+// Lab name: Lab 4 - Areas Calculation w/ Member Initalization
 // File name: Square.h
 // Desc: Contains class Square - Defines variables and functions
 
