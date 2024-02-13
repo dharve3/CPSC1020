@@ -3,5 +3,13 @@
 // Date: 
 // Project 2
 // Time: 
-// Description: 
+// Desc: Headerfile for printResult.cpp
 
+#ifndef PRINTRESULT_H
+#define PRINTRESULT_H
+
+// Include statements
+
+
+
+#endif // PRINTRESULT_H
