@@ -7,14 +7,14 @@
 
 class Patient {
 	private:
+		char patientType = 'I';
 		int days = 0;
 		double rate = 0.0;
 		double services = 0.0;
 		double medication = 0.0;
-		char patientType = 'I';
 
 	public:
-		Patient(int d, double r, double s, double m, char pt): days(d), rate(r), services(s), medication(m), patientType(pt) { } // Constructor for inpatients
+		Patient(char pt, int d, double r, double s, double m): patientType(pt), days(d), rate(r), services(s), medication(m) { } // Constructor for inpatients
 		Patient(char pt, double s, double m): patientType(pt), services(s), medication(m) { } // Constructor for outpatients
 		Patient() = default; // Default Constructor
 
