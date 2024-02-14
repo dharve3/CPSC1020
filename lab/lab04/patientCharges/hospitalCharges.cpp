@@ -15,7 +15,7 @@ int main() {
     char type;
 	int day = 0;
 	double rate = 0.0, service, medicine;
-	cout << "This program will calculate a patient's hospital charges."<<endl;
+	cout << "This program will calculate a patient's hospital charges." << endl;
 
 	while (type != 'I' && type != 'O') { // validates user input 
 		cout << "Enter I for in-patient or O for out-patient: ";
