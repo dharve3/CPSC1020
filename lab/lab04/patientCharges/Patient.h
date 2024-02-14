@@ -12,12 +12,11 @@ class Patient {
 		double services = 0.0;
 		double medication = 0.0;
 		char patientType = 'I';
-		
+
 		bool validateInput(double);
 		bool validateInput(int);
 	public:
-		Patient(int d, double r, double s, double m, char p): days{d}, rate{r}, service{s}, medication{m}, patientType{p} 
-            { setDays(days); setRate(rate); setService(service); setMedication(medication); setPatientType(patientType); }
+		Patient(int d, double r, double s, double m, char p): days{d}, rate{r}, services{s}, medication{m}, patientType{p} { }
 		Patient() = default; // Default Constructor
 
 		void setDays(int);

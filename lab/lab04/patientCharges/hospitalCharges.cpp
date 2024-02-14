@@ -5,8 +5,9 @@
 // File Name: hospitalCharges.cpp
 // Desc: 
 
-#include "validateUserInput.h"
-#include "calcTotalCharges.h"
+#include <iostream>
+
+using namespace std;
 
 int main() {
 	char type;
