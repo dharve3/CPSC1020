@@ -13,11 +13,12 @@ class Patient {
 		double medication = 0.0;
 		char patientType = 'I';
 
-		bool validateInput(double);
-		bool validateInput(int);
 	public:
 		Patient(int d, double r, double s, double m, char p): days{d}, rate{r}, services{s}, medication{m}, patientType{p} { }
 		Patient() = default; // Default Constructor
+
+		bool validateInput(double);
+		bool validateInput(int);
 
 		void setDays(int);
 		void setRate(double);
