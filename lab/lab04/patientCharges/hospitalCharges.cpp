@@ -3,63 +3,45 @@
 // Class: CPSC 1021
 // Lab Name: Lab 4 - Paitent Charges w/ Classes
 // File Name: hospitalCharges.cpp
-// Desc: 
+// Desc: Calculates the total cost of hospital bills depending on if they are an outpatient or inpatient, user enters ttheir information which is sent to functions to validate and calculate cost 
 
-#include <iostream>
 #include <iomanip>
-
+#include <iostream>
 #include "Patient.h"
 
 using namespace std;
 
 int main() {
-	char type;
-	double day, rate, services, medicine, total;
-	cout << "This program will calculate a patient's hospital charges." << endl;
-	
-	while (type != 'I' && type != 'O') {        // validates user input 
+    char type;
+	int day = 0;
+	double rate = 0.0, service, medicine;
+	cout << "This program will calculate a patient's hospital charges."<<endl;
+
+	while (type != 'I' && type != 'O') { // validates user input 
 		cout << "Enter I for in-patient or O for out-patient: ";
 		cin >> type;
 	}
-	if (type == 'I') {   // conditions for inpatients
+    if (type=='I') { // conditions for inpatients
 		cout << "Number of days in the hospital: ";
-		cin >> day;
-		if (Patient::validateUserInput(day) == false) {  // calls validateUserInput to make sure input is not less than 0
-			day = 0.0;
-		}
+		cin >> day; 
 		cout << "Daily room rate ($): ";
 		cin >> rate;
-		if (Patient::validateUserInput(rate) == false) {
-			rate = 0.0;     // if input is less than 0, will set to default value: 0
-		}
 		cout << "Lab fees and other service charges ($) : ";
-		cin >> services;
-		if (Patient::validateUserInput(services) == false) {
-			services = 0.0;
-		}
+		cin >> service;
 		cout << "Medication charges ($) : ";
 		cin >> medicine;
-		if (Patient::validateUserInput(medicine) == false) {
-            medicine = 0.0;
-        }
-		total = Patient::calcTotalCharges(day, rate, services, medicine);  // sends arguments to calcTotal to have total cost
-		cout << "Your total hospital bills is $" << fixed << setprecision(2) << total << endl;
 
-	} else {  // conditions for outpatients
+		Patient patient1(type, day, rate, service, medicine); // creatings instance of object, sends all arguments
+		cout << "Your total hospital bills is $" << fixed << setprecision(2) << patient1.calcTotalCharges() << endl; // prints by calling calcTotalCharges for object
+
+	} else { // conditions for outpatients
 		cout << "Lab fees and other service charges ($) : ";
-		cin >> services;
-		if (Patient::validateUserInput(services) == false) {
-			services = 0.0;
-		}
+		cin >> service;
 		cout << "Medication charges ($) : ";
 		cin >> medicine;
-		if (Patient::validateUserInput(medicine) == false) {
-			medicine = 0.0;
-		}
-		total = Patient::calcTotalCharges(services, medicine); //sends arguments to calcTotal (overloaded) for cost
-		cout << "Your total hospital bills is $" << fixed << setprecision(2) << total << endl;  
+
+		Patient patient1(type, service, medicine); // creates instance of object, sends outpatient arguments
+		cout << "Your total hospital bills is $" << fixed << setprecision(2) << patient1.calcTotalCharges() << endl; // prints by calling calcTotalCharges for object
 	}
-
-	return 0;
+    return 0;
 }
-
