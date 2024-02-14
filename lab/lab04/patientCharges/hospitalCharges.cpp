@@ -10,7 +10,7 @@
 
 int main() {
 	char type;
-	double day, rate, service, medicine, total;
+	double day, rate, services, medicine, total;
 	cout << "This program will calculate a patient's hospital charges." << endl;
 	
 	while (type != 'I' && type != 'O') {        // validates user input 
@@ -29,33 +29,31 @@ int main() {
 			rate = 0.0;     // if input is less than 0, will set to default value: 0
 		}
 		cout << "Lab fees and other service charges ($) : ";
-		cin >> service;
-		if (validateUserInput(service) == false) {
-			service = 0.0;
+		cin >> services;
+		if (validateUserInput(services) == false) {
+			services = 0.0;
 		}
 		cout << "Medication charges ($) : ";
 		cin >> medicine;
 		if (validateUserInput(medicine) == false) {
             medicine = 0.0;
         }
-		total = calcTotalCharges(day, rate, service, medicine);  // sends arguments to calcTotal to have total cost
+		total = calcTotalCharges(day, rate, services, medicine);  // sends arguments to calcTotal to have total cost
 		cout << "Your total hospital bills is $" << fixed << setprecision(2) << total << endl;
 
 	} else {  // conditions for outpatients
-		 cout << "Lab fees and other service charges ($) : ";
-                cin >> service;
-                if (validateUserInput(service) == false) {
-                    service = 0.0;
-                }
-                cout << "Medication charges ($) : ";
-                cin >> medicine;
-                if (validateUserInput(medicine) == false) {
-                    medicine = 0.0;
-                }
-                total = calcTotalCharges(service, medicine); //sends arguments to calcTotal (overloaded) for cost
-                cout << "Your total hospital bills is $" << fixed << setprecision(2) << total << endl;  
-
-
+		cout << "Lab fees and other service charges ($) : ";
+		cin >> services;
+		if (validateUserInput(services) == false) {
+			services = 0.0;
+		}
+		cout << "Medication charges ($) : ";
+		cin >> medicine;
+		if (validateUserInput(medicine) == false) {
+			medicine = 0.0;
+		}
+		total = calcTotalCharges(services, medicine); //sends arguments to calcTotal (overloaded) for cost
+		cout << "Your total hospital bills is $" << fixed << setprecision(2) << total << endl;  
 	}
 
 	return 0;
