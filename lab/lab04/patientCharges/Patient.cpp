@@ -3,10 +3,11 @@
 // Class: CPSC 1021
 // Lab Name: Lab 4 - Paitent Charges w/ Classes
 // File Name: Paitent.cpp
-// Desc: 
+// Desc: Soruce file for Patient class, contains methods.
 
 #include "Patient.h"
 
+// Validates that input is greater than or equal to 0 for double type
 bool Patient::validateInput(double v) {
 	if (v >= 0) {
 		return true;
@@ -14,6 +15,7 @@ bool Patient::validateInput(double v) {
 		return false;
 	}
 }
+// Validates that input is greater than or equal to 0 for int type
 bool Patient::validateInput(int v) {
     if (v >= 0) {
         return true;
@@ -22,6 +24,7 @@ bool Patient::validateInput(int v) {
     }
 }
 
+// Setter functions, usees validate to determine if it should use the provided value or set to a default value.
 void Patient::setDays(int d) {
 	if (validateInput(d)) {
 		days = d;
@@ -58,6 +61,7 @@ void Patient::setPatientType(char p) {
 	}
 }
 
+// Getter functions
 int Patient::getDays() {
     return days;
 }
@@ -74,6 +78,7 @@ char Patient::getPatientType() {
     return patientType;
 }
 
+// Calculates the total charges based on the class variables, and the type determines the formula to use.
 double Patient::calcTotalCharges() {
     double sum;
 	if (patientType == 'I') {

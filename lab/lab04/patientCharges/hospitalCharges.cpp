@@ -3,7 +3,8 @@
 // Class: CPSC 1021
 // Lab Name: Lab 4 - Paitent Charges w/ Classes
 // File Name: hospitalCharges.cpp
-// Desc: Calculates the total cost of hospital bills depending on if they are an outpatient or inpatient, user enters ttheir information which is sent to functions to validate and calculate cost 
+// Desc: Calculates the total cost of hospital bills depending on if they are an outpatient or inpatient,
+// 		 user enters ttheir information which is sent to functions to validate and calculate cost 
 
 #include <iomanip>
 #include <iostream>
