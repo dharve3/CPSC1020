@@ -1,0 +1,3 @@
+class Example {
+    // Class definition
+};
