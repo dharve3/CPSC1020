@@ -22,7 +22,6 @@ class Patient {
 		void setDays(int);
 		void setRate(double);
 		void setServices(double);
-		void setMedication(double);
 		void setMedication(double); 
 		void setPatientType(char);
 

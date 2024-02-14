@@ -21,39 +21,39 @@ int main() {
 	if (type == 'I') {   // conditions for inpatients
 		cout << "Number of days in the hospital: ";
 		cin >> day;
-		if (validateUserInput(day) == false) {  // calls validateUserInput to make sure input is not less than 0
+		if (Patient::validateUserInput(day) == false) {  // calls validateUserInput to make sure input is not less than 0
 			day = 0.0;
 		}
 		cout << "Daily room rate ($): ";
 		cin >> rate;
-		if (validateUserInput(rate) == false) {
+		if (Patient::validateUserInput(rate) == false) {
 			rate = 0.0;     // if input is less than 0, will set to default value: 0
 		}
 		cout << "Lab fees and other service charges ($) : ";
 		cin >> services;
-		if (validateUserInput(services) == false) {
+		if (Patient::validateUserInput(services) == false) {
 			services = 0.0;
 		}
 		cout << "Medication charges ($) : ";
 		cin >> medicine;
-		if (validateUserInput(medicine) == false) {
+		if (Patient::validateUserInput(medicine) == false) {
             medicine = 0.0;
         }
-		total = calcTotalCharges(day, rate, services, medicine);  // sends arguments to calcTotal to have total cost
+		total = Patient::calcTotalCharges(day, rate, services, medicine);  // sends arguments to calcTotal to have total cost
 		cout << "Your total hospital bills is $" << fixed << setprecision(2) << total << endl;
 
 	} else {  // conditions for outpatients
 		cout << "Lab fees and other service charges ($) : ";
 		cin >> services;
-		if (validateUserInput(services) == false) {
+		if (Patient::validateUserInput(services) == false) {
 			services = 0.0;
 		}
 		cout << "Medication charges ($) : ";
 		cin >> medicine;
-		if (validateUserInput(medicine) == false) {
+		if (Patient::validateUserInput(medicine) == false) {
 			medicine = 0.0;
 		}
-		total = calcTotalCharges(services, medicine); //sends arguments to calcTotal (overloaded) for cost
+		total = Patient::calcTotalCharges(services, medicine); //sends arguments to calcTotal (overloaded) for cost
 		cout << "Your total hospital bills is $" << fixed << setprecision(2) << total << endl;  
 	}
 

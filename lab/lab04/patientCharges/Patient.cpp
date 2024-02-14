@@ -80,7 +80,7 @@ double Patient::calcTotalCharges() {
 		sum = days * rate + services + medication;
 		return sum;
 	} else {
-		sum = service + medication;
+		sum = services + medication;
 		return sum;
 	}
 }
