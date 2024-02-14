@@ -15,7 +15,7 @@ class Patient {
 
 	public:
 		Patient(int d, double r, double s, double m, char pt): days(d), rate(r), services(s), medication(m), patientType(pt) { } // Constructor for inpatients
-		Patient(double s, double m, char pt): services(s), medication(m), patientType(pt) { } // Constructor for outpatients
+		Patient(char pt, double s, double m): patientType(pt), services(s), medication(m) { } // Constructor for outpatients
 		Patient() = default; // Default Constructor
 
 		bool validateInput(double);
