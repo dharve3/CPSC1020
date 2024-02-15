@@ -6,8 +6,6 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
-const char* IP = "127.0.0.1";
-
 int main() {
     // Creating socket
     int clientSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -19,7 +17,9 @@ int main() {
     sockaddr_in serverAddress; // Data type to store the address of the socket
     serverAddress.sin_family = AF_INET; // 
     serverAddress.sin_port = htons(8080); // Convert unsigned int from machine byte to network byte
-    serverAddress.sin_addr.s_addr = IP; // INADDR_ANY = No particular IP, listen to all available IPs; INADDR_LOOPBACK = localhost (127.0.0.1)
+    serverAddress.sin_addr.s_addr = INADDR_LOOPBACK; // INADDR_ANY = No particular IP, listen to all available IPs; INADDR_LOOPBACK = localhost (127.0.0.1)
+    // Use inet_addr(IP) for specific addresses to convert to 32-bit binary rep in network byte order
+    // Use inet_pton(AF_INET, ipAddress, &(serverAddress.sin_addr)) for a more modern approach
 
     // Sending connection request
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
