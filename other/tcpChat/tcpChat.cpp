@@ -46,7 +46,7 @@ void TCPChat::recieveMessage() {
     while (true) {
         ssize_t bytesReceived = recv(socket_, buffer, BUFFER_SIZE, 0);
         if (bytesReceived > 0) {
-            buffer[bytesReceived] = buffer[bytesReceived] + "\0"; // Null-termniate the received data
+            buffer[bytesReceived] = '\0'; // Null-termniate the received data
             std::cout << "Received: " << buffer << std::endl;
         } else if (bytesReceived == 0) {
             std::cout << "Peer disconnected\n";
