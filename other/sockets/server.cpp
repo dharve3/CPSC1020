@@ -8,6 +8,8 @@
 
 using namespace std;
 
+const char IP = "127.0.0.1";
+
 int main() {
     // Creating socket
     int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
@@ -19,7 +21,7 @@ int main() {
     sockaddr_in serverAddress; // Data type to store the address of the socket
     serverAddress.sin_family = AF_INET; // 
     serverAddress.sin_port = htons(8080); // Convert unsigned int from machine byte to network byte
-    serverAddress.sin_addr.s_addr = "127.0.0.1"; // INADDR_ANY = No particular IP, listen to all available IPs
+    serverAddress.sin_addr.s_addr = IP; // INADDR_ANY = No particular IP, listen to all available IPs
 
     // Binding socket
     bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
