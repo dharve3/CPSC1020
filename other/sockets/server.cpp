@@ -11,26 +11,38 @@ using namespace std;
 int main() {
     // Creating socket
     int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
+    // DOMAIN: AF_INET = IPv4
+    // TYPE: SOCK_STREAM = TCP
+    // PROTOCOL: 0
 
     // Specifying the address
-    sockaddr_in serverAddress;
-    serverAddress.sin_family = AF_INET;
-    serverAddress.sin_port = htons(8080);
-    serverAddress.sin_addr.s_addr = INADDR_ANY;
+    sockaddr_in serverAddress; // Data type to store the address of the socket
+    serverAddress.sin_family = AF_INET; // 
+    serverAddress.sin_port = htons(8080); // Convert unsigned int from machine byte to network byte
+    serverAddress.sin_addr.s_addr = "127.0.0.1"; // INADDR_ANY = No particular IP, listen to all available IPs
 
     // Binding socket
     bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
+    // Add some info here about bind()
 
     // Listening to the assigned socket
     listen(serverSocket, 5);
 
     // Accepting connection request
     int clientSocket = accept(serverSocket, nullptr, nullptr);
+    // binds clientSocket with serverSocket
+    // 1st nullptr = address, address of connecting entity
+    // 2nd nullptr = address_len, amount of space pointed to by address
 
     // Recieving data
-    char buffer[1024] = { 0 };
+    char buffer[1024] = {0}; // char array buffer assigned to all 0
     recv(clientSocket, buffer, sizeof(buffer), 0);
+    // clientSocket = socket you recv from 
+    // buffer = void ptr to buffer 
+    // sizeof(buffer) = size_t length of buffer
+    // 0 = flags
     cout << "Message from client: " << buffer << endl;
+    // Prints directly from buffer
 
     // Closing the socket.
     close(serverSocket);
