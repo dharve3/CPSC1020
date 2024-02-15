@@ -13,7 +13,7 @@ int main() {
     int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
     // DOMAIN: AF_INET = IPv4
     // TYPE: SOCK_STREAM = TCP
-    // PROTOCOL: 0
+    // PROTOCOL: 0 = IP (same that appears in packet headers)
 
     // Specifying the address
     sockaddr_in serverAddress; // Data type to store the address of the socket
