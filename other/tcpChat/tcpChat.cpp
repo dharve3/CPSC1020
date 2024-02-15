@@ -16,7 +16,7 @@ TCPChat::~TCPChat() {
     close(socket_);
 }
 
-void TCPChat::startChat(cosnt std::string& peerIP, int peerPort) {
+void TCPChat::startChat(const std::string& peerIP, int peerPort) {
     serverAddr_.sin_family = AF_INET;
     serverAddr_.sin_port = htons(peerPort);
     serverAddr_.sin_addr.s_addr = inet_addr(peerIP.c_str());
@@ -46,7 +46,7 @@ void TCPChat::recieveMessage() {
     while (true) {
         ssize_t bytesReceived = recv(socket_, buffer, BUFFER_SIZE, 0);
         if (bytesReceived > 0) {
-            buffer[bytesReceived] = "\0"; // Null-termniate the received data
+            buffer[bytesReceived] = buffer[bytesReceived] + "\0"; // Null-termniate the received data
             std::cout << "Received: " << buffer << std::endl;
         } else if (bytesReceived == 0) {
             std::cout << "Peer disconnected\n";

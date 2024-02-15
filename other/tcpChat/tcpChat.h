@@ -23,7 +23,7 @@ public:
     TCPChat();
     ~TCPChat();
     void startChat(const std::string& peerIP, int peerPort);
-    void sendMessage(const std::string& string& message);
+    void sendMessage(const std::string& message);
     void recieveMessage();
 
 private:
