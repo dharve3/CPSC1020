@@ -1,5 +1,5 @@
 COMPILER = g++
-OPTIONS = -Wall
+OPTIONS = -Wall -pthread
 PROGRAM = tcpChat.out
 
 all: $(PROGRAM)
