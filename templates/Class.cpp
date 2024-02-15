@@ -10,7 +10,7 @@ double Class::getValue()
     return value;
 }
   
-double Class:calcValue()
+double Class::calcValue()
 {
     return (value * 2);
 }

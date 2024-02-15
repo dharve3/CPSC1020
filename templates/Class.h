@@ -1,10 +1,10 @@
-#ifndef CLASS_H_
-#define CLASS_H_
+#ifndef CLASS_H
+#define CLASS_H
 
 class Class
 {
 private:
-    double var1;
+    double value;
 
 public:
     void setValue(double);
@@ -12,4 +12,4 @@ public:
     double calcValue();
 };
 
-#endif
+#endif // CLASS_H

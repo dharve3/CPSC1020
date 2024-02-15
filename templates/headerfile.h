@@ -12,4 +12,4 @@ using namespace std;
 // Function prototypes
 float functionName(int value1, float value2);
 
-#endif
+#endif // HEADERFILE_H
