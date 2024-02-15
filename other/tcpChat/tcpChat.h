@@ -6,7 +6,8 @@
 #include <thread> // Multi-threading
 #include <cstring> // String manipulation
 #include <cstdlib> // exit() function
-#include <unistd.h> // UNIX standard functions
+
+#include <unistd.h> // UNIX/POSIX standard functions
 
 #include <arpa/inet.h> // manipulate IP addresses
 #include <sys/socket.h> // Sockets
