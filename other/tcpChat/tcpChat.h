@@ -20,6 +20,11 @@
 
 // Class Declaration
 class TCPChat {
+private:
+    int socket_;
+    struct sockaddr_in serverAddr_;
+    const int BUFFER_SIZE = 1024;
+
 public:
     TCPChat();
     ~TCPChat();
@@ -27,10 +32,6 @@ public:
     void sendMessage(const std::string& message);
     void recieveMessage();
 
-private:
-    int socket_;
-    struct sockaddr_in serverAddr_;
-    const int BUFFER_SIZE = 1024;
 };
 
 #endif // TCPCHAT_H
