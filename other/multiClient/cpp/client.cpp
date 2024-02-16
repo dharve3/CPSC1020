@@ -33,7 +33,7 @@ int main() {
     int length = message.length();
     char* cMessage = new char[length + 1];
 
-    strcpy(cMessage, cMessage.c_str());
+    strcpy(cMessage, message.c_str());
 
     // Sending data
     // const char* message = "Hello, server!"; // Old message
