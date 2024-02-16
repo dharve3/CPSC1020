@@ -26,9 +26,10 @@ int main() {
 
     // Get input from user
     string message;
-    char* cMessage;
     cout << "Message to send to server: ";
     getline(cin, message);
+
+    char* cMessage = message.c_str();
 
     // Sending data
     // const char* message = "Hello, server!"; // Old message
