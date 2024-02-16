@@ -16,7 +16,21 @@ void handleClient(int clientSocket) {
     char buffer[1024] = {0}; // Buffer for receiving data
 
     // Receive data
-    recv(clientSocket, buffer, sizeof(buffer), 0);
+    int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
+
+    // Check if client disconnected
+    if (bytesRead <= 0) {
+        // Client disconnected or error occurred
+        if (bytesRead == 0) {
+            cout << "Client disconnected." << endl;
+        } else {
+            cerr << "Error receiving data from client." << endl;
+        }
+        // Close client socket
+        close(clientSocket);
+        return;
+    }
+
     cout << "Message from client: " << buffer << endl;
 
     // Close client socket
