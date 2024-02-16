@@ -13,25 +13,28 @@ using namespace std;
 
 // Function to handle each client connection
 void handleClient(int clientSocket) {
-    char buffer[1024] = {0}; // Buffer for receiving data
+    while (true) {
+        char buffer[1024] = {0}; // Buffer for receiving data
 
-    // Receive data
-    int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
+        // Receive data
+        int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
 
-    // Check if client disconnected
-    if (bytesRead <= 0) {
-        // Client disconnected or error occurred
-        if (bytesRead == 0) {
-            cout << "Client disconnected." << endl;
-        } else {
-            cerr << "Error receiving data from client." << endl;
+        // Check if client disconnected
+        if (bytesRead <= 0) {
+            // Client disconnected or error occurred
+            if (bytesRead == 0) {
+                cout << "Client disconnected." << endl;
+            } else {
+                cerr << "Error receiving data from client." << endl;
+            }
+            // Close client socket
+            cout << "DEBUG: Closing client socket" << endl;
+            close(clientSocket);
+            return;
         }
-        // Close client socket
-        close(clientSocket);
-        return;
-    }
 
-    cout << "Message from client: " << buffer << endl;
+        cout << "Message from client: " << buffer << endl;
+    }
 }
 
 int main() {
