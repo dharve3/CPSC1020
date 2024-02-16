@@ -1,4 +1,5 @@
 // server.c
+// Yeah this was largley experimental, does not seem to be working as intended
 
 #include <stdio.h>
 #include <stdlib.h>

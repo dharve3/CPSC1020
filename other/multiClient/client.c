@@ -1,4 +1,5 @@
 // client.c
+// Yeah this was largley experimental, does not seem to be working as intended
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -61,6 +62,7 @@ int main() {
     // Create connection depending on input
     switch (choice) {
     case 1: {
+        // Read
         int client_request = 1;
 
         // Create thread
@@ -69,6 +71,7 @@ int main() {
         break;
     }
     case 2: {
+        // Write
         int client_request = 2;
 
         // Create thread
