@@ -35,8 +35,10 @@ void handleClient(int clientSocket) {
     }
     
     while (true) {
-        buffer[1024] = {0}; // Reset buffer
-        
+        for (int i = 0; i < sizeof(buffer); i++) {
+            buffer[i] = '';
+        }
+
         // Receive data
         int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
 
