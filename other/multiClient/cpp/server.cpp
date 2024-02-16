@@ -32,9 +32,6 @@ void handleClient(int clientSocket) {
     }
 
     cout << "Message from client: " << buffer << endl;
-
-    // Close client socket
-    close(clientSocket);
 }
 
 int main() {

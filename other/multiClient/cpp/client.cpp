@@ -44,7 +44,7 @@ int main() {
         // Sending data
         int msgSend = send(clientSocket, cMessage, strlen(cMessage), MSG_NOSIGNAL);
         // MSG_NOSIGNAL flag -> returns -1 if send fails
-        if (msgSend == -1) cout << "socket send failed" << endl;
+        if (msgSend == -1) cout << "Socket send failed" << endl;
         // Notifies user if message fails to send
 
         delete[] cMessage;
