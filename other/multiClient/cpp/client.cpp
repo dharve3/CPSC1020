@@ -2,6 +2,7 @@
 // if you need info on these commands, check ../sockets/client.cpp
 
 #include <cstring> // char arrays
+#include <string> // 
 #include <iostream>
 
 #include <netinet/in.h>
@@ -24,13 +25,14 @@ int main() {
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
 
     // Get input from user
-    char* message;
+    string message;
+    char* cMessage;
     cout << "Message to send to server: ";
-    cin >> message;
+    getline(cin, message);
 
     // Sending data
     // const char* message = "Hello, server!"; // Old message
-    send(clientSocket, message, strlen(message), 0);
+    send(clientSocket, cMessage, strlen(cMessage), 0);
 
 
     // Closing socket
