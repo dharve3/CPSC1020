@@ -24,22 +24,26 @@ int main() {
     // Sending connection request
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
 
-    // Get input from user
-    string message;
+    while (true) {
+        // Get input from user
+        string message;
 
-    cout << "Message to send to server: ";
-    getline(cin, message);
+        cout << "Message to send to server: ";
+        getline(cin, message);
 
-    int length = message.length();
-    char* cMessage = new char[length + 1];
+        // Convert c++ string to cstring char* array
+        int length = message.length();
+        char* cMessage = new char[length + 1];
 
-    strcpy(cMessage, message.c_str());
+        strcpy(cMessage, message.c_str());
 
-    // Sending data
-    // const char* message = "Hello, server!"; // Old message
-    send(clientSocket, cMessage, strlen(cMessage), 0);
+        // Sending data
+        // const char* message = "Hello, server!"; // Old message
+        send(clientSocket, cMessage, strlen(cMessage), 0);
 
-    delete[] cMessage;
+        delete[] cMessage;
+    }
+
 
     // Closing socket
     close(clientSocket);
