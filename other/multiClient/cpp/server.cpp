@@ -13,9 +13,28 @@ using namespace std;
 
 // Function to handle each client connection
 void handleClient(int clientSocket) {
-    while (true) {
-        char buffer[1024] = {0}; // Buffer for receiving data
+    const char handshake[] = "ThisIsAHandshake12345";
+    char buffer[1024] = {0}; // Buffer for receiving data
+    
+    int sendHandshake = send(clientSocket, handshake, sizeof(handshake), MSG_NOSIGNAL);
+    if (sendHandshake == -1) {
+        cout << "Failed to send handshake to client" << endl;
+        close(clientSocket);
+        return;
+    }
 
+    int recvHandshake = recv(clientSocket, buffer, sizeof(buffer), MSG_NOSIGNAL);
+    if (recvHandshake == -1) {
+        cout << "Failed to recv handshake from client" << endl;
+        close(clientSocket);
+        return;
+    } else if (strcmp(handshake, buffer) != 0) {
+        cout << "Improper client handshake" << endl;
+        close(clientSocket);
+        return;
+    }
+
+    while (true) {
         // Receive data
         int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
 

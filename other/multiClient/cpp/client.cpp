@@ -24,6 +24,28 @@ int main() {
     // Sending connection request
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
 
+    const char handshake[] = "ThisIsAHandshake12345";
+    char buffer[1024] = {0}; // Buffer for receiving data
+
+    int recvHandshake = recv(clientSocket, buffer, sizeof(buffer), MSG_NOSIGNAL);
+    if (recvHandshake == -1) {
+        cout << "Failed to recv handshake from client" << endl;
+        close(clientSocket);
+        return;
+    } else if (strcmp(handshake, buffer) != 0) {
+        cout << "Improper server handshake" << endl;
+        close(clientSocket);
+        return;
+    }
+    
+    int sendHandshake = send(clientSocket, handshake, sizeof(handshake), MSG_NOSIGNAL);
+    if (sendHandshake == -1) {
+        cout << "Failed to send handshake to client" << endl;
+        close(clientSocket);
+        return;
+    }
+
+
     string message;
 
     while (true) {
@@ -44,7 +66,11 @@ int main() {
         // Sending data
         int msgSend = send(clientSocket, cMessage, strlen(cMessage), MSG_NOSIGNAL);
         // MSG_NOSIGNAL flag -> returns -1 if send fails
-        if (msgSend == -1) cout << "Socket send failed" << endl;
+        if (msgSend == -1) {
+            cout << "Socket send failed" << endl;
+            delete[] cMessage;
+            break;
+        }
         // Notifies user if message fails to send
 
         delete[] cMessage;
