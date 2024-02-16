@@ -26,15 +26,20 @@ int main() {
 
     // Get input from user
     string message;
+
     cout << "Message to send to server: ";
     getline(cin, message);
 
-    char* cMessage = message.c_str();
+    int length = message.length();
+    char* cMessage = new char[length + 1];
+
+    strcpy(cMessage, s.c_str());
 
     // Sending data
     // const char* message = "Hello, server!"; // Old message
     send(clientSocket, cMessage, strlen(cMessage), 0);
 
+    delete[] cMessage;
 
     // Closing socket
     close(clientSocket);
