@@ -27,6 +27,7 @@ int main() {
     const char handshake[] = "ThisIsAHandshake12345";
     char buffer[1024] = {0}; // Buffer for receiving data
 
+    // THIS IS NOT A PROPER HANDSHAKE, AND IS ALSO SUPER SCUFFED
     int recvHandshake = recv(clientSocket, buffer, sizeof(buffer), MSG_NOSIGNAL);
     if (recvHandshake == -1) {
         cout << "Failed to recv handshake from server" << endl;

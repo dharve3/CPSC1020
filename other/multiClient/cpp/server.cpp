@@ -16,6 +16,7 @@ void handleClient(int clientSocket) {
     const char handshake[] = "ThisIsAHandshake12345";
     char buffer[1024] = {0}; // Buffer for receiving data
     
+    // THIS IS NOT A PROPER HANDSHAKE, AND IS ALSO SUPER SCUFFED
     int sendHandshake = send(clientSocket, handshake, sizeof(handshake), MSG_NOSIGNAL);
     if (sendHandshake == -1) {
         cout << "Failed to send handshake to client" << endl;
@@ -35,6 +36,7 @@ void handleClient(int clientSocket) {
     }
     
     while (true) {
+        // Clears buffer
         for (size_t i = 0; i < sizeof(buffer); i++) {
             buffer[i] = '\0';
         }
