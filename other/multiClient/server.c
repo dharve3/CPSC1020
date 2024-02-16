@@ -114,7 +114,7 @@ int main() {
             }
         } else if (choice == 2) {
             // Create writers thread
-            if (pthread_create(&writerthreads[i++], NULl, writer, &newSocket) != 0) {
+            if (pthread_create(&writerthreads[i++], NULL, writer, &newSocket) != 0) {
                 printf("Failed to create writer thread");
             }
         }

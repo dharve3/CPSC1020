@@ -1,5 +1,5 @@
 COMPILER = gcc
-OPTIONS = -Wall -lpthread
+OPTIONS = -Wall -lpthread -lrt
 SERVER = server.out
 CLIENT = client.out
 
