@@ -29,7 +29,7 @@ int main() {
 
     int recvHandshake = recv(clientSocket, buffer, sizeof(buffer), MSG_NOSIGNAL);
     if (recvHandshake == -1) {
-        cout << "Failed to recv handshake from client" << endl;
+        cout << "Failed to recv handshake from server" << endl;
         close(clientSocket);
         exit(1);
     } else if (strcmp(handshake, buffer) != 0) {
