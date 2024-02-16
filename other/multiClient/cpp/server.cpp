@@ -53,7 +53,6 @@ void handleClient(int clientSocket) {
                 cerr << "Error receiving data from client." << endl;
             }
             // Close client socket
-            cout << "DEBUG: Closing client socket" << endl;
             close(clientSocket);
             return;
         }
