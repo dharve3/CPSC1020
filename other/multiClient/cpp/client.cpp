@@ -24,12 +24,16 @@ int main() {
     // Sending connection request
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
 
+    string message;
+
     while (true) {
         // Get input from user
-        string message;
-
-        cout << "Message to send to server: ";
+        cout << "Message to send to server (type 'quit' to exit): ";
         getline(cin, message);
+
+        if (message == "quit") {
+            break;
+        }
 
         // Convert c++ string to cstring char* array
         int length = message.length();
@@ -38,12 +42,13 @@ int main() {
         strcpy(cMessage, message.c_str());
 
         // Sending data
-        // const char* message = "Hello, server!"; // Old message
-        send(clientSocket, cMessage, strlen(cMessage), 0);
+        int msgSend = send(clientSocket, cMessage, strlen(cMessage), MSG_NOSIGNAL);
+        // MSG_NOSIGNAL flag -> returns -1 if send fails
+        if (msgSend == -1) cout << "socket send failed" << endl;
+        // Notifies user if message fails to send
 
         delete[] cMessage;
     }
-
 
     // Closing socket
     close(clientSocket);
