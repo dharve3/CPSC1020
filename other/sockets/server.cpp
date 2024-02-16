@@ -1,7 +1,8 @@
 // server.cpp
 
-#include <cstring>
+#include <cstring> // char arrays
 #include <iostream>
+
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <unistd.h>
@@ -27,7 +28,7 @@ int main() {
     bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
     // Add some info here about bind()
 
-    // Listening to the assigned socket
+    // Listen for incoming connections to the assigned socket
     listen(serverSocket, 5);
 
     // Accepting connection request
