@@ -9,11 +9,11 @@ runServer: $(SERVER)
 runClient: $(CLIENT)
 	./$(CLIENT)
 
-$(SERVER): server.cpp
-	$(COMPILER) $(OPTIONS) server.cpp -o $(SERVER)
+$(SERVER): server.c
+	$(COMPILER) $(OPTIONS) server.c -o $(SERVER)
 
-$(CLIENT): client.cpp
-	$(COMPILER) $(OPTIONS) client.cpp -o $(CLIENT)
+$(CLIENT): client.c
+	$(COMPILER) $(OPTIONS) client.c -o $(CLIENT)
 
 clean:
 	rm *.out
