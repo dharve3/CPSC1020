@@ -31,18 +31,18 @@ int main() {
     if (recvHandshake == -1) {
         cout << "Failed to recv handshake from client" << endl;
         close(clientSocket);
-        return;
+        exit(1);
     } else if (strcmp(handshake, buffer) != 0) {
         cout << "Improper server handshake" << endl;
         close(clientSocket);
-        return;
+        exit(1);
     }
     
     int sendHandshake = send(clientSocket, handshake, sizeof(handshake), MSG_NOSIGNAL);
     if (sendHandshake == -1) {
         cout << "Failed to send handshake to client" << endl;
         close(clientSocket);
-        return;
+        exit(1);
     }
 
 
