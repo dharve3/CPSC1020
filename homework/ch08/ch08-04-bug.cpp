@@ -1,8 +1,10 @@
 #include <iostream>
+#include <vector> // Added include statement for vector
 using namespace std;
 
 // Function prototype
 void showValues(vector<int>);
+void showStats(vector<int>); // Added prototype for showStats
 
 int main()
 {
@@ -15,7 +17,7 @@ int main()
     // Display the numbers
     showValues(values);
     showStats(values);
-  values.pop_back();
+    values.pop_back();
     showStats(values);
     for (int i=0; i<1000; i++) {
         values.push_back(i);
