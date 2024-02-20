@@ -1,0 +1,8 @@
+Here are the areas of the 6 circles.
+circle     0.00
+circle    12.56
+circle    19.62
+circle  9847.04
+circle 17662.50
+circle    78.50
+The average area of these circles is: 4603.37
