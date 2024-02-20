@@ -10,15 +10,16 @@ using namespace std;
 
 int main()
 {
-   const int NUM_EMPLOYEES = 10;  // Sets number of employees
+   const int NUM_EMPLOYEES = 12;  // Sets number of employees // Updated from 10 to 12 to match input
    int hours[NUM_EMPLOYEES];     // Holds each employee's hours
-   int count = 1;                // Loop control variable counts
+   int count = 0;                // Loop control variable counts // Updated to start at 0
                                  // how many data items have been read in
      int total;
    ifstream inputFile;           // Input file stream object
 
    // Open the data file.
-   inputFile.open("work.dat");
+   inputFile.open("work.dat"); // work.dat
+   // C:\\Users\\ddcoo\\Desktop\\CodingStuff\\CPSC1020\\homework\\ch08\\work.dat - full path windows
    if (!inputFile)
        cout << "Error opening data file\n";
    else
@@ -32,7 +33,7 @@ int main()
 
        // Display the contents of the array.
        cout << "The hours worked by each employee are\n";
-       for (int employee = 1; employee < count; employee++)
+       for (int employee = 0; employee < count; employee++) // Start employee at 0
        {   cout << "Employee " << employee+1 << ": ";
            cout << hours[employee] << endl;
                  total += hours[employee];
