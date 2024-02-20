@@ -7,11 +7,11 @@
 #include <stdlib.h> // Added stdlib for atoi
 using namespace std;
 
-long long int binomialCoeff(long long int n, long long int k) {
-    long long int res = 1;
+unsigned long long int binomialCoeff(unsigned long long int n, unsigned long long int k) {
+    unsigned long long int res = 1;
     if (k > (n - k))
       k = (n - k);
-    for (long long int i = 0; i < k; ++i) { // Fixed For loop syntax error
+    for (unsigned long long int i = 0; i < k; ++i) { // Fixed For loop syntax error
       res *= (n - i);
       res /= (i + 1);
     }
@@ -22,11 +22,11 @@ long long int binomialCoeff(long long int n, long long int k) {
 int main(int argc, char *argv[]) {
     int numLines = atoi(argv[1]); // Added typecast and use argv[1]
     
-    vector<vector<long long int>> pascal;
+    vector<vector<unsigned long long int>> pascal;
 
-    for (long long int line = 0; line <= numLines; line++) {
-        vector<long long int> aRow;
-        for (long long int row = 0; row <= line; row++) { // Fixed for loop condition, <= line
+    for (unsigned long long int line = 0; line <= numLines; line++) {
+        vector<unsigned long long int> aRow;
+        for (unsigned long long int row = 0; row <= line; row++) { // Fixed for loop condition, <= line
             if (row == 0 || row == line)
               aRow.push_back(1); // push_back 1 instead of 2
             else
@@ -37,8 +37,8 @@ int main(int argc, char *argv[]) {
 
     /* Now we print the vector that we just defined using a simple
     range-based for loop. */
-    for (vector<long long int> row : pascal) {
-        for (long long int value : row)
+    for (vector<unsigned long long int> row : pascal) {
+        for (unsigned long long int value : row)
             cout << value << " ";
       cout << endl; // endl syntax error
     }
