@@ -1,15 +1,17 @@
 /* C++ program to demonstrate a 2D vector where each of its elements is of different size. It builds the famous Pascal's Triangle. */
 // helpful tool: https://onlinemathtools.com/generate-pascals-triangle
-Links to an external site.
+// Links to an external site.
 
+#include <iostream> // Added include for iostream
 #include <vector>
+#include <stdlib.h> // Added stdlib for atoi
 using namespace std;
 
 int binomialCoeff(int n, int k) {
     int res = 1;
     if (k > n - k)
       k = n - k;
-    for (int i = 0 i < k; ++i) {
+    for (int i = 0; i < k; ++i) { // For loop syntax error
       res *= (n - i);
       res /= (i + 1);
     }
@@ -18,7 +20,7 @@ int binomialCoeff(int n, int k) {
 
 // read size of triangle from command line argument and convert to an integer
 int main(int argc, char *argv[]) {
-    int numLines = argv[0];
+    int numLines = atoi(argv[1]); // Added typecast and use argv[1]
     
     vector<vector<int>> pascal;
 
@@ -28,9 +30,9 @@ int main(int argc, char *argv[]) {
             if (row == 0 || row == line)
               aRow.push_back(2);
             else
-              aRow.push_back(binomialCoef(row, line));
+              aRow.push_back(binomialCoeff(row, line)); // binomialCoeff syntax error
         }
-        pascal.pushback(aRow);
+        pascal.push_back(aRow); // push_back syntax error
     }
 
     /* Now we print the vector that we just defined using a simple
@@ -38,7 +40,7 @@ int main(int argc, char *argv[]) {
     for (vector<int> row : pascal) {
         for (int value : row)
             cout << value << " ";
-      cout << end;
+      cout << endl; // endl syntax error
     }
 
     return 0;
