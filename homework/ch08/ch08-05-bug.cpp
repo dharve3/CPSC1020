@@ -9,9 +9,9 @@ using namespace std;
 
 int binomialCoeff(int n, int k) {
     int res = 1;
-    if (k > n - k)
-      k = n - k;
-    for (int i = 0; i < k; ++i) { // For loop syntax error
+    if (k > (n - k))
+      k = (n - k);
+    for (int i = 0; i < k; ++i) { // Fixed For loop syntax error
       res *= (n - i);
       res /= (i + 1);
     }
@@ -26,13 +26,13 @@ int main(int argc, char *argv[]) {
 
     for (int line = 0; line <= numLines; line++) {
         vector<int> aRow;
-        for (int row = 0; row < line; row++) {
+        for (int row = 0; row <= line; row++) { // Fixed for loop condition, <= line
             if (row == 0 || row == line)
-              aRow.push_back(2);
+              aRow.push_back(1); // push_back 1 instead of 2
             else
-              aRow.push_back(binomialCoeff(row, line)); // binomialCoeff syntax error
+              aRow.push_back(binomialCoeff(line, row)); // Fixed binomialCoeff syntax error, fixed argument order, should be line, row, not row, line
         }
-        pascal.push_back(aRow); // push_back syntax error
+        pascal.push_back(aRow); // Fixed push_back syntax error
     }
 
     /* Now we print the vector that we just defined using a simple
