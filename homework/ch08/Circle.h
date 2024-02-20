@@ -4,7 +4,7 @@
 #include <cmath>
 
 class Circle
-{    private
+{  private: // Fixed private syntax
         double radius;                    // Circle radius
         int centerX, centerY;             // Center coordinates
 
@@ -38,7 +38,7 @@ class Circle
         }
 
         double findArea()
-        {  return 3.14 * pow(radius, 3);
+        {  return 3.14 * pow(radius, 2); // Updated to power of 2, not 3
         }
 }; // End Circle class declaration
 #endif
