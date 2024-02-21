@@ -33,14 +33,14 @@ public:
     bool setName(string n);
     bool setEmail(string e);
     bool setAddress(string a);
-    bool setregNumber(int rN);
+    bool setRegNumber(int rN);
     bool setFirstVisit(bool fV);
 
     // Accessors (Getters)
     string getName();
     string getEmail();
     string getAddress();
-    int getregNumber();
+    int getRegNumber();
     bool getFirstVisit();
 
 }
