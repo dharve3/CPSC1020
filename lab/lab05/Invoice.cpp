@@ -62,21 +62,52 @@ double Invoice::calcTotal() const {
 template<typename CustomerType, typename VehicleType>
 string Invoice::printInvoice(const CustomerType& customer, const VehicleType& vehicle) const {
     stringstream invoiceDetails;
-    // Using stringstream for readability and ease
+    // Using stringstream for readability and helps with 
+    // not having to to_string() every non str value
 
     // Customer information
     invoiceDetails << "Customer Information:\n";
     invoiceDetails << "Name: " << customer.getName() << "\n";
     invoiceDetails << "Email: " << customer.getEmail() << "\n";
     invoiceDetails << "Address: " << customer.getAddress() << "\n";
-    // May need to add more customer-specific details
+
+    // As much as it pains me to hard-code this logic, 
+    // I couldn't think of a better way to do this here
+
+    // Depending on the type of customer, access additonal attributes
+    if (is_same<CustomerType, Visitors>::value) {
+        invoiceDetails << "Registration Number: " << customer.getRegNumber() << "\n";
+        invoiceDetails << "First Visit: " << (customer.getFirstVisit() ? "Yes" : "No") << "\n";
+    } else if (is_same<CustomerType, Students>::value) {
+        invoiceDetails << "Student ID: " << customer.getStudentID() << "\n";
+        invoiceDetails << "Education Level: " << customer.getLevel() << "\n";
+    } else if (is_same<CustomerType, Employees>::value) {
+        invoiceDetails << "Employee ID: " << customer.getEmployeeID() << "\n";
+        invoiceDetails << "Years Employed: " << customer.getYearsEmployed() << "\n";
+    } else {
+        invoiceDetails << "Error getting customer specific information.\n";
+    }
     invoiceDetails << "\n";
 
     // Vehicle Information
     invoiceDetails << "Vehicle Information:\n";
     invoiceDetails << "Make: " << vehicle.getMake() << "\n";
     invoiceDetails << "Model: " << vehicle.getModel() << "\n";
-    // May need to add more vehicle-specific details
+    invoiceDetails << "Year: " << vehicle.getYear() << "\n";
+
+    // Depending on the type of vehicle, access additonal attributes
+    if (is_same<VehicleType, Regular>::value) {
+        invoiceDetails << "Color: " << vehicle.getColor() << "\n";
+        invoiceDetails << "License Plate: " << vehicle.getLicensePlate() << "\n";
+    } else if (is_same<CustomerType, Motorcycles>::value) {
+        invoiceDetails << "CCs: " << vehicle.getCC() << "\n";
+        invoiceDetails << "Capacity: " << vehicle.getCapacity() << "\n";
+    } else if (is_same<VehicleType, LowEmissions>::value) {
+        invoiceDetails << "" << vehicle.getWeight() << "\n";
+        invoiceDetails << "" << vehicle.getMPG() << "\n";
+    } else {
+        invoiceDetails << "Error getting vehicle specific information.\n";
+    }
     invoiceDetails << "\n";
 
     // Price Details
