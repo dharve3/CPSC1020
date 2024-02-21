@@ -26,22 +26,22 @@ public:
     Visitors(string n, string e, string a, int rN, bool fV): name(n), email(e), address(a), regNumber(rN), firstVisit(fV) { } // Constructor for all values given
 
     // Input Validation Methods
-    bool validateInput(string v)
-    bool validateInput(int v)
+    bool validateInput(string v);
+    bool validateInput(int v);
 
     // Mutators (Setters)
-    bool setName(string n)
-    bool setEmail(string e)
-    bool setAddress(string a)
-    bool setregNumber(int rN)
-    bool setFirstVisit(bool fV)
+    bool setName(string n);
+    bool setEmail(string e);
+    bool setAddress(string a);
+    bool setregNumber(int rN);
+    bool setFirstVisit(bool fV);
 
     // Accessors (Getters)
-    string getName()
-    string getEmail()
-    string getAddress()
-    int getregNumber()
-    bool getFirstVisit()
+    string getName();
+    string getEmail();
+    string getAddress();
+    int getregNumber();
+    bool getFirstVisit();
 
 }
 

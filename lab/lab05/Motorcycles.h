@@ -26,22 +26,22 @@ public:
     Motorcycles(string m, string o, int c, int p, int y): make(m), model(o), cc(c), capacity(p), year(y) { } // Constructor for all values given
 
     // Input Validation Methods
-    bool validateInput(string v)
-    bool validateInput(int v)
+    bool validateInput(string v);
+    bool validateInput(int v);
 
     // Mutators (Setters)
-    bool setMake(string m)
-    bool setModel(string o)
-    bool setCC(int c)
-    bool setCapacity(int p)
-    bool setYear(int y)
+    bool setMake(string m);
+    bool setModel(string o);
+    bool setCC(int c);
+    bool setCapacity(int p);
+    bool setYear(int y);
 
     // Accessors (Getters)
-    string getMake()
-    string getModel()
-    string getColor()
-    string getLicensePlate()
-    int getYear()
+    string getMake();
+    string getModel();
+    string getColor();
+    string getLicensePlate();
+    int getYear();
 
 }
 
