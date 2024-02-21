@@ -4,3 +4,6 @@ I would have preferred to just write lab05 like this but there was unessecary re
 For example, forcing each class to be declared independently rather than a child of a parent class vehicle or customer etc.
 And many other small improvements.
 Enjoy!
+
+### .docs
+Has the inital specs and an updated design doc (maybe)
