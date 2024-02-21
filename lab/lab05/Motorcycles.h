@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class Visitors
+class Motorcycles
 {
 private:
     string make;
@@ -22,7 +22,7 @@ private:
     int year;
 public:
     // Constructors
-    Motorcycles() = default; // Default constructor
+    Motorcycles(): make(""), model(""), cc(0), capacity(0), year(0) { } // Default constructor
     Motorcycles(string m, string o, int c, int p, int y): make(m), model(o), cc(c), capacity(p), year(y) { } // Constructor for all values given
 
     // Input Validation Methods

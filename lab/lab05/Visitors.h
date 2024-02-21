@@ -22,7 +22,7 @@ private:
     bool firstVisit;
 public:
     // Constructors
-    Visitors() = default; // Default constructor
+    Visitors(): name(""), email(""), address(""), regNumber(0), firstVisit(0) { } // Default constructor
     Visitors(string n, string e, string a, int rN, bool fV): name(n), email(e), address(a), regNumber(rN), firstVisit(fV) { } // Constructor for all values given
 
     // Input Validation Methods
