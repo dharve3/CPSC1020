@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab05 - Parking Permits
 // File Name: Motorcycles.h
-// Desc: Description here
+// Desc: Headerfile for Motorcycles Class (Type of vehicle), defines methods
 
 #ifndef MOTORCYCLES_H
 #define MOTORCYCLES_H

@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab05 - Parking Permits
 // File Name: Motorcycles.cpp
-// Desc: Description here
+// Desc: Source file for Motorcycles Class (Type of vehicle), declares methods
 
 #include "Motorcycles.h"
 
