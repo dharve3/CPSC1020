@@ -47,6 +47,8 @@ void receiveMessage() {
 
         // Skip printing handshake message
         if (strcmp(buffer, "NICK25185") == 0) {
+            // Clear buffer for next message
+            memset(buffer, 0, sizeof(buffer));
             continue;
         }
 
