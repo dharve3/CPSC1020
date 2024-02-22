@@ -103,8 +103,8 @@ string Invoice::printInvoice(const CustomerType& customer, const VehicleType& ve
         invoiceDetails << "CCs: " << vehicle.getCC() << "\n";
         invoiceDetails << "Capacity: " << vehicle.getCapacity() << "\n";
     } else if (is_same<VehicleType, LowEmissions>::value) {
-        invoiceDetails << "" << vehicle.getWeight() << "\n";
-        invoiceDetails << "" << vehicle.getMPG() << "\n";
+        invoiceDetails << "Weight: " << vehicle.getWeight() << "\n";
+        invoiceDetails << "MPG: " << vehicle.getMPG() << "\n";
     } else {
         invoiceDetails << "Error getting vehicle specific information.\n";
     }
