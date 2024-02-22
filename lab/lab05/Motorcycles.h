@@ -40,7 +40,6 @@ public:
     string getMake();
     string getModel();
     string getColor();
-    string getLicensePlate();
     int getYear();
 
 }
