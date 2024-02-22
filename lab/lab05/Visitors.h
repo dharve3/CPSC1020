@@ -43,6 +43,6 @@ public:
     int getRegNumber();
     bool getFirstVisit();
 
-}
+};
 
 #endif // VISITORS_H

@@ -52,6 +52,6 @@ public:
     // Uses polymorphism and templates (template functions r pretty neat)
     template<typename CustomerType, typename VehicleType>
     string printInvoice(const CustomerType& customer, const VehicleType& vehicle) const;
-}
+};
 
 #endif // INVOICE_H

@@ -43,6 +43,6 @@ public:
     int getCapacity();
     int getYear();
 
-}
+};
 
 #endif // MOTORCYCLES_H
