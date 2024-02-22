@@ -8,6 +8,7 @@
 
 #include <netinet/in.h>
 #include <sys/socket.h>
+#include <arpa/inet.h>
 #include <unistd.h>
 
 using namespace std;
@@ -87,9 +88,9 @@ int main() {
 
     // Set default values if none given
     if (ip.empty())
-        ip = "127.0.0.1"
+        ip = "127.0.0.1";
     if (port.empty())
-        port = "8080"
+        port = "8080";
 
     // Get user input for nickname
     cout << "Choose a nickname, no spaces: "
