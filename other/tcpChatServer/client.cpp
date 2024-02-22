@@ -104,7 +104,7 @@ int main() {
     sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_port = htons(stoi(port));
-    serverAddress.sin_addr.s_addr = inet_pton(ip); // inet_addr is deprecated, inet_pton supports IPv4 and IPv6
+    serverAddress.sin_addr.s_addr = inet_addr(ip); // inet_addr is deprecated, inet_pton supports IPv4 and IPv6
 
     // Sending connection request
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
