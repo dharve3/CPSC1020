@@ -80,11 +80,7 @@ void handle(int clientSocket) {
         cout << "Failed to recv handshake/nickname from client" << endl; 
         close(clientSocket);
         return;
-    // } else if (strcmp(handshake, buffer) != 0) {
-    //     cout << "Improper client handshake" << endl;
-    //     close(clientSocket);
-    //     return;
-    // }
+    }
 
     // Add client socket to the list of clients
     clients.push_back(clientSocket);
