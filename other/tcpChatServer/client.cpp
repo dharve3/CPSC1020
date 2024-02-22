@@ -24,14 +24,12 @@ void receiveMessage() {
 
     while (true) {
         // Clears buffer
-        for (size_t i = 0; i < sizeof(buffer); i++) {
-            buffer[i] = '\0';
-        }
+        memset(buffer, 0, sizeof(buffer));
 
         // Receive data
         int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
 
-        if (strcmp(buffer, "NICK25185"))
+        if (strcmp(buffer, "NICK25185") == 0)
             send(clientSocket, nickname.c_str(), nickname.length(), 0);
 
         // Check if server disconnected
@@ -99,7 +97,7 @@ int main() {
     // For some reason, remove_if was not defined
 
     // Creating socket
-    int clientSocket = socket(AF_INET, SOCK_STREAM, 0);
+    clientSocket = socket(AF_INET, SOCK_STREAM, 0);
 
     // Specifying address
     sockaddr_in serverAddress;

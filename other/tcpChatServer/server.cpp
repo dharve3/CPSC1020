@@ -35,9 +35,7 @@ void recieve(int clientSocket) {
 
     while (true) {
         // Clears buffer
-        for (size_t i = 0; i < sizeof(buffer); i++) {
-            buffer[i] = '\0';
-        }
+        memset(buffer, 0, sizeof(buffer));
 
         // Receive data
         int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
@@ -82,14 +80,16 @@ void handle(int clientSocket) {
         cout << "Failed to recv handshake/nickname from client" << endl; 
         close(clientSocket);
         return;
-    } else if (strcmp(handshake, buffer) != 0) {
-        cout << "Improper client handshake" << endl;
-        close(clientSocket);
-        return;
-    }
+    // } else if (strcmp(handshake, buffer) != 0) {
+    //     cout << "Improper client handshake" << endl;
+    //     close(clientSocket);
+    //     return;
+    // }
 
     // Add client socket to the list of clients
     clients.push_back(clientSocket);
+    // Add client nickname to the list of nicknames
+    nicknames.push_back(buffer);
 
     // Receive and broadcast messages
     recieve(clientSocket);
