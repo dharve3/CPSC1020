@@ -41,7 +41,7 @@ void recieve(int clientSocket) {
         int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
 
         // Check for client disconnect/error cases
-        if (bytesRead == 0) {
+        if (bytesRead <= 0) {
             // Client disconnected or error occourred
             if (bytesRead == 0) {
                 cout << "Client disconnected." << endl;
@@ -53,6 +53,11 @@ void recieve(int clientSocket) {
             // Close client socket
             close(clientSocket);
             return;
+        }
+
+        // Skip printing handshake message
+        if (strcmp(buffer, "NICK25185") == 0) {
+            continue;
         }
 
         cout << "Message from client: " << buffer << endl;

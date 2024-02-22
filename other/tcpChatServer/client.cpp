@@ -47,6 +47,9 @@ void receiveMessage() {
 
         // Print message recv'd from server
         cout << buffer << endl;
+
+        // Print message prompt again
+        cout << "Enter message to send to server (type 'quit' to exit): " << flush; // flush ensures the prompt is immediately visible
     }
 }
 
@@ -56,7 +59,7 @@ void sendMessage() {
 
     while (true) {
         // Get input from user
-        cout << "Message to send to server (type 'quit' to exit): ";
+        cout << "Enter message to send to server (type 'quit' to exit): ";
         getline(cin, message);
 
         if (message == "quit") {
@@ -96,8 +99,10 @@ int main() {
         port = "8080";
 
     // Get user input for nickname
-    cout << "Choose a nickname, no spaces: ";
+    cout << "Choose a nickname, no spaces (Default is User): ";
     getline(cin, nickname);
+    if (nickname.empty())
+        nickname = "User";
     // nickname.erase(remove_if(nickname.begin(), nickname.end(), isspace), nickname.end()); // Remove whitespace from nickname
     // For some reason, remove_if was not defined
 
