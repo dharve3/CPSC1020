@@ -93,7 +93,7 @@ int main() {
         port = "8080";
 
     // Get user input for nickname
-    cout << "Choose a nickname, no spaces: "
+    cout << "Choose a nickname, no spaces: ";
     getline(cin, nickname);
     nickname.erase(remove_if(nickname.begin(), nickname.end(), isspace), nickname.end()); // Remove whitespace from nickname
 
@@ -104,7 +104,7 @@ int main() {
     sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_port = htons(stoi(port));
-    serverAddress.sin_addr.s_addr = inet_addr(ip); // inet_addr is deprecated, inet_pton supports IPv4 and IPv6
+    serverAddress.sin_addr.s_addr = inet_addr(ip.c_str()); // inet_addr is deprecated, inet_pton supports IPv4 and IPv6 but works differently
 
     // Sending connection request
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
