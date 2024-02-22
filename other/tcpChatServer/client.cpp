@@ -72,14 +72,33 @@ void sendMessage() {
 
 
 int main() {
+    string ip, port, nickname;
+
+    // Get user input for ip and port to connect to
+    cout << "Enter an address to connect to (localhost is default): ";
+    getline(cin, ip);
+    cout << "Enter a port to use (8080 is default): ";
+    getline(cin, port);
+
+    // Set default values if none given
+    if (ip.empty())
+        ip = "127.0.0.1"
+    if (port.empty())
+        port = "8080"
+
+    // Get user input for nickname
+    cout << "Choose a nickname, no spaces: "
+    getline(cin, nickname);
+    nickname.erase(remove_if(nickname.begin(), nickname.end(), isspace), nickname.end()); // Remove whitespace from nickname
+
     // Creating socket
     int clientSocket = socket(AF_INET, SOCK_STREAM, 0);
 
     // Specifying address
     sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
-    serverAddress.sin_port = htons(8080);
-    serverAddress.sin_addr.s_addr = INADDR_ANY;
+    serverAddress.sin_port = htons(stoi(port));
+    serverAddress.sin_addr.s_addr = inet_pton(ip); // inet_addr is deprecated, inet_pton supports IPv4 and IPv6
 
     // Sending connection request
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
