@@ -12,6 +12,9 @@
 
 using namespace std;
 
+// Global vector to store client sockets
+vector<int> clients;
+
 // Function to handle each client connection
 void handleClient(int clientSocket) {
     const char handshake[] = "ThisIsAHandshake12345";
