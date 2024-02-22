@@ -45,7 +45,8 @@ void receiveMessage() {
             exit(1);
         }
 
-        cout << "Message from server: " << buffer << endl;
+        // Print message recv'd from server
+        cout << buffer << endl;
     }
 }
 
@@ -62,8 +63,11 @@ void sendMessage() {
             break;
         }
 
+        // Prefix message with username and colon
+        string prefixedMessage = nickname + ": " + message;
+
         // Sending data
-        int msgSend = send(clientSocket, message.c_str(), message.length(), 0);
+        int msgSend = send(clientSocket, prefixedMessage.c_str(), prefixedMessage.length(), 0);
         if (msgSend == -1) {
             cout << "Message failed to send." << endl;
             break;
@@ -72,6 +76,7 @@ void sendMessage() {
 
     // Close the socket
     close(clientSocket);
+    exit(1);
 }
 
 
@@ -103,7 +108,8 @@ int main() {
     sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_port = htons(stoi(port));
-    serverAddress.sin_addr.s_addr = inet_addr(ip.c_str()); // inet_addr is deprecated, inet_pton supports IPv4 and IPv6 but works differently
+    serverAddress.sin_addr.s_addr = inet_addr(ip.c_str()); // inet_addr is deprecated, inet_pton supports IPv4 and IPv6
+    // Replace with pton at some point, this whole declartion could probably be overhauled
 
     // Sending connection request
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
