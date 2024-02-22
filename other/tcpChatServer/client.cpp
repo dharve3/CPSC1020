@@ -14,6 +14,8 @@ using namespace std;
 
 // Global client socket var
 int clientSocket;
+// Global client nickname var
+string nickname;
 
 // Function to receive messages from the server
 void receiveMessage() {
@@ -27,6 +29,9 @@ void receiveMessage() {
 
         // Receive data
         int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
+
+        if (strcmp(buffer, "NICK25185"))
+            send(clientSocket, nickname.c_str(), nickname.length(), 0);
 
         // Check if server disconnected
         if (bytesRead <= 0) {
@@ -72,7 +77,7 @@ void sendMessage() {
 
 
 int main() {
-    string ip, port, nickname;
+    string ip, port;
 
     // Get user input for ip and port to connect to
     cout << "Enter an address to connect to (localhost is default): ";
