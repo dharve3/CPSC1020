@@ -3,6 +3,7 @@
 
 #include <cstring> // char arrays
 #include <iostream>
+#include <vector> // managing client sockets (vectors save us)
 
 #include <netinet/in.h>
 #include <sys/socket.h>
@@ -34,6 +35,8 @@ void handleClient(int clientSocket) {
         close(clientSocket);
         return;
     }
+
+    clients.push_back(clientSocket);
     
     while (true) {
         // Clears buffer
@@ -52,11 +55,19 @@ void handleClient(int clientSocket) {
             } else {
                 cerr << "Error receiving data from client." << endl;
             }
+            // Remove client socket from the list
+            clients.erase(remove(clients.begin(), clients.end(), clientSocket), clients.end());
             // Close client socket
             close(clientSocket);
             return;
         }
 
+        // Broadcast the message to all clients except the sender
+        for (int& otherClientSocket : clients) {
+            if (otherClientSocket != clientSocket) {
+                send(otherClientSocket, buffer, bytesRead, 0);
+            }
+        }
         cout << "Message from client: " << buffer << endl;
     }
 }
