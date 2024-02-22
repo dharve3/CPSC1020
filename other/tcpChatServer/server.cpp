@@ -4,6 +4,7 @@
 #include <cstring> // char arrays
 #include <iostream>
 #include <vector> // managing client sockets (vectors save us)
+#include <algorithm> // for removing specific values from vectors
 
 #include <netinet/in.h>
 #include <sys/socket.h>
