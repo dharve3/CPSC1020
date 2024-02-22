@@ -16,7 +16,7 @@ using namespace std;
 int clientSocket;
 
 // Function to receive messages from the server
-void receive() {
+void receiveMessage() {
     char buffer[1024] = {0}; // Buffer for receiving data
 
     while (true) {
@@ -46,7 +46,7 @@ void receive() {
 }
 
 // Function to send messages to the server
-void write() {
+void sendMessage() {
     string message;
 
     while (true) {
@@ -85,8 +85,8 @@ int main() {
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
 
     // Start seperate thread for receiving and writing messages
-    thread receiveThread(receive);
-    thread writeThread(write);
+    thread receiveThread(receiveMessage);
+    thread writeThread(sendMessage);
 
     // Wait for threads to finish
     receiveThread.join();
