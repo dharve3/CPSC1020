@@ -56,7 +56,7 @@ void receiveMessage() {
         cout << buffer << endl;
 
         // Clear immediate space for readability
-        cout << "" << flush; // flush ensures the prompt is immediately visible
+        cout << "" << flush;
     }
 }
 
@@ -64,7 +64,7 @@ void receiveMessage() {
 void sendMessage() {
     string message;
 
-    cout << "Enter message to send to server (type 'quit' to exit): ";
+    cout << "Enter message to send to server (type 'quit' to exit): \n";
 
     while (true) {
         // Get input from user

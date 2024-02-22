@@ -55,7 +55,7 @@ void recieve(int clientSocket) {
             return;
         }
 
-        cout << "Message from client: " << buffer << endl;
+        cout << "Client: " << buffer << endl;
 
         // Broadcast the received message to all clients
         broadcast(buffer, clientSocket); // Could possibly remove clientSocket argument here, see comment in broadacst function
