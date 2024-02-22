@@ -10,6 +10,7 @@
 
 #include <netinet/in.h>
 #include <sys/socket.h>
+#include <arpa/inet.h>
 #include <unistd.h>
 
 using namespace std;
@@ -103,7 +104,7 @@ int main() {
     sockaddr_in serverAddress;
     serverAddress.sin_family = AF_INET;
     serverAddress.sin_port = htons(8080);
-    serverAddress.sin_addr.s_addr = INADDR_ANY;
+    serverAddress.sin_addr.s_addr = inet_pton("127.0.0.1");
 
     // Binding socket
     bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
@@ -112,7 +113,7 @@ int main() {
     listen(serverSocket, 5);
 
     // Output info
-    cout << "Server listening on " << serverAddress.sin_addr.s_addr << ":" << serverAddress.sin_port << endl;
+    cout << "Server listening on " << serverAddress.sin_addr.s_addr << ":" << ntohs(serverAddress.sin_port) << endl;
     // Unsure of how to format this atm, dont be suprised if errors
     // For port could be ntohs();
 
