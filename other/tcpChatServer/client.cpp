@@ -95,7 +95,8 @@ int main() {
     // Get user input for nickname
     cout << "Choose a nickname, no spaces: ";
     getline(cin, nickname);
-    nickname.erase(remove_if(nickname.begin(), nickname.end(), isspace), nickname.end()); // Remove whitespace from nickname
+    // nickname.erase(remove_if(nickname.begin(), nickname.end(), isspace), nickname.end()); // Remove whitespace from nickname
+    // For some reason, remove_if was not defined
 
     // Creating socket
     int clientSocket = socket(AF_INET, SOCK_STREAM, 0);
