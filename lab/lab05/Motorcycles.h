@@ -39,7 +39,8 @@ public:
     // Accessors (Getters)
     string getMake();
     string getModel();
-    string getColor();
+    int getCC();
+    int getCapacity();
     int getYear();
 
 }
