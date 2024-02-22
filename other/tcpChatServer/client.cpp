@@ -2,14 +2,74 @@
 // if you need info on these commands, check ../sockets/client.cpp
 
 #include <cstring> // char arrays
-#include <string> // 
+#include <string> // c++ strings
 #include <iostream>
+#include <thread> // For recv/write threads
 
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include <unistd.h>
 
 using namespace std;
+
+// Global client socket var
+int clientSocket;
+
+// Function to receive messages from the server
+void receive() {
+    char buffer[1024] = {0}; // Buffer for receiving data
+
+    while (true) {
+        // Clears buffer
+        for (size_t i = 0; i < sizeof(buffer); i++) {
+            buffer[i] = '\0';
+        }
+
+        // Receive data
+        int bytesRead = recv(clientSocket, buffer, sizeof(buffer), 0);
+
+        // Check if server disconnected
+        if (bytesRead <= 0) {
+            // Server disconnected or error occurred
+            if (bytesRead == 0) {
+                cout << "Server disconnected." << endl;
+            } else {
+                cerr << "Error receiving data from server." << endl;
+            }
+            // Close client socket
+            close(clientSocket);
+            exit(1);
+        }
+
+        cout << "Message from server: " << buffer << endl;
+    }
+}
+
+// Function to send messages to the server
+void write() {
+    string message;
+
+    while (true) {
+        // Get input from user
+        cout << "Message to send to server (type 'quit' to exit): ";
+        getline(cin, message);
+
+        if (message == "quit") {
+            break;
+        }
+
+        // Sending data
+        int msgSend = send(clientSocket, message.c_str(), message.length(), 0);
+        if (msgSend == -1) {
+            cout << "Message failed to send." << endl;
+            break;
+        }
+    }
+
+    // Close the socket
+    close(clientSocket);
+}
+
 
 int main() {
     // Creating socket
@@ -24,61 +84,13 @@ int main() {
     // Sending connection request
     connect(clientSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
 
-    const char handshake[] = "ThisIsAHandshake12345";
-    char buffer[1024] = {0}; // Buffer for receiving data
+    // Start seperate thread for receiving and writing messages
+    thread receiveThread(receive);
+    thread writeThread(write);
 
-    // THIS IS NOT A PROPER HANDSHAKE, AND IS ALSO SUPER SCUFFED
-    int recvHandshake = recv(clientSocket, buffer, sizeof(buffer), MSG_NOSIGNAL);
-    if (recvHandshake == -1) {
-        cout << "Failed to recv handshake from server" << endl;
-        close(clientSocket);
-        exit(1);
-    } else if (strcmp(handshake, buffer) != 0) {
-        cout << "Improper server handshake" << endl;
-        close(clientSocket);
-        exit(1);
-    }
-    
-    int sendHandshake = send(clientSocket, handshake, sizeof(handshake), MSG_NOSIGNAL);
-    if (sendHandshake == -1) {
-        cout << "Failed to send handshake to client" << endl;
-        close(clientSocket);
-        exit(1);
-    }
-
-
-    string message;
-
-    while (true) {
-        // Get input from user
-        cout << "Message to send to server (type 'quit' to exit): ";
-        getline(cin, message);
-
-        if (message == "quit") {
-            break;
-        }
-
-        // Convert c++ string to cstring char* array
-        int length = message.length();
-        char* cMessage = new char[length + 1];
-
-        strcpy(cMessage, message.c_str());
-
-        // Sending data
-        int msgSend = send(clientSocket, cMessage, strlen(cMessage), MSG_NOSIGNAL);
-        // MSG_NOSIGNAL flag -> returns -1 if send fails
-        if (msgSend == -1) {
-            cout << "Socket send failed" << endl;
-            delete[] cMessage;
-            break;
-        }
-        // Notifies user if message fails to send
-
-        delete[] cMessage;
-    }
-
-    // Closing socket
-    close(clientSocket);
+    // Wait for threads to finish
+    receiveThread.join();
+    writeThread.join();
 
     return 0;
 }
