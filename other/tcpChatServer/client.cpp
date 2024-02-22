@@ -45,11 +45,16 @@ void receiveMessage() {
             exit(1);
         }
 
+        // Skip printing handshake message
+        if (strcmp(buffer, "NICK25185") == 0) {
+            continue;
+        }
+
         // Print message recv'd from server
         cout << buffer << endl;
 
-        // Print message prompt again
-        cout << "Enter message to send to server (type 'quit' to exit): " << flush; // flush ensures the prompt is immediately visible
+        // Clear immediate space for readability
+        cout << "" << flush; // flush ensures the prompt is immediately visible
     }
 }
 
@@ -57,9 +62,10 @@ void receiveMessage() {
 void sendMessage() {
     string message;
 
+    cout << "Enter message to send to server (type 'quit' to exit): ";
+
     while (true) {
         // Get input from user
-        cout << "Enter message to send to server (type 'quit' to exit): ";
         getline(cin, message);
 
         if (message == "quit") {

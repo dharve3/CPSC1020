@@ -55,11 +55,6 @@ void recieve(int clientSocket) {
             return;
         }
 
-        // Skip printing handshake message
-        if (strcmp(buffer, "NICK25185") == 0) {
-            continue;
-        }
-
         cout << "Message from client: " << buffer << endl;
 
         // Broadcast the received message to all clients
