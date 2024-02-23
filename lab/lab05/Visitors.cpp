@@ -56,7 +56,7 @@ bool Visitors::setAddress(string a) {
         return 0;
     }
 }
-bool Visitors::setregNumber(int rN) {
+bool Visitors::setRegNumber(int rN) {
     if (validateInput(rN)) {
         regNumber = rN;
         return 1;
@@ -83,7 +83,7 @@ string Visitors::getEmail() {
 string Visitors::getAddress() {
     return address;
 }
-int Visitors::getregNumber() {
+int Visitors::getRegNumber() {
     return regNumber;
 }
 bool Visitors::getFirstVisit() {
