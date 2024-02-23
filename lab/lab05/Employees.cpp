@@ -22,6 +22,7 @@ bool Employees::validateInput(int v) {
     else
         return 1;
 }
+
 // Mutators (Setters)
 bool Employees::setName(string n) {
     if (validateInput(n)) {
@@ -56,14 +57,13 @@ bool Employees:: setEmployeeID(int d) {
 	}
 }
 bool Employees:: setYearsEmployed(int y) {
-        if (validateInput(y)) {
-                yearEmployed= y;
-                return 1;
-        } else {
-                return 0;
-        }
+    if (validateInput(y)) {
+        yearsEmployed = y;
+        return 1;
+    } else {
+        return 0;
+    }
 }
-
 
 // Accessors (Getters)
 string Employees::getName() {
