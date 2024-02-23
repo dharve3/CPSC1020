@@ -7,7 +7,7 @@
 
 #include "LowEmissions.h"
 
-//validates input not empty for string type
+// Validates input not empty for string type
 bool LowEmissions::validateInput(string v) {
     if (v.empty())
         return 0;
@@ -15,7 +15,7 @@ bool LowEmissions::validateInput(string v) {
         return 1;
 }
 
-// validates that input is greater than or equal to 0 for int type
+// Validates that input is greater than or equal to 0 for int type
 bool LowEmissions::validateInput(int v) {
     if (v < 0)
         return 0;
