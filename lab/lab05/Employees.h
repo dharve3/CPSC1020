@@ -1,6 +1,38 @@
-// Name: Dylan Harvey
-// Date: 03/01/2024
-// Class: CPSC 1021
-// Lab Name: Lab05 - Parking Permits
-// File Name: Employees.h
-// Desc: Description here
+//Name: Angie Diaz
+//Date: 3/1/24
+//CPSC 1021
+//Lab 5: Parking Permits
+//File: Employees.h
+//Desc: Header file containing Employee class atrributes and methods
+
+
+#ifndef EMPLOYEES_H
+#define EMPLOYEES_H
+#include <string>
+using namespace std;
+
+class Employees {
+	private:
+		string name;
+		string email;
+		int employeeID;
+		int yearsEmployed;
+	public:
+		Employees(): name(""), email(""), employeeID(0), yearsEmployed(0) {}
+		Employees(string n, string e, int e, int eID, int yE): name(n), email(e), employeeID(eID), yearsEmployed(yE) {} //constructor for all attributes
+		//input validation methods
+		bool validateInput(string v);
+    		bool validateInput(int v);
+		//mutators
+		bool setEmail(string e);
+		bool setAddress(string a);
+		bool setEmployeeID(int d);
+		bool setYearsEmployed(int y);
+		//accessors
+		string getName();
+		string getEmail();
+		string getAddress();
+		int getEmployeeID();
+		int getYearsEmployed();
+};
+
