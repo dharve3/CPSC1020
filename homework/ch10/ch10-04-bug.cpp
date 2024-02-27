@@ -24,7 +24,7 @@ int main()
    // this time use pointer notation with the array name!
    cout << "\nAnd here they are again:\n";
    for (int count = 0; count < NUM_COINS; count++)
-      cout << *coins << " ";
+      cout << *(coins + count) << " "; // Array derefence notation
    cout << endl;
    return 0;
 }
