@@ -6,11 +6,11 @@
 using namespace std;
 
 // Function prototype
-int &getRandomNumbers(int);
+int *getRandomNumbers(int); // updated prototype to match ptr type
 
 int main()
 {
-   int numbers = nullptr;  // To point to the numbers
+   int* numbers = nullptr;  // To point to the numbers
 
    // Get an array of five random numbers
    numbers = getRandomNumbers(5);
@@ -31,9 +31,9 @@ int main()
 // indicates the number of numbers requested.      *
 //**************************************************
 
-int &getRandomNumbers(int size)
+int *getRandomNumbers(int size) // ptr type
 {
-   int array = nullptr;    // Array to hold the numbers
+   int* array = nullptr;    // Array to hold the numbers // ptr type int
 
    // Return nullptr if size is zero or negative
    if (size <= 0)
