@@ -6,20 +6,24 @@ using namespace std;
 int main()
 {
     int x = 25;     // int variable
-    int ptr;       // Pointer variable, can point to an int
+    int* ptr;       // Pointer variable, can point to an int
+    // Fixed pointer var declaration
 
-    ptr = x;       // Store the address of x in ptr
+    ptr = &x;       // Store the address of x in ptr
+    // Added address operator
 
     // Use both x and ptr to display the value in x
     cout << "Here is the value in x, printed twice:\n";
-    cout << x << "  " << ptr << endl;
+    cout << x << "  " << *ptr << endl;
+    // Print directly from x and dereference ptr
 
     // Assign 100 to the location pointed to by ptr
     // This will actually assign 100 to x.
     *ptr = 100;
+    // Assign 100 to the address stored in ptr (x)
 
     // Use both x and ptr to display the value in x
     cout << "Once again, here is the value in x:\n";
-    cout << *x << "  " << *ptr << endl;
+    cout << x << "  " << *ptr << endl;
     return 0;
 }
