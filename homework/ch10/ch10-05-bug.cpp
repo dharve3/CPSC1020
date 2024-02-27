@@ -11,24 +11,24 @@ int main()
     int *numPtr = numbers;        // Make numPtr point to numbers
 
     cout << "The numbers in the array are:\n";
-    cout << numPtr << " ";   // Display first element
+    cout << *numPtr << " ";   // Display first element // dereference
     while (numPtr < &numbers[SIZE-1])
     {
         // Advance numPtr to the next element
         numPtr++;
         // Display the value pointed to by numPtr
-        cout << numPtr << " ";
+        cout << *numPtr << " "; // dereference
     }
 
     // Display the numbers in reverse order
     cout << "\nThe numbers in reverse order are:\n";
-    cout << numPtr << " "; // Display last element
+    cout << *numPtr << " "; // Display last element // dereference
     while (numPtr > numbers)
     {
         // Move backward to the previous element
         numPtr--;
         // Display the value pointed to by numPtr
-        cout << numPtr << " ";
+        cout << *numPtr << " "; // dereference
     }
     return 0;
 }
