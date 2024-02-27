@@ -12,13 +12,9 @@
 #include <iostream>
 #include <sstream> // Stringstream for printInvoice
 // Customers:
-#include "Visitors.h"
-#include "Students.h"
-#include "Employees.h"
+#include "Customers.h"
 // Vehicles:
-#include "Regular.h"
-#include "Motorcycles.h"
-#include "LowEmissions.h"
+#include "Vehicles.h"
 
 class Invoice
 {
