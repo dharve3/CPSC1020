@@ -7,8 +7,8 @@ all: $(PROGRAM)
 run: $(PROGRAM)
 	./$(PROGRAM)
 
-$(PROGRAM): main.cpp Visitors.cpp Students.cpp Employees.cpp Regular.cpp Motorcycles.cpp LowEmissions.cpp Invoice.cpp
-	$(COMPILER) $(OPTIONS) main.cpp Visitors.cpp Students.cpp Employees.cpp Regular.cpp Motorcycles.cpp LowEmissions.cpp Invoice.cpp -o $(PROGRAM)
+$(PROGRAM): main.cpp Customers.cpp Vehicles.cpp Invoice.cpp
+	$(COMPILER) $(OPTIONS) main.cpp Customers.cpp Vehicles.cpp Invoice.cpp -o $(PROGRAM)
 
 clean:
 	rm *.out
