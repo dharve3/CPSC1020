@@ -52,9 +52,9 @@ class Regular {
 // Class: CPSC 1021
 // Lab Name: Lab05 - Parking Permits
 // File Name: Vehicles.h
-// Desc: Headerfile for Motorcycles Class (Type of vehicle), defines methods
+// Desc: Headerfile for Motorcycle Class (Type of vehicle), defines methods
 
-class Motorcycles
+class Motorcycle
 {
 private:
     string make;
@@ -64,8 +64,8 @@ private:
     int year;
 public:
     // Constructors
-    Motorcycles(): make(""), model(""), cc(0), capacity(0), year(0) { } // Default constructor
-    Motorcycles(string m, string o, int c, int p, int y): make(m), model(o), cc(c), capacity(p), year(y) { } // Constructor for all values given
+    Motorcycle(): make(""), model(""), cc(0), capacity(0), year(0) { } // Default constructor
+    Motorcycle(string m, string o, int c, int p, int y): make(m), model(o), cc(c), capacity(p), year(y) { } // Constructor for all values given
 
     // Input Validation Methods
     bool validateInput(string v);
@@ -92,9 +92,9 @@ public:
 //CPSC 1021
 //Lab 5: Parking Permits
 //File: Vehicles.h
-//Desc: Header file containing LowEmissions class atrributes and methods
+//Desc: Header file containing LowEmission class atrributes and methods
 
-class LowEmissions 
+class LowEmission 
 {
 private:
 	string make;
@@ -104,8 +104,8 @@ private:
 	int year;
 public: 
 	// Constructors
-	LowEmissions(): make(""), model(""), weight(0), mpg(0), year(0) {}
-	LowEmissions(string m, string o, int w, int p, int y): make{m}, model{o}, weight{w}, mpg{p}, year{y} {} // constructor for all attributes
+	LowEmission(): make(""), model(""), weight(0), mpg(0), year(0) {}
+	LowEmission(string m, string o, int w, int p, int y): make{m}, model{o}, weight{w}, mpg{p}, year{y} {} // constructor for all attributes
 
 	// Input Validation Methods
 	bool validateInput(string v);

@@ -13,9 +13,9 @@ using namespace std;
 // Class: CPSC 1021
 // Lab Name: Lab05 - Parking Permits
 // File Name: Customers.h
-// Desc: Headerfile for Visitors Class (Type of customer), defines methods
+// Desc: Headerfile for Visitor Class (Type of customer), defines methods
 
-class Visitors 
+class Visitor 
 {
 private:
     string name;
@@ -25,8 +25,8 @@ private:
     bool firstVisit;
 public:
     // Constructors
-    Visitors(): name(""), email(""), address(""), regNumber(0), firstVisit(0) { } // Default constructor
-    Visitors(string n, string e, string a, int rN, bool fV): name(n), email(e), address(a), regNumber(rN), firstVisit(fV) { } // Constructor for all values given
+    Visitor(): name(""), email(""), address(""), regNumber(0), firstVisit(0) { } // Default constructor
+    Visitor(string n, string e, string a, int rN, bool fV): name(n), email(e), address(a), regNumber(rN), firstVisit(fV) { } // Constructor for all values given
 
     // Input Validation Methods
     bool validateInput(string v);
@@ -47,7 +47,6 @@ public:
     bool getFirstVisit();
 };
 
-
 // Name: Janaki Bhosale
 // Date: 3/1/24
 // CPSC 1021
@@ -55,7 +54,7 @@ public:
 // File: Customers.h
 // Desc: Header file containing Student class, including atrributes and methods
 
-class Students {
+class Student {
     private:
         string name;
         string email;
@@ -64,8 +63,8 @@ class Students {
         int educationLevel;
     public:
         // constructors
-        Students(): name(""), email(""), address(""), studentID(0), educationLevel(0) {}
-        Students(string n, string e, string a, int sID, int l): name(n), email(e), address(a), studentID(sID), eductionLevel(l) {}
+        Student(): name(""), email(""), address(""), studentID(0), educationLevel(0) {}
+        Student(string n, string e, string a, int sID, int l): name(n), email(e), address(a), studentID(sID), eductionLevel(l) {}
 
         // Input Validation Methods
         bool validateInput(string v);
@@ -94,7 +93,7 @@ class Students {
 //File: Customers.h
 //Desc: Header file containing Employee class atrributes and methods
 
-class Employees 
+class Employee 
 {
 private:
 	string name;
@@ -104,8 +103,8 @@ private:
 	int yearsEmployed;
 public:
 	// Constructors
-	Employees(): name(""), email(""), address(""), employeeID(0), yearsEmployed(0) {}
-	Employees(string n, string e, string a, int eID, int yE): name(n), email(e), address(a), employeeID(eID), yearsEmployed(yE) {} // constructor for all attributes
+	Employee(): name(""), email(""), address(""), employeeID(0), yearsEmployed(0) {}
+	Employee(string n, string e, string a, int eID, int yE): name(n), email(e), address(a), employeeID(eID), yearsEmployed(yE) {} // constructor for all attributes
 
 	// Input Validation Methods
 	bool validateInput(string v);

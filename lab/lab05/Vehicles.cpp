@@ -89,11 +89,11 @@ int Regular::getYear() {
 // Date: 03/01/2024
 // Class: CPSC 1021
 // Lab Name: Lab05 - Parking Permits
-// File Name: Motorcycles.cpp
-// Desc: Source file for Motorcycles Class (Type of vehicle), declares methods
+// File Name: Motorcycle.cpp
+// Desc: Source file for Motorcycle Class (Type of vehicle), declares methods
 
 // Validates that input is not empty for the string type
-bool Motorcycles::validateInput(string v) {
+bool Motorcycle::validateInput(string v) {
     if (v.empty())
         return 0;
     else
@@ -101,7 +101,7 @@ bool Motorcycles::validateInput(string v) {
 }
 
 // Validates that input is greater than or equal to 0 for int type
-bool Motorcycles::validateInput(int v) {
+bool Motorcycle::validateInput(int v) {
     if (v < 0)
         return 0;
     else
@@ -109,7 +109,7 @@ bool Motorcycles::validateInput(int v) {
 }
 
 // Mutators (Setters)
-bool Motorcycles::setMake(string m) {
+bool Motorcycle::setMake(string m) {
     if (validateInput(m)) {
         make = m;
         return 1;
@@ -117,7 +117,7 @@ bool Motorcycles::setMake(string m) {
         return 0;
     }
 }
-bool Motorcycles::setModel(string o) {
+bool Motorcycle::setModel(string o) {
     if (validateInput(o)) {
         model = o;
         return 1;
@@ -125,7 +125,7 @@ bool Motorcycles::setModel(string o) {
         return 0;
     }
 }
-bool Motorcycles::setCC(int c) {
+bool Motorcycle::setCC(int c) {
     if (validateInput(c)) {
         cc = c;
         return 1;
@@ -133,7 +133,7 @@ bool Motorcycles::setCC(int c) {
         return 0;
     }
 }
-bool Motorcycles::setCapacity(int p) {
+bool Motorcycle::setCapacity(int p) {
     if (validateInput(p)) {
         capacity = p;
         return 1;
@@ -141,7 +141,7 @@ bool Motorcycles::setCapacity(int p) {
         return 0;
     }
 }
-bool Motorcycles::setYear(int y) {
+bool Motorcycle::setYear(int y) {
     if (validateInput(y)) {
         year = y;
         return 1;
@@ -151,19 +151,19 @@ bool Motorcycles::setYear(int y) {
 }
 
 // Accessors (Getters)
-string Motorcycles::getMake() {
+string Motorcycle::getMake() {
     return make;
 }
-string Motorcycles::getModel() {
+string Motorcycle::getModel() {
     return model;
 }
-int Motorcycles::getCC() {
+int Motorcycle::getCC() {
     return cc;
 }
-int Motorcycles::getCapacity() {
+int Motorcycle::getCapacity() {
     return capacity;
 }
-int Motorcycles::getYear() {
+int Motorcycle::getYear() {
     return year;
 }
 
@@ -172,11 +172,11 @@ int Motorcycles::getYear() {
 //Date: 3/1/24
 //CPSC 1021
 //Lab 5: Parking Permits
-//File: LowEmissions.cpp
-//Desc: LowEmissions class method definitions
+//File: LowEmission.cpp
+//Desc: LowEmission class method definitions
 
 // Validates input not empty for string type
-bool LowEmissions::validateInput(string v) {
+bool LowEmission::validateInput(string v) {
     if (v.empty())
         return 0;
     else
@@ -184,7 +184,7 @@ bool LowEmissions::validateInput(string v) {
 }
 
 // Validates that input is greater than or equal to 0 for int type
-bool LowEmissions::validateInput(int v) {
+bool LowEmission::validateInput(int v) {
     if (v < 0)
         return 0;
     else
@@ -192,7 +192,7 @@ bool LowEmissions::validateInput(int v) {
 }
 
 // Mutators 
-bool LowEmissions::setMake(string m) {
+bool LowEmission::setMake(string m) {
     if (validateInput(m)) {
         make = m;
         return 1;
@@ -200,7 +200,7 @@ bool LowEmissions::setMake(string m) {
         return 0;
     }
 }
-bool LowEmissions::setModel(string o) {
+bool LowEmission::setModel(string o) {
     if (validateInput(o)) {
         model = o;
         return 1;
@@ -208,7 +208,7 @@ bool LowEmissions::setModel(string o) {
         return 0;
     }
 }
-bool LowEmissions::setWeight(int w) {
+bool LowEmission::setWeight(int w) {
     if (validateInput(w)) {
         weight = w;
         return 1;
@@ -216,7 +216,7 @@ bool LowEmissions::setWeight(int w) {
         return 0;
     }
 }
-bool LowEmissions::setMPG(int p) {
+bool LowEmission::setMPG(int p) {
     if (validateInput(p)) {
         mpg = p;
         return 1;
@@ -224,7 +224,7 @@ bool LowEmissions::setMPG(int p) {
         return 0;
     }
 }
-bool LowEmissions::setYear(int y) {
+bool LowEmission::setYear(int y) {
     if (validateInput(y)) {
         year = y;
         return 1;
@@ -234,18 +234,18 @@ bool LowEmissions::setYear(int y) {
 }
 
 // Accessors 
-string LowEmissions::getMake() {
+string LowEmission::getMake() {
     return make;
 }
-string LowEmissions::getModel() {
+string LowEmission::getModel() {
     return model;
 }
-int LowEmissions::getWeight() {
+int LowEmission::getWeight() {
     return weight;
 }
-int LowEmissions::getMPG() {
+int LowEmission::getMPG() {
     return mpg;
 }
-int LowEmissions::getYear() {
+int LowEmission::getYear() {
     return year;
 }

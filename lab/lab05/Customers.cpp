@@ -8,10 +8,10 @@
 // Class: CPSC 1021
 // Lab Name: Lab05 - Parking Permits
 // File Name: Customers.cpp
-// Desc: Source file for Visitors Class (Type of customer), declares methods
+// Desc: Source file for Visitor Class (Type of customer), declares methods
 
 // Validates that input is not empty for the string type
-bool Visitors::validateInput(string v) {
+bool Visitor::validateInput(string v) {
     if (v.empty())
         return 0;
     else
@@ -19,7 +19,7 @@ bool Visitors::validateInput(string v) {
 }
 
 // Validates that input is greater than or equal to 0 for int type
-bool Visitors::validateInput(int v) {
+bool Visitor::validateInput(int v) {
     if (v < 0)
         return 0;
     else
@@ -27,7 +27,7 @@ bool Visitors::validateInput(int v) {
 }
 
 // Validates that the input is a valid (0 or 1) for the bool type
-bool Visitors::validateInput(bool v) {
+bool Visitor::validateInput(bool v) {
     if (v != 0 && v != 1)
         return 0;
     else
@@ -35,7 +35,7 @@ bool Visitors::validateInput(bool v) {
 }
 
 // Mutators (Setters)
-bool Visitors::setName(string n) {
+bool Visitor::setName(string n) {
     if (validateInput(n)) {
         name = n;
         return 1;
@@ -43,7 +43,7 @@ bool Visitors::setName(string n) {
         return 0;
     } 
 }
-bool Visitors::setEmail(string e) {
+bool Visitor::setEmail(string e) {
     if (validateInput(e)) {
         email = e;
         return 1;
@@ -51,7 +51,7 @@ bool Visitors::setEmail(string e) {
         return 0;
     }
 }
-bool Visitors::setAddress(string a) {
+bool Visitor::setAddress(string a) {
     if (validateInput(a)) {
         address = a;
         return 1;
@@ -59,7 +59,7 @@ bool Visitors::setAddress(string a) {
         return 0;
     }
 }
-bool Visitors::setRegNumber(int rN) {
+bool Visitor::setRegNumber(int rN) {
     if (validateInput(rN)) {
         regNumber = rN;
         return 1;
@@ -67,7 +67,7 @@ bool Visitors::setRegNumber(int rN) {
         return 0;
     }
 }
-bool Visitors::setFirstVisit(bool fV) {
+bool Visitor::setFirstVisit(bool fV) {
     if (validateInput(fV)) {
         firstVisit = fV;
         return 1;
@@ -77,19 +77,19 @@ bool Visitors::setFirstVisit(bool fV) {
 }
 
 // Accessors (Getters)
-string Visitors::getName() {
+string Visitor::getName() {
     return name;
 }
-string Visitors::getEmail() {
+string Visitor::getEmail() {
     return email;
 }
-string Visitors::getAddress() {
+string Visitor::getAddress() {
     return address;
 }
-int Visitors::getRegNumber() {
+int Visitor::getRegNumber() {
     return regNumber;
 }
-bool Visitors::getFirstVisit() {
+bool Visitor::getFirstVisit() {
     return firstVisit;
 }
 
@@ -103,7 +103,7 @@ bool Visitors::getFirstVisit() {
 
 
 // Validates that input is not empty for the string type
-bool Students::validateInput(string v) {
+bool Student::validateInput(string v) {
     if (v.empty())
         return 0;
     else
@@ -111,7 +111,7 @@ bool Students::validateInput(string v) {
 }
 
 // Validates that input is greater than or equal to 0 for int type
-bool Students::validateInput(int v) {
+bool Student::validateInput(int v) {
     if (v < 0)
         return 0;
     else
@@ -119,7 +119,7 @@ bool Students::validateInput(int v) {
 }
 
 // Mutators (Setters)
-bool Students::setName(string n) {
+bool Student::setName(string n) {
     if (validateInput(n)) {
         name = n;
         return 1;
@@ -127,7 +127,7 @@ bool Students::setName(string n) {
         return 0;
     }
 }
-bool Students::setEmail(string e) {
+bool Student::setEmail(string e) {
     if (validateInput(e)) {
         email = e;
         return 1;
@@ -135,7 +135,7 @@ bool Students::setEmail(string e) {
         return 0;
     }
 }
-bool Students::setAddress(string a) {
+bool Student::setAddress(string a) {
     if (validateInput(a)) {
         address = a;
         return 1;
@@ -143,7 +143,7 @@ bool Students::setAddress(string a) {
         return 0;
     }
 }
-bool Students:: setStudentID(int sID) {
+bool Student:: setStudentID(int sID) {
 	if (validateInput(d)) {
 		studentID = d;
 		return 1;
@@ -151,7 +151,7 @@ bool Students:: setStudentID(int sID) {
 		return 0;
 	}
 }
-bool Students:: setEducationLevel(int l) {
+bool Student:: setEducationLevel(int l) {
     if (validateInput(l)) {
         educationLevel = l;
         return 1;
@@ -161,19 +161,19 @@ bool Students:: setEducationLevel(int l) {
 }
 
 // Accessors (Getters)
-string Students::getName() {
+string Student::getName() {
     return name;
 }
-string Students::getEmail() {
+string Student::getEmail() {
     return email;
 }
-string Students::getAddress() {
+string Student::getAddress() {
     return address;
 }
-int Students::getStudentID() {
+int Student::getStudentID() {
     return studentID;
 }
-int Students::getEducationLevel() {
+int Student::getEducationLevel() {
     return educationLevel;
 }
 
@@ -186,7 +186,7 @@ int Students::getEducationLevel() {
 //Desc: File containing Employee class method definitions
 
 // Validates that input is not empty for the string type
-bool Employees::validateInput(string v) {
+bool Employee::validateInput(string v) {
     if (v.empty())
         return 0;
     else
@@ -194,7 +194,7 @@ bool Employees::validateInput(string v) {
 }
 
 // Validates that input is greater than or equal to 0 for int type
-bool Employees::validateInput(int v) {
+bool Employee::validateInput(int v) {
     if (v < 0)
         return 0;
     else
@@ -202,7 +202,7 @@ bool Employees::validateInput(int v) {
 }
 
 // Mutators (Setters)
-bool Employees::setName(string n) {
+bool Employee::setName(string n) {
     if (validateInput(n)) {
         name = n;
         return 1;
@@ -210,7 +210,7 @@ bool Employees::setName(string n) {
         return 0;
     }
 }
-bool Employees::setEmail(string e) {
+bool Employee::setEmail(string e) {
     if (validateInput(e)) {
         email = e;
         return 1;
@@ -218,7 +218,7 @@ bool Employees::setEmail(string e) {
         return 0;
     }
 }
-bool Employees::setAddress(string a) {
+bool Employee::setAddress(string a) {
     if (validateInput(a)) {
         address = a;
         return 1;
@@ -226,7 +226,7 @@ bool Employees::setAddress(string a) {
         return 0;
     }
 }
-bool Employees:: setEmployeeID(int d) {
+bool Employee:: setEmployeeID(int d) {
 	if (validateInput(d)) {
 		employeeID = d;
 		return 1;
@@ -234,7 +234,7 @@ bool Employees:: setEmployeeID(int d) {
 		return 0;
 	}
 }
-bool Employees:: setYearsEmployed(int y) {
+bool Employee:: setYearsEmployed(int y) {
     if (validateInput(y)) {
         yearsEmployed = y;
         return 1;
@@ -244,18 +244,18 @@ bool Employees:: setYearsEmployed(int y) {
 }
 
 // Accessors (Getters)
-string Employees::getName() {
+string Employee::getName() {
     return name;
 }
-string Employees::getEmail() {
+string Employee::getEmail() {
     return email;
 }
-string Employees::getAddress() {
+string Employee::getAddress() {
     return address;
 }
-int Employees::getEmployeeID() {
+int Employee::getEmployeeID() {
     return employeeID;
 }
-int Employees::getYearsEmployed() {
+int Employee::getYearsEmployed() {
     return yearsEmployed;
 }
