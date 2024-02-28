@@ -41,11 +41,11 @@ public:
     bool setFirstVisit(bool fV);
 
     // Accessors (Getters)
-    string getName();
-    string getEmail();
-    string getAddress();
-    int getRegNumber();
-    bool getFirstVisit();
+    string getName() const;
+    string getEmail() const;
+    string getAddress() const;
+    int getRegNumber() const;
+    bool getFirstVisit() const;
 };
 
 // Name: Janaki Bhosale
@@ -79,11 +79,11 @@ class Student {
 	      bool setEducationLevel(int l);
 
 	      // Accessors
-	      string getName();
-	      string getEmail();
-	      string getAddress();
-	      int getStudentID();
-	      int getEducationLevel();
+	      string getName() const;
+	      string getEmail() const;
+	      string getAddress() const;
+	      int getStudentID() const;
+	      int getEducationLevel() const;
 };
 
 
@@ -119,11 +119,11 @@ public:
 	bool setYearsEmployed(int y);
 
 	// Accessors
-	string getName();
-	string getEmail();
-	string getAddress();
-	int getEmployeeID();
-	int getYearsEmployed();
+	string getName() const;
+	string getEmail() const;
+	string getAddress() const;
+	int getEmployeeID() const;
+	int getYearsEmployed() const;
 };
 
 

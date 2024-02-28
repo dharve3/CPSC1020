@@ -35,9 +35,9 @@ public:
     bool setDiscount(double d);
 
     // Accessors (Getters)
-    double getPermitPrice();
-    double getServiceCharge();
-    double getDiscount();
+    double getPermitPrice() const;
+    double getServiceCharge() const;
+    double getDiscount() const;
 
     // Calculates the total cost of the permit
     double calcTotal() const;

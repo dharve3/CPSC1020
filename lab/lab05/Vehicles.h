@@ -39,11 +39,11 @@ class Regular {
         bool setLicensePlate(string p);
 
         // Accessors
-        string getMake();
-        string getModel();
-        int getYear();
-        string getColor();
-        string getLicensePlate();
+        string getMake() const;
+        string getModel() const;
+        int getYear() const;
+        string getColor() const;
+        string getLicensePlate() const;
 };
 
 
@@ -79,11 +79,11 @@ public:
     bool setCapacity(int p);
 
     // Accessors (Getters)
-    string getMake();
-    string getModel();
-    int getYear();
-    int getCC();
-    int getCapacity();
+    string getMake() const;
+    string getModel() const;
+    int getYear() const;
+    int getCC() const;
+    int getCapacity() const;
 };
 
 
@@ -119,11 +119,11 @@ public:
 	bool setMPG(int m);
 
 	// Accessors
-	string getMake();
-	string getModel();
-    int getYear();
-	int getWeight();
-	int getMPG();
+	string getMake() const;
+	string getModel() const;
+    int getYear() const;
+	int getWeight() const;
+	int getMPG() const;
 };
 
 #endif // VEHICLES_H

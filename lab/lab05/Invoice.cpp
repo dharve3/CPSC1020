@@ -42,13 +42,13 @@ bool Invoice::setDiscount(double d) {
 }
 
 // Accessors (Getters)
-double Invoice::getPermitPrice() {
+double Invoice::getPermitPrice() const {
     return permitPrice;
 }
-double Invoice::getServiceCharge() {
+double Invoice::getServiceCharge() const {
     return serviceCharge;
 }
-double Invoice::getDiscount() {
+double Invoice::getDiscount() const {
     return discount;
 }
 

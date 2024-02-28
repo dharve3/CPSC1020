@@ -77,19 +77,19 @@ bool Visitor::setFirstVisit(bool fV) {
 }
 
 // Accessors (Getters)
-string Visitor::getName() {
+string Visitor::getName() const {
     return name;
 }
-string Visitor::getEmail() {
+string Visitor::getEmail() const {
     return email;
 }
-string Visitor::getAddress() {
+string Visitor::getAddress() const {
     return address;
 }
-int Visitor::getRegNumber() {
+int Visitor::getRegNumber() const {
     return regNumber;
 }
-bool Visitor::getFirstVisit() {
+bool Visitor::getFirstVisit() const {
     return firstVisit;
 }
 
@@ -161,19 +161,19 @@ bool Student:: setEducationLevel(int l) {
 }
 
 // Accessors (Getters)
-string Student::getName() {
+string Student::getName() const {
     return name;
 }
-string Student::getEmail() {
+string Student::getEmail() const {
     return email;
 }
-string Student::getAddress() {
+string Student::getAddress() const {
     return address;
 }
-int Student::getStudentID() {
+int Student::getStudentID() const {
     return studentID;
 }
-int Student::getEducationLevel() {
+int Student::getEducationLevel() const {
     return educationLevel;
 }
 
@@ -244,18 +244,18 @@ bool Employee:: setYearsEmployed(int y) {
 }
 
 // Accessors (Getters)
-string Employee::getName() {
+string Employee::getName() const {
     return name;
 }
-string Employee::getEmail() {
+string Employee::getEmail() const {
     return email;
 }
-string Employee::getAddress() {
+string Employee::getAddress() const {
     return address;
 }
-int Employee::getEmployeeID() {
+int Employee::getEmployeeID() const {
     return employeeID;
 }
-int Employee::getYearsEmployed() {
+int Employee::getYearsEmployed() const {
     return yearsEmployed;
 }

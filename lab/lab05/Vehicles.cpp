@@ -68,19 +68,19 @@ bool Regular::setLicensePlate(string p) {
 }
 
 // Accessors 
-string Regular::getMake() {
+string Regular::getMake() const {
     return make;
 }
-string Regular::getModel() {
+string Regular::getModel() const {
     return model;
 }
-int Regular::getYear() {
+int Regular::getYear() const {
     return year;
 }
-string Regular::getColor() {
+string Regular::getColor() const {
     return color;
 }
-string Regular::getLicensePlate() {
+string Regular::getLicensePlate() const {
     return licensePlate;
 }
 
@@ -151,19 +151,19 @@ bool Motorcycle::setCapacity(int p) {
 }
 
 // Accessors (Getters)
-string Motorcycle::getMake() {
+string Motorcycle::getMake() const {
     return make;
 }
-string Motorcycle::getModel() {
+string Motorcycle::getModel() const {
     return model;
 }
-int Motorcycle::getYear() {
+int Motorcycle::getYear() const {
     return year;
 }
-int Motorcycle::getCC() {
+int Motorcycle::getCC() const {
     return cc;
 }
-int Motorcycle::getCapacity() {
+int Motorcycle::getCapacity() const {
     return capacity;
 }
 
@@ -234,18 +234,18 @@ bool LowEmission::setMPG(int p) {
 }
 
 // Accessors 
-string LowEmission::getMake() {
+string LowEmission::getMake() const {
     return make;
 }
-string LowEmission::getModel() {
+string LowEmission::getModel() const {
     return model;
 }
-int LowEmission::getYear() {
+int LowEmission::getYear() const {
     return year;
 }
-int LowEmission::getWeight() {
+int LowEmission::getWeight() const {
     return weight;
 }
-int LowEmission::getMPG() {
+int LowEmission::getMPG() const {
     return mpg;
 }
