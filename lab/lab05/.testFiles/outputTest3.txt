@@ -1,22 +1,10 @@
-What type of customer are you? (visitor, student, or employee?): 
-Enter your name: 
-Enter your email: 
-Enter your address: 
-Enter your studentID: 
-Enter your education level (years): 
-What is your vehicle type? (regular, motorcycle, or lowEmission?): 
-Enter vehicle make: 
-Enter vehicle model: 
-Enter vehicle year: 
-Enter vehicle color: 
-Enter license plate: 
-What type of permit would you like to purchase? (annual, semester, or one-day?): 
+What type of customer are you? (visitor, student, or employee?): Enter your name: Enter your email: Enter your address: Enter your studentID #: Enter your education level (years 1-4 etc.): What is your vehicle type? (regular, motorcycle, or lowEmission?): Enter vehicle make: Enter vehicle model: Enter vehicle year: Enter vehicle color: Enter license plate: What type of permit would you like to purchase? (annual, semester, or one-day?):
 
 Customer Information:
 Name: Jack
 Email: jack@clemson.edu
 Address: 123 Real Drive
-Student ID: 3343456
+Student ID: 13579
 Education Level: 4
 
 Vehicle Information:

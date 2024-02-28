@@ -3,11 +3,11 @@ What type of customer are you? (visitor, student, or employee?): Enter your name
 Customer Information:
 Name: Joe Schmoe
 Email: joe@gmail.com
-Address: 123 Real Street 
+Address: 123 Real Street
 Registration Number: 47321
 First Visit: Yes
 
-Vehicle Information: 
+Vehicle Information:
 Make: Honda
 Model: Grom
 Year: 2015

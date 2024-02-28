@@ -1,16 +1,4 @@
-What type of customer are you? (visitor, student, or employee?): 
-Enter your name: 
-Enter your email: 
-Enter your address: 
-Enter your employeeID: 
-Enter your years employed:  
-What is your vehicle type? (regular, motorcycle, or lowEmission?): 
-Enter vehicle make: 
-Enter vehicle model: 
-Enter vehicle year: 
-Enter MPG: 
-Enter weight in pounds: 
-What type of permit would you like to purchase? (annual, semester, or one-day?): 
+What type of customer are you? (visitor, student, or employee?): Enter your name: Enter your email: Enter your address: Enter your employeeID: Enter your years employed: What is your vehicle type? (regular, motorcycle, or lowEmission?): Enter vehicle make: Enter vehicle model: Enter vehicle year: Enter weight in pounds: Enter MPG: What type of permit would you like to purchase? (annual, semester, or one-day?): 
 
 Customer Information:
 Name: Jane
