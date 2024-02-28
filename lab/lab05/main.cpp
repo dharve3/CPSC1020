@@ -109,7 +109,7 @@ int main() {
 
 
     // Get Vehicle type from user
-    cout << "What is your vehicle type? (regular, motorcycle, or lowEmssion?): ";
+    cout << "What is your vehicle type? (regular, motorcycle, or lowEmission?): ";
     getline(cin, vehicleType);
     // Loop until valid input is recieved
     while (vehicleType != "regular" && vehicleType != "motorcycle" && vehicleType != "lowEmission") {
@@ -169,15 +169,15 @@ int main() {
         cout << "Enter vehicle year: ";
         getline(cin, input);
         stringstream(input) >> year;
-        cout << "Enter MPG: ";
-        getline(cin, input);
-        stringstream(input) >> mpg;
         cout << "Enter weight in pounds: ";
         getline(cin, input);
         stringstream(input) >> weight;
+        cout << "Enter MPG: ";
+        getline(cin, input);
+        stringstream(input) >> mpg;
 
         // Create LowEmission object
-        lowEmission1 = LowEmission(make, model, year, mpg, weight);
+        lowEmission1 = LowEmission(make, model, year, weight, mpg);
     }
 
 

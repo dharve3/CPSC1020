@@ -116,7 +116,7 @@ public:
 	bool setModel(string o);
 	bool setYear(int y);
 	bool setWeight(int w);
-	bool setMPG(int m);
+	bool setMPG(int p);
 
 	// Accessors
 	string getMake() const;
