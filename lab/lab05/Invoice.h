@@ -8,6 +8,8 @@
 #ifndef INVOICE_H
 #define INVOICE_H
 
+#include <iostream>
+#include <iomanip>
 #include <string>
 #include <sstream> // Stringstream for printInvoice
 
