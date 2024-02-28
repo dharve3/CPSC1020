@@ -10,7 +10,6 @@
 
 #include <string>
 #include <sstream> // Stringstream for printInvoice
-#include <iomanip>
 
 #include "Customers.h"
 #include "Vehicles.h"
@@ -53,9 +52,7 @@ public:
         // Using stringstream for readability and helps with 
         // not having to to_string() every non str value
 
-        // Sets 2 decmial places and adds inital newline
-        invoiceDetails << fixed << setprecision(2) << "\n";
-
+        invoiceDetails << "\n";
         // Customer information
         invoiceDetails << "Customer Information:\n";
         invoiceDetails << "Name: " << customer.getName() << "\n";
@@ -104,10 +101,10 @@ public:
 
         // Price Details
         invoiceDetails << "Price Details:\n";
-        invoiceDetails << "Permit Price: $" << fixed << setprecision(2) << permitPrice << "\n";
-        invoiceDetails << "Service Charge: $" << fixed << setprecision(2) << serviceCharge << "\n";
-        invoiceDetails << "Discount: $" << fixed << setprecision(2) << discount << "\n";
-        invoiceDetails << "Total: $" << fixed << setprecision(2) << calcTotal() << "\n";
+        invoiceDetails << "Permit Price: $" << permitPrice << "\n";
+        invoiceDetails << "Service Charge: $" << serviceCharge << "\n";
+        invoiceDetails << "Discount: $" << discount << "\n";
+        invoiceDetails << "Total: $" << calcTotal() << "\n";
 
         return invoiceDetails.str();
     }

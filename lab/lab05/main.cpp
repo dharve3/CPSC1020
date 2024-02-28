@@ -188,6 +188,9 @@ int main() {
         cout << "Please try again (input is case sensitive): ";
         getline(cin, permitType);
     }
+
+    // Formatting
+    cout << fixed << setprecision(2);
     
     // Yes I KNOW this is a lot of hard coded logic but idk how else to determine which objects to pass
     // HOPEFULLY FIX AT SOME POINT CUZ EW
@@ -199,27 +202,27 @@ int main() {
 
         if (customerType == "visitor") { // Case for visitor
             if (vehicleType == "regular") {
-                annual.printInvoice(visitor1, regular1);
+                cout << annual.printInvoice(visitor1, regular1);
             } else if (vehicleType == "motorcycle") {
-                annual.printInvoice(visitor1, motorcycle1);
+                cout << annual.printInvoice(visitor1, motorcycle1);
             } else if (vehicleType == "lowEmission") {
-                annual.printInvoice(visitor1, lowEmission1);
+                cout << annual.printInvoice(visitor1, lowEmission1);
             }
         } else if (customerType == "student") { // Case for student
             if (vehicleType == "regular") {
-                annual.printInvoice(student1, regular1);
+                cout << annual.printInvoice(student1, regular1);
             } else if (vehicleType == "motorcycle") {
-                annual.printInvoice(student1, motorcycle1);
+                cout << annual.printInvoice(student1, motorcycle1);
             } else if (vehicleType == "lowEmission") {
-                annual.printInvoice(student1, lowEmission1);
+                cout << annual.printInvoice(student1, lowEmission1);
             }
         } else if (customerType == "employee") { // Case for employee
             if (vehicleType == "regular") {
-                annual.printInvoice(employee1, regular1);
+                cout << annual.printInvoice(employee1, regular1);
             } else if (vehicleType == "motorcycle") {
-                annual.printInvoice(employee1, motorcycle1);
+                cout << annual.printInvoice(employee1, motorcycle1);
             } else if (vehicleType == "lowEmission") {
-                annual.printInvoice(employee1, lowEmission1);
+                cout << annual.printInvoice(employee1, lowEmission1);
             }
         }
     } else if (permitType == "semester") {
