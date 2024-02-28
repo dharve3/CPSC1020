@@ -9,11 +9,9 @@
 #define INVOICE_H
 
 #include <string>
-#include <iostream>
 #include <sstream> // Stringstream for printInvoice
-// Customers:
+
 #include "Customers.h"
-// Vehicles:
 #include "Vehicles.h"
 
 class Invoice
@@ -45,9 +43,69 @@ public:
     double calcTotal() const;
 
     // Generate the invoice for any combination of customer and vehicle
+    // Returns a string of the invoice using the provided data
     // Uses polymorphism and templates (template functions r pretty neat)
-    template<typename CustomerType, typename VehicleType>
-    string printInvoice(const CustomerType& customer, const VehicleType& vehicle) const;
+    // NOTE: Template function is implemented in the headerfile to avoind linker errors.
+    template<typename CustomerT, typename VehicleT>
+    string Invoice::printInvoice(const CustomerT& customer, const VehicleT& vehicle) const {
+        stringstream invoiceDetails;
+        // Using stringstream for readability and helps with 
+        // not having to to_string() every non str value
+
+        // Customer information
+        invoiceDetails << "Customer Information:\n";
+        invoiceDetails << "Name: " << customer.getName() << "\n";
+        invoiceDetails << "Email: " << customer.getEmail() << "\n";
+        invoiceDetails << "Address: " << customer.getAddress() << "\n";
+
+        // As much as it pains me to hard-code this logic, 
+        // I couldn't think of a better way to do this here
+
+        // Depending on the type of customer, access additonal attributes
+        if (is_same<CustomerT, Visitor>::value) {
+            invoiceDetails << "Registration Number: " << customer.getRegNumber() << "\n";
+            invoiceDetails << "First Visit: " << (customer.getFirstVisit() ? "Yes" : "No") << "\n";
+        } else if (is_same<CustomerT, Student>::value) {
+            invoiceDetails << "Student ID: " << customer.getStudentID() << "\n";
+            invoiceDetails << "Education Level: " << customer.getLevel() << "\n";
+        } else if (is_same<CustomerT, Employee>::value) {
+            invoiceDetails << "Employee ID: " << customer.getEmployeeID() << "\n";
+            invoiceDetails << "Years Employed: " << customer.getYearsEmployed() << "\n";
+        } else {
+            invoiceDetails << "Error getting customer specific information.\n";
+        }
+        invoiceDetails << "\n";
+
+        // Vehicle Information
+        invoiceDetails << "Vehicle Information:\n";
+        invoiceDetails << "Make: " << vehicle.getMake() << "\n";
+        invoiceDetails << "Model: " << vehicle.getModel() << "\n";
+        invoiceDetails << "Year: " << vehicle.getYear() << "\n";
+
+        // Depending on the type of vehicle, access additonal attributes
+        if (is_same<VehicleT, Regular>::value) {
+            invoiceDetails << "Color: " << vehicle.getColor() << "\n";
+            invoiceDetails << "License Plate: " << vehicle.getLicensePlate() << "\n";
+        } else if (is_same<VehicleT, Motorcycle>::value) {
+            invoiceDetails << "CCs: " << vehicle.getCC() << "\n";
+            invoiceDetails << "Capacity: " << vehicle.getCapacity() << "\n";
+        } else if (is_same<VehicleT, LowEmission>::value) {
+            invoiceDetails << "Weight: " << vehicle.getWeight() << "\n";
+            invoiceDetails << "MPG: " << vehicle.getMPG() << "\n";
+        } else {
+            invoiceDetails << "Error getting vehicle specific information.\n";
+        }
+        invoiceDetails << "\n";
+
+        // Price Details
+        invoiceDetails << "Price Details:\n";
+        invoiceDetails << "Permit Price: $" << permitPrice << "\n";
+        invoiceDetails << "Service Charge: $" << serviceCharge << "\n";
+        invoiceDetails << "Discount: $" << discount << "\n";
+        invoiceDetails << "Total: $" << calcTotal() << "\n";
+
+        return invoiceDetails.str();
+    }
 };
 
 #endif // INVOICE_H
