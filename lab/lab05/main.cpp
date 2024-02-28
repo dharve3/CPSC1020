@@ -170,7 +170,7 @@ int main() {
     cout << "What type of permit would you like to purchase? (annual, semester, or one-day?): ";
     cin >> permitType;
     // Loop until valid input is recieved
-    while (permitType != "annual" || permitType != "semester" || permitType != "one-day") {
+    while (permitType != "annual" && permitType != "semester" && permitType != "one-day") {
         cout << "Please try again (input is case sensitive): ";
         cin >> permitType;
     }
