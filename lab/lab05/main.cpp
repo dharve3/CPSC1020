@@ -15,6 +15,16 @@ int main() {
     double discount = 0.00;
     double serviceFee = 25.00;
     double permitPrice = 5.00;
+
+    // Class declarations to avoid scope issues.
+    // Customer classes
+    Visitor visitor1;
+    Student student1;
+    Employee employee1;
+    // Vehicle classes
+    Regular regular1;
+    Motorcycle motorcycle1;
+    LowEmission lowEmission1;
     
     // Get customer type from user
     cout << "What type of customer are you? (visitor, student, or employee?): ";
@@ -50,7 +60,7 @@ int main() {
         }
 
         // Create Visitor object
-        Visitor visitor1(name, email, address, regNum, firstVisit);
+        visitor1 = Visitor(name, email, address, regNum, firstVisit);
     } else if (customerType == "student") {
         // Student specific vars
         int studentId, educationLevel;
@@ -68,7 +78,7 @@ int main() {
         cin >> educationLevel;
 
         // Create Student object
-        Student student1(name, email, address, studentId, educationLevel);
+        student1 = Student(name, email, address, studentId, educationLevel);
     } else if (customerType == "employee") {
         // Employee specific vars
         int employeeId, yearsEmployed;
@@ -86,7 +96,7 @@ int main() {
         cin >> yearsEmployed;
 
         // Create Employee object
-        Employee employee1(name, email, address, employeeId, yearsEmployed);
+        employee1 = Employee(name, email, address, employeeId, yearsEmployed);
     }
 
 
@@ -116,7 +126,7 @@ int main() {
         cin >> licensePlate;
         
         // Create Regular object
-        Regular regular1(make, model, year, color, licensePlate);
+        regular1 = Regular(make, model, year, color, licensePlate);
     } else if (vehicleType == "motorcycle") {
         // Motorcycle specific vars
         int cc, capacity;
@@ -134,7 +144,7 @@ int main() {
         cin >> capacity;
 
         // Create Motorcycle Object
-        Motorcycle motorcycle1(make, model, year, cc, capacity);
+        motorcycle1 = Motorcycle(make, model, year, cc, capacity);
     } else if (vehicleType == "lowEmission") {
         // Low Emission specific vars
         int mpg, weight;
@@ -152,7 +162,7 @@ int main() {
         cin >> weight;
 
         // Create LowEmission object
-        LowEmission lowEmission1(make, model, year, mpg, weight);
+        lowEmission1 = LowEmission(make, model, year, mpg, weight);
     }
 
 
