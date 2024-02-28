@@ -20,7 +20,7 @@ int main() {
     cout << "What type of customer are you? (visitor, student, or employee?): ";
     cin >> customerType;
     // Loop until valid input is recieved
-    while (customerType != "visitor" || customerType != "student" || customerType != "employee") {
+    while (customerType != "visitor" && customerType != "student" && customerType != "employee") {
         cout << "Please try again (input is case sensitive): ";
         cin >> customerType;
     }
@@ -94,7 +94,7 @@ int main() {
     cout << "What is your vehicle type? (regular, motorcycle, or lowEmssion?): ";
     cin >> vehicleType;
     // Loop until valid input is recieved
-    while (vehicleType != "regular" || vehicleType != "motorcycle" || vehicleType != "lowEmission") {
+    while (vehicleType != "regular" && vehicleType != "motorcycle" && vehicleType != "lowEmission") {
         cout << "Please try again (input is case sensitive): ";
         cin >> vehicleType;
     }
