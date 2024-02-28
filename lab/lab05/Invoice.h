@@ -54,7 +54,7 @@ public:
         // not having to to_string() every non str value
 
         // Sets 2 decmial places and adds inital newline
-        invoiceDetails << fixed << showpoint << setprecision(2) << "\n";
+        invoiceDetails << fixed << setprecision(2) << "\n";
 
         // Customer information
         invoiceDetails << "Customer Information:\n";
