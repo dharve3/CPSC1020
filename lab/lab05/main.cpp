@@ -5,6 +5,8 @@
 // File Name: main.cpp
 // Desc: 
 
+#include <iostream>
+
 #include "Customers.h"
 #include "Vehicles.h"
 #include "Invoice.h"
