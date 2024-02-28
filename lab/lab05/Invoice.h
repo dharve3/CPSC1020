@@ -104,10 +104,10 @@ public:
 
         // Price Details
         invoiceDetails << "Price Details:\n";
-        invoiceDetails << "Permit Price: $" << permitPrice << "\n";
-        invoiceDetails << "Service Charge: $" << serviceCharge << "\n";
-        invoiceDetails << "Discount: $" << discount << "\n";
-        invoiceDetails << "Total: $" << calcTotal() << "\n";
+        invoiceDetails << "Permit Price: $" << fixed << setprecision(2) << permitPrice << "\n";
+        invoiceDetails << "Service Charge: $" << fixed << setprecision(2) << serviceCharge << "\n";
+        invoiceDetails << "Discount: $" << fixed << setprecision(2) << discount << "\n";
+        invoiceDetails << "Total: $" << fixed << setprecision(2) << calcTotal() << "\n";
 
         return invoiceDetails.str();
     }
