@@ -50,7 +50,8 @@ int main() {
         cout << "Enter your address: ";
         getline(cin, address);
         cout << "Enter your registration number: ";
-        cin >> regNum;
+        getline(cin, input);
+        stringstream(input) >> regNum;
         cout << "Is this your first visit? (y/n): ";
         getline(cin, input);
         // Logic for first visit
@@ -75,9 +76,11 @@ int main() {
         cout << "Enter your address: ";
         getline(cin, address);
         cout << "Enter your studentID #: ";
-        cin >> studentId;
+        getline(cin, input);
+        stringstream(input) >> studentId;
         cout << "Enter your education level (years 1-4 etc.): ";
-        cin >> educationLevel;
+        getline(cin, input);
+        stringstream(input) >> educationLevel;
 
         // Create Student object
         student1 = Student(name, email, address, studentId, educationLevel);
@@ -93,9 +96,11 @@ int main() {
         cout << "Enter your address: ";
         getline(cin, address);
         cout << "Enter your employeeID: ";
-        cin >> employeeId;
+        getline(cin, input);
+        stringstream(input) >> employeeId;
         cout << "Enter your years employed: ";
-        cin >> yearsEmployed;
+        getline(cin, input);
+        stringstream(input) >> yearsEmployed;
 
         // Create Employee object
         employee1 = Employee(name, email, address, employeeId, yearsEmployed);
@@ -121,7 +126,8 @@ int main() {
         cout << "Enter vehicle model: ";
         getline(cin, model);
         cout << "Enter vehicle year: ";
-        cin >> year;
+        getline(cin, input);
+        stringstream(input) >> year;
         cout << "Enter vehicle color: ";
         getline(cin, color);
         cout << "Enter license plate: ";
@@ -139,11 +145,14 @@ int main() {
         cout << "Enter vehicle model: ";
         getline(cin, model);
         cout << "Enter vehicle year: ";
-        cin >> year;
+        getline(cin, input);
+        stringstream(input) >> year;
         cout << "Enter CCs: ";
-        cin >> cc;
+        getline(cin, input);
+        stringstream(input) >> cc;
         cout << "Enter capacity: ";
-        cin >> capacity;
+        getline(cin, input);
+        stringstream(input) >> capacity;
 
         // Create Motorcycle Object
         motorcycle1 = Motorcycle(make, model, year, cc, capacity);
@@ -157,11 +166,14 @@ int main() {
         cout << "Enter vehicle model: ";
         getline(cin, model);
         cout << "Enter vehicle year: ";
-        cin >> year;
+        getline(cin, input);
+        stringstream(input) >> year;
         cout << "Enter MPG: ";
-        cin >> mpg;
+        getline(cin, input);
+        stringstream(input) >> mpg;
         cout << "Enter weight in pounds: ";
-        cin >> weight;
+        getline(cin, input);
+        stringstream(input) >> weight;
 
         // Create LowEmission object
         lowEmission1 = LowEmission(make, model, year, mpg, weight);
