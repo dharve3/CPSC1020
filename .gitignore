@@ -16,6 +16,7 @@
 *.swp
 
 # out/executable files
+*.o
 *.out
 *.exe
 
