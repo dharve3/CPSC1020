@@ -15,7 +15,7 @@ int main() {
     string customerType, vehicleType, permitType, name, email, address, make, model, input;
     int year;
     double discount = 0.00;
-    double serviceFee = 25.00;
+    double serviceFee = 2.50;
     double permitPrice = 5.00;
 
     // Class declarations to avoid scope issues.
@@ -57,7 +57,7 @@ int main() {
         // Logic for first visit
         if (input == "y") {
             firstVisit = 1;
-            discount = 5.00;
+            discount = 2.50;
         } else {
             firstVisit = 0;
         }
