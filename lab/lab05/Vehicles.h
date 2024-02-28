@@ -24,8 +24,8 @@ class Regular {
         string licensePlate;
     public: 
         // Constructors
-        Regular(): make(""), model(""), color(""), licensePlate(""), year(0) { }
-        Regular(string m, string o, string c, string p, int y): make(m), model(o), year(y), color(c), licensePlate(p) { } // constructor for all attributes
+        Regular(): make(""), model(""), year(0), color(""), licensePlate("") { }
+        Regular(string m, string o, int y, string c, string p): make(m), model(o), year(y), color(c), licensePlate(p) { } // constructor for all attributes
 
         // Input Validation Methods
         bool validateInput(string v);
@@ -104,7 +104,7 @@ private:
 	int mpg;
 public: 
 	// Constructors
-	LowEmission(): make(""), model(""), weight(0), mpg(0), year(0) { }
+	LowEmission(): make(""), model(""), year(0), weight(0), mpg(0) { }
 	LowEmission(string m, string o, int y, int w, int p): make(m), model(o), year(y), weight(w), mpg(p) { } // constructor for all attributes
 
 	// Input Validation Methods
