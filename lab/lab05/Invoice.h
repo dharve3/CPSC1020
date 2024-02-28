@@ -62,6 +62,7 @@ public:
         // I couldn't think of a better way to do this here
 
         // Depending on the type of customer, access additonal attributes
+        // constexpr is REQUIRED so it evaluates expression at compile time, or else will throw errors for missing functions
         if constexpr (is_same<CustomerT, Visitor>::value) {
             invoiceDetails << "Registration Number: " << customer.getRegNumber() << "\n";
             invoiceDetails << "First Visit: " << (customer.getFirstVisit() ? "Yes" : "No") << "\n";
