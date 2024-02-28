@@ -42,6 +42,14 @@ bool Regular::setModel(string o) {
         return 0;
     }
 }
+bool Regular::setYear(int y) {
+    if (validateInput(y)) {
+        year = y;
+        return 1;
+    } else {
+        return 0;
+    }
+}
 bool Regular::setColor(string c) {
     if (validateInput(c)) {
         color = c;
@@ -58,14 +66,6 @@ bool Regular::setLicensePlate(string p) {
         return 0;
     }
 }
-bool Regular::setYear(int y) {
-    if (validateInput(y)) {
-        year = y;
-        return 1;
-    } else {
-        return 0;
-    }
-}
 
 // Accessors 
 string Regular::getMake() {
@@ -74,14 +74,14 @@ string Regular::getMake() {
 string Regular::getModel() {
     return model;
 }
+int Regular::getYear() {
+    return year;
+}
 string Regular::getColor() {
     return color;
 }
 string Regular::getLicensePlate() {
     return licensePlate;
-}
-int Regular::getYear() {
-    return year;
 }
 
 
@@ -125,6 +125,14 @@ bool Motorcycle::setModel(string o) {
         return 0;
     }
 }
+bool Motorcycle::setYear(int y) {
+    if (validateInput(y)) {
+        year = y;
+        return 1;
+    } else {
+        return 0;
+    }
+}
 bool Motorcycle::setCC(int c) {
     if (validateInput(c)) {
         cc = c;
@@ -141,14 +149,6 @@ bool Motorcycle::setCapacity(int p) {
         return 0;
     }
 }
-bool Motorcycle::setYear(int y) {
-    if (validateInput(y)) {
-        year = y;
-        return 1;
-    } else {
-        return 0;
-    }
-}
 
 // Accessors (Getters)
 string Motorcycle::getMake() {
@@ -157,14 +157,14 @@ string Motorcycle::getMake() {
 string Motorcycle::getModel() {
     return model;
 }
+int Motorcycle::getYear() {
+    return year;
+}
 int Motorcycle::getCC() {
     return cc;
 }
 int Motorcycle::getCapacity() {
     return capacity;
-}
-int Motorcycle::getYear() {
-    return year;
 }
 
 
@@ -208,6 +208,14 @@ bool LowEmission::setModel(string o) {
         return 0;
     }
 }
+bool LowEmission::setYear(int y) {
+    if (validateInput(y)) {
+        year = y;
+        return 1;
+    } else {
+        return 0;
+    }
+}
 bool LowEmission::setWeight(int w) {
     if (validateInput(w)) {
         weight = w;
@@ -224,14 +232,6 @@ bool LowEmission::setMPG(int p) {
         return 0;
     }
 }
-bool LowEmission::setYear(int y) {
-    if (validateInput(y)) {
-        year = y;
-        return 1;
-    } else {
-        return 0;
-    }
-}
 
 // Accessors 
 string LowEmission::getMake() {
@@ -240,12 +240,12 @@ string LowEmission::getMake() {
 string LowEmission::getModel() {
     return model;
 }
+int LowEmission::getYear() {
+    return year;
+}
 int LowEmission::getWeight() {
     return weight;
 }
 int LowEmission::getMPG() {
     return mpg;
-}
-int LowEmission::getYear() {
-    return year;
 }

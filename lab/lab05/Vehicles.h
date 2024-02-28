@@ -19,13 +19,13 @@ class Regular {
     private:
         string make;
         string model;
+        int year;
         string color;
         string licensePlate;
-        int year;
     public: 
         // Constructors
-        Regular(): make(""), model(""), color(""), licensePlate(""), year(0) {}
-        Regular(string m, string o, string c, string p, int y): make{m}, model{o}, color{c}, licensePlate{p}, year{y} {} // constructor for all attributes
+        Regular(): make(""), model(""), color(""), licensePlate(""), year(0) { }
+        Regular(string m, string o, string c, string p, int y): make(m), model(o), year(y), color(c), licensePlate(p) { } // constructor for all attributes
 
         // Input Validation Methods
         bool validateInput(string v);
@@ -34,16 +34,16 @@ class Regular {
         // Mutators
         bool setMake(string m);
         bool setModel(string o);
+        bool setYear(int y);
         bool setColor(string c);
         bool setLicensePlate(string p);
-        bool setYear(int y);
 
         // Accessors
         string getMake();
         string getModel();
+        int getYear();
         string getColor();
         string getLicensePlate();
-        int getYear();
 };
 
 
@@ -59,13 +59,13 @@ class Motorcycle
 private:
     string make;
     string model;
+    int year;
     int cc;
     int capacity;
-    int year;
 public:
     // Constructors
-    Motorcycle(): make(""), model(""), cc(0), capacity(0), year(0) { } // Default constructor
-    Motorcycle(string m, string o, int c, int p, int y): make(m), model(o), cc(c), capacity(p), year(y) { } // Constructor for all values given
+    Motorcycle(): make(""), model(""), year(0), cc(0), capacity(0) { } // Default constructor
+    Motorcycle(string m, string o, int y, int c, int p): make(m), model(o), year(y), cc(c), capacity(p) { } // Constructor for all values given
 
     // Input Validation Methods
     bool validateInput(string v);
@@ -74,16 +74,16 @@ public:
     // Mutators (Setters)
     bool setMake(string m);
     bool setModel(string o);
+    bool setYear(int y);
     bool setCC(int c);
     bool setCapacity(int p);
-    bool setYear(int y);
 
     // Accessors (Getters)
     string getMake();
     string getModel();
+    int getYear();
     int getCC();
     int getCapacity();
-    int getYear();
 };
 
 
@@ -99,13 +99,13 @@ class LowEmission
 private:
 	string make;
 	string model;
+    int year;
 	int weight;
 	int mpg;
-	int year;
 public: 
 	// Constructors
-	LowEmission(): make(""), model(""), weight(0), mpg(0), year(0) {}
-	LowEmission(string m, string o, int w, int p, int y): make{m}, model{o}, weight{w}, mpg{p}, year{y} {} // constructor for all attributes
+	LowEmission(): make(""), model(""), weight(0), mpg(0), year(0) { }
+	LowEmission(string m, string o, int y, int w, int p): make(m), model(o), year(y), weight(w), mpg(p) { } // constructor for all attributes
 
 	// Input Validation Methods
 	bool validateInput(string v);
@@ -114,16 +114,16 @@ public:
 	// Mutators
 	bool setMake(string m);
 	bool setModel(string o);
+	bool setYear(int y);
 	bool setWeight(int w);
 	bool setMPG(int m);
-	bool setYear(int y);
 
 	// Accessors
 	string getMake();
 	string getModel();
+    int getYear();
 	int getWeight();
 	int getMPG();
-	int getYear();
 };
 
 #endif // VEHICLES_H
