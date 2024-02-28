@@ -1,5 +1,5 @@
 COMPILER = g++
-OPTIONS = -Wall
+OPTIONS = -Wall -std=c++17
 PROGRAM = parkingPermit.out
 
 all: $(PROGRAM)
