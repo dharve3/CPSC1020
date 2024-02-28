@@ -67,7 +67,7 @@ public:
             invoiceDetails << "First Visit: " << (customer.getFirstVisit() ? "Yes" : "No") << "\n";
         } else if constexpr (is_same<CustomerT, Student>::value) {
             invoiceDetails << "Student ID: " << customer.getStudentID() << "\n";
-            invoiceDetails << "Education Level: " << customer.getLevel() << "\n";
+            invoiceDetails << "Education Level: " << customer.getEducationLevel() << "\n";
         } else if constexpr (is_same<CustomerT, Employee>::value) {
             invoiceDetails << "Employee ID: " << customer.getEmployeeID() << "\n";
             invoiceDetails << "Years Employed: " << customer.getYearsEmployed() << "\n";
