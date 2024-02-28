@@ -62,13 +62,13 @@ public:
         // I couldn't think of a better way to do this here
 
         // Depending on the type of customer, access additonal attributes
-        if (is_same<CustomerT, Visitor>::value) {
+        if constexpr (is_same<CustomerT, Visitor>::value) {
             invoiceDetails << "Registration Number: " << customer.getRegNumber() << "\n";
             invoiceDetails << "First Visit: " << (customer.getFirstVisit() ? "Yes" : "No") << "\n";
-        } else if (is_same<CustomerT, Student>::value) {
+        } else if constexpr (is_same<CustomerT, Student>::value) {
             invoiceDetails << "Student ID: " << customer.getStudentID() << "\n";
             invoiceDetails << "Education Level: " << customer.getLevel() << "\n";
-        } else if (is_same<CustomerT, Employee>::value) {
+        } else if constexpr (is_same<CustomerT, Employee>::value) {
             invoiceDetails << "Employee ID: " << customer.getEmployeeID() << "\n";
             invoiceDetails << "Years Employed: " << customer.getYearsEmployed() << "\n";
         } else {
@@ -83,13 +83,13 @@ public:
         invoiceDetails << "Year: " << vehicle.getYear() << "\n";
 
         // Depending on the type of vehicle, access additonal attributes
-        if (is_same<VehicleT, Regular>::value) {
+        if constexpr (is_same<VehicleT, Regular>::value) {
             invoiceDetails << "Color: " << vehicle.getColor() << "\n";
             invoiceDetails << "License Plate: " << vehicle.getLicensePlate() << "\n";
-        } else if (is_same<VehicleT, Motorcycle>::value) {
+        } else if constexpr (is_same<VehicleT, Motorcycle>::value) {
             invoiceDetails << "CCs: " << vehicle.getCC() << "\n";
             invoiceDetails << "Capacity: " << vehicle.getCapacity() << "\n";
-        } else if (is_same<VehicleT, LowEmission>::value) {
+        } else if constexpr (is_same<VehicleT, LowEmission>::value) {
             invoiceDetails << "Weight: " << vehicle.getWeight() << "\n";
             invoiceDetails << "MPG: " << vehicle.getMPG() << "\n";
         } else {
