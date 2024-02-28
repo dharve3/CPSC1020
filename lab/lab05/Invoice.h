@@ -47,7 +47,7 @@ public:
     // Uses polymorphism and templates (template functions r pretty neat)
     // NOTE: Template function is implemented in the headerfile to avoind linker errors.
     template<typename CustomerT, typename VehicleT>
-    string Invoice::printInvoice(const CustomerT& customer, const VehicleT& vehicle) const {
+    string printInvoice(const CustomerT& customer, const VehicleT& vehicle) const {
         stringstream invoiceDetails;
         // Using stringstream for readability and helps with 
         // not having to to_string() every non str value
