@@ -31,6 +31,7 @@ public:
     // Input Validation Methods
     bool validateInput(string v);
     bool validateInput(int v);
+	bool validateInput(bool v);
 
     // Mutators (Setters)
     bool setName(string n);
@@ -64,14 +65,14 @@ class Student {
     public:
         // constructors
         Student(): name(""), email(""), address(""), studentID(0), educationLevel(0) {}
-        Student(string n, string e, string a, int sID, int l): name(n), email(e), address(a), studentID(sID), eductionLevel(l) {}
+        Student(string n, string e, string a, int sID, int l): name(n), email(e), address(a), studentID(sID), educationLevel(l) {}
 
         // Input Validation Methods
         bool validateInput(string v);
 	      bool validateInput(int v);
 
 	      // Mutators
-	      bool setName(string n)
+	      bool setName(string n);
 	      bool setEmail(string e);
 	      bool setAddress(string a);
 	      bool setStudentID(int sID);
@@ -81,7 +82,7 @@ class Student {
 	      string getName();
 	      string getEmail();
 	      string getAddress();
-	      int getstudentID();
+	      int getStudentID();
 	      int getEducationLevel();
 };
 
@@ -111,7 +112,7 @@ public:
 	bool validateInput(int v);
 
 	// Mutators
-	bool setName(string n)
+	bool setName(string n);
 	bool setEmail(string e);
 	bool setAddress(string a);
 	bool setEmployeeID(int d);

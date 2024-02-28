@@ -42,7 +42,7 @@ bool Regular::setModel(string o) {
         return 0;
     }
 }
-bool Regular::setColor(int c) {
+bool Regular::setColor(string c) {
     if (validateInput(c)) {
         color = c;
         return 1;
@@ -50,7 +50,7 @@ bool Regular::setColor(int c) {
         return 0;
     }
 }
-bool Regular::licensePlate(int p) {
+bool Regular::setLicensePlate(string p) {
     if (validateInput(p)) {
         licensePlate = p;
         return 1;
@@ -74,10 +74,10 @@ string Regular::getMake() {
 string Regular::getModel() {
     return model;
 }
-int Regular::getColor() {
+string Regular::getColor() {
     return color;
 }
-int Regular::getLicensePlate() {
+string Regular::getLicensePlate() {
     return licensePlate;
 }
 int Regular::getYear() {

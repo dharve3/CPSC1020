@@ -75,13 +75,13 @@ string Invoice::printInvoice(const CustomerType& customer, const VehicleType& ve
     // I couldn't think of a better way to do this here
 
     // Depending on the type of customer, access additonal attributes
-    if (is_same<CustomerType, Visitors>::value) {
+    if (is_same<CustomerType, Visitor>::value) {
         invoiceDetails << "Registration Number: " << customer.getRegNumber() << "\n";
         invoiceDetails << "First Visit: " << (customer.getFirstVisit() ? "Yes" : "No") << "\n";
-    } else if (is_same<CustomerType, Students>::value) {
+    } else if (is_same<CustomerType, Student>::value) {
         invoiceDetails << "Student ID: " << customer.getStudentID() << "\n";
         invoiceDetails << "Education Level: " << customer.getLevel() << "\n";
-    } else if (is_same<CustomerType, Employees>::value) {
+    } else if (is_same<CustomerType, Employee>::value) {
         invoiceDetails << "Employee ID: " << customer.getEmployeeID() << "\n";
         invoiceDetails << "Years Employed: " << customer.getYearsEmployed() << "\n";
     } else {
@@ -99,10 +99,10 @@ string Invoice::printInvoice(const CustomerType& customer, const VehicleType& ve
     if (is_same<VehicleType, Regular>::value) {
         invoiceDetails << "Color: " << vehicle.getColor() << "\n";
         invoiceDetails << "License Plate: " << vehicle.getLicensePlate() << "\n";
-    } else if (is_same<CustomerType, Motorcycles>::value) {
+    } else if (is_same<CustomerType, Motorcycle>::value) {
         invoiceDetails << "CCs: " << vehicle.getCC() << "\n";
         invoiceDetails << "Capacity: " << vehicle.getCapacity() << "\n";
-    } else if (is_same<VehicleType, LowEmissions>::value) {
+    } else if (is_same<VehicleType, LowEmission>::value) {
         invoiceDetails << "Weight: " << vehicle.getWeight() << "\n";
         invoiceDetails << "MPG: " << vehicle.getMPG() << "\n";
     } else {
