@@ -144,8 +144,8 @@ bool Student::setAddress(string a) {
     }
 }
 bool Student:: setStudentID(int sID) {
-	if (validateInput(d)) {
-		studentID = d;
+	if (validateInput(sID)) {
+		studentID = sID;
 		return 1;
 	} else {
 		return 0;

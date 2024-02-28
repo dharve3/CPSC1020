@@ -41,8 +41,8 @@ class Regular {
         // Accessors
         string getMake();
         string getModel();
-        int getColor();
-        int getLicensePlate();
+        string getColor();
+        string getLicensePlate();
         int getYear();
 };
 
