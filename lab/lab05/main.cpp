@@ -12,9 +12,9 @@
 int main() {
     string customerType, vehicleType, permitType, name, email, address, make, model, input;
     int year;
-    double discount = 0;
-    double serviceFee = 25.0;
-    double permitPrice = 5.0;
+    double discount = 0.00;
+    double serviceFee = 25.00;
+    double permitPrice = 5.00;
     
     // Get customer type from user
     cout << "What type of customer are you? (visitor, student, or employee?): ";
@@ -44,6 +44,7 @@ int main() {
         // Logic for first visit
         if (input == "y") {
             firstVisit = 1;
+            discount = 5.00;
         } else {
             firstVisit = 0;
         }
@@ -163,20 +164,100 @@ int main() {
         cout << "Please try again (input is case sensitive): ";
         cin >> permitType;
     }
-
+    
+    // Yes I KNOW this is a lot of hard coded logic but idk how else to determine which objects to pass
+    // HOPEFULLY FIX AT SOME POINT CUZ EW
     if (permitType == "annual") {
         permitPrice *= 100; // Multiply price by days in academic year (roughly)
 
         // Create Invoice object for annual permit
         Invoice annual(permitPrice, serviceFee, discount);
+
+        if (customerType == "visitor") { // Case for visitor
+            if (vehicleType == "regular") {
+                annual.printInvoice(visitor1, regular1);
+            } else if (vehicleType == "motorcycle") {
+                annual.printInvoice(visitor1, motorcycle1);
+            } else if (vehicleType == "lowEmission") {
+                annual.printInvoice(visitor1, lowEmission1);
+            }
+        } else if (customerType == "student") { // Case for student
+            if (vehicleType == "regular") {
+                annual.printInvoice(student1, regular1);
+            } else if (vehicleType == "motorcycle") {
+                annual.printInvoice(student1, motorcycle1);
+            } else if (vehicleType == "lowEmission") {
+                annual.printInvoice(student1, lowEmission1);
+            }
+        } else if (customerType == "employee") { // Case for employee
+            if (vehicleType == "regular") {
+                annual.printInvoice(employee1, regular1);
+            } else if (vehicleType == "motorcycle") {
+                annual.printInvoice(employee1, motorcycle1);
+            } else if (vehicleType == "lowEmission") {
+                annual.printInvoice(employee1, lowEmission1);
+            }
+        }
     } else if (permitType == "semester") {
         permitPrice *= 50; // Multiply price by days in academic semester (roughly)
 
         // Create Invoice object for semester permit
         Invoice semester(permitPrice, serviceFee, discount);
+
+        if (customerType == "visitor") { // Case for visitor
+            if (vehicleType == "regular") {
+                semester.printInvoice(visitor1, regular1);
+            } else if (vehicleType == "motorcycle") {
+                semester.printInvoice(visitor1, motorcycle1);
+            } else if (vehicleType == "lowEmission") {
+                semester.printInvoice(visitor1, lowEmission1);
+            }
+        } else if (customerType == "student") { // Case for student
+            if (vehicleType == "regular") {
+                semester.printInvoice(student1, regular1);
+            } else if (vehicleType == "motorcycle") {
+                semester.printInvoice(student1, motorcycle1);
+            } else if (vehicleType == "lowEmission") {
+                semester.printInvoice(student1, lowEmission1);
+            }
+        } else if (customerType == "employee") { // Case for employee
+            if (vehicleType == "regular") {
+                semester.printInvoice(employee1, regular1);
+            } else if (vehicleType == "motorcycle") {
+                semester.printInvoice(employee1, motorcycle1);
+            } else if (vehicleType == "lowEmission") {
+                semester.printInvoice(employee1, lowEmission1);
+            }
+        }
     } else if (permitType == "one-day") {
         // Create Invoice object for one-day permit
         Invoice oneDay(permitPrice, serviceFee, discount);
+
+        if (customerType == "visitor") { // Case for visitor
+            if (vehicleType == "regular") {
+                oneDay.printInvoice(visitor1, regular1);
+            } else if (vehicleType == "motorcycle") {
+                oneDay.printInvoice(visitor1, motorcycle1);
+            } else if (vehicleType == "lowEmission") {
+                oneDay.printInvoice(visitor1, lowEmission1);
+            }
+        } else if (customerType == "student") { // Case for student
+            if (vehicleType == "regular") {
+                oneDay.printInvoice(student1, regular1);
+            } else if (vehicleType == "motorcycle") {
+                oneDay.printInvoice(student1, motorcycle1);
+            } else if (vehicleType == "lowEmission") {
+                oneDay.printInvoice(student1, lowEmission1);
+            }
+        } else if (customerType == "employee") { // Case for employee
+            if (vehicleType == "regular") {
+                oneDay.printInvoice(employee1, regular1);
+            } else if (vehicleType == "motorcycle") {
+                oneDay.printInvoice(employee1, motorcycle1);
+            } else if (vehicleType == "lowEmission") {
+                oneDay.printInvoice(employee1, lowEmission1);
+            }
+        }
     }
 
     return 0;
