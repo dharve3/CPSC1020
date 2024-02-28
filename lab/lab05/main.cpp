@@ -28,6 +28,9 @@ int main() {
     Regular regular1;
     Motorcycle motorcycle1;
     LowEmission lowEmission1;
+
+    // Number Formatting
+    cout << fixed << setprecision(2);
     
     // Get customer type from user
     cout << "What type of customer are you? (visitor, student, or employee?): ";
@@ -189,9 +192,6 @@ int main() {
         cout << "Please try again (input is case sensitive): ";
         getline(cin, permitType);
     }
-
-    // Formatting
-    cout << fixed << setprecision(2);
     
     // Yes I KNOW this is a lot of hard coded logic but idk how else to determine which objects to pass
     // HOPEFULLY FIX AT SOME POINT CUZ EW

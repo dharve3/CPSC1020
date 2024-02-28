@@ -52,7 +52,8 @@ public:
         // Using stringstream for readability and helps with 
         // not having to to_string() every non str value
 
-        invoiceDetails << "\n";
+        // Number formatting and newline
+        invoiceDetails << fixed << setprecision(2) << "\n";
         // Customer information
         invoiceDetails << "Customer Information:\n";
         invoiceDetails << "Name: " << customer.getName() << "\n";
