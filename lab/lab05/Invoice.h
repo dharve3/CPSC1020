@@ -57,7 +57,7 @@ public:
         // Number formatting and newline
         invoiceDetails << fixed << setprecision(2);
         // Customer information
-        invoiceDetails << "Customer Information:\n";
+        invoiceDetails << "\n\nCustomer Information:\n";
         invoiceDetails << "Name: " << customer.getName() << "\n";
         invoiceDetails << "Email: " << customer.getEmail() << "\n";
         invoiceDetails << "Address: " << customer.getAddress() << "\n";
