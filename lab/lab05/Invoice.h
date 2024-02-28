@@ -52,6 +52,7 @@ public:
         // Using stringstream for readability and helps with 
         // not having to to_string() every non str value
 
+        invoiceDetails << "\n";
         // Customer information
         invoiceDetails << "Customer Information:\n";
         invoiceDetails << "Name: " << customer.getName() << "\n";
