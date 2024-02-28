@@ -1,0 +1,32 @@
+What type of customer are you?
+Enter your name: 
+Enter your email: 
+Enter your address: 
+Enter your registration number: 
+Is this your first visit? (y/n): 
+What is your vehicle type? (regular, motorcycle, or lowEmission?): 
+Enter vehicle make: 
+Enter vehicle model: 
+Enter vehicle year: 
+Enter CCs: 
+Enter capacity: 
+What type of permit would you like to purchase? (annual, semester, or one-day?): 
+Customer Information:
+Name: Joe
+Email: joe@gmail.com
+Address: 123 Real Street 
+Registration Number: 47321
+First Visit: No
+
+Vehicle Information: 
+Make: Honda
+Model: grom
+Year: 2015
+CCs: 125
+Capacity: 1
+
+Price Details:
+Permit Price: $5.00
+Service Charge: $25.00
+Discount: $5.00
+Total: $25.00

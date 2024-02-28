@@ -1,0 +1,32 @@
+What type of customer are you?
+Enter your name:
+Enter your email:
+Enter your address:
+Enter your employeeID:
+Enter your years employed: 
+What is your vehicle type? (regular, motorcycle, or lowEmission?):
+Enter vehicle make:
+Enter vehicle model:
+Enter vehicle year:
+Enter MPG:
+Enter weight in pounds: 
+What type of permit would you like to purchase? (annual, semester, or one-day?):
+Customer Information:
+Name: Jane
+Email: janedoe@clemson.edu
+Address: 555 Real Road
+Employee ID: 3343456
+Years Employed: 10
+
+Vehicle Information:
+Make: Tesla
+Model: Model 3
+Year: 2020
+Weight: 4000
+MPG: 134
+
+Price Details:
+Permit Price: $500.00
+Service Charge: $25.00
+Discount: $0.00
+Total: $525.00

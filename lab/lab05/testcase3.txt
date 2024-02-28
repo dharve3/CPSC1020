@@ -1,0 +1,13 @@
+student
+Jack 
+jack@clemson.edu
+123 Real Drive
+13579
+4
+regular
+Toyota 
+Camry
+2020
+black
+abc123
+semester
