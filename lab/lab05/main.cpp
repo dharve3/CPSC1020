@@ -33,10 +33,10 @@ int main() {
     cout << "What type of customer are you? (visitor, student, or employee?): ";
     getline(cin, customerType);
     // Loop until valid input is recieved
-    while (customerType != "visitor" && customerType != "student" && customerType != "employee") {
-        cout << "Please try again (input is case sensitive): ";
-        getline(cin, customerType);
-    }
+    // while (customerType != "visitor" && customerType != "student" && customerType != "employee") {
+    //     cout << "Please try again (input is case sensitive): ";
+    //     getline(cin, customerType);
+    // }
 
     if (customerType == "visitor") {
         // Visitor specific vars
@@ -112,10 +112,10 @@ int main() {
     cout << "What is your vehicle type? (regular, motorcycle, or lowEmission?): ";
     getline(cin, vehicleType);
     // Loop until valid input is recieved
-    while (vehicleType != "regular" && vehicleType != "motorcycle" && vehicleType != "lowEmission") {
-        cout << "Please try again (input is case sensitive): ";
-        getline(cin, vehicleType);
-    }
+    // while (vehicleType != "regular" && vehicleType != "motorcycle" && vehicleType != "lowEmission") {
+    //     cout << "Please try again (input is case sensitive): ";
+    //     getline(cin, vehicleType);
+    // }
 
     if (vehicleType == "regular") {
         // Regular specific vars
@@ -185,10 +185,10 @@ int main() {
     cout << "What type of permit would you like to purchase? (annual, semester, or one-day?): ";
     getline(cin, permitType);
     // Loop until valid input is recieved
-    while (permitType != "annual" && permitType != "semester" && permitType != "one-day") {
-        cout << "Please try again (input is case sensitive): ";
-        getline(cin, permitType);
-    }
+    // while (permitType != "annual" && permitType != "semester" && permitType != "one-day") {
+    //     cout << "Please try again (input is case sensitive): ";
+    //     getline(cin, permitType);
+    // }
     
     // Yes I KNOW this is a lot of hard coded logic but idk how else to determine which objects to pass
     // HOPEFULLY FIX AT SOME POINT CUZ EW
