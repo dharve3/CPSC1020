@@ -107,8 +107,7 @@ public:
         invoiceDetails << "Permit Price: $" << permitPrice << "\n";
         invoiceDetails << "Service Charge: $" << serviceCharge << "\n";
         invoiceDetails << "Discount: $" << discount << "\n";
-        invoiceDetails << "Total: $" << calcTotal() << "\n";
-        invoiceDetails << "\n"; // Extra newline
+        invoiceDetails << "Total: $" << calcTotal() << "\n\n";
 
         return invoiceDetails.str();
     }
