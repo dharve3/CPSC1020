@@ -8,6 +8,6 @@ regular
 Toyota 
 Camry
 2020
-black
-abc123
+Black
+ABC123
 semester

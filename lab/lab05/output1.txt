@@ -1,4 +1,4 @@
-What type of customer are you?
+What type of customer are you? (visitor, student, or employee?): 
 Enter your name: 
 Enter your email: 
 Enter your address: 
@@ -11,22 +11,23 @@ Enter vehicle year:
 Enter CCs: 
 Enter capacity: 
 What type of permit would you like to purchase? (annual, semester, or one-day?): 
+
 Customer Information:
-Name: Joe
+Name: Joe Schmoe
 Email: joe@gmail.com
 Address: 123 Real Street 
 Registration Number: 47321
-First Visit: No
+First Visit: Yes
 
 Vehicle Information: 
 Make: Honda
-Model: grom
+Model: Grom
 Year: 2015
 CCs: 125
 Capacity: 1
 
 Price Details:
 Permit Price: $5.00
-Service Charge: $25.00
-Discount: $5.00
-Total: $25.00
+Service Charge: $2.50
+Discount: $2.50
+Total: $5.00
