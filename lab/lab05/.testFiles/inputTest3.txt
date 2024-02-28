@@ -1,5 +1,5 @@
 student
-Jack 
+Jack
 jack@clemson.edu
 123 Real Drive
 13579
