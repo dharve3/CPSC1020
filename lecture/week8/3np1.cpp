@@ -18,9 +18,26 @@ bool isOdd(int n) {
 // len3nplus1
 // Returns the number of elements in the 3n+1 sequence of n
 int len3nplus1(int value) {
+    vector<int> sequence;
+    int current, count;
 
+    sequence.emplace_back(value);
+    current = value;
 
-    return count + 1;
+    // While the current value of the seqeuence != 1, continute the sequence
+    while (current != 1) {
+        if (isOdd(current)) {
+            current = (current * 3) + 1 // If odd, triple and add 1
+        } else {
+            current = (current / 2) // If even, divide by 2
+        }
+        sequence.emplace_back(current) // Add the current value of the sequence
+    }
+    sequence.emplace_back(1); // Add the 1 to the end
+
+    count = sequence.size();
+
+    return count;
 }
 
 // seumSeq3nPlus1
