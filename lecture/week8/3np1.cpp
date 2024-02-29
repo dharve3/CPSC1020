@@ -2,6 +2,7 @@
 // Gradescope will not work without them all included
 
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -70,5 +71,16 @@ int sumSeq3nPlus1(int value) {
 // returns the number in the range from 1 to max that has the longest 3n+1 sequence
 // if there is more than 1, return the first one. 
 int longestSequence(int max) {
+    vector<int> sequenceLengths;
+    int largest, position;
 
+    for (int i = 1; i <= max; i++) {
+        sequenceLengths.emplace_back(len3nplus1(i));
+    }
+
+    // Get the position of the largest element
+    position = distance(begin(sequenceLengths), max_element(begin(sequenceLengths), end(sequenceLengths)));
+
+    // +1 to account for index starting at 0
+    return position + 1;
 }
