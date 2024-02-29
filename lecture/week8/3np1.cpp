@@ -27,13 +27,12 @@ int len3nplus1(int value) {
     // While the current value of the seqeuence != 1, continute the sequence
     while (current != 1) {
         if (isOdd(current)) {
-            current = (current * 3) + 1 // If odd, triple and add 1
+            current = (current * 3) + 1; // If odd, triple and add 1
         } else {
-            current = (current / 2) // If even, divide by 2
+            current = (current / 2); // If even, divide by 2
         }
-        sequence.emplace_back(current) // Add the current value of the sequence
+        sequence.emplace_back(current); // Add the current value of the sequence
     }
-    sequence.emplace_back(1); // Add the 1 to the end
 
     count = sequence.size();
 
