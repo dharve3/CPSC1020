@@ -36,7 +36,7 @@ int main()
     Rectangle rect;
     rect.width = 4;
     rect.height = 2;
-    cout << "Initial size of rectangle is ";
+    cout << "Initial size of  rectangle is ";
     output(&rect); // Pass in address of rect struct
     magnify(&rect, 3);
     cout << "Size of Rectangle after magnification is ";
