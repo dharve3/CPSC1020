@@ -15,8 +15,8 @@ public:
             name = name1;
             age = age1;
       }
-      int getAge() { return *age; }
-      string getName() { return &name; }
+      int getAge() { return age; } // Fixed return types
+      string getName() { return name; }
 };
 
 // Rectangle structure
@@ -36,21 +36,21 @@ int main()
     Rectangle rect;
     rect.width = 4;
     rect.height = 2;
-    cout << "Initial size of  rectangle is ";
-    output(rect);
-    magnify(rect, 3);
+    cout << "Initial size of rectangle is ";
+    output(&rect); // Pass in address of rect struct
+    magnify(&rect, 3);
     cout << "Size of Rectangle after magnification is ";
-    output(rect);
+    output(&rect);
 
     // Create a Person object and find the length of the person's name
     Person *pPerson = new Person("Susan Wu", 32);
-    cout << "The name " << pPerson.getName()
+    cout << "The name " << pPerson->getName() // Use member access operator instead of dot operator
          << " has length " << lengthOfName(pPerson) << endl;
 
     delete pPerson;
-      pPerson = nullptr;
+    pPerson = nullptr;
 
-      return 0;
+    return 0;
 }
 
 //*********************************************
@@ -58,8 +58,8 @@ int main()
 //*********************************************
 void output(Rectangle *pRect)
 {
-    cout << "width: " << pRect.width << " height: "
-         << pRect.height << endl;
+    cout << "width: " << pRect->width << " height: "
+         << pRect->height << endl; // Use member access operator instead of dot operator
 }
 
 //******************************************************
@@ -67,7 +67,7 @@ void output(Rectangle *pRect)
 //******************************************************
 int lengthOfName(Person *p)
 {
-   string name = p.getName();
+   string name = p->getName(); // Use member access operator instead of dot operator
    return name.length();
 }
 
@@ -77,6 +77,6 @@ int lengthOfName(Person *p)
 //******************************************************
 void magnify(Rectangle *pRect, int factor)
 {
-   pRect.width = pRect.width * factor;
-   pRect.height = pRect.height * factor;
+   pRect->width = pRect->width * factor;
+   pRect->height = pRect->height * factor;
 }
