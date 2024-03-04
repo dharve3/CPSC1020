@@ -1,0 +1,13 @@
+employee
+Jane
+janedoe@clemson.edu
+555 Real Road
+3343456
+10
+lowEmission
+Tesla
+Model 3
+2020
+4000
+134
+annual
