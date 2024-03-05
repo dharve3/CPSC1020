@@ -4,3 +4,9 @@
 // Lab Name: Lab06 - Date Class with I/O
 // File Name: Date.cpp
 // Desc: 
+
+#include "Date.h"
+
+const int Date::getMonth() {
+    
+}
