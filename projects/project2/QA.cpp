@@ -5,34 +5,27 @@
 // Time: 
 // Desc: 
 
-#include "Quiz.h"
+#include "QA.h"
 
-Quiz::Quiz()
-
-Quiz::Quiz(std::string q, std::string a) {
-    question = q;
-    answer = a;
-}
-
-std::string getQuestion() {
+string QA::getQuestion() {
     // Logic to parse text file for question
     return question;
 }
 
-std::string getAnswer() {
+string QA::getAnswer() {
     // Logic to parse text file for answer
     return answer;
 }
 
-static int getScore() {
+static int QA::getScore() {
     return score;
 }
 
-int getCount() {
+int QA::getCount() {
     // return the number of questions
 }
 
-static void updateScore(int val) {
+static void QA::updateScore(int val) {
     if (val != -1)
         score += val;
     else if (score != 0)

@@ -5,8 +5,8 @@
 // Time: 
 // Desc: Headerfile for Quiz.cpp
 
-#ifndef QUIZ_H
-#define QUIZ_H
+#ifndef QA_H
+#define QA_H
 
 // Include statements
 #include <string>
@@ -14,22 +14,22 @@
 using namespace std;
 
 // Class declaration
-class Quiz {
+class QA {
 private:
     string question {""};
     string answer {""};
     static int score;
 
 public:
-    Quiz() = default;
-    Quiz(string, string);
+    QA() = default;
+    QA(string q, string a) : question(q), answer(a) {}
 
     string getQuestion();
     string getAnswer();
     static int getScore();
     int getCount();
 
-    static void updateScore(int);
+    static void updateScore(int val);
 };
 
-#endif // QUIZ_H
+#endif // QA_H
