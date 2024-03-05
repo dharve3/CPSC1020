@@ -11,25 +11,25 @@
 // Include statements
 #include <string>
 
-using namespace std;
-
 // Class declaration
 class QA {
 private:
-    string question {""};
-    string answer {""};
+    std::string question {""};
+    std::string answer {""};
     static int score;
 
 public:
     QA() = default;
-    QA(string q, string a) : question(q), answer(a) {}
+    QA(std::string q, std::string a) : question(q), answer(a) {}
 
-    string getQuestion();
-    string getAnswer();
+    std::string getQuestion();
+    std::string getAnswer();
     static int getScore();
-    int getCount();
+    int letterCount();
 
     static void updateScore(int val);
+
+    friend std::string printResult(int questions, int correct, int wrong);
 };
 
 #endif // QA_H

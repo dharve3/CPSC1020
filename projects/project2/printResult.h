@@ -9,7 +9,9 @@
 #define PRINTRESULT_H
 
 // Include statements
+#include <string>
+#include <sstream>
 
-
+std::string printResult(int questions, int correct, int wrong);
 
 #endif // PRINTRESULT_H
