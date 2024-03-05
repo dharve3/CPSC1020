@@ -1,7 +1,7 @@
 // Name: Dylan Harvey
 // Class: CPSC-1020
-// Date: 
-// Project 2
+// Date: 3/9/2024
+// Project 2 - Quiz Game
 // Time: 
 // Desc: Headerfile for Quiz.cpp
 
@@ -11,20 +11,21 @@
 // Include statements
 #include <string>
 
+using namespace std;
+
 // Class declaration
-class Quiz
-{
+class Quiz {
 private:
-    std::string question = "";
-    std::string answer = "";
+    string question {""};
+    string answer {""};
     static int score;
 
 public:
-    Quiz();
+    Quiz() = default;
     Quiz(string, string);
 
-    std::string getQuestion();
-    std::string getAnswer();
+    string getQuestion();
+    string getAnswer();
     static int getScore();
     int getCount();
 

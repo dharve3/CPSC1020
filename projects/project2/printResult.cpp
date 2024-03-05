@@ -1,7 +1,7 @@
 // Name: Dylan Harvey
 // Class: CPSC-1020
-// Date: 
-// Project 2
+// Date: 3/9/2024
+// Project 2 - Quiz Game
 // Time: 
 // Desc: 
 

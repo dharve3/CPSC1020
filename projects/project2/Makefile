@@ -7,8 +7,8 @@ all: $(PROGRAM)
 run: $(PROGRAM)
 	./$(PROGRAM)
 
-$(PROGRAM): main.cpp printResult.cpp Quiz.cpp
-	$(COMPILER) $(OPTIONS) main.cpp printResult.cpp Quiz.cpp -o $(PROGRAM)
+$(PROGRAM): main.cpp QA.cpp printResult.cpp
+	$(COMPILER) $(OPTIONS) main.cpp QA.cpp printResult.cpp -o $(PROGRAM)
 
 clean:
 	rm *.out
