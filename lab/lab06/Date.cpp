@@ -38,12 +38,12 @@ string Date::print() {
     return ss.str();
 }
 // Compares two dates, returns true if first date is earlier
-static bool compare(const Date d1, const Date d2) {
-    if (d1.year != d2.year)
-        return d1.year < d2.year;
-    if (d1.month != d2.month)
-        return d1.month < d2.month;
-    if (d1.day != d2.day)
-        return d1.day < d2.day;
+static bool Date::compare(const Date d1, const Date d2) {
+    if (d1.getYear() != d2.getYear())
+        return d1.getYear() < d2.getYear();
+    if (d1.getMonth() != d2.getMonth())
+        return d1.getMonth() < d2.getMonth();
+    if (d1.getDay() != d2.getDay())
+        return d1.getDay() < d2.getDay();
     return false; // If dates are the exact same
 }
