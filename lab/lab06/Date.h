@@ -19,7 +19,7 @@ private:
     int month {1};
     int day {1};
     int year {1900};
-    const static string MONTHS[12] {"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"}
+    static const string MONTHS[12] {"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"};
 
 public:
     Date() = default;
@@ -34,6 +34,6 @@ public:
     
     string print();
     static bool compare(const Date d1, const Date d2);
-}
+};
 
 #endif // DATE_H
