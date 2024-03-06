@@ -33,10 +33,10 @@ int main(int argc, char* argv[]) {
     // Parse file for Question and Answer per line and input to array with QA objects
     while (std::getline(infile, line)) {
         if (line.find("Question:") != std::string::npos) {
-            quesition = line.substr(line.find(":") + 1);
+            quesition = line.substr(line.find(":") + 2); // +2 to skip the whitespace aswell
             std::getline(infile, line);
             if (line.find("Answer:") != std::string::npos) {
-                answer = line.substr(line.find(":") + 1);
+                answer = line.substr(line.find(":") + 2); // +2 to skip the whitespace aswell
                 quizVector.emplace_back(QA(quesition, answer));
             }
         }
@@ -54,7 +54,7 @@ int main(int argc, char* argv[]) {
         std::string playerAnswer;
         std::cout << qa.getQuestion() << std::endl;
         std::cout << "Type in your answer: ";
-        std::cin >> playerAnswer;
+        std::getline(std::cin, playerAnswer);
 
         // Check if answer is right or wrong
         if (playerAnswer == qa.getAnswer()) {
