@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab06 - Date Class with I/O
 // File Name: Date.cpp
-// Desc: 
+// Desc: Source file for Date class, declares functions to display and compare dates.
 
 #include "Date.h"
 

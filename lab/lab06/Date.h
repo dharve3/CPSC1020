@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab06 - Date Class with I/O
 // File Name: Date.h
-// Desc: 
+// Desc: Headerfile for Date class, handles dates, and has function to display and compare dates.
 
 #ifndef DATE_H
 #define DATE_H
