@@ -7,6 +7,8 @@
 
 #include "QA.h"
 
+int QA::score = 0; // Static
+
 std::string QA::getQuestion() const {
     return question;
 }

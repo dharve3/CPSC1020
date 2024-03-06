@@ -26,7 +26,6 @@ public:
     std::string getAnswer() const;
     static int getScore();
     int letterCount(const std::string& str);
-
     static void updateScore(int val);
 
     friend std::string printResult(int questions, int correct, int wrong);
