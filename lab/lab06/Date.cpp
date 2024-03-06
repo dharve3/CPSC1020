@@ -34,7 +34,7 @@ string Date::print() const {
     stringstream ss;
 
     ss << setw(10) << left << MONTHS[getMonth() - 1]
-       << setw(3) << right << getDay()
+       << setw(3) << left << getDay()
        << setw(5) << right << getYear();
 
     return ss.str();
