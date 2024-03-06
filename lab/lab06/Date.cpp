@@ -33,9 +33,9 @@ void Date::setYear(int y) {
 string Date::print() const {
     stringstream ss;
 
-    ss << setw(10) << MONTHS[getMonth() - 1]
-       << setw(3) << getDay()
-       << setw(5) << getYear();
+    ss << setw(10) << left << MONTHS[getMonth() - 1]
+       << setw(3) << right << getDay()
+       << setw(5) << right << getYear();
 
     return ss.str();
 }
