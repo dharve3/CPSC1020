@@ -8,6 +8,7 @@
 #ifndef DATE_H
 #define DATE_H
 
+#include <iomanip>
 #include <string>
 #include <sstream> // Stringstream
 

@@ -7,6 +7,7 @@
 
 #include "Date.h"
 
+// Getters and setters
 int Date::getMonth() const {
     return month;
 }
@@ -26,9 +27,17 @@ void Date::setYear(int y) {
     year = y;
 }
 
+// Helper function to print date
 string Date::print() {
-    
+    stringstream stream;
+
+    stream << setw(10) << MONTHS[getMonth() - 1];
+    stream << setw(3) << getDay();
+    stream << setw(5) << getYear();
+
+    return stream.str();
 }
+// Compares two dates, returns true if first date is earlier
 static bool compare(const Date d1, const Date d2) {
 
 }
