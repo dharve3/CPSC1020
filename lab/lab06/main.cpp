@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab06 - Date Class with I/O
 // File Name: main.cpp
-// Desc: 
+// Desc: Takes input from a file of dates, sorts and writes the output to another file using class Date.
 
 #include <iostream>
 #include <fstream>
