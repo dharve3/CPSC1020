@@ -7,30 +7,28 @@
 
 #include "QA.h"
 
-std::string QA::getQuestion() {
-    // Logic to parse text file for question
+std::string QA::getQuestion() const {
     return question;
 }
 
-std::string QA::getAnswer() {
-    // Logic to parse text file for answer
+std::string QA::getAnswer() const {
     return answer;
 }
 
-static int QA::getScore() {
+static int QA::getScore() const {
     return score;
 }
 
 // Returms the number of letters in a question and answer
 // Ignores whitespace and punctuation
-int QA::letterCount() {
+int QA::letterCount(const std::string& str) {
     int count = 0;
-    // Need to input str as question and answer?
-    // for (char c : str) {
-    //     if (isalpha(c)) {
-    //         count++;
-    //     }
-    // }
+    // Input question and answer as str?
+    for (char c : str) {
+        if (isalpha(c)) {
+            count++;
+        }
+    }
     return count;
 }
 

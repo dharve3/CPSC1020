@@ -22,9 +22,9 @@ public:
     QA() = default;
     QA(std::string q, std::string a) : question(q), answer(a) {}
 
-    std::string getQuestion();
-    std::string getAnswer();
-    static int getScore();
+    std::string getQuestion() const;
+    std::string getAnswer() const;
+    static int getScore() const;
     int letterCount();
 
     static void updateScore(int val);
