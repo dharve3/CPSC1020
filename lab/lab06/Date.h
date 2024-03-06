@@ -32,7 +32,7 @@ public:
     int getYear() const;
     void setYear(int y);
     
-    string print();
+    string print() const;
     static bool compare(const Date d1, const Date d2);
 };
 

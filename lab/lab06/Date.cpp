@@ -30,7 +30,7 @@ void Date::setYear(int y) {
 }
 
 // Helper function to print date
-string Date::print() {
+string Date::print() const {
     stringstream ss;
 
     ss << setw(10) << MONTHS[getMonth() - 1]
