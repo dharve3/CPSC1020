@@ -2,8 +2,8 @@
 // Class: CPSC-1020
 // Date: 3/9/2024
 // Project 2 - Quiz Game
-// Time: 
-// Desc: Headerfile for Quiz.cpp
+// Time: ~2 hrs
+// Desc: Headerfile for class QA, defines members and methods
 
 #ifndef QA_H
 #define QA_H

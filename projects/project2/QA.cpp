@@ -2,8 +2,8 @@
 // Class: CPSC-1020
 // Date: 3/9/2024
 // Project 2 - Quiz Game
-// Time: 
-// Desc: 
+// Time: ~2 hrs
+// Desc: Sourcefile for class QA, declares a static member and methods.
 
 #include "QA.h"
 

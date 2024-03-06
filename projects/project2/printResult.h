@@ -2,8 +2,8 @@
 // Class: CPSC-1020
 // Date: 3/9/2024
 // Project 2 - Quiz Game
-// Time: 
-// Desc: Headerfile for printResult.cpp
+// Time: ~2 hrs
+// Desc: Headerfile for printResult()
 
 #ifndef PRINTRESULT_H
 #define PRINTRESULT_H

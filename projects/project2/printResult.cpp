@@ -2,12 +2,13 @@
 // Class: CPSC-1020
 // Date: 3/9/2024
 // Project 2 - Quiz Game
-// Time: 
-// Desc: 
+// Time: ~2 hrs
+// Desc: Sourcefile for printResult()
 
 #include "printResult.h"
 #include "QA.h"
 
+// Returns a string of the results of the quiz
 std::string printResult(int questions, int correct, int wrong) {
     std::stringstream ss;
     ss << "Number of questions: " << questions << std::endl;
