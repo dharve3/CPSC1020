@@ -29,15 +29,21 @@ void Date::setYear(int y) {
 
 // Helper function to print date
 string Date::print() {
-    stringstream stream;
+    stringstream ss;
 
-    stream << setw(10) << MONTHS[getMonth() - 1];
-    stream << setw(3) << getDay();
-    stream << setw(5) << getYear();
+    ss << setw(10) << MONTHS[getMonth() - 1]
+       << setw(3) << getDay()
+       << setw(5) << getYear();
 
-    return stream.str();
+    return ss.str();
 }
 // Compares two dates, returns true if first date is earlier
 static bool compare(const Date d1, const Date d2) {
-
+    if (d1.year != d2.year)
+        return d1.year < d2.year;
+    if (d1.month != d2.month)
+        return d1.month < d2.month;
+    if (d1.day != d2.day)
+        return d1.day < d2.day;
+    return false; // If dates are the exact same
 }
