@@ -24,8 +24,8 @@ public:
 
     std::string getQuestion() const;
     std::string getAnswer() const;
-    static int getScore() const;
-    int letterCount();
+    static int getScore();
+    int letterCount(const std::string& str);
 
     static void updateScore(int val);
 

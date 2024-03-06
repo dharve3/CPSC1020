@@ -15,7 +15,7 @@ std::string QA::getAnswer() const {
     return answer;
 }
 
-int QA::getScore() const {
+int QA::getScore() {
     return score;
 }
 
