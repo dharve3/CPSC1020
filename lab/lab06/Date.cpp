@@ -7,6 +7,8 @@
 
 #include "Date.h"
 
+const string Date::MONTHS[12] = {"JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"};
+
 // Getters and setters
 int Date::getMonth() const {
     return month;
@@ -38,7 +40,7 @@ string Date::print() {
     return ss.str();
 }
 // Compares two dates, returns true if first date is earlier
-static bool Date::compare(const Date d1, const Date d2) {
+bool Date::compare(const Date d1, const Date d2) {
     if (d1.getYear() != d2.getYear())
         return d1.getYear() < d2.getYear();
     if (d1.getMonth() != d2.getMonth())
