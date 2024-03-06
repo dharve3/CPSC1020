@@ -15,7 +15,7 @@ std::string QA::getAnswer() const {
     return answer;
 }
 
-static int QA::getScore() const {
+int QA::getScore() const {
     return score;
 }
 
@@ -32,7 +32,7 @@ int QA::letterCount(const std::string& str) {
     return count;
 }
 
-static void QA::updateScore(int val) {
+void QA::updateScore(int val) {
     if (val != -1)
         score += val;
     else if (score != 0)
