@@ -50,7 +50,7 @@ int main(int argc, char const *argv[] ) {
 
     // Write to output file
     for (const auto& date : dates) {
-        ouputFile << date.print() << endl;
+        outputFile << date.print() << endl;
     }
 
     return 0;
