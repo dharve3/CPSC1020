@@ -98,7 +98,7 @@ Length operator-(Length a, Length b)
 //************************************
 bool operator==(Length a, Length b)
 {
-    return a.len_inches = b.len_inches;
+    return a.len_inches == b.len_inches; // was assignment instead of comparison
 }
 
 //************************************
