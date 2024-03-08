@@ -9,8 +9,10 @@ private:
    double divBudget;
 public:
    Budget() { divBudget = 0; }
-   void addBudget(double b)
-       { }
+   void addBudget(double b) { // Add the budgets to each
+      divBudget += b;
+      corpBudget += b;
+   }
    double getDivBudget() const { return divBudget; }
    double getCorpBudget() const { return corpBudget; }
 };
