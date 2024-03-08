@@ -27,8 +27,8 @@ public:
     friend Length operator-(Length a, Length b);
     friend bool operator<(Length a, Length b);
     friend bool operator==(Length a, Length b);
-    Length operator++(); // prefix
-    Length operator++(); // postfix - google the notation for postfix
+    Length& operator++(); // prefix - added Length&
+    Length operator++(int); // postfix - added (int)
 
     // Overloaded stream input and output operators
     friend ostream &operator<<(ostream &out, Length a);
@@ -64,16 +64,16 @@ ostream &operator<<(ostream& out, Length a)
 //***********************************
 // Overloaded prefix ++ operator    *
 //***********************************
-Length Length::operator++()
+Length& Length::operator++() // Updated to match class
 {
     len_inches ++;
-    return this;
+    return *this; // Ptr return
 }
 
 //***********************************
 // Overloaded postfix ++ operator   *
 //***********************************
-Length Length::operator++()
+Length Length::operator++(int) // Updated to match class
 {
     Length temp = *this;
     len_inches ++;
