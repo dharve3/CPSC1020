@@ -5,7 +5,8 @@
 //************************************* 
 Length operator+(Length a, Length b)
 {
-    return Length(a.len_inches + b.len_inches);
+    int total_inches = a.len_inches + b.len_inches;
+    return Length(total_inches / 12, total_inches % 12);
 }
 
 //*************************************
@@ -13,7 +14,8 @@ Length operator+(Length a, Length b)
 //*************************************
 Length operator-(Length a, Length b)
 {
-    return Length(a.len_inches - b.len_inches);
+    int total_inches = a.len_inches - b.len_inches;
+    return Length(total_inches / 12, total_inches % 12);
 }
 
 //************************************
