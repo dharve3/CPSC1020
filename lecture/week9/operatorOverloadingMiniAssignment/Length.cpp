@@ -5,8 +5,7 @@
 //************************************* 
 Length operator+(Length a, Length b)
 {
-    int total_inches = a.len_inches + b.len_inches;
-    return Length(total_inches / 12, total_inches % 12);
+    return Length(a.len_inches + b.len_inches);
 }
 
 //*************************************
@@ -14,8 +13,7 @@ Length operator+(Length a, Length b)
 //*************************************
 Length operator-(Length a, Length b)
 {
-    int total_inches = a.len_inches - b.len_inches;
-    return Length(total_inches / 12, total_inches % 12);
+    return Length(a.len_inches - b.len_inches);
 }
 
 //************************************
@@ -39,7 +37,7 @@ bool operator<(Length a, Length b)
 //************************************
 ostream& operator<<(ostream &os, const Length &l)
 {
-    os << l.getFeet() << " feet, " << l.getInches() << " inches.";
+    os << l.getFeet() << " feet, " << l.getInches() << " inches";
     return os;
 }
 
