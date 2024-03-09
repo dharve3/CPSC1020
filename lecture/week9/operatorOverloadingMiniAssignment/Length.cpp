@@ -37,7 +37,7 @@ bool operator<(Length a, Length b)
 //************************************
 ostream& operator<<(ostream &os, const Length &l)
 {
-    os << l.getFeet() << "feet, " << l.getInches() << " inches.";
+    os << l.getFeet() << " feet, " << l.getInches() << " inches.";
     return os;
 }
 
