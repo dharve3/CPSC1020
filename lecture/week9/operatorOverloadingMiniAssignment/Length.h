@@ -25,7 +25,7 @@ public:
     friend bool operator== (Length a, Length b);   
     friend ostream& operator<<(ostream &os, const Length &l);
     friend istream& operator>>(istream &is, Length &l);
-    friend istream& operator| (istream &is, Length &l);
+    friend Length operator| (Length a);
 };
 
 #endif // _LENGTH_H

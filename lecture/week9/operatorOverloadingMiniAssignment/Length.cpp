@@ -58,11 +58,11 @@ istream& operator>>(istream &is, Length &l)
 //************************************
 // Overloaded operator |             *
 //************************************
-istream& operator| (istream &is, Length &l)
+Length operator| (Length a)
 {
     double cm;
     cout << "Enter centimeters: ";
-    is >> cm;
+    cin >> cm;
     int total_inches = static_cast<int>(cm / 2.54); // 1 in = 2.54 cm
     return Length(total_inches / 12, total_inches % 12);
 }
