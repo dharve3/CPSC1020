@@ -21,11 +21,13 @@ int main()
     // Test the + and - operators 
     third = first + second;
     cout << "first + second = ";
-    cout << third << endl;
-
+    cout << third.getFeet() << " feet, ";
+    cout << third.getInches() << " inches.\n";
+    
     third = first - second;
     cout << "first - second = ";
-    cout << third << endl;
+    cout << third.getFeet() << " feet, ";
+    cout << third.getInches() << " inches.\n";
 
     // Test the relational operators
     cout << "first == second = " << (first == second ? "true" : "false") << endl;
