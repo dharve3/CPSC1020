@@ -58,7 +58,7 @@ istream& operator>>(istream &is, Length &l)
 //************************************
 // Overloaded operator |             *
 //************************************
-istream& operator| (istream &is, Legnth &l)
+istream& operator| (istream &is, Length &l)
 {
     double cm;
     cout << "Enter centimeters: ";

@@ -8,7 +8,6 @@ int main()
 {
     Length first(0), second(0), third(0);
     int f, i;
-    double cm;
 
     // New input using >>
     cout << "Enter a distance in feet and inches: ";
