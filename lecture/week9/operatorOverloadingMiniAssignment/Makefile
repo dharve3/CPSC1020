@@ -7,8 +7,8 @@ all: $(PROGRAM)
 run: $(PROGRAM)
 	./$(PROGRAM)
 
-$(PROGRAM): p11-10.cpp Length.cpp
-	$(COMPILER) $(OPTIONS) p11-10.cpp Length.cpp -o $(PROGRAM)
+$(PROGRAM): pr11-10.cpp Length.cpp
+	$(COMPILER) $(OPTIONS) pr11-10.cpp Length.cpp -o $(PROGRAM)
 
 clean:
 	rm *.out
