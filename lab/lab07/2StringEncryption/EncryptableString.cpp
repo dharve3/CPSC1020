@@ -5,3 +5,12 @@
 // File Name: EncryptableString.cpp
 // Desc: 
 
+#include "EncryptableString.h"
+
+void EncryptableString::encrypt() {
+    int length = size();
+
+    for (int i = 0; i < length; ++i) {
+        *this[i] += 1;
+    }
+}

@@ -5,3 +5,15 @@
 // File Name: EncryptableString.h
 // Desc: 
 
+#ifndef ENCRYPTABLESTRING_H
+#define ENCRYPTABLESTRING_H
+
+#include <string>
+
+class EncryptableString : public std::string {
+public:
+    EncryptableString(std::string& str) : std::string(str) {}
+    void encrypt();
+}
+
+#endif // ENCRYPTABLESTRING_H
