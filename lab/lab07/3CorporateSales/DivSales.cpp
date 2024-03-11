@@ -10,15 +10,16 @@
 double DivSales::totalSales = 0;
 
 DivSales::DivSales() {
-    sales.resize(4);
+    sales.resize(4, 0); // Initalize sales vector with all 4 elements set to 0
     divSales = 0;
 }
 
-void DivSales::setSales(double s[]) {
-    for (int i = 0; i < 4; ++i) {
-        sales[i] = s[i];
-        divSales += s[i];
-        totalSales += s[i];
+// Function to set sales for a divison
+void DivSales::setSales(double q1, double q2, double q3, double q4) {
+    if (q1 >= 0 && q2 >= 0 && q3 >= 0 && q4 >= 0) {
+        divSales = q1 + q2 + q3 + q4;
+        totalSales += divSales; // Update total corporate sales
+        sales = {q1, q2, q3, q4}; // Set the sales vector with q values
     }
 }
 

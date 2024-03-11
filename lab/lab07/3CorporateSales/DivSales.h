@@ -19,7 +19,7 @@ private:
 public:
     DivSales();
 
-    void setSales(double s[]);
+    void setSales(double q1, double q2, double q3, double q4);
     double getDivSales() const;
     static double getCorpSales();
 };
