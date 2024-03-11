@@ -6,7 +6,21 @@
 // Desc: 
 
 
-int main() {
+#include <iostream>
+#include "Pstring.h"
 
-	return 0;
+int main() {
+    std::cout << "This is a palindrome-testing program. Enter a string to test: ";
+    std::string input;
+    std::cin >> input;
+
+    Pstring pstring(input);
+
+    if (pstring.isPalindrome()) {
+        std::cout << input << " is a palindrome" << std::endl;
+    } else {
+        std::cout << input << " is not a palindrome" << std::endl;
+    }
+
+    return 0;
 }

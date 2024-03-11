@@ -5,3 +5,15 @@
 // File Name: Pstring.h
 // Desc: 
 
+#ifndef PSTRING_H
+#define PSTRING_H
+
+#include <string>
+
+class Pstring : public std::string {
+public:
+    Pstring(const std::string& str) : std::string(str) {}
+    bool isPalindrome();
+};
+
+#endif // PSTRING_H

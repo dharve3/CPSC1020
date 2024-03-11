@@ -5,3 +5,15 @@
 // File Name: Pstring.cpp
 // Desc: 
 
+#include "Pstring.h"
+
+bool Pstring::isPalindrome() {
+    int length = size();
+    // Checks half of the string (in both directions)
+    for (int i = 0; i < length / 2; ++i) {
+        if ((*this)[i] != (*this)[length - i - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
