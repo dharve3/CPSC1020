@@ -13,6 +13,7 @@ public:
         setLength(feet, inches);
     }
     Length(int inches){ len_inches = inches; }
+    Length() { len_inches = 0; } // Default constructor
     int getFeet() const { return len_inches / 12; }
     int getInches() const { return len_inches % 12; }
     void setLength(int feet, int inches)
@@ -28,8 +29,8 @@ public:
     Length operator++(int);
 
     // Overloaded stream input and output operators
-    ostream &operator<<(ostream &out, Length a);
-    istream &operator>>(istream &in, Length &a);
+    friend ostream &operator<<(ostream &out, Length &a);
+    friend istream &operator>>(istream &in, Length &a);
 };
 
 //**********************************************
@@ -43,6 +44,7 @@ istream &operator>>(istream &in, Length &a)
     in >> feet;
     cout << "Enter inches: ";
     in >> inches;
+    a.setLength(feet, inches);
 
     return in;
 }
@@ -50,7 +52,7 @@ istream &operator>>(istream &in, Length &a)
 //*********************************************
 // Overloaded stream insertion operator <<    *
 //*********************************************
-ostream &operator<<(ostream& out, Length a)
+ostream &operator<<(ostream& out, Length &a)
 {
     out << a.getFeet() << " feet, " << a.getInches() << " inches";
     return out;
