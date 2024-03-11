@@ -19,9 +19,9 @@ private:
     int month {1};
     int day {1};
     int year {1900};
-    static const string MONTHS[12];
 
 public:
+    static const string MONTHS[12];
     Date() = default;
     Date(int m, int d, int y) : month(m), day(d), year(y) {}
 
@@ -32,7 +32,7 @@ public:
     int getYear() const;
     void setYear(int y);
     
-    string print() const;
+    string print();
     static bool compare(const Date d1, const Date d2);
 };
 
