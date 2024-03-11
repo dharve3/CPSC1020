@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab 7: Challenge 1 - Palindrome Testing
 // File Name: Pstring.h
-// Desc: 
+// Desc: Headerfile for derived class Pstring
 
 #ifndef PSTRING_H
 #define PSTRING_H
