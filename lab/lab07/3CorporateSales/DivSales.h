@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab 7: Challenge 3 - Corporate Sales
 // File Name: DivSales.h
-// Desc: 
+// Desc: Headerfile for DivSales class
 
 #ifndef DIVSALES_H
 #define DIVSALES_H

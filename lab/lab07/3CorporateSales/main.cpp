@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab 7: Challenge 3 - Corporate Sales
 // File Name: main.cpp
-// Desc: 
+// Desc: Takes input for 4 divisons of corporate sales, summarizes, totals, and displays output
 
 #include <iostream>
 #include <iomanip>

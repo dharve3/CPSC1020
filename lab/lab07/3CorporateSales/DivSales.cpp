@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab 7: Challenge 3 - Corporate Sales
 // File Name: DivSales.cpp
-// Desc: 
+// Desc: Sourcefile for DivSales class, contains functions to set, modify, and get the sales data.
 
 #include "DivSales.h"
 
