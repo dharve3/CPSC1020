@@ -12,7 +12,7 @@
 
 class EncryptableString : public std::string {
 public:
-    EncryptableString(std::string& str) : std::string(str) {}
+    EncryptableString(const std::string& str) : std::string(str) {}
     void encrypt();
 }
 

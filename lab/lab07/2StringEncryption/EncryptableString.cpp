@@ -8,9 +8,11 @@
 #include "EncryptableString.h"
 
 void EncryptableString::encrypt() {
-    int length = size();
-
-    for (int i = 0; i < length; ++i) {
-        *this[i] += 1;
+    // Loop each character in the provided string
+    for (char& c : *this) {
+        if (isalpha(c)) { // Ensure each character is a letter
+            // Logic to check for the last letter (z) and respond accordingly, else increment 1 as usual
+            c = (c == 'z' || c == 'Z') ? c - 25 : c + 1;
+        }
     }
 }

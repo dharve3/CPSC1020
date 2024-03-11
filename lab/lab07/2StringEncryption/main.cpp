@@ -5,8 +5,18 @@
 // File Name: main.cpp
 // Desc: 
 
+#include <iostream>
+#include "EncryptableString.h"
 
 int main() {
+    std::cout << "This is an Encryption program. Enter a string to encrypt: ";
+    std::string input;
+    std::cin >> input;
 
-	return 0;
+    EncryptableString encryptedString(input);
+    encryptedString.encrypt();
+
+    std::cout << "Here is the encrypted string: " << encryptedString << std::endl;
+
+    return 0;
 }
