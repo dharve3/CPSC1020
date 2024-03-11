@@ -18,18 +18,18 @@ public:
     {
         switch(index)
         {
-            case 1: return last_name; break;
-            case 2: return first_name; break;
+            case 1: return first_name; break;
+            case 2: return last_name; break;
             default: subError();
         }
-                return first_name;  // not needed logically but gets rid of warning
+        return first_name;  // not needed logically but gets rid of warning
     }
-        string const getLastName() {return last_name; }
+        string const getLastName() { return last_name; }
 };
 
 int main()
 {
-    Name  name;
+    Name name;
 
     // Set first name and last name
     name[1] = "Joseph";
@@ -38,7 +38,7 @@ int main()
     // Access first name and last name
     cout << name[1] << " " << name[2] << " aka Joe Blow\n";
 
-        cout << "last name is: " << name.getLastName() << endl; 
+    cout << "last name is: " << name.getLastName() << endl; 
 
     return 0;
 }
