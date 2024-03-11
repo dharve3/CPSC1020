@@ -29,8 +29,8 @@ public:
     Length operator++(int);
 
     // Overloaded stream input and output operators
-     ostream &operator<<(ostream &out, Length a);
-     istream &operator>>(istream &in, Length &a);
+    friend ostream &operator<<(ostream &out, Length a);
+    friend istream &operator>>(istream &in, Length &a);
 };
 
 //**********************************************
@@ -119,3 +119,4 @@ int main()
     cout << "you entered: " << a << endl;
     return 0;
 }
+// Why wasnt there any calls to ++?
