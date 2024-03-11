@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab 7: Challenge 2 - String Encryption
 // File Name: EncryptableString.cpp
-// Desc: 
+// Desc: Sourcefile for class EncryptableString, contains encrypt function
 
 #include "EncryptableString.h"
 

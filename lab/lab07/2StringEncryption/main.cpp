@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab 7: Challenge 2 - String Encryption
 // File Name: main.cpp
-// Desc: 
+// Desc: Encrypts a provided string by shifting it +1 with caesar cipher (shift cipher)
 
 #include <iostream>
 #include "EncryptableString.h"

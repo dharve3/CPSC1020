@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab 7: Challenge 2 - String Encryption
 // File Name: EncryptableString.h
-// Desc: 
+// Desc: Headerfile for class EncryptableString
 
 #ifndef ENCRYPTABLESTRING_H
 #define ENCRYPTABLESTRING_H
