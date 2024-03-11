@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab 7: Challenge 4 - Rational Arithmetic
 // File Name: Rational.h
-// Desc: 
+// Desc: Headerfile for class Rational
 
 #ifndef RATIONAL_H
 #define RATIONAL_H

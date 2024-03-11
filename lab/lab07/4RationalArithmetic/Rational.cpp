@@ -3,7 +3,7 @@
 // Class: CPSC 1021
 // Lab Name: Lab 7: Challenge 4 - Rational Arithmetic
 // File Name: Rational.cpp
-// Desc: 
+// Desc: Sourcefile for class Rational, contains functions to reduce the fraction, get the gcd, and overloads << to display output.
 
 #include "Rational.h"
 
