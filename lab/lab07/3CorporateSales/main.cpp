@@ -16,7 +16,7 @@ int main() {
 	for (i = 0; i < 4; ++i) {
 		std::cout << "Enter sales data for Division " << i + 1 << std::endl;
 		double sales[4];
-		for (int j = 0; j < 4; ++j) {
+		for (j = 0; j < 4; ++j) {
 			do {
 				std::cout << "Quarter " << j + 1 << ": ";
 				std::cin >> sales[j];

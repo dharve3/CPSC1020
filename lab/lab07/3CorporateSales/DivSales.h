@@ -18,10 +18,10 @@ private:
 
 public:
     DivSales();
-    
+
     void setSales(double s[]);
     double getDivSales() const;
-    static double getCorpSales() const;
+    static double getCorpSales();
 };
 
 #endif // DIVSALES_H

@@ -26,6 +26,6 @@ double DivSales::getDivSales() const {
     return divSales;
 }
 
-double DivSales::getCorpSales() const {
+double DivSales::getCorpSales() {
     return totalSales;
 }
