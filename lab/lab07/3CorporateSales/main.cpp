@@ -18,8 +18,8 @@ int main() {
 		std::cout << "Enter sales data for Division " << i + 1 << std::endl;
 		double sales[4];
 		for (j = 0; j < 4; ++j) {
+			std::cout << "Quarter " << j + 1 << ": ";
 			do {
-				std::cout << "Quarter " << j + 1 << ": ";
 				std::cin >> sales[j];
 				if (sales[j] < 0)
 					std::cout << "Please enter 0 or greater: ";
