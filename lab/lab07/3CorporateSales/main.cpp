@@ -6,6 +6,7 @@
 // Desc: 
 
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include "DivSales.h"
 
@@ -21,17 +22,17 @@ int main() {
 				std::cout << "Quarter " << j + 1 << ": ";
 				std::cin >> sales[j];
 				if (sales[j] < 0)
-					std::cout << "Please enter 0 or greater." << std::endl;
+					std::cout << "Please enter 0 or greater: ";
 			} while (sales[j] < 0);
 		}
 		divisions[i].setSales(sales);
 	}
 
     for (i = 0; i < 4; ++i) {
-        std::cout << "Total Sales for Division " << i + 1 << ": $" << divisions[i].getDivSales() << std::endl;
+        std::cout << "Total Sales for Division " << std::fixed << std::setprecision(2) << i + 1 << ": $" << divisions[i].getDivSales() << std::endl;
     }
 
-    std::cout << "Total Corporate Sales: $" << DivSales::getCorpSales() << std::endl;
+    std::cout << "Total Corporate Sales: $" << std::fixed << std::setprecision(2) << DivSales::getCorpSales() << std::endl;
 
     return 0;
 }
