@@ -14,6 +14,6 @@ class EncryptableString : public std::string {
 public:
     EncryptableString(const std::string& str) : std::string(str) {}
     void encrypt();
-}
+};
 
 #endif // ENCRYPTABLESTRING_H
