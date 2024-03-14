@@ -98,10 +98,9 @@ int main() {
 
     // Specifying the address
     sockaddr_in serverAddress;
-    serverAddress.sin_family = AF_INET;
     serverAddress.sin_port = htons(8080);
-    serverAddress.sin_addr.s_addr = inet_addr("127.0.0.1"); // inet_addr is deprecated, inet_pton supports IPv4 and IPv6
-    // Replace with pton at some point, this whole declartion could probably be overhauled
+    inet_pton(AF_INET, "127.0.0.1", &(serverAddress.sin_addr));
+    // inet_pton is newer
 
     // Binding socket
     bind(serverSocket, (struct sockaddr*)&serverAddress, sizeof(serverAddress));
