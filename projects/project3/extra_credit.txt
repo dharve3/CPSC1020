@@ -1,0 +1,3 @@
+If you attempted to solve any of the extra credit challenges, please add this txt file to your submission.
+
+Briefly comment on which challenge(s) you attempted to solve and how you solved them. 1-2 sentences per challenge is sufficient. We just need to know what to look out for.
