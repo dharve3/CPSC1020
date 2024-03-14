@@ -1,3 +1,5 @@
+// Const Functions
+
 #include <iostream>
 
 class MyClass {

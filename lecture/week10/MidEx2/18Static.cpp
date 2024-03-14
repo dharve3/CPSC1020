@@ -1,3 +1,5 @@
+// Static
+
 #include <iostream>
 
 class MyClass {

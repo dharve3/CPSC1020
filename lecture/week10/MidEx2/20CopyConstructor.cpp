@@ -1,3 +1,5 @@
+// Copy Constructor
+
 #include <iostream>
 
 class MyClass {

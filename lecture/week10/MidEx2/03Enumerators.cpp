@@ -1,3 +1,5 @@
+// Enumerators
+
 #include <iostream>
 
 enum Color {

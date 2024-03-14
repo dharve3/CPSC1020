@@ -1,3 +1,5 @@
+// = Operator
+
 #include <iostream>
 
 class MyClass {

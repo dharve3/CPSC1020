@@ -1,3 +1,5 @@
+// Structs vs Classes
+
 #include <iostream>
 
 // Struct

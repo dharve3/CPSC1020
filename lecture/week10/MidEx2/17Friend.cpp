@@ -1,3 +1,5 @@
+// Friend
+
 #include <iostream>
 
 class MyClass {

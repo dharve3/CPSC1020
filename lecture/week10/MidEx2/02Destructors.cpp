@@ -1,3 +1,5 @@
+// Destructors
+
 #include <iostream>
 
 class MyClass {
