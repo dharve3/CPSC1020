@@ -2,15 +2,17 @@
 
 #include <iostream>
 
-class Engine {};
+class Room {
+public:
+    Room() {
+        std::cout << "Room constructor called\n";
+    }
 
-// Aggregation
-class Car {
-private:
-    Engine engine;
+    ~Room() {
+        std::cout << "Room destructor called\n";
+    }
 };
 
-// Composition
 class House {
 private:
     Room* room;
@@ -18,35 +20,45 @@ public:
     House() {
         room = new Room();
     }
+
     ~House() {
         delete room;
     }
 };
 
-// Has-a relationship
-class Car {
+class Engine {};
+
+// Car with has-a relationship with Engine
+class CarWithEngine {
 private:
     Engine engine;
 };
 
-// Is-a relationship (Inheritance)
-class Animal {
-public:
-    virtual void speak() = 0;
+// Car with aggregation relationship with Room
+class CarWithRoom {
+private:
+    Room room;
 };
 
-class Dog : public Animal {
+// Car with composition relationship with Room
+class CarWithRoomComposition {
+private:
+    Room* room;
 public:
-    void speak() override {
-        std::cout << "Woof" << std::endl;
+    CarWithRoomComposition() {
+        room = new Room();
+    }
+
+    ~CarWithRoomComposition() {
+        delete room;
     }
 };
 
 int main() {
-    Car car;
-    House house;
-    Animal* animal = new Dog();
-    animal->speak(); // Output: Woof
-    delete animal;
+    House house; // House constructor called, Room constructor called
+    CarWithEngine car1; // No constructor called for Engine (default constructor)
+    CarWithRoom car2; // Room constructor called
+    CarWithRoomComposition car3; // Room constructor called
+
     return 0;
 }
