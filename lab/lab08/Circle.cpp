@@ -10,6 +10,6 @@
 
 // Returns area of circle
 double Circle::getArea() {
-    return (PI * pow(radius, 2))
+    return (PI * pow(radius, 2));
 }
 

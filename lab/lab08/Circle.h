@@ -11,18 +11,16 @@
 
 class Circle: public Shape // inherit publically from Shape
 {
-    private:
-        const double PI=3.14;
-        double radius;
-    public: 
-        //default constructor
-        Circle();
-        //argument constructor 
-        Circle(double r): radius(r), name("Circle") {}
-        //abstract function 
-        double getArea();
-
-
+private:
+    const double PI=3.14;
+    double radius;
+public: 
+    //default constructor
+    Circle();
+    //argument constructor 
+    Circle(double r): radius(r) {}
+    //abstract function 
+    double getArea();
 };
 
 #endif
