@@ -9,7 +9,7 @@
 
 #include "Shape.h"
 
-class Rectangle::public Shape // inherit publically from Shape
+class Rectangle: public Shape // inherit publically from Shape
 {
     private:
         double length;
@@ -19,7 +19,7 @@ class Rectangle::public Shape // inherit publically from Shape
         Rectangle();
 
         // argument constructor
-        Rectangle(double l, double w): length{l}, width{w}, Shape("Rectangle") {}
+        Rectangle(double l, double w): length(l), width(w), Shape("Rectangle") {}
 
         // abstract function
         double getArea();

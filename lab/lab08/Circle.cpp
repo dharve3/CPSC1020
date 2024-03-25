@@ -5,11 +5,9 @@
 // Date:3/25/24
 
 #include "Circle.h"
-#include <cmath>
-// implement getArea()
 
+// implement getArea()
 // Returns area of circle
 double Circle::getArea() {
-    return (PI * pow(radius, 2));
+    return (PI * (radius * radius));
 }
-

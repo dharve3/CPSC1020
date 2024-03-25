@@ -21,4 +21,4 @@ public:
     virtual double getArea() = 0;
 };
 
-#endif
+#endif // SHAPE_H_

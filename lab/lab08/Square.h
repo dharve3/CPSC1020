@@ -9,20 +9,18 @@
 
 #include "Shape.h"
 
-class Square::public Shape // inherit publically from Shape
+class Square: public Shape // inherit publically from Shape
 {
-    private:
-        double side;
-    public:
-        // default constructor
-        Square();
+private:
+    double side;
+public:
+    // default constructor
+    Square();
+    // argument constructor
+    Square(double s): side(s), Shape("Square") {}
 
-        // argument constructor
-        Square(double s): side{s}, Shape("Square") {}
-
-        // abstract function
-        double getArea();
-
+    // abstract function
+    double getArea();
 };
 
 #endif
