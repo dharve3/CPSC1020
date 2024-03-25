@@ -13,7 +13,7 @@ public:
 
     // implement printName() and tag it as 'final'
     // to prevent derived-classes from overriding it
-    std::string printName() final {
+    virtual std::string printName() final {
         return name;
     }
 
