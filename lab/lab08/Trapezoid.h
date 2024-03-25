@@ -19,7 +19,7 @@ class Trapezoid: public Shape  // inherit publically from Shape
         //default constructor
         Trapezoid();
         //argument constructor
-        Trapezoid(double b1, double b2, double h): Shape("Trapezoid"), base1(b1), base2(b2), height(h),  {}
+        Trapezoid(double b1, double b2, double h): Shape("Trapezoid"), base1(b1), base2(b2), height(h) {}
 
         //abstract function
         double getArea();
