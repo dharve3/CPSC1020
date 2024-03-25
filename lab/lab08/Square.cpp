@@ -1,14 +1,14 @@
-// Janaki Bhosale
-// CPSC1021
-// Date: March 25, 2024
-// Description: Source file for square
-// Time: 5 minutes
+// Name: Dylan Harvey
+// Date: 3/25/2024
+// Class: CPSC 1021
+// Lab Name: Lab08 - Inheritance and Polymorphism
+// File Name: Square.cpp
+// Desc: Sourcefile for class Square, calculates area
 
 #include "Square.h"
 
 // implement getArea()
-
-double Square::getArea()
-{
+// Returns area of the square
+double Square::getArea() {
     return (side * side);
 }
