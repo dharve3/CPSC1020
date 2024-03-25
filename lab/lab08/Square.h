@@ -17,7 +17,7 @@ public:
     // default constructor
     Square();
     // argument constructor
-    Square(double s): side(s), Shape("Square") {}
+    Square(double s): Shape("Square"), side(s) {}
 
     // abstract function
     double getArea();

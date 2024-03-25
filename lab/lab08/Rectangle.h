@@ -19,7 +19,7 @@ class Rectangle: public Shape // inherit publically from Shape
         Rectangle();
 
         // argument constructor
-        Rectangle(double l, double w): length(l), width(w), Shape("Rectangle") {}
+        Rectangle(double l, double w): Shape("Rectangle"), length(l), width(w) {}
 
         // abstract function
         double getArea();

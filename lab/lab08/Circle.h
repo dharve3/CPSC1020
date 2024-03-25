@@ -18,8 +18,8 @@ public:
     //default constructor
     Circle();
     //argument constructor 
-    Circle(double r): radius(r), Shape("Circle") {}
-    
+    Circle(double r): Shape("Circle"), radius(r) {}
+
     //abstract function 
     double getArea();
 };
