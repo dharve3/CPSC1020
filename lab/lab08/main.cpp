@@ -22,9 +22,8 @@ int main()
     Trapezoid trapezoid(2.5, 3.5, 4.0);
 
     
-    Shape *ptrShape;
     // make a vector 'vector<Type>shapeVect {element0, element1, element2, element3}'
-    vector<ptrShape>shapeVect {&circle, &square, &rectangle, &trapezoid};
+    vector<Shape*>shapeVect {&circle, &square, &rectangle, &trapezoid};
     // where 'Type' is a pointer to class Shape and each element is the memory address
     // of one of objects you have instantiated above
 
