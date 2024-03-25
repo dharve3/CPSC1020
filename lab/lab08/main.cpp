@@ -32,7 +32,7 @@ int main()
     // use a range-based for loop to print the name and area of each object using
     // functions printName() and getArea() accessed through the base class pointer
     for (auto &v : shapeVect) {
-        cout << "Area of " << v->printName() << "is: " << v->getArea() << endl;
+        cout << fixed << setprecision(1) << "Area of " << v->printName() << " is: " << v->getArea() << endl;
     }
 
     return 0;
