@@ -18,7 +18,7 @@ class Square::public Shape // inherit publically from Shape
         Square();
 
         // argument constructor
-        Square(double s): side{s}, name("Square") {}
+        Square(double s): side{s}, Shape("Square") {}
 
         // abstract function
         double getArea();
