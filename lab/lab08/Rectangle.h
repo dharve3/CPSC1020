@@ -1,28 +1,28 @@
-// Janaki Bhosale
-// CPSC1021
-// Date: March 25, 2024
-// Description: Header file for rectangle
-// Time: 5 minutes
+// Name: Dylan Harvey
+// Date: 3/25/2024
+// Class: CPSC 1021
+// Lab Name: Lab08 - Inheritance and Polymorphism
+// File Name: Rectangle.h
+// Desc: Headerfile for class Rectangle, child class of Shape
 
 #ifndef RECTANGLE_H_
 #define RECTANGLE_H_
 
 #include "Shape.h"
 
-class Rectangle::public Shape // inherit publically from Shape
+class Rectangle: public Shape // inherit publically from Shape
 {
-    private:
-        double length;
-        double width;
-    public:
-        // default constructor
-        Rectangle();
+private:
+    double length;
+    double width;
+public:
+    // default constructor
+    Rectangle();
+    // argument constructor
+    Rectangle(double l, double w): Shape("Rectangle"), length(l), width(w) {}
 
-        // argument constructor
-        Rectangle(double l, double w): length{l}, width{w}, name("Rectangle") {}
-
-        // abstract function
-        double getArea();
+    // abstract function
+    double getArea();
 };
 
-#endif
+#endif // RECTANGLE_H_

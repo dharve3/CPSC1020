@@ -1,8 +1,9 @@
-// Angie Diaz
-// CPSC 1021
-// File: Circle.h
-// Lab 8
-// Date: 3/25/24
+// Name: Dylan Harvey
+// Date: 3/25/2024
+// Class: CPSC 1021
+// Lab Name: Lab08 - Inheritance and Polymorphism
+// File Name: Circle.h
+// Desc: Headerfile for class Circle, child class of Shape
 
 #ifndef CIRCLE_H_
 #define CIRCLE_H_
@@ -12,15 +13,16 @@
 class Circle: public Shape // inherit publically from Shape
 {
 private:
-    const double PI=3.14;
     double radius;
+    const double PI = 3.14;
 public: 
     //default constructor
     Circle();
     //argument constructor 
-    Circle(double r): radius(r) {}
+    Circle(double r): Shape("Circle"), radius(r) {}
+
     //abstract function 
     double getArea();
 };
 
-#endif
+#endif // CIRCLE_H_
