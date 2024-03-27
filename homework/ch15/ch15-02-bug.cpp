@@ -81,15 +81,15 @@ void Encryption::display(const string& fn) {
 class SimpleEncryption : public Encryption {
 public:
     char transform(char ch) override {
-        // Updated transform logic to account for uppercase/lowercase letters and wrapping
-        if (islower(ch)) {
-            ch = (ch - 'a' + 1) % 26 + 'a';
-        } else if (isupper(ch)) {
-            ch = (ch - 'A' + 1) % 26 + 'A';
-        } else {
-            ch += 1;
-        }
-        return ch;
+        // // Updated transform logic to account for uppercase/lowercase letters and wrapping
+        // if (islower(ch)) {
+        //     ch = (ch - 'a' + 1) % 26 + 'a';
+        // } else if (isupper(ch)) {
+        //     ch = (ch - 'A' + 1) % 26 + 'A';
+        // } else {
+        //     ch += 1;
+        // }
+        return ch + 1;
     }
     SimpleEncryption(const string& inFileName, const string& outFileName)
         : Encryption(inFileName, outFileName) {}
@@ -104,6 +104,6 @@ int main() {
     cin >> outFileName;
     SimpleEncryption obfuscate(inFileName, outFileName);
     obfuscate.encrypt();
-    obfuscate.display(inFileName); // Display the encrypted contents of the input file
+    obfuscate.display(outFileName); // Display the encrypted contents of the output file
     return 0;
 }
