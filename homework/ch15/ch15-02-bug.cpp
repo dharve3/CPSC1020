@@ -86,8 +86,6 @@ public:
             ch = (ch - 'a' + 1) % 26 + 'a';
         } else if (isupper(ch)) {
             ch = (ch - 'A' + 1) % 26 + 'A';
-        } else {
-            ch = ch + 1;
         }
         return ch;
     }
