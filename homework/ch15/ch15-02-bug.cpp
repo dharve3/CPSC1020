@@ -8,33 +8,33 @@ using namespace std;
 
 class Encryption {
 protected:
-   ifstream inFile;
-   ofstream outFile;
+    ifstream inFile;
+    ofstream outFile;
 public:
-   Encryption(const string& inFileName, const string& outFileName);
-  ~Encryption();
-   // Pure virtual function
-   char transform(char ch);
-   // Do the actual work.
-   void encrypt() final;
-     void display(const string& fn);
+    Encryption(const string& inFileName, const string& outFileName);
+    ~Encryption();
+    // Pure virtual function
+    virtual char transform(char ch) const = 0; // made pure virtual and const to match later declaration
+    // Do the actual work.
+    virtual void encrypt() final; // made virtual
+    void display(const string& fn);
 };
 
 //**************************************************
 // Constructor opens the input and output file.    *
 //**************************************************
 Encryption::Encryption(const string& inFileName, const string& outFileName) {
-   inFile.open(inFileName);
-   outFile.open(outFileName);
-   if (!inFile) {
-      cout << "The file " << inFileName
-         << " cannot be opened.";
-      exit(1);
-   }
-   if (!outFile) {
-      cout << "The file " << outFileName
-         << " cannot be opened.";
-      exit(1);
+    inFile.open(inFileName);
+    outFile.open(outFileName);
+    if (!inFile) {
+        cout << "The file " << inFileName
+             << " cannot be opened.";
+        exit(1);
+    }
+    if (!outFile) {
+        cout << "The file " << outFileName
+             << " cannot be opened.";
+        exit(1);
    }
 }
 
@@ -42,8 +42,8 @@ Encryption::Encryption(const string& inFileName, const string& outFileName) {
 //Destructor closes files.                         *
 //**************************************************
 Encryption::~Encryption() {
-   inFile.close();
-   outFile.close();
+    inFile.close();
+    outFile.close();
 }
 
 //*****************************************************
@@ -51,14 +51,14 @@ Encryption::~Encryption() {
 //member function to transform individual characters. *
 //*****************************************************
 void Encryption::encrypt() {
-   char ch;
-   char transCh;
-   inFile.get(ch);
-   while (!inFile.fail()) {
-      transCh = transform(ch);
-      outFile.put(transCh);
-      inFile.get(ch);
-   }
+    char ch;
+    char transCh;
+    inFile.get(ch);
+    while (!inFile.fail()) {
+        transCh = transform(ch);
+        outFile.put(transCh);
+        inFile.get(ch);
+    }
 }
 
 //****************************************************
@@ -66,35 +66,42 @@ void Encryption::encrypt() {
 //****************************************************
 void Encryption::display(const string& fn) {
     char ch;
-    inFile.close();
-    outFile.close();
     inFile.get(ch);
     while (!inFile.fail()) {
-         cout << ch;
-         inFile.get(ch);
+        cout << ch;
+        inFile.get(ch);
     }
+    // moved close statements to the end of the function
+    inFile.close();
+    outFile.close();
 }
 
 // The subclass simply overides the virtual
 // transformation function
 class SimpleEncryption : public Encryption {
 public:
-   char transform(char ch) const override {
-      return ch + 1;
-   }
-   SimpleEncryption(const string& inFileName, const string& outFileName)
-      : Encryption(inFileName, outFileName) {}
+    char transform(char ch) const override {
+        // Updated transform logic to account for uppercase/lowercase letters and wrapping
+        if (islower(ch)) {
+            ch = (ch - 'a' + 1) % 26 + 'a';
+        } else if (isupper(ch)) {
+            ch = (ch - 'A' + 1) % 26 + 'A';
+        }
+        return ch;
+    }
+    SimpleEncryption(const string& inFileName, const string& outFileName)
+        : Encryption(inFileName, outFileName) {}
 };
 
 int main() {
-   string inFileName, outFileName;
-   cout << "Enter name of file to encrypt: ";
-   cin >> inFileName;
-   cout << "Enter name of file to receive "
-      << "the encrypted text: ";
-   cin >> outFileName;
-   SimpleEncryption obfuscate(inFileName, outFileName);
-   obfuscate.encrypt();
-     obfuscate.display(outFileName);
-   return 0;
+    string inFileName, outFileName;
+    cout << "Enter name of file to encrypt: ";
+    cin >> inFileName;
+    cout << "Enter name of file to receive "
+        << "the encrypted text: ";
+    cin >> outFileName;
+    SimpleEncryption obfuscate(inFileName, outFileName);
+    obfuscate.encrypt();
+    obfuscate.display(inFileName); // Display the encrypted contents of the input file
+    return 0;
 }
