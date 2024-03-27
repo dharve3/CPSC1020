@@ -14,7 +14,7 @@ public:
     Encryption(const string& inFileName, const string& outFileName);
     ~Encryption();
     // Pure virtual function
-    virtual char transform(char ch) const = 0; // made pure virtual and const to match later declaration
+    virtual char transform(char ch) = 0; // made pure virtual to match later declaration
     // Do the actual work.
     virtual void encrypt() final; // made virtual
     void display(const string& fn);
@@ -80,12 +80,14 @@ void Encryption::display(const string& fn) {
 // transformation function
 class SimpleEncryption : public Encryption {
 public:
-    char transform(char ch) const override {
+    char transform(char ch) override {
         // Updated transform logic to account for uppercase/lowercase letters and wrapping
         if (islower(ch)) {
             ch = (ch - 'a' + 1) % 26 + 'a';
         } else if (isupper(ch)) {
             ch = (ch - 'A' + 1) % 26 + 'A';
+        } else {
+            ch += 1;
         }
         return ch;
     }
