@@ -66,14 +66,14 @@ void Encryption::encrypt() {
 //****************************************************
 void Encryption::display(const string& fn) {
     char ch;
+    inFile.close();
+    outFile.close();
+    inFile.open(fn); // open fn
     inFile.get(ch);
     while (!inFile.fail()) {
         cout << ch;
         inFile.get(ch);
     }
-    // moved close statements to the end of the function
-    inFile.close();
-    outFile.close();
 }
 
 // The subclass simply overides the virtual
@@ -81,24 +81,23 @@ void Encryption::display(const string& fn) {
 class SimpleEncryption : public Encryption {
 public:
     char transform(char ch) override {
-        if (islower(ch)) { // If character is lowercase
-            ch = (ch - 'a' + 5) % 26 + 'a'; // Add 5 and wrap around if necessary
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') // If character is a vowel
-                ch -= 2; // Subtract 2
-            else
-                ch += 3; // Otherwise, add 3
-        } else if (isupper(ch)) { // If character is uppercase
-            ch = (ch - 'A' - 5 + 26) % 26 + 'A'; // Subtract 5 and wrap around if necessary
-            if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') // If character is a vowel
-                ch -= 2; // Subtract 2
-            else
-                ch += 3; // Otherwise, add 3
-        } else { // If character is neither uppercase nor lowercase
-            ch += 1; // Add 1
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') // If character is a vowel
-                ch -= 2; // Subtract 2
-            else
-                ch += 3; // Otherwise, add 3
+        if (islower(ch)) {
+            ch += 5;
+        } else if (isupper(ch)) {
+            ch -= 5;
+        } else {
+            ch += 1;
+        }
+
+        if (islower(ch)) {
+            // Check if lowercase vowel
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                ch -= 2;
+            } else {
+                ch += 3;
+            }
+        } else {
+            ch += 3; // If not lowercase, always add 3
         }
         return ch;
     }
@@ -115,6 +114,6 @@ int main() {
     cin >> outFileName;
     SimpleEncryption obfuscate(inFileName, outFileName);
     obfuscate.encrypt();
-    obfuscate.display(inFileName); // Display the encrypted contents of the input file
+    obfuscate.display(outFileName); // Display the encrypted contents of the output file
     return 0;
 }
