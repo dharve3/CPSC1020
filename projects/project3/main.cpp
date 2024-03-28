@@ -16,16 +16,16 @@ void determineWinner(const Card& computerCard, const Card& playerCard, int& huma
     int computerValue = computerCard.getValue();
 
     if (playerValue == computerValue) {
-        cout << "Tie!" << endl << endl;
+        cout << "Tie!" << endl;
     } else if (playerValue > computerValue) {
-        cout << "You win this round!" << endl << endl;
+        cout << "You win this round!" << endl;
         humanScore += playerValue;
     } else {
-        cout << "The computer wins this round!" << endl << endl;
+        cout << "The computer wins this round!" << endl;
         computerScore += computerValue;
     }
 
-    cout << "Current scores:" << endl;
+    cout << endl << "Current scores:" << endl;
     cout << "Human: " << humanScore << endl;
     cout << "Computer: " << computerScore << endl;
 } // Note: Nice reusability here
@@ -47,8 +47,9 @@ int main() {
     int humanScore = 0;
     int computerScore = 0;
 
-    // 3. Play five rounds. In each round:
-    const int numRounds = 5;
+    // 3. Play six rounds. In each round:
+    // This said five rounds before but the doc says 6??
+    const int numRounds = 6;
     for (int round = 1; round <= numRounds; round++) {
         cout << endl << "Round " << round << endl;
         cout << "-------" << endl << endl;
@@ -76,16 +77,16 @@ int main() {
         cout << endl;
     }
     // 4. Print final game results.
-    cout << "FINAL SCORE:" << endl;
+    cout << endl << "FINAL SCORE:" << endl;
     cout << "Human: " << humanScore << endl;
     cout << "Computer: " << computerScore << endl;
 
     if (humanScore > computerScore) {
-        cout << "You have won!" << endl;
+        cout << endl << "You have won!" << endl;
     } else if (humanScore < computerScore) {
-        cout << "Computer has won!" << endl;
+        cout << endl << "Computer has won!" << endl;
     } else {
-        cout << "It's a tie!" << endl;
+        cout << endl << "It's a tie!" << endl;
     }
 
     return 0;
