@@ -2,6 +2,7 @@
 #define HAND_H_
 
 #include "Card.h"
+#include "Deck.h"
 #include <vector>
 #include <string>
 #include <sstream>
