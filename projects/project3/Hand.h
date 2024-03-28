@@ -15,8 +15,8 @@ public:
     Hand(Deck deck, int N);
 
     std::string strHand() const;
-    Card dealCard(int num);
-    int getHandSize();
+    Card dealCard(int num) const;
+    int getHandSize() const;
 private:
     std::vector<Card> hand;
 };

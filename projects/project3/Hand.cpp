@@ -16,12 +16,12 @@ std::string Hand::strHand() const {
     return handStr;
 }
 // Deals a card from the hand based on its position
-Card Hand::dealCard(int num) {
+Card Hand::dealCard(int num) const {
     Card dealtCard = hand[num - 1]; // Adjusting for 1-based indexing
     hand.erase(hand.begin() + num - 1);
     return dealtCard;
 }
 // Returns the current number of cards in the hand
-int Hand::getHandSize() {
+int Hand::getHandSize() const {
     return hand.size();
 }
