@@ -11,26 +11,12 @@
 class Player
 {
 public:
-    // Constructors
-    Player() = default;
-    Player(Deck deck, int N): hand(deck, N) {} // Parameterized constructor to initialize hand with N cards
-    // Getters
-    const Hand& getHand() const {
-        return hand;
-    }
-    int getHandSize() const {
-        return getHand().getHandSize();
-    }
-    int getScore() const {
-        return score;
-    }
-    // Setters
-    void setScore(int newScore) {
-        score = newScore;
-    }
-private:
     Hand hand;
     int score {0}; // Initialize score to 0 using in-class initialization
+
+    // Constructors
+    Player() = default;
+    Player(Deck& deck, int N): hand(deck, N) {} // Parameterized constructor to initialize hand with N cards // CHANGE
 };
 
 #endif // PLAYER_H_
