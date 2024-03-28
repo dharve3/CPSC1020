@@ -18,7 +18,8 @@ public:
     Card dealCard(int num) const;
     int getHandSize() const;
 private:
-    std::vector<Card> hand;
+    mutable std::vector<Card> hand; 
+    // made mutable so that dealCard can modify and still work with const hand objects
 };
 
 #endif // HAND_H_
