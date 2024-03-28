@@ -16,12 +16,12 @@ void determineWinner(const Card& computerCard, const Card& playerCard, int& huma
     int computerValue = computerCard.getValue();
 
     if (playerValue == computerValue) {
-        cout << "Tie!" << endl;
+        cout << "Tie!" << endl << endl;
     } else if (playerValue > computerValue) {
-        cout << "You win this round!" << endl;
+        cout << "You win this round!" << endl << endl;
         humanScore += playerValue;
     } else {
-        cout << "The computer wins this round!" << endl;
+        cout << "The computer wins this round!" << endl << endl;
         computerScore += computerValue;
     }
 
@@ -37,6 +37,8 @@ int main() {
     Deck deck;
     deck.shuffle();
 
+    cout << "The deck was shuffled and each player has drawn 6 cards." << endl;
+
     // 2. Create two players, each one with 6 cards in their hand.
     const int numCardsInHand = 6;
     Player human(deck, numCardsInHand);
@@ -48,8 +50,8 @@ int main() {
     // 3. Play five rounds. In each round:
     const int numRounds = 5;
     for (int round = 1; round <= numRounds; round++) {
-        cout << "Round " << round << endl;
-        cout << "-------" << endl;
+        cout << endl << "Round " << round << endl;
+        cout << "-------" << endl << endl;
 
         //    - Have computer deal a card from their hand.
         Card computerCard = computer.getHand().dealCard(1);
