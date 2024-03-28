@@ -66,14 +66,14 @@ void Encryption::encrypt() {
 //****************************************************
 void Encryption::display(const string& fn) {
     char ch;
+    inFile.close();
+    outFile.close();
+    inFile.open(fn); // open fn
     inFile.get(ch);
     while (!inFile.fail()) {
         cout << ch;
         inFile.get(ch);
     }
-    // moved close statements to the end of the function
-    inFile.close();
-    outFile.close();
 }
 
 // The subclass simply overides the virtual
