@@ -1,7 +1,7 @@
 #include "Hand.h"
 
 // Parameterized constructor to draw N cards from the deck
-Hand::Hand(Deck deck, int N) {
+Hand::Hand(Deck& deck, int N) {
     for (int i = 0; i < N; i++) {
         hand.push_back(deck.drawCard());
     }
@@ -22,6 +22,6 @@ Card Hand::dealCard(int num) {
     return dealtCard;
 }
 // Returns the current number of cards in the hand
-int Hand::getHandSize() const {
+int Hand::getHandSize() {
     return hand.size();
 }

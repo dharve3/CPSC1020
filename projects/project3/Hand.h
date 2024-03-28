@@ -11,7 +11,7 @@ class Hand
 public:
     // Constructors
     Hand() = default;
-    Hand(Deck deck, int N);
+    Hand(Deck& deck, int N);
 
     std::string strHand();
     Card dealCard(int num);
