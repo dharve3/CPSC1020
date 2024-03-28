@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Class: CPSC-1020
+// Date: 3/30/2024
+// Project 3 - TigerGame
+// Time: ~4 Hours
+// Desc: Sourcefile for class Card, a card of one of 3 colors, and a rank, to determine the cards value.
+
 #include "Card.h"
 
 // Returns formatted string for displaying a card

@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Class: CPSC-1020
+// Date: 3/30/2024
+// Project 3 - TigerGame
+// Time: ~4 Hours
+// Desc: Headerfile for class Player, each player has a hand and a score, note all values are public
+
 // Note: There is no Player.cpp file.
 // The player class is simple enough to
 // implement everything in Player.h

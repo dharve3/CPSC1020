@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Class: CPSC-1020
+// Date: 3/30/2024
+// Project 3 - TigerGame
+// Time: ~4 Hours
+// Desc: Sourcefile for class Hand, a set of cards drawn from a deck
+
 #include "Hand.h"
 
 // Parameterized constructor to draw N cards from the deck

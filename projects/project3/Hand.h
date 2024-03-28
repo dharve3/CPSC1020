@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Class: CPSC-1020
+// Date: 3/30/2024
+// Project 3 - TigerGame
+// Time: ~4 Hours
+// Desc: Headerfile for class Hand, a set of cards drawn from a deck
+
 #ifndef HAND_H_
 #define HAND_H_
 

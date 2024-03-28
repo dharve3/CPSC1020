@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Class: CPSC-1020
+// Date: 3/30/2024
+// Project 3 - TigerGame
+// Time: ~4 Hours
+// Desc: Sourcefile for class Deck, a deck of 30 cards
+
 #include "Deck.h"
 
 // initalizes the deck with 15 purple cards, 10 orange cards, and 5 black cards

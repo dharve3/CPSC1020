@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Class: CPSC-1020
+// Date: 3/30/2024
+// Project 3 - TigerGame
+// Time: ~4 Hours
+// Desc: Mainfile for TigerGame, a card game where the goal is to get the highest number of points by playing a higher value card
+
 #include "Card.h"
 #include "Deck.h"
 #include "Hand.h"
@@ -8,7 +15,7 @@ using namespace std;
 // Function to display the current hand of the human player
 void displayHumanHand(const Hand& hand) {
     cout << "Your hand: " << hand.strHand() << endl;
-} // Note: This is kinda unessecary but it aids readability later
+}
 
 // Function to determine the winner of a round
 void determineWinner(const Card& computerCard, const Card& playerCard, int& humanScore, int& computerScore) {
@@ -28,7 +35,7 @@ void determineWinner(const Card& computerCard, const Card& playerCard, int& huma
     cout << endl << "Current scores:" << endl;
     cout << "Human: " << humanScore << endl;
     cout << "Computer: " << computerScore << endl;
-} // Note: Nice reusability here
+}
 
 
 int main() {
