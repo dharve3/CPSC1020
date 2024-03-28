@@ -15,7 +15,7 @@ public:
     Player() = default;
     Player(Deck& deck, int N): hand(deck, N) {} // Parameterized constructor to initialize hand with N cards
     // Getters
-    Hand& getHand() const {
+    const Hand& getHand() const {
         return hand;
     }
     int getHandSize() const {
