@@ -40,7 +40,7 @@ int main() {
     // 2. Create two players, each one with 6 cards in their hand.
     const int numCardsInHand = 6;
     Player human(deckOfCards, numCardsInHand);
-    deckOfCards.shuffle(); // Temporary solution, idk why they were drawing the exact same cards each time
+    // deckOfCards.shuffle(); // Temporary solution, idk why they were drawing the exact same cards each time
     Player computer(deckOfCards, numCardsInHand);
 
     cout << "The deck was shuffled and each player has drawn 6 cards." << endl;

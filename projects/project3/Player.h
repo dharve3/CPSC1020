@@ -13,7 +13,7 @@ class Player
 public:
     // Constructors
     Player() = default;
-    Player(Deck& deck, int N): hand(deck, N) {} // Parameterized constructor to initialize hand with N cards
+    Player(Deck deck, int N): hand(deck, N) {} // Parameterized constructor to initialize hand with N cards
     // Getters
     const Hand& getHand() const {
         return hand;
