@@ -2,7 +2,10 @@
 
 // Returns formatted string for displaying a card
 std::string Card::strCard() const {
-    return (getColor() + ":" + std::to_string(getRank()));
+    static const std::string colorStrings[] = {"purple", "orange", "black"};
+    // Used an array matching the enum rather than a switch statement
+    std::string colorStr = colorStrings[getColor()];
+    return (colorStr + ":" + std::to_string(getRank()));
 }
 
 // Accessors
