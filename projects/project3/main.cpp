@@ -34,15 +34,15 @@ void determineWinner(const Card& computerCard, const Card& playerCard, int& huma
 int main() {
     cout << "Welcome to TigerGame!" << endl;
     // 1. Create a deck of cards and shuffle it.
-    Deck deck;
-    deck.shuffle();
-
-    cout << "The deck was shuffled and each player has drawn 6 cards." << endl;
+    Deck deckOfCards;
+    deckOfCards.shuffle();
 
     // 2. Create two players, each one with 6 cards in their hand.
     const int numCardsInHand = 6;
-    Player human(deck, numCardsInHand);
-    Player computer(deck, numCardsInHand);
+    Player human(deckOfCards, numCardsInHand);
+    Player computer(deckOfCards, numCardsInHand);
+
+    cout << "The deck was shuffled and each player has drawn 6 cards." << endl;
 
     int humanScore = 0;
     int computerScore = 0;

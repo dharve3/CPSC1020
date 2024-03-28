@@ -14,7 +14,7 @@ public:
     // Constructor
     Deck();
 
-    static int myrandom(int i);
+    // static int myrandom(int i);
     void shuffle();
     Card drawCard();
     int getDeckSize();

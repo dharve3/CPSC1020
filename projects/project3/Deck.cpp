@@ -14,15 +14,16 @@ Deck::Deck() {
 }
 
 // Random generator function:
-int Deck::myrandom(int i) {
-    return (std::rand() % i);
-}
+// int Deck::myrandom(int i) {
+//     return (std::rand() % i);
+// }
 
 // Shuffles the deck
 void Deck::shuffle() {
     // std::srand(unsigned (std::time(0))); // Not using time for testing reasons
     std::srand(unsigned (0)); // seed of 0 for testing 
-    std::random_shuffle(deck.begin(), deck.end(), myrandom); // using custom rng
+    // std::random_shuffle(deck.begin(), deck.end(), myrandom); // using custom rng
+    std::random_shuffle(deck.begin(), deck.end()); // using built in
 }
 // Draws first card from deck and removes it
 Card Deck::drawCard() {
