@@ -15,10 +15,10 @@ public:
     Hand(Deck deck, int N);
 
     std::string strHand() const;
-    Card dealCard(int num) const;
+    Card dealCard(int num);
     int getHandSize() const;
 private:
-    std::vector<Card> hand;
+    std::vector<Card> hand; 
 };
 
 #endif // HAND_H_

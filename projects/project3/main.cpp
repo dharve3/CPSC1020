@@ -56,19 +56,19 @@ int main() {
         cout << "-------" << endl << endl;
 
         //    - Have computer deal a card from their hand.
-        Card computerCard = computer.getHand().dealCard(1);
+        Card computerCard = computer.hand.dealCard(1);
         cout << "The computer plays: " << computerCard.strCard() << endl;
 
         //    - Show human their hand of cards so that they can make a selection.
-        displayHumanHand(human.getHand());
+        displayHumanHand(human.hand);
 
         //    - Have human deal their card.
         int selectedCardIndex;
         do {
             cout << "Which card do you want to play? ";
             cin >> selectedCardIndex;
-        } while (selectedCardIndex < 1 || selectedCardIndex > human.getHandSize()); // Input validation
-        Card playerCard = human.getHand().dealCard(selectedCardIndex); // Play the card
+        } while (selectedCardIndex < 1 || selectedCardIndex > human.hand.getHandSize()); // Input validation
+        Card playerCard = human.hand.dealCard(selectedCardIndex); // Play the card
 
         cout << "You played: " << playerCard.strCard() << endl;
 
