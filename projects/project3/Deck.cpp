@@ -14,7 +14,7 @@ Deck::Deck() {
 }
 
 // Random generator function:
-int Deck::myrandom(int i) {
+static int Deck::myrandom(int i) {
     return (std::rand() % i);
 }
 

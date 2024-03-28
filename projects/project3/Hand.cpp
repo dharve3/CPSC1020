@@ -8,7 +8,7 @@ Hand::Hand(Deck deck, int N) {
 }
 
 // Shows the current hand
-std::string Hand::strHand() {
+std::string Hand::strHand() const {
     std::string handStr;
     for (size_t i = 0; i < hand.size(); ++i) {
         handStr += "[" + std::to_string(i + 1) + "] " + hand[i].strCard() + " ";

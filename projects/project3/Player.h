@@ -15,10 +15,13 @@ public:
     Player() = default;
     Player(Deck& deck, int N): hand(deck, N) {} // Parameterized constructor to initialize hand with N cards
     // Getters
-    Hand& getHand() {
+    Hand& getHand() const {
         return hand;
     }
-    int getScore() {
+    int getHandSize() const {
+        return getHand().getHandSize();
+    }
+    int getScore() const {
         return score;
     }
     // Setters

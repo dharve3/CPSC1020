@@ -14,11 +14,11 @@ public:
     Card(int r, Color c): rank(r), color(c) {}
 
     // Formatted string for displaying card
-    std::string strCard();
+    std::string strCard() const;
     // Accessors
-    int getRank();
-    Color getColor();
-    int getValue();
+    int getRank() const;
+    Color getColor() const;
+    int getValue() const;
 private:
     int rank {0};
     Color color {purple};

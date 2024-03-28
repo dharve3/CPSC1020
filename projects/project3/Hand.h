@@ -14,7 +14,7 @@ public:
     Hand() = default;
     Hand(Deck deck, int N);
 
-    std::string strHand();
+    std::string strHand() const;
     Card dealCard(int num);
     int getHandSize();
 private:
