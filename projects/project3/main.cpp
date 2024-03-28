@@ -74,7 +74,6 @@ int main() {
         //    - Determine who won the round and update points accordingly.
         determineWinner(computerCard, playerCard, humanScore, computerScore);
         //    - Print results for current round.
-        cout << endl;
     }
     // 4. Print final game results.
     cout << endl << "FINAL SCORE:" << endl;
