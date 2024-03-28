@@ -1,0 +1,10 @@
+dealing a card from the hand - Card dealCard(int whichCard) where int specifies which card to return
+
+- hand contains a vector of cards
+- vectors have many methods - https://www.geeksforgeeks.org/vector-in-cpp-stl/
+- for dealCard we need two things
+-- select a specific element (the card) from the hand vector - use method at; keep in mind you pass at the POSITION of the card in the vector; the first card is located at position 0, so you need to call at(whichCard-1)
+
+-- remove that element - use the erase method - you need to send it the location of the element so consider this: begin() + (whichCard-1) : for example if you ask for card 5, think about its position in the vector; first position is 0, therefore you want the 4th position; that's exactly what begin() + (whichCard-1) gives you
+
+- return the element selected (the card)
