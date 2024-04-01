@@ -45,8 +45,7 @@ int main()
         cout << fixed << setprecision(1) << "Area of " << v->printName() << " is: " << v->getArea() << endl;
     }
     for (auto &s : shapeVect1) {
-        cout << fixed << setprecision(1) << "Area of " << s->printName() << " is: " << s->getArea() << endl;
-
+        cout "Area of " << s->printName() << " is: " << s->getArea() << endl;
     }
 
     return 0;
