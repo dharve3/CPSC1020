@@ -23,9 +23,10 @@ public:
     Rectangle(T l, T w): Shape<T>("Rectangle"), length(l), width(w) {}
 
     // abstract function
-    T getArea();
+    template <typename T>
+    T getArea() {
+        return (length * width);
+    }
 };
-
-#include "Rectangle.cpp" // Fix linker error
 
 #endif // RECTANGLE_H_

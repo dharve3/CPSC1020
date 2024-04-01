@@ -23,9 +23,10 @@ public:
     Circle(T r): Shape<T>("Circle"), radius(r) {}
 
     //abstract function 
-    T getArea();
+    template <typename T>
+    T getArea() {
+        return (PI * (radius * radius));
+    }
 };
-
-#include "Circle.cpp" // Fix linker error
 
 #endif // CIRCLE_H_

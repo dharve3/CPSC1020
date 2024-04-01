@@ -22,9 +22,10 @@ public:
     Square(T s): Shape<T>("Square"), side(s) {}
 
     // abstract function
-    T getArea();
+    template <typename T>
+    T getArea() {
+        return (side * side);
+    }
 };
-
-#include "Square.cpp" // Fix linker error
 
 #endif // SQUARE_H_

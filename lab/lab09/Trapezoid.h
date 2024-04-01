@@ -24,9 +24,10 @@ public:
     Trapezoid(T b1, T b2, T h): Shape<T>("Trapezoid"), base1(b1), base2(b2), height(h) {}
 
     //abstract function
-    T getArea();
+    template <typename T>
+    T getArea() {
+        return ((base1 + base2) * (height / 2));
+    }
 };
-
-#include "Trapezoid.cpp" // Fix linker error
 
 #endif // TRAPEZOID_H_
