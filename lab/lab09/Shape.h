@@ -1,7 +1,7 @@
 // Name: Dylan Harvey
-// Date: 3/25/2024
+// Date: 4/1/2024
 // Class: CPSC 1021
-// Lab Name: Lab08 - Inheritance and Polymorphism
+// Lab Name: Lab09 - Area Calculation using Inheritance and Polymorphism
 // File Name: Shape.h
 // Desc: Headerfile for Shape class, parent class of many others
 
@@ -10,7 +10,8 @@
 
 #include <string>
 
-template <typename T> class Shape
+template <typename T>
+class Shape
 {
 private:
     std::string name;

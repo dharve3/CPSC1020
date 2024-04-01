@@ -1,7 +1,7 @@
 // Name: Dylan Harvey
-// Date: 3/25/2024
+// Date: 4/1/2024
 // Class: CPSC 1021
-// Lab Name: Lab08 - Inheritance and Polymorphism
+// Lab Name: Lab09 - Area Calculation using Inheritance and Polymorphism
 // File Name: Trapezoid.h
 // Desc: Headerfile for class Trapezoid, child class of Shape
 
@@ -10,7 +10,8 @@
 
 #include "Shape.h"
 
-template <typename T> class Trapezoid: public Shape<T>  // inherit publically from Shape
+template <typename T>
+class Trapezoid: public Shape<T>  // inherit publically from Shape
 {
 private:
     T base1;
