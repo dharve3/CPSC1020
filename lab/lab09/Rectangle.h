@@ -19,7 +19,7 @@ public:
     // default constructor
     Rectangle();
     // argument constructor
-    Rectangle(double l, double w): Shape("Rectangle"), length(l), width(w) {}
+    Rectangle(double l, double w): Shape<T>("Rectangle"), length(l), width(w) {}
 
     // abstract function
     double getArea();
