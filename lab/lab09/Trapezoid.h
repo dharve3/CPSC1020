@@ -10,20 +10,20 @@
 
 #include "Shape.h"
 
-template <typename T> class Trapezoid: public Shape<T>  // inherit publically from Shape
+template <typename Type> class Trapezoid: public Shape<T>  // inherit publically from Shape
 {
 private:
-    double base1;
-    double base2;
-    double height;
+    Type base1;
+    Type base2;
+    Type height;
 public: 
     //default constructor
     Trapezoid();
     //argument constructor
-    Trapezoid(double b1, double b2, double h): Shape<T>("Trapezoid"), base1(b1), base2(b2), height(h) {}
+    Trapezoid(Type b1, Type b2, Type h): Shape<T>("Trapezoid"), base1(b1), base2(b2), height(h) {}
 
     //abstract function
-    double getArea();
+    Type getArea();
 };
 
 #endif // TRAPEZOID_H_

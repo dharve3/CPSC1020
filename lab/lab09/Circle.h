@@ -10,19 +10,19 @@
 
 #include "Shape.h"
 
-template <typename T> class Circle: public Shape<T> // inherit publically from Shape
+template <typename Type> class Circle: public Shape<T> // inherit publically from Shape
 {
 private:
-    double radius;
+    Type radius;
     const double PI = 3.14;
 public: 
     //default constructor
     Circle();
     //argument constructor 
-    Circle(double r): Shape<T>("Circle"), radius(r) {}
+    Circle(Type r): Shape<T>("Circle"), radius(r) {}
 
     //abstract function 
-    double getArea();
+    Type getArea();
 };
 
 #endif // CIRCLE_H_

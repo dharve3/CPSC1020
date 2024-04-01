@@ -10,18 +10,18 @@
 
 #include "Shape.h"
 
-template <typename T> class Square: public Shape<T> // inherit publically from Shape
+template <typename Type> class Square: public Shape<T> // inherit publically from Shape
 {
 private:
-    double side;
+    Type side;
 public:
     // default constructor
     Square();
     // argument constructor
-    Square(double s): Shape<T>("Square"), side(s) {}
+    Square(Type s): Shape<T>("Square"), side(s) {}
 
     // abstract function
-    double getArea();
+    Type getArea();
 };
 
 #endif // SQUARE_H_
