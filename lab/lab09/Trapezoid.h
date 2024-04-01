@@ -29,7 +29,7 @@ public:
 
 template <typename T>
 T Trapezoid<T>::getArea() {
-    return ((base1 + base2) * (height / 2));
+    return (((base1 + base2) * height)/2);
 }
 
 #endif // TRAPEZOID_H_
