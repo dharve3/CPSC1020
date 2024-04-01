@@ -9,6 +9,6 @@
 
 // implement getArea()
 // Returns area of the rectangle
-T Rectangle<T>::getArea() {
+template <typename T> Rectangle<T>::getArea() {
     return (length * width);
 }
