@@ -34,7 +34,8 @@ int main()
     // make a vector 'vector<Type>shapeVect {element0, element1, element2, element3}'
     // vector needs type of the template class
     // To fix this, I used 2 vectors, but a solution would be to create a class to store these objects
-    vector<Shape<auto>*> shapeVect {&circle, &square, &rectangle, &trapezoid, &circle1, &square1, &rectangle1, &trapezoid1};
+    vector<Shape<double>*> shapeVect {&circle, &square, &rectangle, &trapezoid};
+    vector<Shape<int>*> shapeVect1 {&circle1, &square1, &rectangle1, &trapezoid1};
     // where 'Type' is a pointer to class Shape and each element is the memory address
     // of one of objects you have instantiated above
     
@@ -42,6 +43,10 @@ int main()
     // functions printName() and getArea() accessed through the base class pointer
     for (auto &v : shapeVect) {
         cout << fixed << setprecision(1) << "Area of " << v->printName() << " is: " << v->getArea() << endl;
+    }
+    for (auto &s : shapeVect1) {
+        cout << fixed << setprecision(1) << "Area of " << s->printName() << " is: " << s->getArea() << endl;
+
     }
 
     return 0;
