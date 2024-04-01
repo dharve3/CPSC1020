@@ -22,10 +22,12 @@ public:
     Square(T s): Shape<T>("Square"), side(s) {}
 
     // abstract function
-    template <typename Type>
-    Type getArea() {
-        return (side * side);
-    }
+    T getArea();
 };
+
+template <typename T>
+T Square<T>::getArea() {
+    return (side * side);
+}
 
 #endif // SQUARE_H_

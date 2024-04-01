@@ -23,10 +23,12 @@ public:
     Circle(T r): Shape<T>("Circle"), radius(r) {}
 
     //abstract function 
-    template <typename Type>
-    Type getArea() {
-        return (PI * (radius * radius));
-    }
+    T getArea();
 };
+
+template <typename T>
+T Circle<T>::getArea() {
+    return (PI * (radius * radius));
+}
 
 #endif // CIRCLE_H_

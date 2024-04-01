@@ -23,10 +23,12 @@ public:
     Rectangle(T l, T w): Shape<T>("Rectangle"), length(l), width(w) {}
 
     // abstract function
-    template <typename Type>
-    Type getArea() {
-        return (length * width);
-    }
+    T getArea();
 };
+
+template <typename T>
+T Rectangle<T>::getArea() {
+    return (length * width);
+}
 
 #endif // RECTANGLE_H_
