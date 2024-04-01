@@ -25,4 +25,6 @@ public:
     T getArea();
 };
 
+#include "Square.cpp" // Fix linker error
+
 #endif // SQUARE_H_

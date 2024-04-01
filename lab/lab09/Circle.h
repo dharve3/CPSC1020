@@ -26,4 +26,6 @@ public:
     T getArea();
 };
 
+#include "Circle.cpp" // Fix linker error
+
 #endif // CIRCLE_H_

@@ -27,4 +27,6 @@ public:
     T getArea();
 };
 
+#include "Trapezoid.cpp" // Fix linker error
+
 #endif // TRAPEZOID_H_

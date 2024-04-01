@@ -26,4 +26,6 @@ public:
     T getArea();
 };
 
+#include "Rectangle.cpp" // Fix linker error
+
 #endif // RECTANGLE_H_
