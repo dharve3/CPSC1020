@@ -9,6 +9,6 @@
 
 // implement getArea()
 // Returns area of the circle
-Type Circle<T>::getArea() {
+Type Circle<Type>::getArea() {
     return (PI * (radius * radius));
 }

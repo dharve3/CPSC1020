@@ -9,6 +9,6 @@
 
 // implement getArea()
 // Returns area of the rectangle
-Type Rectangle<T>::getArea() {
+Type Rectangle<Type>::getArea() {
     return (length * width);
 }

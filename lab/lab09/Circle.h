@@ -19,7 +19,7 @@ public:
     //default constructor
     Circle();
     //argument constructor 
-    Circle(Type r): Shape<T>("Circle"), radius(r) {}
+    Circle(Type r): Shape<Type>("Circle"), radius(r) {}
 
     //abstract function 
     Type getArea();

@@ -18,7 +18,7 @@ public:
     // default constructor
     Square();
     // argument constructor
-    Square(Type s): Shape<T>("Square"), side(s) {}
+    Square(Type s): Shape<Type>("Square"), side(s) {}
 
     // abstract function
     Type getArea();

@@ -20,7 +20,7 @@ public:
     //default constructor
     Trapezoid();
     //argument constructor
-    Trapezoid(Type b1, Type b2, Type h): Shape<T>("Trapezoid"), base1(b1), base2(b2), height(h) {}
+    Trapezoid(Type b1, Type b2, Type h): Shape<Type>("Trapezoid"), base1(b1), base2(b2), height(h) {}
 
     //abstract function
     Type getArea();
