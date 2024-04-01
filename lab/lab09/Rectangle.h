@@ -10,19 +10,19 @@
 
 #include "Shape.h"
 
-template <typename Type> class Rectangle: public Shape<Type> // inherit publically from Shape
+template <typename T> class Rectangle: public Shape<T> // inherit publically from Shape
 {
 private:
-    Type length;
-    Type width;
+    T length;
+    T width;
 public:
     // default constructor
     Rectangle();
     // argument constructor
-    Rectangle(Type l, Type w): Shape<Type>("Rectangle"), length(l), width(w) {}
+    Rectangle(T l, T w): Shape<T>("Rectangle"), length(l), width(w) {}
 
     // abstract function
-    Type getArea();
+    T getArea();
 };
 
 #endif // RECTANGLE_H_

@@ -9,6 +9,6 @@
 
 // implement getArea()
 // Returns area of the trapezoid
-Type Trapezoid<Type>::getArea() {
+T Trapezoid<T>::getArea() {
     return ((base1 + base2) * (height / 2));
 }

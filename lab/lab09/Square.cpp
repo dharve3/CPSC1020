@@ -9,6 +9,6 @@
 
 // implement getArea()
 // Returns area of the square
-Type Square<Type>::getArea() {
+T Square<T>::getArea() {
     return (side * side);
 }
