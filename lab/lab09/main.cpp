@@ -32,7 +32,9 @@ int main()
     Trapezoid<int> trapezoid1(2, 6, 5);
 
     // make a vector 'vector<Type>shapeVect {element0, element1, element2, element3}'
-    vector<Shape<T>*> shapeVect {&circle, &square, &rectangle, &trapezoid, &circle1, &square1, &rectangle1, &trapezoid1};
+    // vector needs type of the template class
+    // To fix this, I used 2 vectors, but a solution would be to create a class to store these objects
+    vector<Shape<auto>*> shapeVect {&circle, &square, &rectangle, &trapezoid, &circle1, &square1, &rectangle1, &trapezoid1};
     // where 'Type' is a pointer to class Shape and each element is the memory address
     // of one of objects you have instantiated above
     
