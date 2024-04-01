@@ -29,7 +29,7 @@ int main()
     Circle<int> circle1(2);
     Square<int> square1(2);
     Rectangle<int> rectangle1(2, 3);
-    Trapezoid<int> trapezoid1(2, 2, 2);
+    Trapezoid<int> trapezoid1(2, 6, 5);
 
     // make a vector 'vector<Type>shapeVect {element0, element1, element2, element3}'
     // vector needs type of the template class
