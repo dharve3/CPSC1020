@@ -9,6 +9,6 @@
 
 // implement getArea()
 // Returns area of the circle
-double Circle::getArea() {
+T Circle<T>::getArea() {
     return (PI * (radius * radius));
 }

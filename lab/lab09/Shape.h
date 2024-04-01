@@ -10,7 +10,7 @@
 
 #include <string>
 
-class Shape
+template <typename T> class Shape
 {
 private:
     std::string name;

@@ -10,7 +10,7 @@
 
 #include "Shape.h"
 
-class Circle: public Shape // inherit publically from Shape
+template <typename T> class Circle: public Shape<T> // inherit publically from Shape
 {
 private:
     double radius;

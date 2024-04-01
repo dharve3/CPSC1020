@@ -10,7 +10,7 @@
 
 #include "Shape.h"
 
-class Trapezoid: public Shape  // inherit publically from Shape
+template <typename T> class Trapezoid: public Shape<T>  // inherit publically from Shape
 {
 private:
     double base1;

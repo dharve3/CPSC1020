@@ -10,7 +10,7 @@
 
 #include "Shape.h"
 
-class Rectangle: public Shape // inherit publically from Shape
+template <typename T> class Rectangle: public Shape<T> // inherit publically from Shape
 {
 private:
     double length;

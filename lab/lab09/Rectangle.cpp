@@ -9,6 +9,6 @@
 
 // implement getArea()
 // Returns area of the rectangle
-double Rectangle::getArea() {
+T Rectangle<T>::getArea() {
     return (length * width);
 }
