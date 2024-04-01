@@ -23,8 +23,8 @@ public:
     Rectangle(T l, T w): Shape<T>("Rectangle"), length(l), width(w) {}
 
     // abstract function
-    template <typename T>
-    T getArea() {
+    template <typename Type>
+    Type getArea() {
         return (length * width);
     }
 };

@@ -22,8 +22,8 @@ public:
     Square(T s): Shape<T>("Square"), side(s) {}
 
     // abstract function
-    template <typename T>
-    T getArea() {
+    template <typename Type>
+    Type getArea() {
         return (side * side);
     }
 };

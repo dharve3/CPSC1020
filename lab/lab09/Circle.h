@@ -23,8 +23,8 @@ public:
     Circle(T r): Shape<T>("Circle"), radius(r) {}
 
     //abstract function 
-    template <typename T>
-    T getArea() {
+    template <typename Type>
+    Type getArea() {
         return (PI * (radius * radius));
     }
 };
