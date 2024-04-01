@@ -19,20 +19,20 @@ using namespace std;
 
 int main()
 {
-    // Objects with float initilization
-    Circle circle(2.0);
-    Square square(2.0);
-    Rectangle rectangle(2.5, 3.0);
-    Trapezoid trapezoid(2.5, 3.5, 4.0);
+    // Objects with double initilization
+    Circle<double> circle(2.0);
+    Square<double> square(2.0);
+    Rectangle<double> rectangle(2.5, 3.0);
+    Trapezoid<double> trapezoid(2.5, 3.5, 4.0);
 
     // Objects with int initilzation
-    Circle circle1(2);
-    Square square1(2);
-    Rectangle rectangle(2, 3);
-    Trapezoid trapezoid1(2, 6, 5);
+    Circle<int> circle1(2);
+    Square<int> square1(2);
+    Rectangle<int> rectangle1(2, 3);
+    Trapezoid<int> trapezoid1(2, 6, 5);
 
     // make a vector 'vector<Type>shapeVect {element0, element1, element2, element3}'
-    vector<Shape*>shapeVect {&circle, &square, &rectangle, &trapezoid};
+    vector<Shape*>shapeVect {&circle, &square, &rectangle, &trapezoid, &circle1, &square1, &rectangle1, &trapezoid1};
     // where 'Type' is a pointer to class Shape and each element is the memory address
     // of one of objects you have instantiated above
     
