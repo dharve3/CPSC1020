@@ -9,6 +9,6 @@
 
 // implement getArea()
 // Returns area of the circle
-T Circle<T>::getArea() {
+template <typename T> T Circle<T>::getArea() {
     return (PI * (radius * radius));
 }
