@@ -25,7 +25,7 @@ public:
     }
 
     // implement getArea() as an abstract function
-    virtual double getArea() = 0;
+    virtual T getArea() = 0;
 };
 
 #endif // SHAPE_H_
