@@ -21,7 +21,7 @@ int main()
         quotient = divide(num1, num2);
         cout << "The quotient is " << quotient << endl;
     }
-    except()
+    catch(const string& exceptionString) // Updated to catch and added const string arguments
     {
         cout << exceptionString;
     }
