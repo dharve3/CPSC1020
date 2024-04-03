@@ -21,12 +21,13 @@ public:
     // Member functions
     IntRange(int low, int high) { // Constructor
         lower = low;
+        upper = high; // Initalized upper
     }
 
     int getInput() {
         cin >> input;
-        if (input < lower && input > upper)
-            throw OutOfRange();
+        if (input < lower || input > upper) // Switch to ||
+            throw OutOfRange(input); // Pass input into exception
 
         return input;
    }
@@ -43,7 +44,7 @@ int main() {
         cout << "You entered " << userValue << endl;
     }
 
-    catch (OutOfRange ex) {
+    catch (IntRange::OutOfRange ex) { // Scope resolution
         cout << "That value " << ex.value
              << " is out of range.\n";
     }
