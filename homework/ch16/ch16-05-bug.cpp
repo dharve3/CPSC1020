@@ -5,11 +5,11 @@ using namespace std;
 
 // Template for minimum of an array
 template <class T>
-T minimum(int arr[ ], int size)
+T minimum(T arr[ ], int size) // Fixed: made array type T
 {
-    int smallest = arr[0];
+    T smallest = arr[0]; // Fixed: changed int to T
     for (int k = 1; k < size; k++) {
-        if (arr[k] > smallest)
+        if (arr[k] < smallest) // Fixed: > to <
             smallest = arr[k];
     }
     return smallest;
