@@ -1,0 +1,159 @@
+Interstellar
+Alice Johnson
+4
+Inception
+Bob Smith
+-2
+Interstellar
+Dan Brown
+-4
+Mad Max: Fury Road
+Eve Davis
+4
+Inception
+Alice Johnson
+-3
+The Lord of the Rings
+Bob Smith
+4
+Mad Max: Fury Road
+Carol Lee
+-5
+Pulp Fiction
+Dan Brown
+5
+The Dark Knight
+Eve Davis
+5
+The Dark Knight
+Alice Johnson
+4
+Pulp Fiction
+Bob Smith
+-1
+The Matrix
+Eve Davis
+3
+Avatar
+Dan Brown
+2
+Avatar
+Carol Lee
+-3
+Blade Runner
+Frank Miller
+-2
+Jurassic Park
+Grace White
+3
+Toy Story
+Harry Adams
+-1
+The Grand Budapest Hotel
+Frank Miller
+5
+Moonrise Kingdom
+Grace White
+-4
+Ratatouille
+Harry Adams
+4
+Cars
+Frank Miller
+3
+Finding Nemo
+Grace White
+5
+WALL-E
+Harry Adams
+-4
+Blade Runner 2049
+Frank Miller
+5
+The Social Network
+Grace White
+4
+La La Land
+Harry Adams
+4
+Dunkirk
+Frank Miller
+-3
+The Lion King
+Grace White
+5
+Up
+Harry Adams
+3
+Interstellar
+Frank Miller
+4
+Inception
+Grace White
+4
+The Matrix
+Harry Adams
+-2
+Mad Max: Fury Road
+Frank Miller
+3
+Pulp Fiction
+Grace White
+3
+The Dark Knight
+Harry Adams
+5
+Avatar
+Frank Miller
+-5
+Blade Runner
+Grace White
+4
+Jurassic Park
+Harry Adams
+3
+The Grand Budapest Hotel
+Alice Johnson
+-4
+Moonrise Kingdom
+Bob Smith
+3
+Ratatouille
+Carol Lee
+5
+Cars
+Dan Brown
+3
+Finding Nemo
+Eve Davis
+4
+WALL-E
+Alice Johnson
+4
+Blade Runner 2049
+Bob Smith
+5
+The Social Network
+Carol Lee
+2
+La La Land
+Dan Brown
+5
+Dunkirk
+Eve Davis
+-2
+The Lion King
+Alice Johnson
+5
+Up
+Bob Smith
+4
+Interstellar
+Carol Lee
+4
+Inception
+Dan Brown
+3
+The Matrix
+Eve Davis
+2
