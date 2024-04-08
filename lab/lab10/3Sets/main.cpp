@@ -25,6 +25,11 @@ int main() {
 
     // Display the unique elements in the new vector using a single space to
     // separate each one. Use an endl at the end of the list.
+    for (const auto& s : uniqueStrings) {
+        cout << s << " ";
+        // NOTE: may need to remove the tailing " "
+    }
+    cout << endl;
 
     return 0;
 }

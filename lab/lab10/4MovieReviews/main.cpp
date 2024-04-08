@@ -17,9 +17,15 @@ int main() {
     set<string> uniqueMovieTitles;
 
     // Read the file to extract unique movie titles
-    ifstream file("movie_reviews.txt");
+    ifstream file;
+    file.open("movie_reviews.txt");
+    if (!file.is_open()) {
+        cout << "Error opening file." << endl;
+        return 1;
+    }
     string movieTitle, reviewerName, rating;
     while (getline(file, movieTitle) && getline(file, reviewerName) && getline(file, rating)) {
+        // cout << "DEBUG: " << movieTitle << endl;
         uniqueMovieTitles.insert(movieTitle);
     }
     file.close();
@@ -33,6 +39,7 @@ int main() {
     // Read the file again to extract reviewer names and ratings
     file.open("movie_reviews.txt");
     while (getline(file, movieTitle) && getline(file, reviewerName) && getline(file, rating)) {
+        // cout << "DEBUG: " << reviewerName << endl;
         reviewerRatings[reviewerName].push_back(stoi(rating));
     }
     file.close();
@@ -40,13 +47,13 @@ int main() {
     // Output each movie title separated by /
     cout << "HERE ARE THE MOVIE TITLES\n";
     cout << "==========================\n";
-
     for (const auto& m : movieTitles) {
         cout << m << " / ";
     }
     cout << endl << endl;
 
     // Output each reviewer followed by their ratings for each movie
+    // I believe the error is that the reviews aren't in order with the given movies
     cout << "HERE ARE THE MOVIE RATINGS\n";
     cout << "===========================\n";
     for (const auto& pair : reviewerRatings) {

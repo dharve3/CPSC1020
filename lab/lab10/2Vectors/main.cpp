@@ -16,12 +16,23 @@ int main() {
         {"Diana", {80, 85}}
     };
     // Display the contents
+    // for (const auto& student : studentData) {
+    //     cout << student.first << "'s scores: ";
+    //     for (int score : student.second) {
+    //         cout << score << " ";
+    //     }
+    //     cout << endl;
+    // }
+    // Display the AVERAGE Scores:
     for (const auto& student : studentData) {
+        int total = 0, avgScore = 0;
         cout << student.first << "'s scores: ";
         for (int score : student.second) {
-            cout << score << " ";
+            total += score;
         }
-        cout << endl;
+        avgScore = total / student.second.size(); 
+        cout << avgScore << endl;
+        // NOTE: May need to use float for avg
     }
     
     return 0;
