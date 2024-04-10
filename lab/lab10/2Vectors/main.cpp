@@ -6,6 +6,7 @@ corresponding scores.*/
 #include <iostream>
 #include <vector>
 #include <utility>
+#include <cmath>
 using namespace std;
 
 int main() {
@@ -25,14 +26,13 @@ int main() {
     // }
     // Display the AVERAGE Scores:
     for (const auto& student : studentData) {
-        int total = 0, avgScore = 0;
+        double total = 0, avgScore = 0;
         cout << student.first << "'s scores: ";
         for (int score : student.second) {
             total += score;
         }
         avgScore = total / student.second.size(); 
-        cout << avgScore << endl;
-        // NOTE: May need to use float for avg
+        cout << round(avgScore) << endl;
     }
     
     return 0;
