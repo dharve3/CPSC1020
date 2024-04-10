@@ -9,6 +9,7 @@ code to work properly. */
 #include <vector>
 #include <set>
 #include <map>
+#include <algorithm>
 
 using namespace std;
 
@@ -40,7 +41,15 @@ int main() {
     file.open("movie_reviews.txt");
     while (getline(file, movieTitle) && getline(file, reviewerName) && getline(file, rating)) {
         // cout << "DEBUG: " << reviewerName << endl;
-        reviewerRatings[reviewerName].push_back(stoi(rating));
+        if (reviewerRatings[reviewerName].size() != movieTitles.size())
+            reviewerRatings[reviewerName].resize(movieTitles.size(), 0); // resize the vector with 0s
+
+        auto it = find(movieTitles.begin(), movieTitles.end(), movieTitle); // create iterator for current movie title
+        if (it != movieTitles.end()) {
+            int index = distance(movieTitles.begin(), it); // find the index of the movie title
+            reviewerRatings[reviewerName][index] = stoi(rating); // assign the rating at that location
+        }
+        // reviewerRatings[reviewerName].push_back(stoi(rating));
     }
     file.close();
 
