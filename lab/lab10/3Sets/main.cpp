@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Date: 4/10/2024
+// Class: CPSC 1021
+// Lab Name: Lab10 - Maps & Sets - Using the STL to organize data
+// File Name: main.cpp
+// Desc: Uses sets to get unique values from data with duplicates
+
 /* In this program, the initial `std::vector` `stringData` contains strings, some
 of which are duplicates. These strings are then added to a `std::set` to remove
 duplicates. The unique elements are then transferred back to a new `std::vector`
@@ -28,7 +35,6 @@ int main() {
     cout << "Unique elements in the new vector: "; 
     for (const auto& s : uniqueStrings) {
         cout << s << " ";
-        // NOTE: may need to remove the tailing " "
     }
     cout << endl;
 

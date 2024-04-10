@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Date: 4/10/2024
+// Class: CPSC 1021
+// Lab Name: Lab10 - Maps & Sets - Using the STL to organize data
+// File Name: main.cpp
+// Desc: Uses a map to display the number of occourances of a word in a given string
+
 /* This program demonstrates the use of a std::map. When you run the
 program, it will prompt you to enter a sentence. After entering the
 sentence, it will output each word in the sentence along with the number

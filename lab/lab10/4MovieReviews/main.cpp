@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Date: 4/10/2024
+// Class: CPSC 1021
+// Lab Name: Lab10 - Maps & Sets - Using the STL to organize data
+// File Name: main.cpp
+// Desc: Uses sets, maps, and pairs to get movie ratings from a file and organize them with their reviewer
+
 /* This is an almost complete solution to the problem to the movie
 review problem. HOWEVER, you will notice an error in the output that
 shows the ratings from each reviewer. Identify this error and fix the
@@ -62,7 +69,6 @@ int main() {
     cout << endl << endl;
 
     // Output each reviewer followed by their ratings for each movie
-    // I believe the error is that the reviews aren't in order with the given movies
     cout << "HERE ARE THE MOVIE RATINGS\n";
     cout << "===========================\n";
     for (const auto& pair : reviewerRatings) {

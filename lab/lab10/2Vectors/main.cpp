@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Date: 4/10/2024
+// Class: CPSC 1021
+// Lab Name: Lab10 - Maps & Sets - Using the STL to organize data
+// File Name: main.cpp
+// Desc: Uses a vector of pairs to store a students scores and an average of those scores
+
 /* In this program, each pair represents a student's name along with their
 scores in different subjects. The program populates the vector with sample
 student data and then displays each student's name followed by their
