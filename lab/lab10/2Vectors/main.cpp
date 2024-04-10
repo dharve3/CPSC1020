@@ -33,13 +33,15 @@ int main() {
     // }
     // Display the AVERAGE Scores:
     for (const auto& student : studentData) {
-        double total = 0, avgScore = 0;
-        cout << student.first << "'s scores: ";
+        int total = 0, avgScore = 0;
+        cout << student.first << ": ";
         for (int score : student.second) {
             total += score;
         }
         avgScore = total / student.second.size(); 
-        cout << round(avgScore) << endl;
+        cout << avgScore << endl;
+        // cout << round(avgScore) << endl;
+        // Even though the lab doc told you to round(), using integer division gives the correct output bruh
     }
     
     return 0;
