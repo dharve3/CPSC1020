@@ -16,7 +16,7 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     // Ensure cmdline args are correct
-    if (argc < 1) {
+    if (argc < 2) {
         cerr << "Usage: " << argv[0] << "<state1> <state2> ..." << endl;
         return 1;
     }
@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
     }
 
     // Output the number of cities for each state provided in the cmdline args
-    for (int i = 2; i < argc; i++) {
+    for (int i = 1; i < argc; i++) {
         string state = argv[i];
         if (stateCities.find(state) != stateCities.end()) {
             cout << stateCities[state].size() << endl;
