@@ -17,7 +17,7 @@ using namespace std;
 int main(int argc, char *argv[]) {
     // Ensure cmdline args are correct
     if (argc < 2) {
-        cerr << "Usage: " << argv[0] << "<state1> <state2> ..." << endl;
+        cerr << "Usage: " << argv[0] << " <state1> <state2> ..." << endl;
         return 1;
     }
 
