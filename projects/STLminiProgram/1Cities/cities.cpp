@@ -16,15 +16,15 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
     // Ensure cmdline args are correct
-    if (argc < 2) {
-        cerr << "Usage: " << argv[0] << " <input_file> <state1> <state2> ..." << endl;
+    if (argc < 1) {
+        cerr << "Usage: " << argv[0] << "<state1> <state2> ..." << endl;
         return 1;
     }
 
     // Open the input file
-    ifstream file(argv[1]); // open the file from cmdline args
+    ifstream file("cities.txt"); // open the file
     if (!file.is_open()) {
-        cerr << "Unable to open file: " << argv[1] << endl;
+        cerr << "Unable to open file" << endl;
         return 1;
     }
 
