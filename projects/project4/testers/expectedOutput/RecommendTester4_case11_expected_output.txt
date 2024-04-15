@@ -1,0 +1,6 @@
+5.00: Watership Down
+3.00: Harry Potter
+0.00: 1984
+0.00: Cats
+0.00: Lord of the Rings
+-1.67: Animal Farm

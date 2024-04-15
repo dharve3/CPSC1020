@@ -1,0 +1,56 @@
+SIMILARITY AVERAGES FOR: Reuven
+===============================
+5.00: Brave New World
+5.00: Dealing with Dragons
+5.00: Ender's Game
+5.00: Far North
+5.00: Flowers For Algernon
+5.00: Holes
+5.00: Maus: A Survivor's Tale
+5.00: My Sister's Keeper
+5.00: Nineteen Eighty-Four (1984)
+5.00: Ranger's Apprentice Series
+5.00: The Hobbit
+5.00: The Lord of the Rings
+5.00: The Shadow Club
+5.00: The War Of The Worlds
+4.33: Harry Potter Series
+4.33: The Hitchhiker's Guide To The Galaxy
+4.00: Hatchet
+4.00: Inkheart
+4.00: Shattered
+4.00: The Golden Compass
+3.67: The Lion the Witch and the Wardrobe
+3.00: Eragon
+3.00: Life of Pi
+3.00: Neuromancer
+3.00: The Great Gatsby
+3.00: The Princess Bride
+3.00: To Kill a Mockingbird
+1.00: Bleach (graphic novel)
+1.00: Bone Series
+1.00: I Know Why the Caged Bird Sings
+1.00: Speak
+0.33: The Da Vinci Code
+0.00: A Great and Terrible Beauty
+0.00: Dinotopia: A Land Apart from Time
+0.00: Foundation Series
+0.00: Kiss the Dust
+0.00: Owl in Love
+0.00: Practical Magic
+0.00: Sabriel
+0.00: Shonen Jump Series
+0.00: The Bourne Series
+0.00: The Five People You Meet in Heaven
+0.00: The Hunger Games
+0.00: The Hunt for Red October
+0.00: The Joy Luck Club
+0.00: The Summer Tree
+0.00: Thirteen Reasons Why
+0.00: Watership Down
+-1.00: Lord of the Flies
+-1.00: The Chrysalids
+-1.00: The Sisterhood of the Travelling Pants
+-3.00: The Princess Diaries
+-5.00: Naruto
+-5.00: Twilight Series
