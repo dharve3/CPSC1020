@@ -15,10 +15,10 @@ public:
     //*********************************************************
     int recurse(int x, int y)
     {
-       if (x / y == 0)    //base case
-          return y;
+       if (y == 0)    //base case
+          return x; // return x when y is 0
        else
-          return recurse(y, x / y);
+          return recurse(y, x % y); // x mod y 
     }
 
 };
