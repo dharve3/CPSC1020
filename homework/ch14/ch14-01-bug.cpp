@@ -19,9 +19,9 @@ public:
        if (position == inputString.length())   //base case
           return 0;
        if (inputString[position] == ch)
-          return 1 + recurse(ch, inputString, position);
+          return 1 + recurse(ch, inputString, position + 1); // position + 1
        else
-          return recurse(ch, inputString, position);
+          return recurse(ch, inputString, position + 1); // position + 1
     }
 };
 
