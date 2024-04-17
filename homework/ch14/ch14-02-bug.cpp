@@ -14,9 +14,9 @@ public:
     int recurse(int num)
     {
       if (num == 0)  //base case
-        return 0;
+        return 1; // when reaches 0, exit
       else
-        return num + recurse(num);
+        return num * recurse(num - 1); // num * recurse(num - 1)
     }
 
 };
