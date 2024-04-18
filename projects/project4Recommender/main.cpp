@@ -32,38 +32,47 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-	// File name containing recommendations data
-	string fileName = "ratings_small.dat";
+    // File name containing recommendations data
+    string fileName = argv[1];
 
-	// Create an instance of Recommend class
-	Recommend recommender(fileName);
+    // Create an instance of Recommend class
+    Recommend recommender(fileName);
 
-	string choice;
-	// Menu Loop
-	while (true) {
-		getline(cin, choice);
-	}
+    string command;
+    // Menu Loop
+    while (true) {
+        getline(cin, command);
 
-	// Print total number of books and recommenders
-	cout << "Total number of books: " << recommender.getBookCount() << endl;
-	cout << "Total number of recommenders: " << recommender.getRecommenderCount() << endl;
+        // Tokensize command
+        stringstream ss(command);
+        string token;
+        ss >> token;
 
-	// Compute recommendation for a specific recommender
-	recommender.computeRecommendation("Bob");
+        if (token == "averages") {
+            
+        }
+    }
 
-	// Print recommendation ratings
-	recommender.printRecommendationRatings();
+    // Print total number of books and recommenders
+    cout << "Total number of books: " << recommender.getBookCount() << endl;
+    cout << "Total number of recommenders: " << recommender.getRecommenderCount() << endl;
 
-	// Print dot products
-	recommender.printDotProducts("Bob");
+    // Compute recommendation for a specific recommender
+    recommender.computeRecommendation("Bob");
 
-	// Print book averages
-	recommender.printAverages();
+    // Print recommendation ratings
+    recommender.printRecommendationRatings();
 
-	// Print similar list
-	recommender.printSimilarList("Bob");
+    // Print dot products
+    recommender.printDotProducts("Bob");
+
+    // Print book averages
+    recommender.printAverages();
+
+    // Print similar list
+    recommender.printSimilarList("Bob");
 
 
 
-	return 0;
+    return 0;
 }

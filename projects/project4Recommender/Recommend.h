@@ -29,42 +29,42 @@ these defines will help make your code be more readable
 
 class Recommend {
 private:
-	BOOK_LIST books;                 // vector of the names of all the books known to your program, read in from a file
-	RECOMMENDER_LIST recommenders;   // vector of recommender's names
-	RECOMMENDER_RATINGS_MAP ratings; // map that contains all book recommendations for each recommender
-	BOOK_AVG_LIST bookAverages;      // vector of books along with their rating average
-	BOOK_AVG_LIST similarList;       // used to compute the top 3 ratings based on similarity among recommenders
-	BOOK_AVG_LIST simAvg; // takes top 3 most similar recommenders, averages the books that are non 0
+    BOOK_LIST books;                 // vector of the names of all the books known to your program, read in from a file
+    RECOMMENDER_LIST recommenders;   // vector of recommender's names
+    RECOMMENDER_RATINGS_MAP ratings; // map that contains all book recommendations for each recommender
+    BOOK_AVG_LIST bookAverages;      // vector of books along with their rating average
+    BOOK_AVG_LIST similarList;       // used to compute the top 3 ratings based on similarity among recommenders
+    BOOK_AVG_LIST simAvg; // takes top 3 most similar recommenders, averages the books that are non 0
 public:
-	Recommend(string fn);
-	void computeRecommendation(RECOMMENDER);
-	void computeBookAverages();
-	void computeSimilarities(RECOMMENDER);
-	void computeSimAvg(BOOK_AVG_LIST);
-	bool checkRecommender(RECOMMENDER);
-	int getBookCount();
-	int getRecommenderCount();
-	double getRecommenderBookRating(RECOMMENDER, BOOK_TITLE);
-	int getBookIndex(BOOK_TITLE);
-	double getBookAverage(BOOK_TITLE);
-	void printDotProducts(RECOMMENDER);
-	void printRecommendation(RECOMMENDER);
-	string strRecommendation();
-	void printAverages();
-	string strAverages();
-	void printRecommendationRatings();
-	string strRecommendationRatings();
-	void printSimilarList(RECOMMENDER);
-	string strSimilarList();
-	void printSimAvg(RECOMMENDER);
-	string strSimAvg();
-	void printFancyRatings();
-	string strFancyRatings();
-	string strBooks();
-	void printBooks();
-	string strNames();
-	void printNames();
+    Recommend(string fn);
+    void computeRecommendation(RECOMMENDER);
+    void computeBookAverages();
+    void computeSimilarities(RECOMMENDER);
+    void computeSimAvg(BOOK_AVG_LIST);
+    bool checkRecommender(RECOMMENDER);
+    int getBookCount();
+    int getRecommenderCount();
+    double getRecommenderBookRating(RECOMMENDER, BOOK_TITLE);
+    int getBookIndex(BOOK_TITLE);
+    double getBookAverage(BOOK_TITLE);
+    void printDotProducts(RECOMMENDER);
+    void printRecommendation(RECOMMENDER);
+    string strRecommendation();
+    void printAverages();
+    string strAverages();
+    void printRecommendationRatings();
+    string strRecommendationRatings();
+    void printSimilarList(RECOMMENDER);
+    string strSimilarList();
+    void printSimAvg(RECOMMENDER);
+    string strSimAvg();
+    void printFancyRatings();
+    string strFancyRatings();
+    string strBooks();
+    void printBooks();
+    string strNames();
+    void printNames();
 private:
-	string removeCR(string);
-	string strDivider(char, int);
+    string removeCR(string);
+    string strDivider(char, int);
 };
