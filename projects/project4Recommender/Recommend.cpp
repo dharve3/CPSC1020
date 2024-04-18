@@ -156,9 +156,12 @@ void Recommend::computeRecommendation(RECOMMENDER requester) {
         cout << "DEBUG: " << "Computing similarities with other recommenders..." << endl;
     }
 
-    // Check if requester is in the list of reccomenders
+    // Check if requester is in the dict
+    if (ratings.find(requester) == ratings.end()) {
+        // If not, print the averages
+        printAverages();
+    }
     
-    // If not, print the recommendation (output should be same as printAverages)
 
     // Compute similarities with other recommenders
     computeSimilarities(requester);
@@ -446,8 +449,6 @@ void Recommend::printDotProducts(RECOMMENDER requester) {
  ==========================================================================*/
 string Recommend::strAverages() {
     stringstream ss;
-    ss << "AVERAGES" << endl;
-    ss << "========" << endl;
     for (const auto& entry : bookAverages) {
         ss << entry.first << ": " << fixed << setprecision(2) << entry.second << endl;
     }
@@ -458,6 +459,8 @@ string Recommend::strAverages() {
  printAverages() - display the bookAverages using strAverages()
  ==========================================================================*/
 void Recommend::printAverages() {
+    cout << "BOOK AVERAGES" << endl;
+    cout << "=============" << endl;
     cout << strAverages();
 }
 
@@ -649,7 +652,7 @@ void Recommend::printNames() {
  recommender (which is passed in)
  ==========================================================================*/
 void Recommend::printRecommendation(RECOMMENDER requester) {
-    cout << "BOOK RECOMMENDATIONS BASED ON RECOMMENDER:  " << requester << endl;
+    cout << "BOOK RECOMMENDATIONS BASED ON RECOMMENDER: " << requester << endl;
     cout << "================================================" << endl;
     for (const auto& entry : simAvg) {
         if (ratings[requester][getBookIndex(entry.first)] == 0) {

@@ -2,10 +2,10 @@
 #include "Recommend.h"
 
 // TODO:
-// Fix ratings (format)
+// Fix file (formatting)
 // Fix Recommend (needs formatting change as well as computation fix) - see computeRecommendation()
-// Fix similar (format and computation)
-// Fix simavg (format and computation)
+// Fix similar (format and computation) - see computeSimilarities()
+// Fix simavg (format and computation) - see computeSimAvg()
 
 int main(int argc, char* argv[]) {
     // Check for the correct number of command line arguments
