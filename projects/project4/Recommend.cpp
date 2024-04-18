@@ -325,6 +325,9 @@ int Recommend::getRecommenderCount() {
  the books vector
  ==========================================================================*/
 int Recommend::getBookIndex(BOOK_TITLE book) {
+	if (DEBUG) {
+		cout << "Getting index of " << book << endl;
+	}
 	// Find the index of the book in books vector
 	auto it = find(books.begin(), books.end(), book);
 	if (it != books.end()) {
