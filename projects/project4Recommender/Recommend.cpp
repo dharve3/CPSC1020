@@ -156,6 +156,10 @@ void Recommend::computeRecommendation(RECOMMENDER requester) {
         cout << "DEBUG: " << "Computing similarities with other recommenders..." << endl;
     }
 
+    // Check if requester is in the list of reccomenders
+    
+    // If not, print the recommendation (output should be same as printAverages)
+
     // Compute similarities with other recommenders
     computeSimilarities(requester);
 
@@ -463,8 +467,6 @@ void Recommend::printAverages() {
  ==========================================================================*/
 string Recommend::strRecommendationRatings() {
     stringstream ss;
-    ss << "RECOMMENDATION RATINGS" << endl;
-    ss << "======================" << endl;
     for (const auto& entry : ratings) {
         ss << entry.first << ": ";
         for (const auto& rating : entry.second) {
@@ -479,6 +481,8 @@ string Recommend::strRecommendationRatings() {
  printRecommendationRatings - display ratings
  ==========================================================================*/
 void Recommend::printRecommendationRatings() {
+    cout << "RECOMMENDER RATINGS" << endl;
+    cout << "===================" << endl;
     cout << strBooks();
     cout << strRecommendationRatings();
 }
@@ -610,6 +614,7 @@ string Recommend::strBooks() {
     for (const auto& book : books) {
         ss << book << " / ";
     }
+    ss << endl;
     return ss.str();
 }
 
@@ -617,7 +622,7 @@ string Recommend::strBooks() {
  printBooks() - display books
  ==========================================================================*/
 void Recommend::printBooks() {
-    cout << "BOOKS: " << strBooks() << endl;
+    cout << "BOOKS: " << strBooks();
 }
 
 /*==========================================================================
@@ -628,6 +633,7 @@ string Recommend::strNames() {
     for (const auto& name : recommenders) {
         ss << name << " / ";
     }
+    ss << endl;
     return ss.str();
 }
 
