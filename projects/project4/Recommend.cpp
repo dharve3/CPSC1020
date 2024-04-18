@@ -1,6 +1,6 @@
 #include "Recommend.h"
 
-bool DEBUG = false;
+bool DEBUG = true;
 
 /*==========================================================================
  bool compareRatings(const pair<string, double>&, const pair<string, couble>&)) - a helper function to compare by rating and then
@@ -516,7 +516,7 @@ void Recommend::printSimAvg(RECOMMENDER requester) {
 	if (DEBUG) {
 		cout << "Printing similar averages for: " << requester << endl;
 	}
-	
+
 	cout << "SIMILAR AVERAGES" << endl;
 	cout << "================" << endl;
 
