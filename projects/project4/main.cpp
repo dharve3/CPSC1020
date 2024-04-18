@@ -16,16 +16,16 @@ int main() {
 	recommender.printRecommendationRatings();
 
 	// Print dot products
-	recommender.printDotProducts("Recommender1");
+	recommender.printDotProducts("Bob");
 
 	// Print book averages
 	recommender.printAverages();
 
 	// Print similar list
-	recommender.printSimilarList("Recommender1");
+	recommender.printSimilarList("Bob");
 
 	// Compute recommendation for a specific recommender
-	recommender.computeRecommendation("Recommender1");
+	recommender.computeRecommendation("Bob");
 
 	return 0;
 }
