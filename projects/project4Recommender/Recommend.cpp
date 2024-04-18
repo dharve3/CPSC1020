@@ -1,6 +1,6 @@
 #include "Recommend.h"
 
-bool DEBUG = true;
+bool DEBUG = false;
 
 /*==========================================================================
  bool compareRatings(const pair<string, double>&, const pair<string, couble>&)) - a helper function to compare by rating and then
