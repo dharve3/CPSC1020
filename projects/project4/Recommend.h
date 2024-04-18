@@ -8,16 +8,17 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <cmath>
 using namespace std;
 
 /*=======================================================================
- use DEBUG to help you place lots of debugging cout statements and be able to turn them all off and back on as needed
+use DEBUG to help you place lots of debugging cout statements and be able to turn them all off and back on as needed
  =======================================================================*/
 extern bool DEBUG;
 
 /*=======================================================================
-  these defines will help make your code be more readable
-	=======================================================================*/
+these defines will help make your code be more readable
+ =======================================================================*/
 #define BOOK_TITLE string
 #define BOOK_LIST vector<BOOK_TITLE>
 #define RECOMMENDER string
@@ -41,9 +42,9 @@ public:
 	void computeSimilarities(RECOMMENDER);
 	void computeSimAvg(BOOK_AVG_LIST);
 	bool checkRecommender(RECOMMENDER);
-  int getBookCount();
-  int getRecommenderCount();
-  double getRecommenderBookRating(RECOMMENDER, BOOK_TITLE);
+	int getBookCount();
+	int getRecommenderCount();
+	double getRecommenderBookRating(RECOMMENDER, BOOK_TITLE);
 	int getBookIndex(BOOK_TITLE);
 	double getBookAverage(BOOK_TITLE);
 	void printDotProducts(RECOMMENDER);
