@@ -34,7 +34,7 @@ Recommend::Recommend(string fn) {
 	ifstream inputFile(fn);
 
 	if (DEBUG) {
-		cout << "Reading file: " << fn << endl;
+		cout << "DEBUG: " << "Reading file: " << fn << endl;
 	}
 
 	// Check if file opened successfully
@@ -65,7 +65,7 @@ Recommend::Recommend(string fn) {
 
 		// Debug to see data as its read in
 		if (DEBUG) {
-			cout << "Reading data from file (1st): " << recommenderName << " - " << bookTitle << " - " << rating << endl;
+			cout << "DEBUG: " << "Reading data from file (1st): " << recommenderName << " - " << bookTitle << " - " << rating << endl;
 		}
 
 		// Store book title in set
@@ -85,7 +85,7 @@ Recommend::Recommend(string fn) {
 
 	// Debug to see all the sorted books
 	if (DEBUG) {
-		cout << "Sorted books from file: ";
+		cout << "DEBUG: " << "Sorted books from file: ";
 		for (const auto& book : books) {
 			cout << book << ", ";
 		}
@@ -94,7 +94,7 @@ Recommend::Recommend(string fn) {
 
 	// Debug to see all the sorted recommenders
 	if (DEBUG) {
-		cout << "Sorted recommenders from file: ";
+		cout << "DEBUG: " << "Sorted recommenders from file: ";
 		for (const auto& recommender : recommenders) {
 			cout << recommender << ", ";
 		}
@@ -124,14 +124,15 @@ Recommend::Recommend(string fn) {
 
 		// Debug to see ratings as they are read in
 		if (DEBUG) {
-			cout << "Reading rating from file (2nd): " << recommenderName << " - " << bookTitle << " - " << rating << endl;
+			cout << "DEBUG: " << "Reading rating from file (2nd): " << recommenderName << " - " << bookTitle << " - " << rating << endl;
 		}
 
 		// Find index of book in vector
 		int bookIndex = getBookIndex(bookTitle);
 		if (DEBUG) {
-			cout << "Index of " << bookTitle << " is " << bookIndex << endl;
+			cout << "DEBUG: " << "Index of " << bookTitle << " is " << bookIndex << endl;
 		}
+
 		if (bookIndex != -1) {
 			// If valid index (found), update rating for the recommender
 			ratings[recommenderName][bookIndex] = rating;
@@ -151,8 +152,8 @@ Recommend::Recommend(string fn) {
  ===========================================================================*/
 void Recommend::computeRecommendation(RECOMMENDER requester) {
 	if (DEBUG) {
-		cout << "Computing recommendation for: " << requester << endl;
-		cout << "Computing similarities with other recommenders..." << endl;
+		cout << "DEBUG: " << "Computing recommendation for: " << requester << endl;
+		cout << "DEBUG: " << "Computing similarities with other recommenders..." << endl;
 	}
 
 	// Compute similarities with other recommenders
@@ -180,8 +181,8 @@ void Recommend::computeRecommendation(RECOMMENDER requester) {
 ===========================================================================*/
 void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
 	if (DEBUG) {
-		cout << "Computing similarity averages for top similar recommenders..." << endl;
-		cout << "Number of top similar recommenders: " << topSimilar.size() << endl;
+		cout << "DEBUG: " << "Computing similarity averages for top similar recommenders..." << endl;
+		cout << "DEBUG: " << "Number of top similar recommenders: " << topSimilar.size() << endl;
 	}
 	// Clear previous simAvg
 	simAvg.clear();
@@ -228,8 +229,8 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
 ===========================================================================*/
 void Recommend::computeBookAverages() {
 	if (DEBUG) {
-		cout << "Computing book averages..." << endl;
-		cout << "Number of books: " << books.size() << endl;
+		cout << "DEBUG: " << "Computing book averages..." << endl;
+		cout << "DEBUG: " << "Number of books: " << books.size() << endl;
 	}
 
 	// Clear previous bookAverages
@@ -267,8 +268,8 @@ void Recommend::computeBookAverages() {
  ==========================================================================*/
 void Recommend::computeSimilarities(RECOMMENDER requester) {
 	if (DEBUG) {
-		cout << "Computing similarities for: " << requester << endl;
-		cout << "Number of recommenders: " << ratings.size() << endl;
+		cout << "DEBUG: " << "Computing similarities for: " << requester << endl;
+		cout << "DEBUG: " << "Number of recommenders: " << ratings.size() << endl;
 	}
 
 	// Clear previous similarList
@@ -351,7 +352,7 @@ int Recommend::getRecommenderCount() {
  ==========================================================================*/
 int Recommend::getBookIndex(BOOK_TITLE book) {
 	if (DEBUG) {
-		cout << "Getting index of " << book << endl;
+		cout << "DEBUG: " << "Getting index of " << book << endl;
 	}
 	// Find the index of the book in books vector
 	auto it = find(books.begin(), books.end(), book);
@@ -370,7 +371,7 @@ int Recommend::getBookIndex(BOOK_TITLE book) {
  ==========================================================================*/
 double Recommend::getRecommenderBookRating(RECOMMENDER recommender, BOOK_TITLE book) {
 	if (DEBUG) {
-		cout << "Searching for rating of book '" << book << "' for recommender '" << recommender << "'" << endl;
+		cout << "DEBUG: " << "Searching for rating of book '" << book << "' for recommender '" << recommender << "'" << endl;
 	}
 
 	// Find the index of the book in books vector
@@ -399,7 +400,7 @@ printDotProducts(RECOMMENDER) - display dot products for current recommender
  ==========================================================================*/
 void Recommend::printDotProducts(RECOMMENDER requester) {
 	if (DEBUG) {
-		cout << "Printing dot products for: " << requester << endl;
+		cout << "DEBUG: " << "Printing dot products for: " << requester << endl;
 	}
 
 	cout << "DOT PRODUCTS" << endl;
@@ -508,7 +509,7 @@ string Recommend::strSimilarList() {
  ==========================================================================*/
 void Recommend::printSimilarList(RECOMMENDER requester) {
 	if (DEBUG) {
-		cout << "Printing similar list for: " << requester << endl;
+		cout << "DEBUG: " << "Printing similar list for: " << requester << endl;
 	}
 
 	cout << "SIMILARITIES" << endl;
@@ -553,7 +554,7 @@ string Recommend::strSimAvg() {
  ==========================================================================*/
 void Recommend::printSimAvg(RECOMMENDER requester) {
 	if (DEBUG) {
-		cout << "Printing similar averages for: " << requester << endl;
+		cout << "DEBUG: " << "Printing similar averages for: " << requester << endl;
 	}
 
 	cout << "SIMILAR AVERAGES" << endl;
