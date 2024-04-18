@@ -479,6 +479,7 @@ string Recommend::strRecommendationRatings() {
  printRecommendationRatings - display ratings
  ==========================================================================*/
 void Recommend::printRecommendationRatings() {
+    cout << strBooks();
     cout << strRecommendationRatings();
 }
 
@@ -580,8 +581,8 @@ void Recommend::printSimAvg(RECOMMENDER requester) {
  ==========================================================================*/
 string Recommend::strFancyRatings() {
     stringstream ss;
-    ss << "FANCY RATINGS" << endl;
-    ss << "=============" << endl;
+    ss << "RECOMMENDATION BOOK RATINGS" << endl;
+    ss << "===========================" << endl;
     for (const auto& entry : ratings) {
         ss << entry.first << ":" << endl;
         for (size_t i = 0; i < books.size(); ++i) {
@@ -649,10 +650,8 @@ void Recommend::printBooks() {
  ==========================================================================*/
 string Recommend::strNames() {
     stringstream ss;
-    ss << "RECOMMENDER NAMES" << endl;
-    ss << "=================" << endl;
     for (const auto& name : recommenders) {
-        ss << name << endl;
+        ss << name << " / ";
     }
     return ss.str();
 }
@@ -661,7 +660,7 @@ string Recommend::strNames() {
  printNames() - display recommender names
  ==========================================================================*/
 void Recommend::printNames() {
-    cout << strNames();
+    cout << "RECOMMENDERS: " << strNames();
 }
 
 /*==========================================================================

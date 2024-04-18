@@ -39,7 +39,7 @@ int main(int argc, char* argv[]) {
             recommender.printDotProducts(currentRecommender);
         } else if (token == "file") {
             // Display data that the recommendation system is using
-            recommender.printRecommendationRatings();
+            recommender.printFancyRatings();
         } else if (token == "menu") {
             // Display menu of commands
             cout << "BOOK RECOMMENDATION SYSTEM MENU" << endl;
@@ -50,10 +50,10 @@ int main(int argc, char* argv[]) {
             cout << "dotprod - display current dot products" << endl;
             cout << "file - fancy display of file data" << endl;
             cout << "menu - display this menu" << endl;
-            cout << "books - display books in alphabetic order" << endl;
             cout << "names - display recommender names" << endl;
+            cout << "ratings - displays ratings" << endl;
             cout << "recommend <name> - display book recommendations based upon recommender <name>" << endl;
-            cout << "sim - display current similarities" << endl;
+            cout << "similar - display current similarities" << endl;
             cout << "simavg - display averages for current similarities" << endl;
             cout << "quit - exits the program" << endl;
         } else if (token == "names") {
