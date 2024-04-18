@@ -3,7 +3,7 @@
 
 int main() {
 	// File name containing recommendations data
-	std::string fileName = "recommendations.txt";
+	std::string fileName = "ratings_small.dat";
 
 	// Create an instance of Recommend class
 	Recommend recommender(fileName);
