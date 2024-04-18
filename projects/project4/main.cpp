@@ -12,6 +12,9 @@ int main() {
 	std::cout << "Total number of books: " << recommender.getBookCount() << std::endl;
 	std::cout << "Total number of recommenders: " << recommender.getRecommenderCount() << std::endl;
 
+	// Compute recommendation for a specific recommender
+	recommender.computeRecommendation("Bob");
+
 	// Print recommendation ratings
 	recommender.printRecommendationRatings();
 
@@ -24,8 +27,7 @@ int main() {
 	// Print similar list
 	recommender.printSimilarList("Bob");
 
-	// Compute recommendation for a specific recommender
-	recommender.computeRecommendation("Bob");
+
 
 	return 0;
 }
