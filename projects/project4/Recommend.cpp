@@ -107,6 +107,9 @@ Recommend::Recommend(string fn) {
 
 		// Find index of book in vector
 		int bookIndex = getBookIndex(bookTitle);
+		if (DEBUG) {
+			cout << "Index of " << bookTitle << " is " << bookIndex << endl;
+		}
 		if (bookIndex != -1) {
 			// If valid index (found), update rating for the recommender
 			ratings[recommenderName][bookIndex] = rating;
