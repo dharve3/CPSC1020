@@ -13,15 +13,15 @@ int main(int argc, char* argv[]) {
 
     // Create an instance of Recommend class
     Recommend recommender(fileName);
+    string currentRecommender;
 
-    string command;
+    string command, token;
     // Menu Loop
     while (true) {
         getline(cin, command);
 
         // Tokensize command
         stringstream ss(command);
-        string token;
         ss >> token;
         // Allows for command arguments separated by a space
 
@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
             DEBUG = !DEBUG;
         } else if (token == "dotprod") {
             // Display current dot products
-            recommender.printDotProducts();
+            recommender.printDotProducts(currentRecommender);
         } else if (token == "file") {
             // Display data that the recommendation system is using
             recommender.printRecommendationRatings();
@@ -68,12 +68,14 @@ int main(int argc, char* argv[]) {
             ss >> name;
             // Compute recommendation
             recommender.computeRecommendation(name);
+            // Update current recommender name
+            currentRecommender = name;
         } else if (token == "similar") {
             // Display similarList
-            recommender.printSimilarList();
+            recommender.printSimilarList(currentRecommender);
         } else if (token == "simavg") {
             // Display simAvg
-            recommender.printSimAvg();
+            recommender.printSimAvg(currentRecommender);
         } else if (token == "quit") {
             // Exit the program
             break;
