@@ -49,6 +49,7 @@ Recommend::Recommend(string fn) {
 
 	// First pass through the file, remove duplicate entries
 	set<string> bookSet;
+	set<string> recommenderSet;
 	while (getline(inputFile, recommenderName)) { // Gets name of recommender
 		// Remove carriage return (windows) if present
 		recommenderName = removeCR(recommenderName);
@@ -69,11 +70,18 @@ Recommend::Recommend(string fn) {
 
 		// Store book title in set
 		bookSet.insert(bookTitle);
+
+		// Store recommender name in set
+		recommenderSet.insert(recommenderName);
 	}
 
 	// Convert the set to a vector and sort
 	books.assign(bookSet.begin(), bookSet.end());
 	sort(books.begin(), books.end());
+
+	// Covnert the set to a vector and sort
+	recommenders.assign(recommenderSet.begin(), recommenderSet.end());
+	sort(recommenders.begin(), recommenders.end());
 
 	// Debug to see all the sorted books
 	if (DEBUG) {
@@ -83,6 +91,20 @@ Recommend::Recommend(string fn) {
 		}
 		cout << endl;
 	}
+
+	// Debug to see all the sorted recommenders
+	if (DEBUG) {
+		cout << "Sorted recommenders from file: ";
+		for (const auto& recommender : recommenders) {
+			cout << recommender << ", ";
+		}
+		cout << endl;
+	}
+
+	// Initialize ratings map
+    for (const auto& recommender : recommenders) {
+        ratings[recommender] = vector<RATINGS>(books.size(), 0);
+    }
 
 	// Second pass through the file, build ratings map
 	inputFile.clear(); // Clears EOF flag
