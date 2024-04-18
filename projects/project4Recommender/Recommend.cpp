@@ -488,8 +488,6 @@ void Recommend::printRecommendationRatings() {
  ==========================================================================*/
 string Recommend::strSimilarList() {
     stringstream ss;
-    ss << "SIMILARITIES" << endl;
-    ss << "============" << endl;
 
     // Check if any recommendation has been made
     if (similarList.empty()) {
@@ -513,19 +511,10 @@ void Recommend::printSimilarList(RECOMMENDER requester) {
         cout << "DEBUG: " << "Printing similar list for: " << requester << endl;
     }
 
-    cout << "SIMILARITIES" << endl;
-    cout << "============" << endl;
+    cout << "SIMILARITIES LIST FOR: " << requester << endl;
+    cout << "=============================" << endl;
 
-    // Check if any recommendation has been made
-    if (similarList.empty()) {
-        cout << "Request a recommendation" << endl;
-        return;
-    }
-
-    // Print similarities
-    for (const auto& sim : similarList) {
-        cout << sim.first << ": " << fixed << setprecision(2) << sim.second << endl;
-    }
+    cout << strSimilarList();
 }
 
 /*==========================================================================
@@ -533,8 +522,6 @@ void Recommend::printSimilarList(RECOMMENDER requester) {
  ==========================================================================*/
 string Recommend::strSimAvg() {
     stringstream ss;
-    ss << "SIMILAR AVERAGES" << endl;
-    ss << "================" << endl;
 
     // Check if any recommendation has been made
     if (simAvg.empty()) {
@@ -558,22 +545,10 @@ void Recommend::printSimAvg(RECOMMENDER requester) {
         cout << "DEBUG: " << "Printing similar averages for: " << requester << endl;
     }
 
-    cout << "SIMILAR AVERAGES" << endl;
-    cout << "================" << endl;
+    cout << "SIMILARITY AVERAGES FOR: " << requester << endl;
+    cout << "===============================" << endl;
 
-    // Check if any recommendation has been made
-    if (simAvg.empty()) {
-        cout << "Request a recommendation" << endl;
-        return;
-    }
-
-    // Get the top 3 similar recommenders
-    vector<pair<BOOK_TITLE, double>> topSimilar(simAvg.begin(), simAvg.begin() + min(3, static_cast<int>(simAvg.size())));
-
-    // Print top similar recommenders
-    for (const auto& similar : topSimilar) {
-        cout << similar.first << ": " << fixed << setprecision(2) << similar.second << endl;
-    }
+    cout << strSimAvg();
 }
 
 /*==========================================================================
@@ -581,8 +556,6 @@ void Recommend::printSimAvg(RECOMMENDER requester) {
  ==========================================================================*/
 string Recommend::strFancyRatings() {
     stringstream ss;
-    ss << "RECOMMENDATION BOOK RATINGS" << endl;
-    ss << "===========================" << endl;
     for (const auto& entry : ratings) {
         ss << entry.first << ":" << endl;
         for (size_t i = 0; i < books.size(); ++i) {
@@ -599,6 +572,8 @@ string Recommend::strFancyRatings() {
  printFancyRatings() - display a fancy formatted string of ratings
  ==========================================================================*/
 void Recommend::printFancyRatings() {
+    cout << "RECOMMENDATION BOOK RATINGS" << endl;
+    cout << "===========================" << endl;
     cout << strFancyRatings();
 }
 
@@ -668,7 +643,8 @@ void Recommend::printNames() {
  recommender (which is passed in)
  ==========================================================================*/
 void Recommend::printRecommendation(RECOMMENDER requester) {
-    cout << "RECOMMENDATIONS FOR " << requester << ":" << endl;
+    cout << "BOOK RECOMMENDATIONS BASED ON RECOMMENDER:  " << requester << endl;
+    cout << "================================================" << endl;
     for (const auto& entry : simAvg) {
         if (ratings[requester][getBookIndex(entry.first)] == 0) {
             cout << entry.first << " (" << fixed << setprecision(2) << entry.second << ")" << endl;
