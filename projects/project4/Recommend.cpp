@@ -49,16 +49,26 @@ Recommend::Recommend(string fn) {
 
 	// First pass through the file, remove duplicate entries
 	set<string> bookSet;
-	while (getline(inputFile, line)) { // Gets name of rater
-		getline(inputFile, line); // Title of book
+	while (getline(inputFile, recommenderName)) { // Gets name of recommender
 		// Remove carriage return (windows) if present
-		line = removeCR(line);
+		recommenderName = removeCR(recommenderName);
+
+		// Read book title
+		getline(inputFile, bookTitle);
+		// Remove carriage return (windows) if present
+		bookTitle = removeCR(bookTitle);
+
+		// Read rating
+		getline(inputFile, line);
+		rating = stoi(line); // store as int
+
+		// Debug to see data as its read in
+		if (DEBUG) {
+			cout << "Reading data from file (1st): " << recommenderName << " - " << bookTitle << " - " << rating << endl;
+		}
 
 		// Store book title in set
-		bookSet.insert(line);
-		// Skip next two lines (book title and rating)
-		getline(inputFile, line); // Title
-		getline(inputFile, line); // Rating
+		bookSet.insert(bookTitle);
 	}
 
 	// Convert the set to a vector and sort
@@ -92,7 +102,7 @@ Recommend::Recommend(string fn) {
 
 		// Debug to see ratings as they are read in
 		if (DEBUG) {
-			cout << "Reading rating from file: " << recommenderName << " - " << bookTitle << " - " << rating << endl;
+			cout << "Reading rating from file (2nd): " << recommenderName << " - " << bookTitle << " - " << rating << endl;
 		}
 
 		// Find index of book in vector
