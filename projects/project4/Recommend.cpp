@@ -429,7 +429,7 @@ void Recommend::printDotProducts(RECOMMENDER requester) {
 		// Print dot product calcultion
 		cout << recommender << ": ";
 		for (size_t i = 0; i < books.size(); ++i) {
-			cout << ratings[requester][i] << " * " << ratings[recommender][i] << " + ";
+			cout << fixed << setprecision(0) << ratings[requester][i] << " * " << ratings[recommender][i] << " + ";
 		}
 		cout << " = " << dotProduct << endl;
 		
