@@ -49,7 +49,8 @@ Recommend::Recommend(string fn) {
 
 	// First pass through the file, remove duplicate entries
 	set<string> bookSet;
-	while (getline(inputFile, line)) {
+	while (getline(inputFile, line)) { // Gets name of rater
+		getline(inputFile, line); // Title of book
 		// Remove carriage return (windows) if present
 		line = removeCR(line);
 
