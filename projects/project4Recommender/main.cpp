@@ -1,30 +1,6 @@
 #include <iostream>
 #include "Recommend.h"
 
-// Command: averages - display average ratings for each book
-
-// Command: books - display list of books
-
-// Command: debug - toggles debugging outputs
-
-// Command: dotprod - display current dot products
-
-// Command: file - display ratings in fancy format
-
-// Command: menu - display menu of commands
-
-// Command: names - display list of recommender names
-
-// Command: ratings - display ratings
-
-// Command: recommend <name> - display book recommendations based upon recommender <name>
-
-// Command: similar - display current similarities
-
-// Command: simavg - display averages for current similarities
-
-// Command: quit - exits the program
-
 int main(int argc, char* argv[]) {
     // Check for the correct number of command line arguments
     if (argc != 2) {
@@ -47,32 +23,65 @@ int main(int argc, char* argv[]) {
         stringstream ss(command);
         string token;
         ss >> token;
+        // Allows for command arguments separated by a space
 
         if (token == "averages") {
-            
+            // Display average ratings for each book
+            recommender.printAverages();
+        } else if (token == "books") {
+            // Display list of books
+            recommender.printBooks();
+        } else if (token == "debug") {
+            // Toggle debugging outputs
+            DEBUG = !DEBUG;
+        } else if (token == "dotprod") {
+            // Display current dot products
+            recommender.printDotProducts();
+        } else if (token == "file") {
+            // Display data that the recommendation system is using
+            recommender.printRecommendationRatings();
+        } else if (token == "menu") {
+            // Display menu of commands
+            cout << "BOOK RECOMMENDATION SYSTEM MENU" << endl;
+            cout << "===============================" << endl;
+            cout << "averages - display average ratings for each book" << endl;
+            cout << "books - display books in alphabetic order" << endl;
+            cout << "debug - toggles debugging outputs" << endl;
+            cout << "dotprod - display current dot products" << endl;
+            cout << "file - fancy display of file data" << endl;
+            cout << "menu - display this menu" << endl;
+            cout << "books - display books in alphabetic order" << endl;
+            cout << "names - display recommender names" << endl;
+            cout << "recommend <name> - display book recommendations based upon recommender <name>" << endl;
+            cout << "sim - display current similarities" << endl;
+            cout << "simavg - display averages for current similarities" << endl;
+            cout << "quit - exits the program" << endl;
+        } else if (token == "names") {
+            // Display list of recommender names
+            recommender.printNames();
+        } else if (token == "ratings") {
+            // Display ratings
+            recommender.printRecommendationRatings();
+        } else if (token == "recommend") {
+            // Get name for recommendation
+            string name;
+            ss >> name;
+            // Compute recommendation
+            recommender.computeRecommendation(name);
+        } else if (token == "similar") {
+            // Display similarList
+            recommender.printSimilarList();
+        } else if (token == "simavg") {
+            // Display simAvg
+            recommender.printSimAvg();
+        } else if (token == "quit") {
+            // Exit the program
+            break;
+        } else {
+            // Invalid command
+            cout << "Invalid command. Type 'menu' to see the list of commands." << endl;
         }
     }
-
-    // Print total number of books and recommenders
-    cout << "Total number of books: " << recommender.getBookCount() << endl;
-    cout << "Total number of recommenders: " << recommender.getRecommenderCount() << endl;
-
-    // Compute recommendation for a specific recommender
-    recommender.computeRecommendation("Bob");
-
-    // Print recommendation ratings
-    recommender.printRecommendationRatings();
-
-    // Print dot products
-    recommender.printDotProducts("Bob");
-
-    // Print book averages
-    recommender.printAverages();
-
-    // Print similar list
-    recommender.printSimilarList("Bob");
-
-
 
     return 0;
 }
