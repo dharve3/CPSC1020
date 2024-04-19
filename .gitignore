@@ -19,6 +19,8 @@
 *.o
 *.out
 *.exe
+output
+compilation_output.*
 
 # vscode files
 .vscode
