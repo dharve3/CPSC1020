@@ -598,17 +598,17 @@ void Recommend::printSimAvg(RECOMMENDER requester) {
 string Recommend::strFancyRatings() {
     stringstream ss;
     // Column headers
-    ss << setw(20) << "" << " ";
+    ss << setw(9) << " ";
     for (const auto& title : books) {
-        ss << setw(15) << title;
+        ss << setw(14) << title;
     }
     ss << endl;
 
     // Ratings for each recommender
     for (const auto& [name, rating] : ratings) {
-        ss << setw(10) << name << ":";
+        ss << setw(9) << name << ":";
         for (size_t j = 0; j < rating.size(); ++j) {
-            ss << setw(15) << rating[j];
+            ss << setw(14) << rating[j];
         }
         ss << endl;
     }
