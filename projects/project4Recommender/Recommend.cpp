@@ -17,6 +17,17 @@ bool compareRatings(const pair<string, double>& a, const pair<string, double>& b
 }
 
 /*==========================================================================
+ int dotProduct() - a helper function to compute the dot product of 2 vectors
+===========================================================================*/
+int dotProduct() {
+    int result = 0;
+    for (size_t i = 0; i < v1.size(); ++i) {
+        result += v1[i] * v2[i];
+    }
+    return result;
+}
+
+/*==========================================================================
  Recommend(string)
  - constructor:
  - open file from file name passed in
@@ -161,20 +172,18 @@ void Recommend::computeRecommendation(RECOMMENDER requester) {
         // If not, print the averages
         printAverages();
     }
-    
 
     // Compute similarities with other recommenders
     computeSimilarities(requester);
 
     // Sort similarList by ratings
-    // sort(similarList.begin(), similarList.end(), compareRatings);
-    // I believe this is redundant
+    sort(similarList.begin(), similarList.end(), compareRatings);
 
     // Get top 3 similar recommenders
-    vector<pair<RECOMMENDER, double>> topSimilar(similarList.begin(), similarList.begin() + min(3, static_cast<int>(similarList.size())));
+    // vector<pair<RECOMMENDER, double>> topSimilar(similarList.begin(), similarList.begin() + min(3, static_cast<int>(similarList.size())));
 
     // Compute recommendations based on top similar recommenders
-    computeSimAvg(topSimilar);
+    computeSimAvg(similarList);
 
     // Print recommendations
     printRecommendation(requester);
@@ -194,38 +203,78 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
     // Clear previous simAvg
     simAvg.clear();
 
-    // Calculate the sum of ratings for each book
-    map<BOOK_TITLE, double> sumRatings;
-    map<BOOK_TITLE, int> countRatings;
+	// Sort similarList based on similarity values
+    vector<pair<RECOMMENDER, double>> sorted_similarities(similarList);
+    sort(sorted_similarities.begin(), sorted_similarities.end(), [](const pair<RECOMMENDER, double>& a, const pair<RECOMMENDER, double>& b) {
+        return a.second > b.second; // Sort in descending order of similarity
+    });
 
-    // Iterate through the top simialr recommenders
-    for (const auto& sim : topSimilar) {
-        RECOMMENDER recommender = sim.first;
-        double similarity = sim.second;
+	// Select top 3 similar recommenders
+    vector<RECOMMENDER> top_similar;
+    for (size_t i = 0; i < min(sorted_similarities.size(), static_cast<size_t>(3)); ++i) {
+        top_similar.push_back(sorted_similarities[i].first);
+    }
 
-        // Get the ratings for the current ecommender
-        const vector<RATINGS>& recommenderRatings = ratings[recommender];
+	// Initialize vectors to store cumulative ratings and count of non-zero ratings
+    vector<double> cumulative_ratings(books.size(), 0.0);
+    vector<int> count_nonzero(books.size(), 0);
 
-        // Update the sum and count of ratings for each book
+    // Loop through the top similar recommenders
+    for (const auto& recommender : top_similar) {
+        // Update cumulative ratings and count of non-zero ratings
         for (size_t i = 0; i < books.size(); ++i) {
-            double rating = recommenderRatings[i];
-            if (rating != 0) {
-                sumRatings[books[i]] += rating * similarity;
-                countRatings[books[i]]++;
+            if (ratings[recommender][i] != 0) {
+                cumulative_ratings[i] += ratings[recommender][i];
+                count_nonzero[i]++;
             }
         }
     }
 
-    // Calculate the average rating for each book
-    for (const auto& entry : sumRatings) {
-        double averageRating = entry.second / countRatings[entry.first];
-        simAvg.push_back({entry.first, averageRating});
+	// Compute average ratings
+    for (size_t i = 0; i < books.size(); ++i) {
+        if (count_nonzero[i] > 0) {
+            double avg_rating = cumulative_ratings[i] / count_nonzero[i];
+            simAvg.push_back(make_pair(books[i], avg_rating));
+        }
     }
 
-    // Sort simAvg by highest average rating
+    // Sort simAvg based on average ratings
     sort(simAvg.begin(), simAvg.end(), [](const pair<BOOK_TITLE, double>& a, const pair<BOOK_TITLE, double>& b) {
-        return a.second > b.second;
+        return a.second > b.second; // Sort in descending order of average rating
     });
+
+    // // Calculate the sum of ratings for each book
+    // map<BOOK_TITLE, double> sumRatings;
+    // map<BOOK_TITLE, int> countRatings;
+
+    // // Iterate through the top simialr recommenders
+    // for (const auto& sim : topSimilar) {
+    //     RECOMMENDER recommender = sim.first;
+    //     double similarity = sim.second;
+
+    //     // Get the ratings for the current ecommender
+    //     const vector<RATINGS>& recommenderRatings = ratings[recommender];
+
+    //     // Update the sum and count of ratings for each book
+    //     for (size_t i = 0; i < books.size(); ++i) {
+    //         double rating = recommenderRatings[i];
+    //         if (rating != 0) {
+    //             sumRatings[books[i]] += rating * similarity;
+    //             countRatings[books[i]]++;
+    //         }
+    //     }
+    // }
+
+    // // Calculate the average rating for each book
+    // for (const auto& entry : sumRatings) {
+    //     double averageRating = entry.second / countRatings[entry.first];
+    //     simAvg.push_back({entry.first, averageRating});
+    // }
+
+    // // Sort simAvg by highest average rating
+    // sort(simAvg.begin(), simAvg.end(), [](const pair<BOOK_TITLE, double>& a, const pair<BOOK_TITLE, double>& b) {
+    //     return a.second > b.second;
+    // });
 }
 
 /*==========================================================================
@@ -284,31 +333,15 @@ void Recommend::computeSimilarities(RECOMMENDER requester) {
 
     // Loop through all recommenders
     for (const auto& recommender : recommenders) {
-        if (recommender != requester) {
-            double dotProduct = 0.0, norm1 = 0.0, norm2 = 0.0;
-
-            // Compute dot product and norms
+        if (recommender != requester) { // Exclude the requested user
+            // Calculate dot product between requested_user and recommender
+            double dot_product = 0.0;
             for (size_t i = 0; i < books.size(); ++i) {
-                double rating1 = ratings[requester][i];
-                double rating2 = ratings[recommender][i];
-                dotProduct += rating1 * rating2;
-                norm1 += rating1 * rating1;
-                norm2 += rating2 * rating2;
+                dot_product += ratings[requester][i] * ratings[recommender][i];
             }
-
-            // Compute similarity score (cosine similarity)
-            double similarity = 0.0;
-            if (norm1 > 0 && norm2 > 0) {
-                similarity = dotProduct / (sqrt(norm1) * sqrt(norm2));
-            }
-
-            // Add to similarList
-            similarList.push_back(make_pair(recommender, similarity));
+            similarList.push_back(make_pair(recommender, dot_product));
         }
     }
-
-    // Sort similarList by similarity score
-    sort(similarList.begin(), similarList.end(), compareRatings);
 }
 
 /*==========================================================================
@@ -654,9 +687,9 @@ void Recommend::printNames() {
 void Recommend::printRecommendation(RECOMMENDER requester) {
     cout << "BOOK RECOMMENDATIONS BASED ON RECOMMENDER: " << requester << endl;
     cout << "================================================" << endl;
-    for (const auto& entry : simAvg) {
-        if (ratings[requester][getBookIndex(entry.first)] == 0) {
-            cout << entry.first << " (" << fixed << setprecision(2) << entry.second << ")" << endl;
+    for (const auto& avg : simAvg) {
+        if (avg.second > 0) { // Only print books with positive ratings
+            cout << avg.first << " " << avg.second << endl;
         }
     }
 }
