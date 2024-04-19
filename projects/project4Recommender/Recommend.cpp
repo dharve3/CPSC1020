@@ -204,19 +204,19 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
     // Clear previous simAvg
     simAvg.clear();
 
-	// Sort similarList based on similarity values
+    // Sort similarList based on similarity values
     vector<pair<RECOMMENDER, double>> sorted_similarities(similarList);
     sort(sorted_similarities.begin(), sorted_similarities.end(), [](const pair<RECOMMENDER, double>& a, const pair<RECOMMENDER, double>& b) {
         return a.second > b.second; // Sort in descending order of similarity
     });
 
-	// Select top 3 similar recommenders
+    // Select top 3 similar recommenders
     vector<RECOMMENDER> top_similar;
     for (size_t i = 0; i < min(sorted_similarities.size(), static_cast<size_t>(3)); ++i) {
         top_similar.push_back(sorted_similarities[i].first);
     }
 
-	// Initialize vectors to store cumulative ratings and count of non-zero ratings
+    // Initialize vectors to store cumulative ratings and count of non-zero ratings
     vector<double> cumulative_ratings(books.size(), 0.0);
     vector<int> count_nonzero(books.size(), 0);
 
@@ -231,7 +231,7 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
         }
     }
 
-	// Compute average ratings
+    // Compute average ratings
     for (size_t i = 0; i < books.size(); ++i) {
         if (count_nonzero[i] > 0) {
             double avg_rating = cumulative_ratings[i] / count_nonzero[i];
@@ -597,15 +597,22 @@ void Recommend::printSimAvg(RECOMMENDER requester) {
  ==========================================================================*/
 string Recommend::strFancyRatings() {
     stringstream ss;
-    for (const auto& entry : ratings) {
-        ss << entry.first << ":" << endl;
-        for (size_t i = 0; i < books.size(); ++i) {
-            if (entry.second[i] != 0) {
-                ss << setw(20) << left << books[i] << ": " << entry.second[i] << endl;
-            }
+    // Column headers
+    ss << setw(20) << "" << " ";
+    for (const auto& title : books) {
+        ss << setw(15) << title;
+    }
+    ss << endl;
+
+    // Ratings for each recommender
+    for (size_t i = 0; i < recommenderNames.size(); ++i) {
+        ss << setw(10) << recommenderNames[i] << ":";
+        for (size_t j = 0; j < bookRatings[i].size(); ++j) {
+            ss << setw(15) << bookRatings[i][j];
         }
         ss << endl;
     }
+
     return ss.str();
 }
 
@@ -690,7 +697,7 @@ void Recommend::printRecommendation(RECOMMENDER requester) {
     cout << "================================================" << endl;
     for (const auto& avg : simAvg) {
         if (avg.second > 0) { // Only print books with positive ratings
-            cout << avg.first << " " << avg.second << endl;
+            cout << fixed << setprecision(2) << avg.first << " " << avg.second << endl;
         }
     }
 }
