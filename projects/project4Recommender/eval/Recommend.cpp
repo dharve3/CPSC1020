@@ -194,9 +194,7 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
 
     // Sort similarList based on similarity values
     vector<pair<RECOMMENDER, double>> sorted_similarities(similarList);
-    sort(sorted_similarities.begin(), sorted_similarities.end(), [](const pair<RECOMMENDER, double>& a, const pair<RECOMMENDER, double>& b) {
-        return a.second > b.second; // Sort in descending order of similarity
-    });
+    sort(sorted_similarities.begin(), sorted_similarities.end(), compareRatings);
 
     // Select top 3 similar recommenders
     vector<RECOMMENDER> top_similar;
