@@ -469,8 +469,8 @@ string Recommend::strRecommendationRatings() {
  printRecommendationRatings - display ratings
  ==========================================================================*/
 void Recommend::printRecommendationRatings() {
-    cout << "RECOMMENDER RATINGS" << endl;
-    cout << "===================" << endl;
+    cout << "RECOMMENDATION RATINGS" << endl;
+    cout << "======================" << endl;
     cout << strBooks();
     cout << strRecommendationRatings();
 }
