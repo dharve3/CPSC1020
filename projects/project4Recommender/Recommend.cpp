@@ -548,33 +548,31 @@ void Recommend::printSimAvg(RECOMMENDER requester) {
 /*==========================================================================
  string strFancyRatings() - return a fancy formatted string of ratings
  ==========================================================================*/
+// Note: GIVEN IN ANNOUNCEMENT
 string Recommend::strFancyRatings() {
     stringstream ss;
-    // Column headers
-    ss << setw(10) << " ";
-    for (const auto& title : books) {
-        ss << setw(14) << title;
+    ss << right << setw(10) << ' ';
+    for (string b : books) {
+        ss << setw(13) << b << " ";
     }
     ss << endl;
-
-    // Ratings for each recommender
-    for (const auto& [name, rating] : ratings) {
-        ss << setw(9) << name << ":";
-        for (size_t j = 0; j < rating.size(); ++j) {
-            ss << setw(14) << rating[j];
+    for (auto const &[person, ratings_row] : ratings) {
+        ss << right << setw(8) << person << ": ";
+        for (double rating : ratings_row) {
+            ss << right << setw(13) << rating << " ";
         }
-        ss << endl;
+    ss << endl;
     }
-
-    return ss.str();
+ return ss.str();
 }
 
 /*==========================================================================
  printFancyRatings() - display a fancy formatted string of ratings
  ==========================================================================*/
+// Note: GIVEN IN ANNOUNCEMENT
 void Recommend::printFancyRatings() {
-    cout << "RECOMMENDATION BOOK RATINGS" << endl;
-    cout << "===========================" << endl;
+    cout << "RECOMMENDATION BOOK RATINGS\n";
+    cout << "===========================\n";
     cout << strFancyRatings();
 }
 
