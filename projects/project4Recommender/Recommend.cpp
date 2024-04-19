@@ -17,9 +17,10 @@ bool compareRatings(const pair<string, double>& a, const pair<string, double>& b
 }
 
 /*==========================================================================
- int dotProduct() - a helper function to compute the dot product of 2 vectors
+ int dotProduct(const vector<int>&, const vector<int>&) - a helper function to compute the dot product of 2 vectors
+ (i made this btw)
 ===========================================================================*/
-int dotProduct() {
+int dotProduct(const vector<int>& v1, const vector<int>& v2) {
     int result = 0;
     for (size_t i = 0; i < v1.size(); ++i) {
         result += v1[i] * v2[i];
