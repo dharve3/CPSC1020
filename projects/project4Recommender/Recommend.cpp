@@ -572,7 +572,7 @@ string Recommend::strSimAvg() {
 
     // Construct the string representation of similar averages
     for (const auto& sim : simAvg) {
-        ss << sim.first << ": " << fixed << setprecision(2) << sim.second << endl;
+        ss << sim.second << ": " << sim.first << endl;
     }
 
     return ss.str();
