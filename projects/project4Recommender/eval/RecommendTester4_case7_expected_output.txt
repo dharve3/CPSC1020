@@ -1,0 +1,6 @@
+Cats 5.00
+Lord of the Rings 5.00
+Watership Down 5.00
+Harry Potter 1.50
+1984 0.00
+Animal Farm -1.67
