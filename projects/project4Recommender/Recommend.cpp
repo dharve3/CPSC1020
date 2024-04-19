@@ -605,10 +605,10 @@ string Recommend::strFancyRatings() {
     ss << endl;
 
     // Ratings for each recommender
-    for (size_t i = 0; i < recommenders.size(); ++i) {
-        ss << setw(10) << recommenders[i] << ":";
-        for (size_t j = 0; j < ratings[i].size(); ++j) {
-            ss << setw(15) << ratings[i][j];
+    for (const auto& [name, rating] : ratings) {
+        ss << setw(10) << name << ":";
+        for (size_t j = 0; j < rating.size(); ++j) {
+            ss << setw(15) << rating[j];
         }
         ss << endl;
     }
