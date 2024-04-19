@@ -538,7 +538,7 @@ string Recommend::strSimilarList() {
 
     // Construct the string representation of similarities
     for (const auto& sim : similarList) {
-        ss << sim.first << ": " << fixed << setprecision(2) << sim.second << endl;
+        ss << sim.second << ": " << sim.first << endl;
     }
 
     return ss.str();
