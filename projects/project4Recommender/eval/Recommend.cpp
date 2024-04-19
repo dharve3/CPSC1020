@@ -175,7 +175,8 @@ void Recommend::computeRecommendation(RECOMMENDER requester) {
     computeSimAvg(similarList);
 
     // Print recommendations
-    printRecommendation(requester);
+    // printRecommendation(requester);
+    // DO NOT PRINT IT HEREEE
 }
 
 /*==========================================================================
