@@ -1,5 +1,5 @@
 COMPILER = g++
-OPTIONS = -Wall
+OPTIONS = -Wall -std=c++17
 PROGRAM = main.out
 
 all: $(PROGRAM)
