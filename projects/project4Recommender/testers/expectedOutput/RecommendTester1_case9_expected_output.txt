@@ -1,7 +1,0 @@
-RECOMMENDATION BOOK RATINGS
-===========================
-                   1984   Animal Farm          Cats  Harry Potter Lord of the Rings Watership Down 
-     Bob:             0             0             5            -3             5             0 
-  Carlos:            -5             1             0             5             0             0 
-   Kalid:             0            -3             0             3             0             5 
-  Suelyn:             5            -3             0             1             0             0 
