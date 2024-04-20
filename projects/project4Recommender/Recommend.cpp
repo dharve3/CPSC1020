@@ -650,6 +650,7 @@ void Recommend::printRecommendation(RECOMMENDER requester) {
         if (avg.second > 0) { // Only print books with positive ratings
             cout << fixed << setprecision(2) << avg.first << " " << avg.second << endl;
         }
+        cout << endl;  // Extra Newline here to fit test case (bruh)
     }
 }
 
