@@ -295,11 +295,11 @@ void Recommend::computeSimilarities(RECOMMENDER requester) {
             double dot_product = 0.0;
             // const vector<int>& recommenderRatings = ratings[recommender];
             for (size_t i = 0; i < books.size(); ++i) {
-                dot_product += ratings[requester][i] * ratings[recommender][i];
                 if (DEBUG) {
-                    cout << "DEBUG: " << "ratings[requester][i]: " << ratings[requester][i] << endl;
-                    cout << "DEBUG: " << "ratings[recommender][i]: " << ratings[recommender][i] << endl;
+                    cout << "DEBUG: " << "ratings[" << requester << "][" << i << "]: " << ratings[requester][i] << endl;
+                    cout << "DEBUG: " << "ratings[" << recommender << "][" << i << "]: " << ratings[recommender][i] << endl;
                 }
+                dot_product += ratings[requester][i] * ratings[recommender][i];
             }
             similarList.push_back(make_pair(recommender, dot_product));
         }
