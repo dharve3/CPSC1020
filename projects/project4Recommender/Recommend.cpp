@@ -167,7 +167,7 @@ void Recommend::computeRecommendation(RECOMMENDER requester) {
     computeSimilarities(requester);
 
     // Sort similarList by ratings
-    // sort(similarList.begin(), similarList.end(), compareRatings);
+    sort(similarList.begin(), similarList.end(), compareRatings);
 
     // Get top 3 similar recommenders
     // vector<pair<RECOMMENDER, double>> topSimilar(similarList.begin(), similarList.begin() + min(3, static_cast<int>(similarList.size())));
@@ -186,35 +186,34 @@ void Recommend::computeRecommendation(RECOMMENDER requester) {
  - averages the books that are non 0
  - returns best books in order
 ===========================================================================*/
-void Recommend::computeSimAvg(BOOK_AVG_LIST simList) {
+void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
     if (DEBUG) {
         cout << "DEBUG: " << "Computing similarity averages for top similar recommenders..." << endl;
-        cout << "DEBUG: " << "Number of top similar recommenders: " << simList.size() << endl;
+        cout << "DEBUG: " << "Number of top similar recommenders: " << topSimilar.size() << endl;
     }
     // Clear previous simAvg
     simAvg.clear();
 
     // Sort similarList based on similarity values
-    sort(simList.begin(), simList.end(), compareRatings);
+    vector<pair<RECOMMENDER, double>> sorted_similarities(similarList);
+    sort(sorted_similarities.begin(), sorted_similarities.end(), compareRatings);
+
+    // Select top 3 similar recommenders
+    vector<RECOMMENDER> top_similar;
+    for (size_t i = 0; i < min(sorted_similarities.size(), static_cast<size_t>(3)); ++i) {
+        top_similar.push_back(sorted_similarities[i].first);
+    }
 
     // Initialize vectors to store cumulative ratings and count of non-zero ratings
     vector<double> cumulative_ratings(books.size(), 0.0);
     vector<int> count_nonzero(books.size(), 0);
 
     // Loop through the top similar recommenders
-    for (const auto& sim : simList) {
-        const auto& recommender = sim.first;
-        double similarity = sim.second;
-
-        // Skip if the similarity is negative
-        if (similarity < 0) {
-            continue;
-        }
-
+    for (const auto& recommender : top_similar) {
+        // Update cumulative ratings and count of non-zero ratings
         for (size_t i = 0; i < books.size(); ++i) {
-            double rating = ratings[recommender][i];
-            if (rating != 0) {
-                cumulative_ratings[i] += rating * similarity; // Weighted sum
+            if (ratings[recommender][i] != 0) {
+                cumulative_ratings[i] += ratings[recommender][i];
                 count_nonzero[i]++;
             }
         }
