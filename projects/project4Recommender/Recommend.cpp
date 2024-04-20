@@ -397,8 +397,8 @@ void Recommend::printDotProducts(RECOMMENDER requester) {
         cout << "DEBUG: " << "Printing dot products for: " << requester << endl;
     }
 
-    cout << "DOT PRODUCTS" << endl;
-    cout << "============" << endl;
+    cout << "DOT PRODUCTS FOR RECOMMENDER: " << endl;
+    cout << "===================================" << endl;
 
     // Check if any recommendation has been made
     if (simAvg.empty()) {
