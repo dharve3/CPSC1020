@@ -70,7 +70,8 @@ int main(int argc, char* argv[]) {
             recommender.computeRecommendation(name);
             // Update current recommender name
             currentRecommender = name;
-            recommender.printRecommendation(currentRecommender);
+            if (name != "")
+                recommender.printRecommendation(currentRecommender);
         } else if (token == "similar") {
             // Display similarList
             recommender.printSimilarList(currentRecommender);
