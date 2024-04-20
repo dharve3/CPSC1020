@@ -655,7 +655,9 @@ void Recommend::printNames() {
  ==========================================================================*/
 void Recommend::printRecommendation(RECOMMENDER requester) {
     cout << "RECOMMENDATION WITH: " << requester << endl;
-    cout << "===========================" << endl;
+    int nameLength = requester.size();
+    cout << "=====================" << string(nameLength, '=') << endl; // conditional length of equals line for Test3 Case 1,2,3,4
+
     for (const auto& avg : simAvg) {
         if (avg.second > 0) { // Only print books with positive ratings
             cout << fixed << setprecision(2) << avg.first << " " << avg.second << endl;
