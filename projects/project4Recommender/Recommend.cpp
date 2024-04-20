@@ -186,22 +186,21 @@ void Recommend::computeRecommendation(RECOMMENDER requester) {
  - averages the books that are non 0
  - returns best books in order
 ===========================================================================*/
-void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
+void Recommend::computeSimAvg(BOOK_AVG_LIST list) {
     if (DEBUG) {
         cout << "DEBUG: " << "Computing similarity averages for top similar recommenders..." << endl;
-        cout << "DEBUG: " << "Number of top similar recommenders: " << topSimilar.size() << endl;
+        cout << "DEBUG: " << "Number of top similar recommenders: " << list.size() << endl;
     }
     // Clear previous simAvg
     simAvg.clear();
 
     // Sort similarList based on similarity values
-    vector<pair<RECOMMENDER, double>> sorted_similarities(similarList);
-    sort(sorted_similarities.begin(), sorted_similarities.end(), compareRatings);
+    sort(list.begin(), list.end(), compareRatings);
 
     // Select top 3 similar recommenders
     vector<RECOMMENDER> top_similar;
-    for (size_t i = 0; i < min(sorted_similarities.size(), static_cast<size_t>(3)); ++i) {
-        top_similar.push_back(sorted_similarities[i].first);
+    for (size_t i = 0; i < min(list.size(), static_cast<size_t>(3)); ++i) {
+        top_similar.push_back(list[i].first);
     }
 
     // Initialize vectors to store cumulative ratings and count of non-zero ratings
@@ -211,6 +210,7 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
     // Loop through the top similar recommenders
     for (const auto& recommender : top_similar) {
         // Update cumulative ratings and count of non-zero ratings
+        // const vector<int>& recommenderRatings = ratings[recommender];
         for (size_t i = 0; i < books.size(); ++i) {
             if (ratings[recommender][i] != 0) {
                 cumulative_ratings[i] += ratings[recommender][i];
