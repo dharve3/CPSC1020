@@ -408,7 +408,8 @@ void Recommend::printDotProducts(RECOMMENDER requester) {
     }
 
     cout << "DOT PRODUCTS FOR RECOMMENDER: " << requester << endl;
-    cout << "===================================" << endl;
+    int nameLength = requester.size();
+    cout << "==============================" << string(nameLength, '=') << endl;
 
     // Check if any recommendation has been made
     if (simAvg.empty()) {
@@ -516,7 +517,8 @@ void Recommend::printSimilarList(RECOMMENDER requester) {
     }
 
     cout << "SIMILARITIES LIST FOR: " << requester << endl;
-    cout << "==========================" << endl;
+    int nameLength = requester.size();
+    cout << "=======================" << string(nameLength, '=') << endl;
 
     cout << strSimilarList();
 }
@@ -550,7 +552,8 @@ void Recommend::printSimAvg(RECOMMENDER requester) {
     }
 
     cout << "SIMILARITY AVERAGES FOR: " << requester << endl;
-    cout << "===============================" << endl;
+    int nameLength = requester.size();
+    cout << "=========================" << string(nameLength, '=') << endl;
 
     cout << strSimAvg();
 }
