@@ -437,7 +437,7 @@ void Recommend::printDotProducts(RECOMMENDER requester) {
 string Recommend::strAverages() {
     stringstream ss;
     for (const auto& entry : bookAverages) {
-        ss << entry.first << ": " << fixed << setprecision(2) << entry.second << endl;
+        ss << entry.first << " " << fixed << setprecision(2) << entry.second << endl;
     }
     return ss.str();
 }
