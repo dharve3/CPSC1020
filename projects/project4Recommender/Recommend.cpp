@@ -491,7 +491,7 @@ string Recommend::strSimilarList() {
 
     // Construct the string representation of similarities
     for (const auto& sim : similarList) {
-        ss << sim.second << ": " << sim.first << endl;
+        ss << fixed << setprecision(2) << sim.second << ": " << sim.first << endl;
     }
 
     return ss.str();
@@ -506,7 +506,7 @@ void Recommend::printSimilarList(RECOMMENDER requester) {
     }
 
     cout << "SIMILARITIES LIST FOR: " << requester << endl;
-    cout << "=============================" << endl;
+    cout << "==========================" << endl;
 
     cout << strSimilarList();
 }
