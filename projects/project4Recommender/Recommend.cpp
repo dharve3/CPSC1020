@@ -208,8 +208,8 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
         // Update cumulative ratings and count of non-zero ratings
         for (size_t i = 0; i < books.size(); ++i) {
             double rating = ratings[recommender.first][i];
+            cumulative_ratings[i] += rating;
             if (rating != 0) {
-                cumulative_ratings[i] += rating;
                 count_nonzero[i]++;
             }
         }
@@ -217,10 +217,8 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
 
     // Compute average ratings
     for (size_t i = 0; i < books.size(); ++i) {
-        if (count_nonzero[i] > 0) {
-            double avg_rating = cumulative_ratings[i] / count_nonzero[i];
-            simAvg.push_back(make_pair(books[i], avg_rating));
-        }
+        double avg_rating = (count_nonzero[i] > 0) ? (cumulative_ratings[i] / count_nonzero[i]) : 0.0;
+        simAvg.push_back(make_pair(books[i], avg_rating));
     }
 
     // Sort simAvg based on average ratings
