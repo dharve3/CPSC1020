@@ -285,13 +285,21 @@ void Recommend::computeSimilarities(RECOMMENDER requester) {
     // Clear previous similarList
     similarList.clear();
 
+    // Get the ratings of that requester
+    // vector<int>& requesterRatings = ratings[requester];
+
     // Loop through all recommenders
     for (const auto& recommender : recommenders) {
         if (recommender != requester) { // Exclude the requested user
             // Calculate dot product between requested_user and recommender
             double dot_product = 0.0;
+            // const vector<int>& recommenderRatings = ratings[recommender];
             for (size_t i = 0; i < books.size(); ++i) {
                 dot_product += ratings[requester][i] * ratings[recommender][i];
+                if (DEBUG) {
+                    cout << "DEBUG: " << "ratings[requester][i]: " << ratings[requester][i] << endl;
+                    cout << "DEBUG: " << "ratings[recommender][i]: " << ratings[recommender][i] << endl;
+                }
             }
             similarList.push_back(make_pair(recommender, dot_product));
         }
@@ -397,7 +405,7 @@ void Recommend::printDotProducts(RECOMMENDER requester) {
         cout << "DEBUG: " << "Printing dot products for: " << requester << endl;
     }
 
-    cout << "DOT PRODUCTS FOR RECOMMENDER: " << endl;
+    cout << "DOT PRODUCTS FOR RECOMMENDER: " << requester << endl;
     cout << "===================================" << endl;
 
     // Check if any recommendation has been made
