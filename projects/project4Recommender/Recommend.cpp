@@ -216,11 +216,15 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimList) {
 
     // Compute average ratings
     for (size_t i = 0; i < books.size(); ++i) {
-        if (count_nonzero[i] > 0) {
-            double avg_rating = cumulative_ratings[i] / count_nonzero[i];
-            simAvg.push_back(make_pair(books[i], avg_rating));
-        }
+        double avg_rating = (count_nonzero[i] > 0) ? (cumulative_ratings[i] / count_nonzero[i]) : 0.0; // Adds 0 rating if none found
+        simAvg.push_back(make_pair(books[i], avg_rating));
     }
+    // for (size_t i = 0; i < books.size(); ++i) {
+    //     if (count_nonzero[i] > 0) {
+    //         double avg_rating = cumulative_ratings[i] / count_nonzero[i];
+    //         simAvg.push_back(make_pair(books[i], avg_rating));
+    //     }
+    // }
 
     // Sort simAvg based on average ratings
     sort(simAvg.begin(), simAvg.end(), compareRatings);
