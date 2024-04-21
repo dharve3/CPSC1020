@@ -1,3 +1,11 @@
+// Name: Dylan Harvey
+// Class: CPSC-1020
+// Date: 4/20/2024
+// Project 4 - Recommender
+// Time: ~20 hrs
+// Desc: Recommender driver program, reads a file of book recommendation data, 
+// has a variety of commands a user can input to get recommendations etc.
+
 #include <iostream>
 #include "Recommend.h"
 

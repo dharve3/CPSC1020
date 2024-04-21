@@ -1,3 +1,10 @@
+// Name: Dylan Harvey
+// Class: CPSC-1020
+// Date: 4/20/2024
+// Project 4 - Recommender
+// Time: ~20 hrs
+// Desc: Source file for class Recommend, contains all the methods used in the main driver program
+
 #include "Recommend.h"
 
 bool DEBUG = false;

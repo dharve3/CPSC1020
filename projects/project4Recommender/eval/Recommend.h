@@ -1,4 +1,9 @@
-// header file for project 4: Recommendation System App
+// Name: Dylan Harvey
+// Class: CPSC-1020
+// Date: 4/20/2024
+// Project 4 - Recommender
+// Time: ~20 hrs
+// Desc: header file for project 4: Recommendation System App (given)
 
 #include <iostream>
 #include <iomanip>
