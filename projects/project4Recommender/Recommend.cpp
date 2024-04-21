@@ -194,9 +194,14 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
     // Clear previous simAvg
     simAvg.clear();
 
-    if (topSimilar.empty()) {
-        cout << "Request a recommendation" << endl;
-        return;
+    // Sort similarList based on similarity values
+    vector<pair<RECOMMENDER, double>> sorted_similarities(similarList);
+    sort(sorted_similarities.begin(), sorted_similarities.end(), compareRatings);
+
+    // Select top 3 similar recommenders
+    vector<RECOMMENDER> top_similar;
+    for (size_t i = 0; i < min(sorted_similarities.size(), static_cast<size_t>(3)); ++i) {
+        top_similar.push_back(sorted_similarities[i].first);
     }
 
     // Initialize vectors to store cumulative ratings and count of non-zero ratings
@@ -204,12 +209,11 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
     vector<int> count_nonzero(books.size(), 0);
 
     // Loop through the top similar recommenders
-    for (const auto& recommender : topSimilar) {
+    for (const auto& recommender : top_similar) {
         // Update cumulative ratings and count of non-zero ratings
         for (size_t i = 0; i < books.size(); ++i) {
-            double rating = ratings[recommender.first][i];
-            cumulative_ratings[i] += rating;
-            if (rating != 0) {
+            if (ratings[recommender][i] != 0) {
+                cumulative_ratings[i] += ratings[recommender][i];
                 count_nonzero[i]++;
             }
         }
@@ -217,13 +221,55 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
 
     // Compute average ratings
     for (size_t i = 0; i < books.size(); ++i) {
-        double avg_rating = (count_nonzero[i] > 0) ? (cumulative_ratings[i] / count_nonzero[i]) : 0.0;
-        simAvg.push_back(make_pair(books[i], avg_rating));
+        if (count_nonzero[i] > 0) {
+            double avg_rating = cumulative_ratings[i] / count_nonzero[i];
+            simAvg.push_back(make_pair(books[i], avg_rating));
+        }
     }
 
     // Sort simAvg based on average ratings
     sort(simAvg.begin(), simAvg.end(), compareRatings);
 }
+
+
+// void Recommend::computeSimAvg(BOOK_AVG_LIST topSimilar) {
+//     if (DEBUG) {
+//         cout << "DEBUG: " << "Computing similarity averages for top similar recommenders..." << endl;
+//         cout << "DEBUG: " << "Number of top similar recommenders: " << topSimilar.size() << endl;
+//     }
+//     // Clear previous simAvg
+//     simAvg.clear();
+
+//     if (topSimilar.empty()) {
+//         cout << "Request a recommendation" << endl;
+//         return;
+//     }
+
+//     // Initialize vectors to store cumulative ratings and count of non-zero ratings
+//     vector<double> cumulative_ratings(books.size(), 0.0);
+//     vector<int> count_nonzero(books.size(), 0);
+
+//     // Loop through the top similar recommenders
+//     for (const auto& recommender : topSimilar) {
+//         // Update cumulative ratings and count of non-zero ratings
+//         for (size_t i = 0; i < books.size(); ++i) {
+//             double rating = ratings[recommender.first][i];
+//             cumulative_ratings[i] += rating;
+//             if (rating != 0) {
+//                 count_nonzero[i]++;
+//             }
+//         }
+//     }
+
+//     // Compute average ratings
+//     for (size_t i = 0; i < books.size(); ++i) {
+//         double avg_rating = (count_nonzero[i] > 0) ? (cumulative_ratings[i] / count_nonzero[i]) : 0.0;
+//         simAvg.push_back(make_pair(books[i], avg_rating));
+//     }
+
+//     // Sort simAvg based on average ratings
+//     sort(simAvg.begin(), simAvg.end(), compareRatings);
+// }
 
 /*==========================================================================
  computeBookAverages()
@@ -653,7 +699,7 @@ void Recommend::printNames() {
 void Recommend::printRecommendation(RECOMMENDER requester) {
     cout << "RECOMMENDATION WITH: " << requester << endl;
     int nameLength = requester.size();
-    cout << "=====================" << string(nameLength, '=') << endl; // conditional length of equals line for Test3 Case 1,2,3,4
+    cout << "=====================" << string(nameLength, '=') << endl;
 
     for (const auto& avg : simAvg) {
         if (avg.second > 0) { // Only print books with positive ratings
