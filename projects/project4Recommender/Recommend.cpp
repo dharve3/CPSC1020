@@ -202,10 +202,15 @@ void Recommend::computeSimAvg(BOOK_AVG_LIST topSimList) {
     for (const auto& recommender : topSimList) {
         // Update cumulative ratings and count of non-zero ratings
         for (size_t i = 0; i < books.size(); ++i) {
-            if (ratings[recommender][i] != 0) {
-                cumulative_ratings[i] += ratings[recommender][i];
+            double rating = ratings[recommender.first][i];
+            cumulative_ratings[i] += rating;
+            if (rating != 0) {
                 count_nonzero[i]++;
             }
+            // if (ratings[recommender][i] != 0) {
+            //     cumulative_ratings[i] += ratings[recommender][i];
+            //     count_nonzero[i]++;
+            // }
         }
     }
 
