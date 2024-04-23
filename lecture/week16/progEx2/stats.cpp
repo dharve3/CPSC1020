@@ -1,5 +1,24 @@
 #include "stats.h"
 
+bool isEven(int num) {
+    return num % 2 == 0;
+}
+
+bool isOdd(int num) {
+    return num % 2 != 0;
+}
+
+bool isFibonacci(int num) {
+    int a = 0, b = 1;
+    while (a <= num) {
+        if (a == num) return true;
+        int temp = b;
+        b = a + b;
+        a = temp;
+    }
+    return false;
+}
+
 Stats::Stats() : values(100), fileName("")  {}
 
 Stats::Stats(string fn): fileName(fn) {
@@ -86,7 +105,9 @@ double Stats::avgEven() {
     int sum = 0;
     int count = countEven();
     for (int v : values) {
-        sum += v;
+        if (isEven(v)) {
+            sum += v;
+        }
     }
     return count == 0 ? 0.0 : static_cast<double>(sum) / count;
 }
@@ -96,7 +117,9 @@ double Stats::avgOdd() {
     int sum = 0;
     int count = countOdd();
     for (int v : values) {
-        sum += v;
+        if (isOdd(v)) {
+            sum += v;
+        }
     }
     return count == 0 ? 0.0 : static_cast<double>(sum) / count;
 }
@@ -106,7 +129,9 @@ double Stats::avgFib() {
     int sum = 0;
     int count = countFib();
     for (int v : values) {
-        sum += v;
+        if (isFibonacci(v)) {
+            sum += v;
+        }
     }
     return count == 0 ? 0.0 : static_cast<double>(sum) / count;
 }
