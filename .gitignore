@@ -28,3 +28,7 @@ compilation_output.*
 # files and directories named "temp"
 temp.*
 temp
+
+# Mac
+__MACOSX
+*.DS_Store
