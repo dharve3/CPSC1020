@@ -1,17 +1,5 @@
 #include "stats.h"
 
-void Stats::generateFib() {
-    int i;
-    
-    for (i = 0; i <= 50; i++) {
-        if (i == 0 || i == 1) {
-            fibonacciNums.push_back(1);
-        } else {
-            fibonacciNums.push_back(fibonacciNums[i-2] + fibonacciNums[i-1]);
-        }
-    }
-}
-
 Stats::Stats(string fn) {
     values.resize(100);
     ifstream inputFile(fn);
@@ -31,6 +19,18 @@ Stats::Stats(string fn) {
         values.push_back(value);
     }
     inputFile.close();
+}
+
+void Stats::generateFib() {
+    int i;
+    
+    for (i = 0; i <= 50; i++) {
+        if (i == 0 || i == 1) {
+            fibonacciNums.push_back(1);
+        } else {
+            fibonacciNums.push_back(fibonacciNums[i-2] + fibonacciNums[i-1]);
+        }
+    }
 }
 
 
