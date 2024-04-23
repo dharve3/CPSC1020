@@ -13,6 +13,7 @@ void generateFib() {
 }
 
 Stats::Stats(string fn) {
+    values.resize(100);
     ifstream inputFile(fn);
 
     // Check if file opened successfully
