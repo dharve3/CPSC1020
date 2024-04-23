@@ -2,7 +2,7 @@
 
 Stats::Stats() : values(100), fileName("")  {}
 
-Stats::Stats(string fn): values(100), fileName(fn) {
+Stats::Stats(string fn): fileName(fn) {
     ifstream inputFile(fn);
 
     // Check if file opened successfully
