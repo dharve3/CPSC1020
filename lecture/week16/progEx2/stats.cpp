@@ -1,8 +1,8 @@
 #include "stats.h"
 
-Stats::Stats() : fileName(""), value(100) {}
+Stats::Stats() : fileName(""), values(100) {}
 
-Stats::Stats(string fn): fileName(fn), value(100) {
+Stats::Stats(string fn): fileName(fn), values(100) {
     ifstream inputFile(fn);
 
     // Check if file opened successfully
