@@ -15,6 +15,7 @@ private:
 public:
     // Other constructor in stats.cpp
     Stats(): values(100), fileName("") { } // Default Constructor
+    Stats(string fn);
 
     int capacity();
     int count();
