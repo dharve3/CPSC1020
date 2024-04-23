@@ -83,8 +83,7 @@ int Stats::countOdd() {
 int Stats::countFib() {
     int count = 0;
     for (int v : values) {
-        auto it = find(fibonacciNums.begin(), fibonacciNums.end(), v);
-        if (it != fibonacciNums.end()) {
+        if (isFibonacci(v)) {
             count++;
         }
     }
