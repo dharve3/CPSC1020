@@ -1,7 +1,7 @@
 #include "stats.h"
 
 int main() {
-    Stats Stats("numbers.txt");
+    Stats stats("numbers.txt");
 
     cout << "Capacity: " << stats.capacity() << endl;
     cout << "Count: " << stats.count() << endl;
