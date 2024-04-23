@@ -1,6 +1,6 @@
 #include "stats.h"
 
-void generateFib() {
+void Stats::generateFib() {
     int i;
     
     for (i = 0; i <= 50; i++) {
@@ -64,7 +64,7 @@ int Stats::countOdd() {
 int Stats::countFib() {
     int count = 0;
     for (int v : values) {
-        it = find(fibonacciNums.begin(), fibonacciNums.end(), v);
+        auto it = find(fibonacciNums.begin(), fibonacciNums.end(), v);
         if (it != fibonacciNums.end()) {
             count++;
         }
