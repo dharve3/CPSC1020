@@ -26,4 +26,6 @@ public:
     double avgEven();
     double avgOdd();
     double avgFib();
+
+    void generateFib();
 };
