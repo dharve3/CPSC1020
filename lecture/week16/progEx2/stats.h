@@ -13,7 +13,7 @@ class Stats {
 private:
     vector<int> values;
     string fileName;
-    vector<int> fibonacciNums;
+    vector<long long int> fibonacciNums;
     // Any others
 
 public:
