@@ -1,7 +1,8 @@
 #include "stats.h"
 
-Stats::Stats(string fn) {
-    values.resize(100);
+Stats::Stats() : fileName(""), value(100) {}
+
+Stats::Stats(string fn): fileName(fn), value(100) {
     ifstream inputFile(fn);
 
     // Check if file opened successfully
@@ -9,7 +10,6 @@ Stats::Stats(string fn) {
         cerr << "Error opening file: " << fn << endl;
         exit(1); 
     }
-    fileName = fn;
 
     string line;
     int value;
@@ -18,7 +18,6 @@ Stats::Stats(string fn) {
         value = stoi(line);
         values.push_back(value);
     }
-    inputFile.close();
 }
 
 void Stats::generateFib() {

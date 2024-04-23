@@ -1,3 +1,6 @@
+#ifndef STATS_H
+#define STATS_H
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -15,7 +18,7 @@ private:
 
 public:
     // Other constructor in stats.cpp
-    Stats(): values(100), fileName("") { } // Default Constructor
+    Stats(); // Default Constructor
     Stats(string fn);
 
     int capacity();
@@ -31,3 +34,5 @@ public:
 
     void generateFib();
 };
+
+#endif // STATS_H
