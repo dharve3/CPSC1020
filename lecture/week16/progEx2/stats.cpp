@@ -28,6 +28,7 @@ Stats::Stats(string fn) {
     while (getline(inputFile, line)) {
         // Read value
         value = stoi(line);
+        values.push_back(value);
     }
     inputFile.close();
 }
