@@ -1,13 +1,14 @@
 #include "stats.h"
 
+// Helper function to check if even
 bool isEven(int num) {
     return num % 2 == 0;
 }
-
+// Helper function to check if odd
 bool isOdd(int num) {
     return num % 2 != 0;
 }
-
+// Helper function to check if fibonacci
 bool isFibonacci(int num) {
     int a = 0, b = 1;
     while (a <= num) {
@@ -19,8 +20,9 @@ bool isFibonacci(int num) {
     return false;
 }
 
+// Default constructor
 Stats::Stats() : values(100), fileName("")  {}
-
+// Custom constructor
 Stats::Stats(string fn): fileName(fn) {
     ifstream inputFile(fn);
 
@@ -39,6 +41,7 @@ Stats::Stats(string fn): fileName(fn) {
     }
 }
 
+// Didnt end up using this
 void Stats::generateFib() {
     int i;
     
@@ -51,7 +54,6 @@ void Stats::generateFib() {
     }
 }
 
-
 int Stats::capacity() {
     return values.capacity();
 }
@@ -59,27 +61,27 @@ int Stats::capacity() {
 int Stats::count() {
     return values.size();
 }
-
+// Counts number of even numbers
 int Stats::countEven() {
     int count = 0;
     for (int v : values) {
-        if (v % 2 == 0) {
+        if (isEven(v)) {
             count++;
         }
     }
     return count;
 }
-
+// Counts number of odd numbers
 int Stats::countOdd() {
     int count = 0;
     for (int v : values) {
-        if (v % 2 == 1) {
+        if (isOdd(v)) {
             count++;
         }
     }
     return count;
 }
-
+// Counts number of fib numbers
 int Stats::countFib() {
     int count = 0;
     for (int v : values) {
@@ -90,6 +92,7 @@ int Stats::countFib() {
     return count;
 }
 
+// Gets average of all numbers
 double Stats::avgAll() {
     if (values.empty()) return 0.0;
     int sum = 0;
@@ -98,11 +101,11 @@ double Stats::avgAll() {
     }
     return static_cast<double>(sum) / values.size();
 }
-
+// Gets average of even numbers
 double Stats::avgEven() {
     if (values.empty()) return 0.0;
     int sum = 0;
-    int count = countEven();
+    int count = countEven(); // inefficent
     for (int v : values) {
         if (isEven(v)) {
             sum += v;
@@ -110,11 +113,11 @@ double Stats::avgEven() {
     }
     return count == 0 ? 0.0 : static_cast<double>(sum) / count;
 }
-
+// Gets average of odd numbers
 double Stats::avgOdd() {
     if (values.empty()) return 0.0;
     int sum = 0;
-    int count = countOdd();
+    int count = countOdd(); // inefficent
     for (int v : values) {
         if (isOdd(v)) {
             sum += v;
@@ -122,11 +125,11 @@ double Stats::avgOdd() {
     }
     return count == 0 ? 0.0 : static_cast<double>(sum) / count;
 }
-
+// Gets average of fib numbers
 double Stats::avgFib() {
     if (values.empty()) return 0.0;
     int sum = 0;
-    int count = countFib();
+    int count = countFib(); // inefficent
     for (int v : values) {
         if (isFibonacci(v)) {
             sum += v;

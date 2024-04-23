@@ -13,11 +13,9 @@ class Stats {
 private:
     vector<int> values;
     string fileName;
-    vector<long long int> fibonacciNums;
-    // Any others
+    vector<long long int> fibonacciNums; // didnt end up using
 
 public:
-    // Other constructor in stats.cpp
     Stats(); // Default Constructor
     Stats(string fn);
 
@@ -32,7 +30,7 @@ public:
     double avgOdd();
     double avgFib();
 
-    void generateFib();
+    void generateFib(); // Didnt end up using
 };
 
 #endif // STATS_H
