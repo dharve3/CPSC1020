@@ -70,7 +70,7 @@ string postfixExpr(istream & in) {
        infixStack.pop();
        lExpr = infixStack.top();
        infixStack.pop();
-       if (ch == '+' || ch == '-' || + ch == '*') {
+       if (ch == '+' || ch == '-' || ch == '*' || ch == '/') { // fixed typo, added '/' condition
            infixStack.push("(" + lExpr + " " +
                             ch + " " + rExpr + ")");
        } else {
