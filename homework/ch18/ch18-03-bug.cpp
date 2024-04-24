@@ -9,7 +9,7 @@ struct ListNode {
     // Constructor
     ListNode(double value1, ListNode *next1 = nullptr) {
         value = value1;
-        next = nullptr;
+        next = next1; // Change to next1 instead of nullptr
     }
 };
 

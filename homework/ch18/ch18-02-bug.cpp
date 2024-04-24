@@ -36,6 +36,8 @@ int main() {
     ListNode *ptr = numberList;
     while (ptr != nullptr) {
         cout << ptr->value << "  "; // Process node
+        ptr = ptr->next; // Next node
     }
+
     return 0;
 }
