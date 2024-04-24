@@ -50,7 +50,7 @@ int size(ListNode *ptr) {
     if (ptr == nullptr)
         return 0;
     else
-        return size(ptr->next);
+        return 1 + size(ptr->next); // 1 + size() call
 }
 
 //*******************************************
