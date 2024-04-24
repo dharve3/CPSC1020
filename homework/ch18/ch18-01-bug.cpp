@@ -23,6 +23,6 @@ int main() {
 
     // Print the list
     cout << "First item is " << head->value << endl;
-    cout << "Second item is " << head->next->value << endl;
+    cout << "Second item is " << secondPtr->value << endl;
     return 0;
 }
