@@ -12,7 +12,7 @@ int main(){
         myList.push_back(x);
 
     // Display the values
-    for (iter = myList.begin(); iter != myList.end(); (*iter)++)
+    for (iter = myList.begin(); iter != myList.end(); iter++) // increment iterator rather than the dref ptr
         cout << *iter << " ";
     cout << endl;
 
@@ -20,7 +20,7 @@ int main(){
     myList.reverse();
 
     // Display the values again
-    for (iter = myList.begin(); iter != myList.end(); (*iter)++)
+    for (iter = myList.begin(); iter != myList.end(); iter++) // increment iterator rather than the dref ptr
         cout << *iter << " ";
     cout << endl;
     return 0;
