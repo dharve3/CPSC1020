@@ -26,7 +26,7 @@ int performOperation(char op, int a, int b) {
             if (b != 0)
                 return a / b;
             else {
-                cout << "Error: Division by zero!" << endl;
+                cerr << "Error: Division by zero!" << endl;
                 return INT_MAX; // Return maximum integer value to indicate error
             }
         default:
@@ -93,10 +93,18 @@ int solve(string equation, int start, int end) {
 }
 
 int main() {
-    string equation;
-    cout << "Enter the equation in infix notation: ";
-    getline(cin, equation);
-    int result = solve(equation, 0, equation.size() - 1);
-    cout << "Result: " << result << endl;
+    int num_equations;
+    cout << "Enter the number of equations: ";
+    cin >> num_equations;
+    cin.ignore(); // Consume newline character
+
+    for (int i = 0; i < num_equations; ++i) {
+        string equation;
+        cout << "Enter equation " << i + 1 << " in infix notation: ";
+        getline(cin, equation);
+        int result = solve(equation, 0, equation.size() - 1);
+        cout << result << endl;
+    }
+
     return 0;
 }
