@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <stack>
 #include <climits>
 #include <string>
@@ -93,15 +94,20 @@ int solve(string equation, int start, int end) {
 }
 
 int main() {
+    ifstream file;
+    file.open("equations.txt");
+    string line;
     int num_equations;
-    cout << "Enter the number of equations: ";
-    cin >> num_equations;
-    cin.ignore(); // Consume newline character
+    // cout << "Enter the number of equations: ";
+    getline(file, line);
+    num_equations = stoi(line);
+
+    // cin.ignore(); // Consume newline character
 
     for (int i = 0; i < num_equations; ++i) {
         string equation;
-        cout << "Enter equation " << i + 1 << " in infix notation: ";
-        getline(cin, equation);
+        // cout << "Enter equation " << i + 1 << " in infix notation: ";
+        getline(file, equation);
         int result = solve(equation, 0, equation.size() - 1);
         cout << result << endl;
     }
